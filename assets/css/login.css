@@ -1,0 +1,15 @@
+body{
+ background-color: #32CBED;
+}
+
+p{
+    text-align: center;
+}
+
+.card{
+    margin: 30px auto;
+    padding: 10px;
+}
+.card-title{
+    text-align: center;
+}

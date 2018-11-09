@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>       
+    Riddle
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">    
+    <script src="../../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>  -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../../assets/css/login.css"> 
+   
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title">Iniciar Sesión</h5>
+            <form action="" method="POST">
+                <div class="form-group row">                       
+                <input type="text" class="form-control col-12"  placeholder="Email" name="email" id="email" required>
+                </div>
+
+                <div class="form-group row">                       
+                    <input type="password" class="form-control col-12"  placeholder="Password" name="password" id="password" required>
+                </div>
+            
+                <div class="form-group row">                       
+                    <button type="submit" name="" class="btn btn-primary col-12">Login</button> 
+                </div>  
+
+                <p>Not a member? <a href="register.php">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+       
+</body>
+
+
+</html>
