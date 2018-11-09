@@ -50,10 +50,7 @@
                     <img class="card-img-top" src="descarga.svg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick
-                            examplee xampleexam pleexampleex ampleexample exampleexampleexample exampleexam
-                            pleexampleexa mpleexampleexampleexample
-                            text to build on the card title and make up the bulk of
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
                             card's content.</p>
                         <button type="button" class="btn btn-secondary float-right" disabled>Próximamente</button>
