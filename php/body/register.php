@@ -13,17 +13,19 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="../../assets/css/registro.css">
+    <link rel="stylesheet" href="css/login_register.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
    
 </head>
 
-<body>
+<body class="my-auto">
+<a href="index.php"><img src="assets/title.png" class="title" ></a>
+
 
     <div class="container">
     <div class="card" style="width: 20rem;">
         <div class="card-body">
-            <h5 class="card-title">Register</h5>
+            <h4 class="card-title">Crea tu cuenta</h4><br>
             <form action="" method="POST">
                 <div class="form-group row">                       
                 <input type="text" class="form-control col-12"  placeholder="Username" name="Username" id="Username" required>
@@ -39,13 +41,13 @@
 
                  <div class="form-group row">                       
                     <input type="password" class="form-control col-12"  placeholder="Repeat password" name="password" id="password" required>
-                </div>
+                </div><br>
             
                 <div class="form-group row">                       
-                    <button type="submit" name="" class="btn btn-primary col-12">Register</button> 
+                    <button type="submit" name="" class="btn btn-primary col-12">Registrate</button> 
                 </div>  
 
-                <p>Already a member? <a href="login.php">Log In</a></p>
+                <p>Ya tienes cuenta? <a href="login.php">Inicia sesión.</a></p>
             </form>
         </div>
     </div>

@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080/riddle_abp/php/body/gamesGrid.php",
+            "url": "http://localhost:8080/riddle_abp/php/body/login.php",
             "webRoot": "${workspaceFolder}"
         }
     ]

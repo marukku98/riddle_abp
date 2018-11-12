@@ -23,7 +23,7 @@
 
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top rounded-0" src="picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top rounded-0" src="assets/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Ataque a Pearl Harbor</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -35,7 +35,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -47,7 +47,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -59,7 +59,7 @@
             </div>
             <div class="col-xl-4    col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="assets/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of

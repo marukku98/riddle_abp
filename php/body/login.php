@@ -19,16 +19,18 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="../../assets/css/login.css">
+    <link rel="stylesheet" href="css/login_register.css">
 
 </head>
 
 <body>
+<a href="index.php"><img src="assets/title.png" class="title" ></a>
 
     <div class="container">
+
         <div class="card" style="width: 20rem;">
             <div class="card-body">
-                <h5 class="card-title">Iniciar Sesión</h5>
+                <h4 class="card-title">Inicia sesión</h4><br>
                 <form action="" method="POST">
                     <div class="form-group row">
                         <input type="text" class="form-control col-12" placeholder="Email" name="email" id="email"
@@ -38,7 +40,7 @@
                         <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password"
                             required>
                     </div>
-
+                    <br>
                     <div class="form-group row">
                         <button type="submit" name="" class="btn btn-primary col-12">Entrar</button>
                     </div>
