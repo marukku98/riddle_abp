@@ -23,7 +23,8 @@
 
 </head>
 
-<body>
+<body style="display: table-cell;
+    vertical-align: middle;">
 <a href="index.php"><img src="assets/title.png" class="title" ></a>
 
     <div class="container">
