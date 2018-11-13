@@ -14,50 +14,60 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/index.css">
+  <style>
+    .x {
+      color: rgb(255, 255, 255) !important;
+    }
+
+    .x:hover {
+
+      background-color: rgb(0, 172, 211);
+    }
+
+    .y:hover {
+      color: #32CBED !important;
+    }
+  </style>
 
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg" style="background-color: #32CBED; padding: 1rem 1rem;">
-      <a class="navbar-brand" href="index.php">
-        <div class="page-header">
-          <img src="assets/title.png" height="40" alt="">
+    <div class="container-fluid" style="background-color: #32CBED;">
+      <div class=" row">
+        <div class="col-xl-9 col-lg-8 col-md-7 col-sm-7">
+          <nav class="navbar navbar-expand-lg" style="background-color: #32CBED;">
+            <a class="navbar-brand" href="index.php">
+              <div class="page-header">
+                <img src="assets/title.png" height="40" alt="">
+              </div>
+            </a>
+          </nav>
+
+          <nav class="nav nav-pills" style="background-color:#32CBED;">
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">MENU</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">JUEGOS</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">ABOUT</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">CONTACT</a>
+          </nav>
         </div>
-      </a>
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto"></ul>
 
-        <a class="navbar-brand">
-          <a class="text-white " style="border-bottom-right-radius:0; border-top-right-radius:0; font-size: 18px" href="register.php">Registrate</a>
-        </a>
-        <a class="navbar-brand">
-          <a class="text-white " style="border-bottom-right-radius:0; border-top-right-radius:0; font-size: 18px" href="register.php">|</a>
-        </a>
-        <a class="navbar-brand">
-          <a class="text-white " style="border-bottom-left-radius:0; border-top-left-radius:0; font-size: 18px" href="login.php">Iniciar
-            Sesion</a>
-        </a>
+
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 mt-auto mb-auto pr-4 d-block" style="background-color: #32CBED; float:right;">
+          <nav class="navbar justify-content-end" style="background-color: #32CBED; display: inline;">
+            <a class="text-white btn btn-light btn-outline-light rounded-0 y float-right ml-5 m-auto" style="font-size: 18px;"
+              href="login.php">Iniciar
+              Sesion</a>
+            <a class="text-white btn float-right mr-2 ml-2 m-auto" style="border-bottom-right-radius:0; border-top-right-radius:0; font-size: 18px"
+              href="register.php">Registrate</a>
+
+          </nav>
+
+        </div>
+
       </div>
-    </nav>
-    <style>
-      .x {
-        color: rgb(255, 255, 255) !important;
-      }
-
-      .x:hover {
-
-        background-color: rgb(0, 172, 211);
-      }
-    </style>
-    <nav class="nav nav-pills" style="background-color:#45B8D2;">
-      <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">MENU</a>
-      <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">JUEGOS</a>
-      <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">ABOUT</a>
-      <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">CONTACT</a>
-    </nav>
+    </div>
   </header>
-
 
   <!-- <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
