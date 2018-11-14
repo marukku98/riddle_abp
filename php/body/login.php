@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html>
+<?php require_once "../templates/user.php" ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        Riddle
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php startblock("titulo"); ?>
+  Login
+<?php endblock(); ?>
 
-    <link rel="stylesheet" href="/riddle_abp/assets/css/bootstrap.min.css">
-    <script src="/riddle_abp/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/riddle_abp/assets/js/popper.min.js"></script>
-    <script src="/riddle_abp/assets/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="/riddle_abp/assets/css/login_register.css">
-
-</head>
-
-<body>
-<a href="index.php"><img src="/riddle_abp/assets/img/title.png" class="title" ></a>
-
-    <div class="container">
-
+<?php startblock("principal"); ?>
         <div class="card" style="width: 20rem;">
             <div class="card-body">
                 <h4 class="card-title">Inicia sesión</h4><br>
@@ -44,9 +26,5 @@
                 </form>
             </div>
         </div>
-    </div>
 
-</body>
-
-
-</html>
+<?php endblock(); ?>
