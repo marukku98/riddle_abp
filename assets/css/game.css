@@ -1,0 +1,46 @@
+.game{
+    background-image: url('/riddle_abp/assets/img/picGame1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    position: relative;
+
+}
+
+.lockHover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: white; 
+}
+.lockHover:hover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: white;
+    background-color: rgba(99, 99, 99, 0.589);
+    background-image: url('/riddle_abp/assets/img/lock.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gameText{
+    font-size: 15px;
+    padding: 5px;
+    height: 33%;
+    width: 100%;
+    background-color: #3f3f3f85;
+    position: absolute;
+    bottom: 0;
+    color: white; 
+}
+
+.lockedImg{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
