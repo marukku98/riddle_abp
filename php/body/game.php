@@ -1,5 +1,7 @@
 <?php require_once "../templates/master.php" ?>
 
+<link rel="stylesheet" href="/riddle_abp/assets/css/game.css">
+
 <?php startblock("titulo"); ?>
   Joc
 <?php endblock(); ?>
