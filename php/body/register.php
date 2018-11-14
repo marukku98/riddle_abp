@@ -8,18 +8,18 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">  
 
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/ABP/assets/css/bootstrap.min.css"> 
+    <script src="/ABP/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/ABP/assets/js/popper.min.js"></script>
+    <script src="/ABP/assets/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/login_register.css">
+    <link rel="stylesheet" href="/ABP/assets/css/login_register.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
    
 </head>
 
 <body class="my-auto">
-<a href="index.php"><img src="assets/title.png" class="title" ></a>
+<a href="index.php"><img src="/ABP/assets/img/title.png" class="title" ></a>
 
 
     <div class="container">

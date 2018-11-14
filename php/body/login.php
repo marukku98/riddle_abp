@@ -9,22 +9,17 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">    
-    <script src="../../assets/js/jquery-3.3.1.min.js"></script>
-    <script src="../../assets/js/popper.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>  -->
+    <link rel="stylesheet" href="/ABP/assets/css/bootstrap.min.css">
+    <script src="/ABP/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/ABP/assets/js/popper.min.js"></script>
+    <script src="/ABP/assets/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="css/login_register.css">
+    <link rel="stylesheet" href="/ABP/assets/css/login_register.css">
 
 </head>
 
 <body>
-<a href="index.php"><img src="assets/title.png" class="title" ></a>
+<a href="index.php"><img src="/ABP/assets/img/title.png" class="title" ></a>
 
     <div class="container">
 
