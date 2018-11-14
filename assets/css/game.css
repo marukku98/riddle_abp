@@ -3,14 +3,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     position: relative;
 
-}
-
-.title{
-    margin: 30px;
 }
 
 .lockHover{
@@ -37,7 +33,7 @@
     padding: 5px;
     height: 33%;
     width: 100%;
-    background-color: #3f3f3fc0;
+    background-color: #3f3f3f85;
     position: absolute;
     bottom: 0;
     color: white; 
