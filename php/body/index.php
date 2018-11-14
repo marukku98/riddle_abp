@@ -9,13 +9,13 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="/ABP/assets/css/bootstrap.min.css">
-  <script src="/ABP/assets/js/jquery-3.3.1.min.js"></script>
-  <script src="/ABP/assets/js/popper.min.js"></script>
-  <script src="/ABP/assets/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/riddle_abp/assets/css/bootstrap.min.css">
+  <script src="/riddle_abp/assets/js/jquery-3.3.1.min.js"></script>
+  <script src="/riddle_abp/assets/js/popper.min.js"></script>
+  <script src="/riddle_abp/assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="/ABP/assets/css/index.css">
+  <link rel="stylesheet" href="/riddle_abp/assets/css/index.css">
 
 </head>
 
@@ -25,7 +25,7 @@
       <a class="navbar-brand" href="index.php">
         <div class="page-header">
           <!-- <h1>RIDDLE</h1> -->
-          <img src="/ABP/assets/img/titulo.png" style="max-height: 200px; max-width: 200px;" alt="">
+          <img src="/riddle_abp/assets/img/titulo.png" style="max-height: 200px; max-width: 200px;" alt="">
         </div>
       </a>
       <div class="collapse navbar-collapse" id="navbarColor02">
@@ -70,7 +70,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100 slide" src="/ABP/assets/img/bg-game.jpg" alt="First slide">
+          <img class="d-block w-100 slide" src="/riddle_abp/assets/img/bg-game.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption text-left">
               <h1>Pear Harbor</h1>
@@ -79,14 +79,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 slide" src="/ABP/assets/img/proximamente.png" alt="Second slide">
+          <img class="d-block w-100 slide" src="/riddle_abp/assets/img/proximamente.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100 slide" src="/ABP/assets/img/proximamente.png" alt="First slide">
+          <img class="d-block w-100 slide" src="/riddle_abp/assets/img/proximamente.png" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
             </div>
@@ -120,7 +120,7 @@
 
       </div>
       <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/ABP/assets/img/Artur_Avatar.png"
+        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Artur_Avatar.png"
           alt="Generic placeholder image">
       </div>
     </div>
@@ -142,7 +142,7 @@
 
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/ABP/assets/img/Toni_Avatar.jpeg"
+        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Toni_Avatar.jpeg"
           alt="Generic placeholder image">
       </div>
     </div>
@@ -162,7 +162,7 @@
         </ul>
       </div>
       <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" src="/ABP/assets/img/Marc_Avatar.png" data-src="holder.js/500x500/auto"
+        <img class="featurette-image img-fluid mx-auto" src="/riddle_abp/assets/img/Marc_Avatar.png" data-src="holder.js/500x500/auto"
           alt="Generic placeholder image">
       </div>
     </div>
@@ -184,7 +184,7 @@
 
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/ABP/assets/img/Marti_Avatar.png"
+        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Marti_Avatar.png"
           alt="Generic placeholder image">
       </div>
     </div>

@@ -9,10 +9,10 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/ABP/assets/css/bootstrap.min.css">
-    <script src="/ABP/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/ABP/assets/js/popper.min.js"></script>
-    <script src="/ABP/assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/riddle_abp/assets/css/bootstrap.min.css">
+    <script src="/riddle_abp/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/riddle_abp/assets/js/popper.min.js"></script>
+    <script src="/riddle_abp/assets/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -22,7 +22,7 @@
       <a class="navbar-brand" href="index.php">
         <div class="page-header">
           <!-- <h1>RIDDLE</h1> -->
-          <img src="/ABP/assets/img/titulo.png" style="max-height: 200px; max-width: 200px;" alt="">
+          <img src="/riddle_abp/assets/img/titulo.png" style="max-height: 200px; max-width: 200px;" alt="">
         </div>
       </a>
       <div class="collapse navbar-collapse" id="navbarColor02">
@@ -61,7 +61,7 @@
 
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top rounded-0" src="/ABP/assets/img/picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top rounded-0" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Ataque a Pearl Harbor</h5>
                         <p class="card-text">Revive el ataque militar de Japón contra Estados Unidos en una base naval en Hawaii.</p>
@@ -71,7 +71,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="/ABP/assets/img/picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -83,7 +83,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="/ABP/assets/img/picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -95,7 +95,7 @@
             </div>
             <div class="col-xl-4    col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="/ABP/assets/img/picGame1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
