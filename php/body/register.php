@@ -8,9 +8,10 @@
     <div class="card" style="width: 20rem;">
         <div class="card-body">
             <h4 class="card-title">Crea tu cuenta</h4><br>
-            <form action="" method="POST">
+
+            <form action="/riddle_abp/php/conexion/register.php" method="POST">
                 <div class="form-group row">                       
-                <input type="text" class="form-control col-12"  placeholder="Username" name="Username" id="Username" required>
+                <input type="text" class="form-control col-12"  placeholder="Username" name="username" id="Username" required>
                 </div>
 
                 <div class="form-group row">                       
@@ -22,11 +23,11 @@
                 </div>
 
                  <div class="form-group row">                       
-                    <input type="password" class="form-control col-12"  placeholder="Repeat password" name="password" id="password" required>
+                    <input type="password" class="form-control col-12"  placeholder="Repeat password" name="password2" id="password" required>
                 </div><br>
             
                 <div class="form-group row">                       
-                    <button type="submit" name="" class="btn btn-primary col-12">Registrate</button> 
+                    <button type="submit" name="insertarUser" class="btn btn-primary col-12">Registrate</button> 
                 </div>  
 
                 <p>Ya tienes cuenta? <a href="login.php">Inicia sesión.</a></p>

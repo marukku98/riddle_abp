@@ -1,40 +1,31 @@
 <?php
 
+session_start();
 //Incluimos el archivo de conexión
-require "conexion.php";
-
-//Recibir los datos y almacenar en variables
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$password2 = $_POST['password2'];
+include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 
 
-if (strcmp($password, $password2) == 0) {
-    //Consulta para insertar a la BD.
-    $insertar = "INSERT INTO usuarios(username, password, name, email)"
-            . "VALUES ('$username', '$password','$name', '$surname', '$email')";
+if(isset($_POST['insertarUser'])){     
+    //Recibir los datos y almacenar en variables
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password2'];
 
-    //Comprueba que no este duplicado el username.
-    $verificar = mysqli_query($con, "SELECT * FROM  usuarios WHERE email = '$email'");
-    if(mysqli_num_rows($verificar) > 0){
-        echo 'Este email ya está registrado';           
-        exit;    
-    }
-    //Ejecuta la consulta.
-    $resultado = mysqli_query($con, $insertar);
+    if (strcmp($password, $password2) == 0) {
+        //Comprueba que no este duplicado el username.
+        $verificar = selectUserByEmail($email);
+        if($verificar > 0){
+            echo 'Este email ya está registrado';  
+            // header('Location: /riddle_abp/php/body/register.php');  
+        }
 
-    //Comprueba si el registro a dado algún error o no.
-    if (!$resultado){
-        echo '<br> Error al registrarse';
-    }
-    else{      
-        header('Location: index.php');     
-    }
-    //Cerrar conexion
-    mysqli_close($con);
-    
-} else {
-    echo "Las contraseñas no coinciden.";
+        //Ejecuta la consulta.
+        //Consulta para insertar a la BD.
+        insertarUsers($username, $email, $password);
+    } else {
+        echo "Las contraseñas no coinciden.";
+    }   
+
 }
 ?>
