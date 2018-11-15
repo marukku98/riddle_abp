@@ -15,9 +15,8 @@ if(isset($_POST['insertarUser'])){
     if (strcmp($password, $password2) == 0) {
         //Comprueba que no este duplicado el username.
         $verificar = selectUserByEmail($email);
-        if($verificar > 0){
-            echo 'Este email ya está registrado';  
-            // header('Location: /riddle_abp/php/body/register.php');  
+        if($verificar > 0){  
+            header('Location: /riddle_abp/php/body/register.php');
         }
 
         //Ejecuta la consulta.
@@ -26,6 +25,9 @@ if(isset($_POST['insertarUser'])){
     } else {
         echo "Las contraseñas no coinciden.";
     }   
+
+ 
+    exit();
 
 }
 ?>
