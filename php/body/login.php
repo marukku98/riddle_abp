@@ -1,5 +1,6 @@
-<?php session_start();?>
-<?php require_once "../templates/user.php";?>
+<?php session_start();
+      require_once "../templates/user.php";
+?>
 
 <?php startblock("titulo"); ?>
 Login
@@ -28,14 +29,13 @@ Login
                     }else{
                         echo '<input type="text" class="form-control col-12" placeholder="Email" name="email" id="email" required>';
                     }
-
                 ?>
             </div>
             <div class="form-group row">
                 <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password"
                     required>
-            </div><br>
-
+            </div>
+            <br>
 
             <div class="form-group row">
                 <button type="submit" name="" class="btn btn-primary col-12">Entrar</button>
