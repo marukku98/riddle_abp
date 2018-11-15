@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php require_once "../templates/user.php";?>
 
 <?php startblock("titulo"); ?>
@@ -14,17 +15,17 @@
                             required>
                     </div>
                     <div class="form-group row">
-                        <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password"
-                            required>
+                        <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password" required>
                             <?php 
                             if(isset($_SESSION['error'])){
-                                echo "<p class='text-danger'>".$_SESSION['error']."<p>";
+                                echo "<p class='text-danger ml-2' style='font-size: 0.75rem;'>*".$_SESSION['error']."<p>";
                                 unset($_SESSION['error']);
+                            }else{
+                                echo "<p class='text-white' style='font-size: 0.75rem;'>.</p>";
                             }
-                            else{echo 1;}
                             ?>
+                            
                     </div>
-                    <br>
                     <div class="form-group row">
                         <button type="submit" name="" class="btn btn-primary col-12">Entrar</button>
                     </div>
