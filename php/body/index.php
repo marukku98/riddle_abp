@@ -17,11 +17,12 @@
   <style>
     .x {
       color: rgb(255, 255, 255) !important;
+
     }
 
     .x:hover {
-
       background-color: rgb(0, 172, 211);
+
     }
 
     .y:hover {
@@ -45,10 +46,10 @@
           </nav>
 
           <nav class="nav nav-pills" style="background-color:#32CBED;">
-            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">MENU</a>
-            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">JUEGOS</a>
-            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">ABOUT</a>
-            <a class="nav-item nav-link text-white mr-3 x rounded-0" href="#">CONTACT</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" style="font-size: 18px;" href="#">MENU</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" style="font-size: 18px;" href="#">JUEGOS</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" style="font-size: 18px;" href="#scroll">ABOUT</a>
+            <a class="nav-item nav-link text-white mr-3 x rounded-0" style="font-size: 18px;" href="#">CONTACTO</a>
           </nav>
         </div>
 
@@ -57,9 +58,9 @@
           <nav class="navbar justify-content-end" style="background-color: #32CBED; display: inline;">
             <a class="text-white btn btn-light btn-outline-light rounded-0 y float-right ml-5 m-auto" style="font-size: 18px;"
               href="login.php">Iniciar
-              Sesion</a>
-            <a class="text-white btn float-right mr-2 ml-2 m-auto" style="border-bottom-right-radius:0; border-top-right-radius:0; font-size: 18px"
-              href="register.php">Registrate</a>
+              Sesión</a>
+            <a class="text-white btn float-right mr-2 ml-2 m-auto z" style="border-bottom-right-radius:0; border-top-right-radius:0; font-size: 18px"
+              href="register.php">Regístrate</a>
 
           </nav>
 
@@ -98,7 +99,9 @@
     </div>
 
 </div> -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" name="" data-ride="carousel">
+    <a name="scroll"></a>
+
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1" class=""></li>
