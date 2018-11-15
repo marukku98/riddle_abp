@@ -1,0 +1,16 @@
+p {
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.logo{
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+    height: 50px;
+}
+
+.enter input {
+    margin: auto; display: block;
+}

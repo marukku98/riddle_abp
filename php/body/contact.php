@@ -1,8 +1,36 @@
 <?php require_once "../templates/master.php" ?>
 
+<link rel="stylesheet" href="/riddle_abp/assets/css/contact.css">
+
 <?php startblock("titulo"); ?>
-  Index
+Index
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
+
+<div class="container">
+  <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/icon.jpg" class="logo" width="50px" height="50px"></a>
+  <p>No dudes en contactar con nosotros si tienes cualquier problema o duda.</p><br>
+  <form>
+    <div class="form-group">
+      <label for="labelName">Nombre</label>
+      <input type="text" class="form-control" id="InputName" name="name" placeholder="Tu nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="labelEmail">Correo eletrónico</label>
+      <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Tu correo electrónico" required>
+    </div>
+    <div class="form-group ">
+      <label for="InputText">Mensaje</label>
+      <textarea class="form-control autoExpand" name="message" min-rows="5" placeholder="Mensaje a enviar..." required></textarea>
+    </div>
+    <div class="enter">
+      <input type="submit" class="btn btn-default btnSubmit" name="submit" value="Enviar Mensaje">
+    </div>
+   
+  </form>
+
+</div>
+
+
 <?php endblock(); ?>
