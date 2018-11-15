@@ -7,17 +7,23 @@ $password = $_POST["password"];
 $res = selectUser($email, $password);
 
 if(count($res)==0){
-    $_SESSION['error']='Usuario o contraseña incorrectos.';
+    $res = selectUserByEmail($email);
+    $_SESSION['email'] = $email;
+
+    if($res==0){
+        $_SESSION['error']='Este correo no pertenece a ninguna cuenta.';
+    }else{
+        $_SESSION['error']='Contraseña incorrecta.';
+    }
+    
     header("Location: /riddle_abp/php/body/login.php");
-    exit();
+
 }
 else{
-    $_SESSION['username'] = "name";
-    $_SESSION['email'] = "email";
+    $_SESSION['username'] = $res[0]["username"];
+    $_SESSION['email'] = $res[0]["email"];
+    $_SESSION['role'] = $res[0]["role"];
     header("Location: /riddle_abp/php/body/index.php");
-    exit();
 }
-
-//conexion.php
 
 ?>

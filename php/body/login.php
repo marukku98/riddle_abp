@@ -11,7 +11,7 @@ Login
         <h4 class="card-title">Inicia sesión</h4>
         <?php 
             if(isset($_SESSION['error'])){
-                echo "<p class='error mb-1 ml-1'>*".$_SESSION['error']."</p>";
+                echo "<p class='error mb-1 ml-1'>".$_SESSION['error']."</p>";
                 unset($_SESSION['error']);
             }
             else{
@@ -21,7 +21,15 @@ Login
 
         <form action="/riddle_abp/php/conexion/login.php" method="POST">
             <div class="form-group row">
-                <input type="text" class="form-control col-12" placeholder="Email" name="email" id="email" required>
+                <?php
+                    if(isset($_SESSION['email'])){
+                        echo '<input value="'.$_SESSION['email'].'" type="text" class="form-control col-12" placeholder="Email" name="email" id="email" required>';
+                        unset($_SESSION['email']);
+                    }else{
+                        echo '<input type="text" class="form-control col-12" placeholder="Email" name="email" id="email" required>';
+                    }
+
+                ?>
             </div>
             <div class="form-group row">
                 <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password"
