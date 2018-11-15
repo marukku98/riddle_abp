@@ -54,7 +54,7 @@
         <div class="navbar-collapse collapse navbars" id="navbar2">
           <ul class="navbar-nav">
             <li class="nav-item ">
-              <a class="nav-link col-2 text-white" href="">MENU</a>
+              <a class="nav-link col-2 text-white" href="index.php">MENU</a>
             </li>
             <li class="nav-item ">
               <a class="nav-link col-2 text-white" href="gamesGrid.php">JUEGOS</a>
