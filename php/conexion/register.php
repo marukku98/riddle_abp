@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+
 //Incluimos el archivo de conexión
 include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 
@@ -17,17 +17,15 @@ if(isset($_POST['insertarUser'])){
         $verificar = selectUserByEmail($email);
         if($verificar > 0){  
             header('Location: /riddle_abp/php/body/register.php');
-        }
+    }
 
-        //Ejecuta la consulta.
-        //Consulta para insertar a la BD.
-        insertarUsers($username, $email, $password);
+    //Ejecuta la consulta.
+    //Consulta para insertar a la BD.
+    insertarUsers($username, $email, $password);
+
     } else {
         echo "Las contraseñas no coinciden.";
-    }   
-
- 
-    exit();
+    }       
 
 }
 ?>
