@@ -17,15 +17,17 @@ if(isset($_POST['insertarUser'])){
         $verificar = selectUserByEmail($email);
         if($verificar > 0){  
             header('Location: /riddle_abp/php/body/register.php');
+        }else{
+            //Ejecuta la consulta.
+            //Consulta para insertar a la BD.
+            insertarUsers($username, $email, $password);
+            header('Location: /riddle_abp/php/body/index.php');
+        }
     }
-
-    //Ejecuta la consulta.
-    //Consulta para insertar a la BD.
-    insertarUsers($username, $email, $password);
-
-    } else {
+    else {
         echo "Las contraseñas no coinciden.";
     }       
 
 }
+
 ?>
