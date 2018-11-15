@@ -20,17 +20,4 @@ else{
 
 //conexion.php
 
-function selectUser($email, $password){
-    $conn = openBD();
-    
-    $sentencia = $conn->prepare("select * from users where email = :email and password = :password");
-    $sentencia->bindParam(':email', $email);
-    $sentencia->bindParam(':password', $password);
-    $sentencia->execute();
-
-    $result = $sentencia->fetchAll();
-
-    $conn = closeBD();
-
-    return $result;
-}?>
+?>

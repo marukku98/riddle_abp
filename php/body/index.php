@@ -54,9 +54,9 @@
         <h2 class="featurette-heading">Artur Alcoverro <span class="text-muted">It'll blow your mind.</span></h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. </p>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-envelope"></i> </li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> </li>
-          <li class="list-group-item"><i class="fab fa-twitter-square"></i> </li>
+          <li class="list-group-item"><i class="far fa-envelope"></i> artur.bcn1998@gmail.com</li>
+          <li class="list-group-item"><i class="fab fa-linkedin"></i> Artur Alcoverro</li>
+          <li class="list-group-item"><i class="fab fa-twitter-square"></i> @ArturAlcoverro</li>
         </ul>
 
       </div>
@@ -78,7 +78,7 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><i class="far fa-envelope"></i> mansoksama@gmail.com</li>
           <li class="list-group-item"><i class="fab fa-linkedin"></i> Toni Altamirano</li>
-          <li class="list-group-item"><i class="fab fa-twitter-square"></i> Mansok</li>
+          <li class="list-group-item"><i class="fab fa-twitter-square"></i> @Mansok</li>
         </ul>
 
       </div>
@@ -97,8 +97,8 @@
           semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
           commodo.</p>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-envelope"></i> </li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> </li>
+          <li class="list-group-item"><i class="far fa-envelope"></i> marc.gonzalez.sds@gmail.com</li>
+          <li class="list-group-item"><i class="fab fa-linkedin"></i> Marc González</li>
           <li class="list-group-item"><i class="fab fa-twitter-square"></i> </li>
         </ul>
       </div>
@@ -118,8 +118,8 @@
           commodo.</p>
 
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="far fa-envelope"></i> </li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> </li>
+          <li class="list-group-item"><i class="far fa-envelope"></i> emdicmarti@gmail.com</li>
+          <li class="list-group-item"><i class="fab fa-linkedin"></i> Martí Soler</li>
           <li class="list-group-item"><i class="fab fa-twitter-square"></i></li>
         </ul>
 

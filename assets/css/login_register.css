@@ -18,10 +18,15 @@ body {
     background-color: #32CBED;
 }
 
-p {
+.center {
     text-align: center;
 }
 
 .card {
     margin: 30px auto;
+}
+
+.error {
+    font-size: 80%;
+    color: #dc3545
 }

@@ -39,6 +39,21 @@ function insertarUsers($username, $email, $password){
       $con = closeBD();
 }
 
+function selectUser($email, $password){
+    $conn = openBD();
+    
+    $sentencia = $conn->prepare("select * from users where email = :email and password = :password");
+    $sentencia->bindParam(':email', $email);
+    $sentencia->bindParam(':password', $password);
+    $sentencia->execute();
+
+    $result = $sentencia->fetchAll();
+
+    $conn = closeBD();
+
+    return $result;
+}
+
 function selectUserByEmail($email){
 
     $con = openBD();
