@@ -21,37 +21,30 @@ if(isset($_POST['insertarUser'])){
 
     $validation = true;
 
-    $email = test_input($_POST["email"]); 
+    $email = test_input($_POST["email"]);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $validation = false;
-        $_SESSION['error']= "Formato de correo inválido";
-        header("Location: /riddle_abp/php/body/register.php");        
-    }   
-
-    if(strlen($password) < 6 || strlen($password2) < 6){
+        $_SESSION['error']= "Formato de correo inválido";     
+    }else if(strlen($password) < 6 || strlen($password2) < 6){
         $validation = false;
         $_SESSION['error']= "La contraseña tiene que tener un minimo de 6 carácteres";
-        header("Location: /riddle_abp/php/body/register.php");
-    }      
-
-    if (strcmp($password, $password2) == 0) {
-        //Comprueba que no este duplicado el username.
+    }else if (strcmp($password, $password2) == 1) {
+        $validation = false;
+        $_SESSION['error'] = "Las contraseñas no coinciden.";
+    }else{
         $verificar = selectUserByEmail($email);
         if($verificar > 0){
             $validation = false;
-            header('Location: /riddle_abp/php/body/register.php');
-        }else{
-            //Ejecuta la consulta.
-            //Consulta para insertar a la BD.
-            if($validation == true){
-                insertarUsers($username, $email, $password);
-                header('Location: /riddle_abp/php/body/index.php');
-            }
+            $_SESSION['error']= "Este email";
         }
     }
-    else {
-        $_SESSION['error'] = "Las contraseñas no coinciden.";
-    }       
+
+    if($validation == true){
+        insertarUsers($username, $email, $password);
+        header('Location: /riddle_abp/php/body/index.php');
+    }else{
+        header('Location: /riddle_abp/php/body/register.php');
+    }
 
 }
 
