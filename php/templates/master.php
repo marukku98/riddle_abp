@@ -43,10 +43,10 @@
           </nav>
 
           <nav class="nav nav-pills bg-main-color">
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#">MENU</a>
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#">JUEGOS</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="index.php">MENU</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="gamesGrid.php">JUEGOS</a>
             <a class="nav-item nav-link text-white mr-3 rounded-0" href="#scroll">ABOUT</a>
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#">CONTACTO</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="contact.php">CONTACTO</a>
           </nav>
         </div>
 
