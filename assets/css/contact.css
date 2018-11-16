@@ -12,5 +12,6 @@ p {
 }
 
 .enter input {
-    margin: auto; display: block;
+    margin: auto; 
+    display: block;
 }

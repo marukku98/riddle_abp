@@ -8,9 +8,7 @@ Index
 
 <?php startblock("principal"); ?>
 
-<div class="container">
-  <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/title_black.png" class="logo" style="max-height: 200px; max-width: 200px;"></a>
-  <p>No dudes en contactar con nosotros si tienes cualquier problema o duda.</p><br>
+<div class="container">    
   <form>
     <div class="form-group">
       <label for="labelName">Nombre</label>
