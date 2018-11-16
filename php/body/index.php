@@ -5,6 +5,7 @@
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
+</div>
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -46,6 +47,8 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+
+    <div class="container">
     <!-- START THE FEATURETTES -->
 	<a name="scroll"/>
 
