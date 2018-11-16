@@ -76,7 +76,7 @@
 
     <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href=""> Team Riddle</a>
+            <a href="">Riddle Team</a>
         </div>
     <!-- Copyright -->
 
