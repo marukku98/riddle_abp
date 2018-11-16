@@ -9,7 +9,7 @@ Index
 <?php startblock("principal"); ?>
 
 <div class="container">
-  <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/icon.jpg" class="logo" width="50px" height="50px"></a>
+  <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/title_black.png" class="logo" style="max-height: 200px; max-width: 200px;"></a>
   <p>No dudes en contactar con nosotros si tienes cualquier problema o duda.</p><br>
   <form>
     <div class="form-group">
