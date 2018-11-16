@@ -30,43 +30,37 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg" style="background-color: #32CBED;">
-      <a class="navbar-brand" href="index.php">
-        <div class="page-header">
-          <!-- <h1>RIDDLE</h1> -->
-          <img src="/riddle_abp/assets/img/titulo.png" style="max-height: 200px; max-width: 200px;" alt="">
+  <!-- <h1>RIDDLE</h1> -->
+  <div class="container-fluid bg-main-color">
+      <div class=" row">
+        <div class="col-xl-9 col-lg-8 col-md-7 col-sm-7">
+          <nav class="navbar navbar-expand-lg bg-main-color">
+            <a class="navbar-brand" href="index.php">
+              <div class="page-header">
+                <img src="/riddle_abp/assets/img/titulo.png" height="40" alt="">
+              </div>
+            </a>
+          </nav>
+
+          <nav class="nav nav-pills bg-main-color">
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#">MENU</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#">JUEGOS</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#scroll">ABOUT</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0" href="#">CONTACTO</a>
+          </nav>
         </div>
-      </a>
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto"></ul>
-        <a class="navbar-brand">
-          <h5><a class="text-white" href="login.php">Iniciar Sesion</a> </h5>
-        </a>
-        <div class="vertical-divider"></div>
-        <a class="navbar-brand">
-          <h5><a class="text-white" href="register.php">Registrate</a> </h5>
-        </a>
+
+
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 mt-auto mb-auto pr-4 d-block bg-main-color float-right">
+          <nav class="navbar justify-content-end bg-main-color d-inline">
+            <a class="text-white btn btn-outline-light btn-login float-right ml-5 m-auto" href="login.php">Iniciar
+              Sesión</a>
+            <a class="text-white btn float-right mr-2 ml-2 m-auto z" href="register.php">Regístrate</a>
+          </nav>
+        </div>
+
       </div>
-    </nav>
-
-    <div id="navigation">
-      <nav class="navbar navbar-expand-lg navbar-light py-1" style="background-color: #45B8D2;">
-        <div class="navbar-collapse collapse navbars" id="navbar2">
-          <ul class="navbar-nav">
-            <li class="nav-item ">
-              <a class="nav-link col-2 text-white" href="index.php">MENU</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link col-2 text-white" href="gamesGrid.php">JUEGOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link col-2 text-white" href="contact.php">CONTACTO</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
     </div>
-
   </header>
 
   <div class="container">

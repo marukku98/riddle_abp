@@ -47,6 +47,7 @@
       </a>
     </div>
     <!-- START THE FEATURETTES -->
+	<a name="scroll"/>
 
     <h3 style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
     <div class="row featurette">
