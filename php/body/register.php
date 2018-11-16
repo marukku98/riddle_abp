@@ -1,7 +1,7 @@
 <?php require_once "../templates/user.php" ?>
 
 <?php startblock("titulo"); ?>
- Login
+ Registro
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
@@ -15,16 +15,15 @@
                </div>
 
                <div class="form-group row">                      
-                   <input type="email" class="form-control col-12"  placeholder="Email" name="email" id="email" required>
+                   <input type="text" class="form-control col-12"  placeholder="Email" name="email" id="email" required>
                </div>
 
                 <div class="form-group row">                      
                    <input type="password" class="form-control col-12"  placeholder="Password" name="password" id="password" required>
-                   <small id="password" class="form-text text-muted"> * Mínimo 6 carácteres</small>
                </div>
 
                 <div class="form-group row">                      
-                   <input type="password" class="form-control col-12"  placeholder="Repeat password" min="6" name="password2" id="password" required>
+                   <input type="password" class="form-control col-12"  placeholder="Repeat password"  name="password2" id="password" required>
                </div><br>
                <div class="form-group row">                      
                    <button type="submit" name="insertarUser" class="btn btn-primary col-12">Registrate</button>
