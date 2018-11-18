@@ -21,9 +21,8 @@
             <h5 class="text m-0">Nivel 1</h5>
             <p>Preparativos para la batalla</p>
         </div>
-        <div class="middle">
-            <div class="play-animation mt-3"></div>
-        </div>
+            <div class="game-button play-animation mt-3"></div>
+
     </div>
     </a>
 </div>
