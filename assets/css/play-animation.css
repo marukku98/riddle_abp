@@ -4,22 +4,17 @@
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     width: 100px;
-    height: 50px;
+    height: 40px;
     background-color: #44CA4C;
-    border-radius: 2px;
+    border-radius: 3px;
     overflow: hidden;
     cursor: pointer;
     color: #fff;
-    border: solid 1px white;
-    box-shadow: 0px 0px 5px black;
 }
 
 .play-animation:hover {
-    background-color: rgb(62, 179, 69);
-}
-
-.play-animation:active {
-    background-color: #44CA4C;
+    background-color: #3eb345;
+    box-shadow: 0 0 0 .7px white;
 }
 
 .play-animation:after {
