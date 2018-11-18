@@ -22,8 +22,7 @@
     background-color: #44CA4C;
 }
 
-.play-animation:after,
-.play-animation:before {
+.play-animation:after {
     content: 'PLAY';
     position: absolute;
     left: 51%;
@@ -39,8 +38,12 @@
 .play-animation:before {
     font-family: 'Ionicons';
     content: '\f488';
+    position: absolute;
+    top: 51%;
     font-size: 30px;
     left: 190%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
 }
 
 .play-animation:hover:before {

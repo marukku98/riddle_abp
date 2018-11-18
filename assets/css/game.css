@@ -12,27 +12,32 @@
     position: relative;
     border-radius: 5px;
     border: solid 1px lightgrey;
+    color: white;
     overflow: hidden;
 }
 
 .lockHover {
     position: absolute;
+    margin-top: 25px;
     height: 100%;
     width: 100%;
+    top: 66%;
     position: absolute;
     color: white;
-}
-
-.lockHover:hover {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    color: white;
-    /* background-color: rgba(99, 99, 99, 0.589); */
+    transition: all 0.5s;
     background-image: url('/riddle_abp/assets/img/lock.png');
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.game:hover .lockHover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    position: absolute;
+    color: white;
+    /* background-color: rgba(99, 99, 99, 0.589); */
 }
 
 .gameText {
@@ -44,7 +49,6 @@
     background-color: #3f3f3f85;
     position: absolute;
     bottom: 0;
-    color: white;
     transition: all 0.5s;
 }
 

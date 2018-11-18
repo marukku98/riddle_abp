@@ -1,10 +1,13 @@
 <?php require_once "../templates/master.php" ?>
 
-<link rel="stylesheet" href="/riddle_abp/assets/css/game.css">
-<link rel="stylesheet" href="/riddle_abp/assets/css/play-animation.css">
 
 <?php startblock("titulo"); ?>
   Joc
+<?php endblock(); ?>
+
+<?php startblock("css"); ?>
+    <link rel="stylesheet" href="/riddle_abp/assets/css/game.css">
+    <link rel="stylesheet" href="/riddle_abp/assets/css/play-animation.css">
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
@@ -17,7 +20,7 @@
 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
     <a href="enigma1.php">
     <div class="game">
-        <div class="gameText">
+        <div class="div-text gameText">
             <h5 class="text m-0">Nivel 1</h5>
             <p>Preparativos para la batalla</p>
         </div>
