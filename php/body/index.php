@@ -51,11 +51,11 @@ Index
 <div class="">
   <div class="container">
     <!-- START THE FEATURETTES -->
-    <a name="scroll" />
+    <a name="scroll"></a>
 
     <h3 style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
     <div class="row featurette">
-      <div class="col-md-7">
+      <div class="col-md-7 m-auto">
         <h2 class="featurette-heading">Artur Alcoverro <span class="text-muted">It'll blow your mind.</span></h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. </p>
         <ul class="list-group list-group-flush">
@@ -74,7 +74,7 @@ Index
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7 order-md-2">
+      <div class="col-md-7 order-md-2 m-auto">
         <h2 class="featurette-heading">Toni Altamirano
           <p><span class="text-muted">Prove yourself and Rise</span></p>
         </h2>
@@ -96,7 +96,7 @@ Index
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7">
+      <div class="col-md-7 m-auto">
         <h2 class="featurette-heading">Marc González <span class="text-muted">Checkmate.</span></h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
           semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
@@ -116,7 +116,7 @@ Index
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7 order-md-2">
+      <div class="col-md-7 order-md-2 m-auto">
         <h2 class="featurette-heading">Martí Soler <span class="text-muted">See for yourself.</span></h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
           semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
