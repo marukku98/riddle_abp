@@ -29,7 +29,7 @@
                    <button type="submit" name="insertarUser" class="btn btn-primary col-12">Registrate</button>
                </div> 
 
-               <p>Ya tienes cuenta? <a href="login.php">Inicia sesión.</a></p>
+               <p class="text-center">Ya tienes cuenta? <a href="login.php">Inicia sesión.</a></p>
            </form>
        </div>
    </div>

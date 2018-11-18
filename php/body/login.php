@@ -41,7 +41,7 @@ Login
                 <button type="submit" name="" class="btn btn-primary col-12">Entrar</button>
             </div>
 
-            <p class="center">No tienes cuenta? <a href="register.php">Registrate!</a></p>
+            <p class="text-center">No tienes cuenta? <a href="register.php">Registrate!</a></p>
         </form>
     </div>
 </div>

@@ -28,11 +28,13 @@
 </head>
 
 <body>
+    <div class="center">
 <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/title.png" class="title" ></a>
     <div class="container">
         <?php startblock('principal'); ?>
 
         <?php endblock(); ?>
+    </div>
     </div>
 </body>
 </html>
