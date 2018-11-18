@@ -15,7 +15,7 @@
     background-color: rgb(0, 172, 211);
 }
 
-.btn{
+.btn {
     font-size: 18px;
 }
 
@@ -23,6 +23,12 @@
     color: #32CBED !important;
 }
 
-.bg-main-color{
-    background-color:#32CBED;
+.bg-main-color {
+    background-color: #32CBED;
+}
+
+.shadow-effect {
+    box-shadow: 0px 0px 10px #202020;
+    position: relative;
+    z-index: 2;
 }

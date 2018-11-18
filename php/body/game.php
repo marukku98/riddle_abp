@@ -1,6 +1,7 @@
 <?php require_once "../templates/master.php" ?>
 
 <link rel="stylesheet" href="/riddle_abp/assets/css/game.css">
+<link rel="stylesheet" href="/riddle_abp/assets/css/play-animation.css">
 
 <?php startblock("titulo"); ?>
   Joc
@@ -21,7 +22,7 @@
             <p>Preparativos para la batalla</p>
         </div>
         <div class="middle">
-            <div class="btn btn-success">Start</div>
+            <div class="play-animation mt-3"></div>
         </div>
     </div>
     </a>

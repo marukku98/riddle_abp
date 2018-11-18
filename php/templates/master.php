@@ -29,9 +29,9 @@
 </head>
 
 <body>
-  <header>
-  <!-- <h1>RIDDLE</h1> -->
-  <div class="container-fluid bg-main-color">
+  <header class="shadow-effect">
+    <!-- <h1>RIDDLE</h1> -->
+    <div class="container-fluid bg-main-color">
       <div class=" row">
         <div class="col-xl-9 col-lg-8 col-md-7 col-sm-7">
           <nav class="navbar navbar-expand-lg bg-main-color">
@@ -63,6 +63,7 @@
     </div>
   </header>
 
+
   <div class="container">
     <?php startblock('principal'); ?>
 
@@ -71,17 +72,17 @@
 
   <hr>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small red">
+  <!-- Footer -->
+  <footer class="page-footer font-small red">
 
     <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="">Riddle Team</a>
-        </div>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="">Riddle Team</a>
+    </div>
     <!-- Copyright -->
 
-    </footer>
-    <!-- Footer -->
+  </footer>
+  <!-- Footer -->
 
 </body>
 

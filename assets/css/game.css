@@ -1,8 +1,8 @@
-.title{
+.title {
     margin: 20px;
 }
 
-.game{
+.game {
     background-image: url('/riddle_abp/assets/img/picGame1.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -10,18 +10,19 @@
     height: 200px;
     width: 200px;
     position: relative;
-
+    border-radius: 5px;
+    border: solid 1px lightgrey;
 }
 
-.lockHover{
+.lockHover {
     position: absolute;
     height: 100%;
     width: 100%;
     position: absolute;
-    color: white; 
+    color: white;
 }
 
-.lockHover:hover{
+.lockHover:hover {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -33,7 +34,7 @@
     background-position: center;
 }
 
-.gameText{
+.gameText {
     font-size: 15px;
     padding: 5px;
     height: 33%;
@@ -41,15 +42,15 @@
     background-color: #3f3f3f85;
     position: absolute;
     bottom: 0;
-    color: white; 
+    color: white;
 }
 
-.lockedImg{
+.lockedImg {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
 }
 
-.game:hover > .gameText{
+.game:hover>.gameText {
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -64,13 +65,13 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
 
-  .game:hover .middle {
+.game:hover .middle {
     opacity: 1;
-  }
-  
-  /* .btnStart {
+}
+
+/* .btnStart {
     background-color: rgb(109, 250, 114);
     color: white;
     font-size: 16px;
