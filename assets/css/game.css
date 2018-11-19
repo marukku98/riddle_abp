@@ -1,8 +1,8 @@
-.title{
+.title {
     margin: 20px;
 }
 
-.game{
+.game {
     background-image: url('/riddle_abp/assets/img/picGame1.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -10,41 +10,79 @@
     height: 200px;
     width: 200px;
     position: relative;
-
+    border-radius: 5px;
+    border: solid 1px lightgrey;
+    color: white;
+    overflow: hidden;
 }
 
-.lockHover{
+.lockHover {
     position: absolute;
+    margin-top: 25px;
     height: 100%;
     width: 100%;
-    position: absolute;
-    color: white; 
-}
-.lockHover:hover{
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    top: 66%;
     position: absolute;
     color: white;
-    background-color: rgba(99, 99, 99, 0.589);
+    transition: all 0.5s;
     background-image: url('/riddle_abp/assets/img/lock.png');
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.gameText{
-    font-size: 15px;
-    padding: 5px;
-    height: 33%;
-    width: 100%;
-    background-color: #3f3f3f85;
+.game:hover .lockHover {
     position: absolute;
-    bottom: 0;
-    color: white; 
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    position: absolute;
+    color: white;
+    /* background-color: rgba(99, 99, 99, 0.589); */
 }
 
-.lockedImg{
+.gameText {
+    font-size: 15px;
+    padding: 5px;
+    top: 66%;
+    height: 100%;
+    width: 100%;
+    background-color: #24242496;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s;
+}
+
+.lockedImg {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
 }
 
+.game:hover>.gameText {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0%;
+}
+
+.game-button {
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 144%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.game:hover .game-button {
+    opacity: 1;
+    top: 78%;
+}
+
+/* .btnStart {
+    background-color: rgb(109, 250, 114);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  } */
