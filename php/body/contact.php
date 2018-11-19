@@ -3,30 +3,49 @@
 <link rel="stylesheet" href="/riddle_abp/assets/css/contact.css">
 
 <?php startblock("titulo"); ?>
-Index
+Contacto
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
 
-<div class="container">    
-  <form>
-    <div class="form-group">
-      <label for="labelName">Nombre</label>
-      <input type="text" class="form-control" id="InputName" name="name" placeholder="Tu nombre" required>
-    </div>
-    <div class="form-group">
-      <label for="labelEmail">Correo eletrónico</label>
-      <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Tu correo electrónico" required>
-    </div>
-    <div class="form-group ">
-      <label for="InputText">Mensaje</label>
-      <textarea class="form-control autoExpand" name="message" min-rows="5" placeholder="Mensaje a enviar..." required></textarea>
-    </div>
-    <div class="enter">
-      <input type="submit" class="btn btn-default btnSubmit" name="submit" value="Enviar Mensaje">
-    </div>
-   
-  </form>
+<div id="contacto" class="card col-lg-7 offset-lg-3 bg-light mb-2 mt-2 p-0">
+  <!-- <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/icon.jpg" class="logo" width="50px" height="50px"></a>
+  <p>No dudes en contactar con nosotros si tienes cualquier problema o duda.</p><br> -->
+  
+  <div class="card-header">
+    <h3 class="text-center m-0">Formulario de Contacto</h3>
+  </div>
+
+  <div class="card-body p4 ">
+    <form action="../conexion/correo.php" method="post">
+      <div class="form-group">
+        <label for="labelName">Nombre</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><span class="fa fa-user"></span></span>
+            </div>
+            <input type="text" class="form-control" id="InputName" name="name" placeholder="Tu nombre" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="labelEmail">Correo eletrónico</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><span class="fa fa-at"></span></span>
+            </div>
+            <input type="email" class="form-control" id="InputEmail" name="email" placeholder="Tu correo electrónico" required>
+        </div>
+      </div>
+      <div class="form-group ">
+        <label for="InputText">Mensaje</label>
+        <textarea class="form-control autoExpand" name="message" min-rows="5" rows="4" placeholder="Mensaje a enviar..." required></textarea>
+      </div>
+      <div class="form-group mb-0">
+        <input type="submit" class="btn btn-primary btnSubmit col-12" name="submit" value="Enviar Mensaje">
+      </div>
+    </form>
+  </div>
+  
 
 </div>
 

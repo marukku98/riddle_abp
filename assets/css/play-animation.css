@@ -1,0 +1,46 @@
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+.play-animation {
+    float: right;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100px;
+    height: 40px;
+    background-color: #44CA4C;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+}
+
+.play-animation:hover {
+    background-color: #3eb345;
+    box-shadow: 0 0 0 .7px white;
+}
+
+.play-animation:after {
+    content: 'PLAY';
+    position: absolute;
+    left: 51%;
+    top: 51%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+}
+
+.play-animation:hover:after {
+    left: -50%;
+}
+
+.play-animation:before {
+    font-family: 'Ionicons';
+    content: '\f488';
+    position: absolute;
+    top: 51%;
+    font-size: 30px;
+    left: 190%;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+}
+
+.play-animation:hover:before {
+    left: 52%;
+}

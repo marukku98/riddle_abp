@@ -24,10 +24,10 @@ if(isset($_POST['insertarUser'])){
     $email = test_input($_POST["email"]);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $validation = false;
-        $_SESSION['error']= "Formato de correo inválido";     
+        $_SESSION['error']= "Formato de correo inválido.";     
     }else if(strlen($password) < 6 || strlen($password2) < 6){
         $validation = false;
-        $_SESSION['error']= "La contraseña tiene que tener un minimo de 6 carácteres";
+        $_SESSION['error']= "La contraseña tiene que tener un minimo de 6 carácteres.";
     }else if (strcmp($password, $password2) == 1) {
         $validation = false;
         $_SESSION['error'] = "Las contraseñas no coinciden.";
@@ -35,7 +35,7 @@ if(isset($_POST['insertarUser'])){
         $verificar = selectUserByEmail($email);
         if($verificar > 0){
             $validation = false;
-            $_SESSION['error']= "Este email";
+            $_SESSION['error']= "Este email ya esta registrado.";
         }
     }
 

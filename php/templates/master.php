@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $direccion = $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/";
     $carpeta = "/riddle_abp/";
 
@@ -19,12 +20,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">
+
+  <?php startblock("css"); ?>
+
+  <?php endblock(); ?>
+
   <script src="<?php echo $carpeta; ?>assets/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo $carpeta; ?>assets/js/popper.min.js"></script>
   <script src="<?php echo $carpeta; ?>assets/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">
 
 
 <!-- <link rel="stylesheet" type="text/css" href="/riddle_abp/assets/css/jqpuzzle.css" />
@@ -34,9 +40,9 @@
 </head>
 
 <body>
-  <header>
-  <!-- <h1>RIDDLE</h1> -->
-  <div class="container-fluid bg-main-color">
+  <header class="shadow-effect">
+    <!-- <h1>RIDDLE</h1> -->
+    <div class="container-fluid bg-main-color">
       <div class=" row">
         <div class="col-xl-9 col-lg-8 col-md-7 col-sm-7">
           <nav class="navbar navbar-expand-lg bg-main-color">
@@ -58,15 +64,31 @@
 
         <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 mt-auto mb-auto pr-4 d-block bg-main-color float-right">
           <nav class="navbar justify-content-end bg-main-color d-inline">
-            <a class="text-white btn btn-outline-light btn-login float-right ml-5 m-auto" href="login.php">Iniciar
-              Sesión</a>
-            <a class="text-white btn float-right mr-2 ml-2 m-auto z" href="register.php">Regístrate</a>
+            <?php
+              if(isset($_SESSION['user'])){
+            ?>
+            <select class="float-right">
+                <option selected hidden><?php echo $_SESSION['user']['username']; ?></option>
+                <option value="sydney">Perfil</option>
+                <option value="melbourne">Cerrar sesión</option>
+            </select>
+            <?php
+              }else{
+            ?>
+              <a class="text-white btn btn-outline-light btn-login float-right ml-5 m-auto btn-animation" href="login.php">Iniciar Sesión
+              </a>
+              <a class="text-white btn float-right mr-2 ml-2 m-auto" href="register.php">Regístrate</a>
+            <?php
+              }
+            ?>
+
           </nav>
         </div>
 
       </div>
     </div>
   </header>
+
 
   <div class="container">
     <?php startblock('principal'); ?>
@@ -76,17 +98,17 @@
 
   <hr>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small red">
+  <!-- Footer -->
+  <footer class="page-footer font-small red">
 
     <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="">Riddle Team</a>
-        </div>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="">Riddle Team</a>
+    </div>
     <!-- Copyright -->
 
-    </footer>
-    <!-- Footer -->
+  </footer>
+  <!-- Footer -->
 
 </body>
 
