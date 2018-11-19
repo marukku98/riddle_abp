@@ -26,6 +26,11 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">
 
+
+<!-- <link rel="stylesheet" type="text/css" href="/riddle_abp/assets/css/jqpuzzle.css" />
+<script type="text/javascript" src="/riddle_abp/assets/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/riddle_abp/assets/js/jquery.jqpuzzle.js"></script> -->
+
 </head>
 
 <body>
@@ -85,10 +90,10 @@
 
 </body>
 
-<script>
+<!-- <script>
   $(function () {
     $('#myList a:last-child').tab('show')
   })
-</script>
+</script> -->
 
 </html>
