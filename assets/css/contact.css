@@ -11,6 +11,16 @@ p {
     height: 50px;
 }
 
-.enter input {
-    margin: auto; display: block;
+label{
+    font-weight: bold;
+}
+
+#contacto{
+    animation: load 0.8s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes load{
+    0%   {right:150px; opacity: 0; }
+    100% {right:0px; opacity: 1;}
 }
