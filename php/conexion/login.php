@@ -20,9 +20,15 @@ if(count($res)==0){
 
 }
 else{
-    $_SESSION['username'] = $res[0]["username"];
-    $_SESSION['email'] = $res[0]["email"];
-    $_SESSION['role'] = $res[0]["role"];
+    // $username = $res[0]["username"];
+    // $email = $res[0]["email"];
+    // $role = $res[0]["role"];
+    $_SESSION['user'] = array(
+        'username'=>$res[0]["username"],
+        'email'=>$res[0]["email"],
+        'role'=>$res[0]["role"]        
+    );
+
     header("Location: /riddle_abp/php/body/index.php");
 }
 
