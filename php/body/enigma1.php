@@ -79,6 +79,7 @@ Enigma 1
         </div>
         <button class="btn btn-primary puzzlee">Empezar</button>
         <img id="rompecabezas" src="/riddle_abp/assets/img/hawaiiMap.png" alt="" />
+
     </div>
     <!-- container -->
 </body>
@@ -92,6 +93,7 @@ Enigma 1
         $("#2").hide();
         $(".btnMapa").hide();
         $(".mapa").hide();
+        $(".content").hide();
 
         $(".carta").click(function () {
             $("#contain").fadeIn(1000); //$("#contain").slideDown(1000);
@@ -103,7 +105,7 @@ Enigma 1
             $("#uno").fadeIn();
 
             var miVar = setInterval(function () { callback2() }, 2000);
-            var miVar2 = setInterval(function () { callback3() }, 6000);
+            var miVar2 = setInterval(function () { callback3() }, 5000);
         });
 
         function callback2() {
@@ -117,6 +119,10 @@ Enigma 1
             $(".total").hide(1000);
             $(".mapa").hide();
             $(".mapa").fadeIn(1000);
+        });
+
+         $(".puzzlee").click(function () {  
+            $(".content").fadeIn(1000);
         });
 
     });

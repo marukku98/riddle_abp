@@ -7,21 +7,8 @@ body {
   position: relative;
 }
 
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-size: 26px;
-}
-
 h3 {
   font-size: 18px;
-}
-
-h1,
-h2,
-h3{
   color: #563D64;
 }
 
@@ -55,7 +42,6 @@ form:after {
   text-shadow: 0 1px 0 #fff;
   width: 400px;
 }
-
 
 #content:after,
 #content:before {
@@ -108,3 +94,4 @@ form:after {
 .puzzlee{
 margin: 20px;
 }
+
