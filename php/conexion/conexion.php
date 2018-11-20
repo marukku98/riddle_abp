@@ -79,4 +79,71 @@ function selectUserByEmail($email){
       return $registros;
 
 }
+
+function consultaProgresUser($email, $game){
+    $con = openBD();
+
+    try{    
+    //Consulta para insertar a la BD.
+    $sentencia = $con->prepare("select email from proges where id = :game)");
+    $sentencia->bindParam(':email', $email); 
+    $sentencia->bindParam(':game', $game); 
+
+    $sentencia->execute(); 
+    $result = $sentencia->fetchAll();
+
+    $value = count($result);
+
+    }catch(PDOException $e){
+        $_SESSION['error'] = 'Error boludo'; 
+    }
+
+    //Cerrar conexion
+    return $value;
+}
+function newProgressUser($game, $email, $progres){
+
+    $con = openBD();
+
+    try{    
+    //Consulta para insertar a la BD.
+    $sentencia = $con->prepare("insert into progres(id, email, progres) values (:id, :email, :progres)");
+    $sentencia->bindParam(':game', $game);
+    $sentencia->bindParam(':email', $email); 
+    $sentencia->bindParam(':progres', $progres); 
+
+    $sentencia->execute();
+    }catch(PDOException $e){
+
+        $_SESSION['error'] = 'Error boludo'; 
+
+    } 
+      //Cerrar conexion
+      $con = closeBD();
+}
+
+function updateProgressUser($game, $email, $progres){
+
+    $con = openBD();
+
+    try{    
+    //Consulta para insertar a la BD.
+    $sentencia = $con->prepare("update into users(username, email, password) values (:username, :email, :password)");
+    $sentencia->bindParam(':username', $username);
+    $sentencia->bindParam(':email', $email); 
+    $sentencia->bindParam(':password', $password); 
+
+    $sentencia->execute();
+
+    $_SESSION['mensaje'] = 'Registro insertado correctamente'; 
+
+    }catch(PDOException $e){
+
+        $_SESSION['error'] = 'Error boludo'; 
+
+    } 
+      //Cerrar conexion
+      $con = closeBD();
+
+}
 ?>

@@ -40,7 +40,9 @@ var imagePuzzle = {
                         $("#finalModal").modal("show");                      
                       },500);
                       
-                      //Enviamos a la BD que el nivel 1 ha sido completado
+                    //Desactivamos funciones(?)
+
+                    //Enviamos a la BD que el nivel 1 ha sido completado
                 }
                 else {
                     imagePuzzle.stepCount++;                                        

@@ -16,7 +16,10 @@
                     <div class="card-body">
                         <h5 class="card-title">Ataque a Pearl Harbor</h5>
                         <p class="card-text">Revive el ataque militar de Japón contra Estados Unidos en una base naval en Hawaii.</p>
-                        <a href="game.php" class="btn btn-primary float-right">Comenzar</a>
+                        <form action="/riddle_abp/php/conexion/progres.php" method="POST">
+                            <input type="text" name="game" value="1" style="visibility:hidden;">
+                            <a href="game.php" class="btn btn-primary float-right" name="gameStart">Comenzar</a>
+                        </form>
                     </div>
                 </div>
             </div>
