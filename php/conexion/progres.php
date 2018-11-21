@@ -12,11 +12,10 @@ if(isset($_POST['gameStart'])){
 
     $verificar = consultaProgresUser($email, $game);
     if($verificar == 0){
-        //Hacemos insert
-        newProgressUser($game, $email, 0);
-        header('Location: /riddle_abp/php/body/index.php');        
-    }else{
-        header('Location: /riddle_abp/php/body/index.php');  
+        //Hacemos insert        
+        newProgressUser($game, $email, 0);      
+    }else{ 
+        //Hacemos update      
     }
 }
 ?>

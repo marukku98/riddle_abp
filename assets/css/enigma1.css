@@ -1,114 +1,9 @@
-body {
+/*Enigma*/
+body{
   background: #DCDDDF url(http://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
-  color: #000;
-  font: 14px Arial;
-  margin: 0 auto;
-  padding: 0;
-  position: relative;
 }
 
-h3 {
-  font-size: 18px;
-  color: #563D64;
-}
-
-.clearfix:after,
-form:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.container {
-  margin: 25px auto;
-  position: relative;
-  width: 900px;
-}
-
-#content {
-  background: #f9f9f9;
-  background: -moz-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(249, 249, 249, 1) 100%);
-  background: linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(249, 249, 249, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9', GradientType=0);
-  -moz-box-shadow: 0 1px 0 #fff inset;
-  box-shadow: 0 1px 0 #fff inset;
-  border: 1px solid #c4c6ca;
-  margin: 0 auto;
-  padding: 25px 25px 25px 25px;
-  position: relative;
-  text-align: center;
-  text-shadow: 0 1px 0 #fff;
-  width: 400px;
-}
-
-#content:after,
-#content:before {
-  background: #f9f9f9;
-  background: -moz-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(249, 249, 249, 1) 100%); 
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9', GradientType=0);
-  border: 1px solid #c4c6ca;
-  content: "";
-  display: block;
-  height: 100%;
-  left: -1px;
-  position: absolute;
-  width: 100%;
-}
-
-#content:after {
-  -moz-transform: rotate(2deg);
-  transform: rotate(2deg);
-  top: 0;
-  z-index: -1;
-}
-
-#content:before {
-  -moz-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  top: 0;
-  z-index: -2;
-}
-
-#content form {
-  margin: 0 20px;
-  position: relative
-}
-
-.btnMapa{
- float: right;
-}
-
-.contBtn{
-  padding-bottom: 30px;
-}
-
-#uno{
-  margin-left: 30px;
-}
-.mapa{
-  margin: 20px;
-}
-
-.puzzlee{
-margin: 20px;
-}
-
-.total{
-  animation: load 1s;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes load{
-  0%   {top:100px; opacity: 0; }
-  100% {top:0px; opacity: 1;}
-}
-
-
-/*Puzzle*/
-body {
-  background: #DCDDDF url(http://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
+.total {
   color: #000;
   font: 14px Arial;
   margin: 0 auto;
@@ -223,7 +118,7 @@ margin: 20px;
 }
 
 #collage #playPanel {
-  background-color:#c2defc;
+  background-color:#cbd8e6;
   padding: 10px 0px;
   margin: 10px auto;
   max-width: 430px;
@@ -238,12 +133,12 @@ margin: 20px;
 }
 
 #collage #sortable {
-  border:2px solid #a46;
+  border:1px solid  #0c0800;
   list-style-type: none;
   display: inline-block;
   margin: 10px;
   padding: 0;
-  width: 404px;
+  width: 402px;
 }
 
 #collage #sortable li {
@@ -254,5 +149,11 @@ margin: 20px;
   padding: 0;
   float: left;
   width: 100px;
-  height: 100px;}
+  height: 100px;
+}
+
+#imgTitle{
+  text-align: center;
+}
+
 

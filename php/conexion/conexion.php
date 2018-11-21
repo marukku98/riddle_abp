@@ -108,7 +108,7 @@ function newProgressUser($game, $email, $progres){
     try{    
     //Consulta para insertar a la BD.
     $sentencia = $con->prepare("insert into progres(id, email, progres) values (:id, :email, :progres)");
-    $sentencia->bindParam(':game', $game);
+    $sentencia->bindParam(':id', $game);
     $sentencia->bindParam(':email', $email); 
     $sentencia->bindParam(':progres', $progres); 
 

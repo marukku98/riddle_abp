@@ -1,85 +1,86 @@
-var imagePuzzle = {
-    stepCount: 0,
-    startGame: function (images, gridSize) {
-        this.setImage(images, gridSize);
-        $('#playPanel').show();
-        $('#sortable').randomize();
-        this.enableSwapping('#sortable li');
-        this.stepCount = 0;
-    },
-    
-    enableSwapping: function (elem) {
-        //Recogemos la función de arrastrar.
-        $(elem).draggable({
-            snap: '#droppable',
-            snapMode: 'outer',
-            revert: "invalid",
-            helper: "clone"
+var contador;
+
+function empezarEnigma(image, gridSize){
+    gridPuzzle(image, gridSize);
+    $('#playPanel').show();
+    mezclarPiezas('#sortable');
+    movimientos('#sortable li');
+    contador = 0;
+}
+
+function gridPuzzle(image, gridSize) {
+    var percentage = 100 / (gridSize - 1);
+    //Con este for vamos a crear una tabla segun la size
+    for (var i = 0; i < gridSize * gridSize; i++) {
+        var xpos = (percentage * (i % gridSize)) + '%';
+        var ypos = (percentage * Math.floor(i / gridSize)) + '%';
+        var li = $('<li class="item" data-value="' + (i) + '"></li>').css({
+            'background-image': 'url(' + image + ')',
+            'background-size': (gridSize * 100) + '%',
+            'background-position': xpos + ' ' + ypos,
+            'width': 400 / gridSize,
+            'height': 400 / gridSize
         });
+        $('#sortable').append(li);
+    }
+}
 
-        //Arrastrar y soltar piezas
-        $(elem).droppable({
-            drop: function (event, ui) {
-                var $dragElem = $(ui.draggable).clone().replaceAll(this);
-                $(this).replaceAll(ui.draggable);
+function movimientos(elem) {
+    //Recogemos la función de arrastrar.
+    $(elem).draggable({
+        snap: '#droppable',
+        snapMode: 'outer',
+        revert: "invalid",
+        helper: "clone"
+    });
 
+    //Arrastrar y soltar piezas
+    $(elem).droppable({
+        drop: function (event, ui) {
+            var $dragElem = $(ui.draggable).clone().replaceAll(this);
+            $(this).replaceAll(ui.draggable);         
+            //Recogemos lo que seria el puzzle bien hecho
+            currentList = $('#sortable > li').map(function (i, el) { return $(el).attr('data-value'); });
+
+            //Comprobamos despues de cada mov si es correcto o no
+            if (completado(currentList)){    
+                setTimeout(function(){ 
+                    $("#finalModal").modal("show");                      
+                  });                  
+
+                //Enviamos a la BD que el nivel 1 ha sido completado
+            }
+            else {
                 setTimeout(function(){   
-                    if(imagePuzzle.stepCount == 10){
-                        // alert("La rosa de los vientos tiene que quedar abajo a la izquierda del mapa");
+                    if(contador == 10){
                         $("#pistaModal").modal("show"); 
                     }                       
-                  }, 500);     
+                  }, 300); 
 
-                //Recogemos lo que seria el puzzle bien hecho
-                currentList = $('#sortable > li').map(function (i, el) { return $(el).attr('data-value'); });
-
-                //Comprobamos despues de cada mov si es correcto o no
-                if (isSorted(currentList)){    
-                    setTimeout(function(){                        
-                        // alert("Completado!!");
-                        $("#finalModal").modal("show");                      
-                      },500);
-                      
-                    //Desactivamos funciones(?)
-
-                    //Enviamos a la BD que el nivel 1 ha sido completado
-                }
-                else {
-                    imagePuzzle.stepCount++;                                        
-                    $('.stepCount').text(imagePuzzle.stepCount);
-                }
-                //Le damos las mismas propiedades a las nuevas piezas movidas
-                imagePuzzle.enableSwapping(this);
-                imagePuzzle.enableSwapping($dragElem);
+                contador++;                                        
+                $('.stepCount').text(contador);
             }
-        });
-    },
-
-    //Haciendo la grid de partición
-    setImage: function (images, gridSize) {
-        var percentage = 100 / (gridSize - 1);
-        var image = images[0];
-        $('#imgTitle').html(image.title);
-        $('#actualImage').attr('src', image.src);
-
-        //Con este for vamos a crear una tabla segun la size
-        for (var i = 0; i < gridSize * gridSize; i++) {
-            var xpos = (percentage * (i % gridSize)) + '%';
-            var ypos = (percentage * Math.floor(i / gridSize)) + '%';
-            var li = $('<li class="item" data-value="' + (i) + '"></li>').css({
-                'background-image': 'url(' + image.src + ')',
-                'background-size': (gridSize * 100) + '%',
-                'background-position': xpos + ' ' + ypos,
-                'width': 400 / gridSize,
-                'height': 400 / gridSize
-            });
-            $('#sortable').append(li);
+            //Le damos las mismas propiedades a las nuevas piezas movidas            
+            movimientos(this);
+            movimientos($dragElem);
         }
-    }
-};
+    });
+}
 
-//Comprobar si está ordenado
-function isSorted(arr) {
+function mezclarPiezas(ul) {
+    var $elems = $(ul).children(),
+        $parents = $elems.parent();
+
+    $parents.each(function () {
+        $(ul).children().sort(function () {
+            return Math.round(Math.random()) - 0.5;
+        }).remove().appendTo(ul);
+    });
+
+    return ul;
+}
+
+function completado(arr) {
     for (var i = 0; i < arr.length - 1; i++) {
         if (arr[i] != i){
             return false;
@@ -87,17 +88,3 @@ function isSorted(arr) {
     }
     return true;
 }
-
-//Mezclar las piezas del puzzle
-$.fn.randomize = function (selector) {
-    var $elems = selector ? $(this).find(selector) : $(this).children(),
-        $parents = $elems.parent();
-
-    $parents.each(function () {
-        $(this).children(selector).sort(function () {
-            return Math.round(Math.random()) - 0.5;
-        }).remove().appendTo(this);
-    });
-
-    return this;
-};

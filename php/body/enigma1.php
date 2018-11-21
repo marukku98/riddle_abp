@@ -1,5 +1,5 @@
 <?php require_once "../templates/master.php" ?>
-<link rel="stylesheet" href="/riddle_abp/assets/css/enigma1.css">
+
 <script src="/riddle_abp/assets/js/jquery-ui.js"></script>
 <script src="/riddle_abp/assets/js/enigma1.js"></script>
 
@@ -8,6 +8,7 @@ Enigma 1
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
+<link rel="stylesheet" href="/riddle_abp/assets/css/enigma1.css">
 
 <body>
 
@@ -78,10 +79,9 @@ Enigma 1
 		<!-- Puzzle -->
 		<div id="collage">
 			<div id="playPanel" style="padding:5px;display:none;">
-				<h3 id="imgTitle"></h3>
-				<hr />
+				<h3 id="imgTitle">Mapa de Hawaii</h3>
 				<div id="stepBox">
-					<div>Steps:</div>
+					<div>Movimientos:</div>
 					<div class="stepCount">0</div>
 				</div>
 				<div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
@@ -89,52 +89,43 @@ Enigma 1
 				</div>
 			</div>
 
-			<!-- Cuando ganas -->
-			<div id="gameOver" style="display:none;">
-				<div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
-					<h2 style="text-align:center">Completado!!</h2>
-					<br /> Lo has resuelto<br />
-					wn <span class="stepCount">0</span> pasos.
-					<br /><br />
+			<!-- Modal -->
+			<div class="modal fade" id="pistaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Pista</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							La rosa de los vientos tiene que quedar abajo a la izquierda del mapa
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- Modal -->
-		<div class="modal fade" id="pistaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Pista</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
+			<!-- Modal -->
+			<div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Correcto!</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							Enhorabuena, has completado el puzzle! Ya puedes pasar a la siguiente pantalla para el 2 nivel.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="modal-body">
-				La rosa de los vientos tiene que quedar abajo a la izquierda del mapa
-			</div>
-			</div>
-		</div>
-		</div>
 
-		<!-- Modal -->
-		<div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Correcto!</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				Enhorabuena, has completado el puzzle! Ya puedes pasar a la siguiente pantalla para el 2 nivel.
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>				
-			</div>
-			</div>
-		</div>
 		</div>
 
 	</div>
@@ -183,19 +174,11 @@ Enigma 1
 		});
 	});
 
-	var images = [
-		{ src: '/riddle_abp/assets/img/hawaii3.jpg', title: 'Mapa de Hawaii' }
-	];
+	var image = '/riddle_abp/assets/img/hawaii3.jpg';
 	$(function () {
-		imagePuzzle.startGame(images, 3); // 3 size                       
+		// imagePuzzle.startGame(images, 3); // 3 size       
+		empezarEnigma(image, 3);
 	});
-
-	/*    setTimeout(function(){
-	if(fin){
-			alert("LO RESOLVISTE COMPADRE!!")
-		}
-	},600);
-	*/
 
 
 </script>
