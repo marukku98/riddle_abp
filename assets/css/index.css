@@ -6,6 +6,10 @@
     height: 500px;
 }
 
+.shadow-effect{
+    box-shadow: 0px 0px 10px black;
+}
+
 .nav-item {
     color: rgb(255, 255, 255) !important;
     font-size: 18px;
@@ -15,14 +19,52 @@
     background-color: rgb(0, 172, 211);
 }
 
-.btn {
+.boton{
+    color: white;
+    padding: .375rem .75rem;
     font-size: 18px;
 }
 
-.btn-login:hover {
-    color: #32CBED !important;
+.boton:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.boton-login {
+    border: solid 1px white;
+    border-radius: .25rem;
+    background: transparent;
 }
 
 .bg-main-color {
     background-color: #32CBED;
+}
+
+.btn-animation{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+}
+.btn-animation:before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:-100%;
+    background-color: white;
+    transition: all 0.3s;
+
+}
+
+.btn-animation:hover:before{
+    left:0;
+    z-index: -1;
+}
+
+.btn-animation:hover{
+    font-style: unset;
+    color: #32CBED;
+    transition: all 0.3s;
 }

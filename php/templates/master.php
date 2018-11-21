@@ -63,7 +63,7 @@
 
 
         <div class="col-xl-3 col-lg-4 col-md-5 col-sm-5 mt-auto mb-auto pr-4 d-block bg-main-color float-right">
-          <nav class="navbar justify-content-end bg-main-color d-inline">
+          <nav class="navbar justify-content-end bg-main-color">
             <?php
               if(isset($_SESSION['user'])){
             ?>
@@ -75,9 +75,9 @@
             <?php
               }else{
             ?>
-              <a class="text-white btn btn-outline-light btn-login float-right ml-5 m-auto btn-animation" href="login.php">Iniciar Sesión
+              <a class="boton float-right mr-2 ml-2 m-auto" href="register.php">Regístrate</a>
+              <a class="boton boton-login float-right ml-5 m-auto btn-animation" href="login.php">Iniciar Sesión
               </a>
-              <a class="text-white btn float-right mr-2 ml-2 m-auto" href="register.php">Regístrate</a>
             <?php
               }
             ?>

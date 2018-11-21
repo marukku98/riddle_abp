@@ -8,13 +8,13 @@ Index
 </div>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
+  <ol class="carousel-indicators" styel="z-index: -1;">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1" class=""></li>
     <li data-target="#myCarousel" data-slide-to="2" class=""></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" style="z-index: -1;">
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/bg-game.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption text-left">
@@ -23,14 +23,14 @@ Index
         </div>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" style="z-index: -1;">
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/proximamente.png" alt="Second slide">
       <div class="container">
         <div class="carousel-caption">
         </div>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" style="z-index: -1;">
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/proximamente.png" alt="First slide">
       <div class="container">
         <div class="carousel-caption">
