@@ -41,8 +41,10 @@
 }
 
 .btn-animation{
-position: relative;
+    position: relative;
     overflow: hidden;
+    z-index: 2;
+
 }
 .btn-animation:before{
     content: "";
@@ -52,17 +54,17 @@ position: relative;
     top:0;
     left:-100%;
     background-color: white;
-    transition: all 0.5s;
+    transition: all 0.3s;
+
 }
 
 .btn-animation:hover:before{
     left:0;
+    z-index: -1;
 }
 
 .btn-animation:hover{
     font-style: unset;
     color: #32CBED;
-    transition: all 0.5s;
-    z-index: 2;
-
+    transition: all 0.3s;
 }
