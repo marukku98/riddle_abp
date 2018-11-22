@@ -30,6 +30,20 @@
     background-position: center;
 }
 
+.success {
+    position: absolute;
+    margin-top: 25px;
+    height: 100%;
+    width: 100%;
+    top: 66%;
+    position: absolute;
+    color: white;
+    transition: all 0.5s;
+    background-image: url('/riddle_abp/assets/img/success.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .game:hover .lockHover {
     position: absolute;
     height: 100%;
@@ -37,9 +51,16 @@
     top: 0%;
     position: absolute;
     color: white;
-    /* background-color: rgba(99, 99, 99, 0.589); */
 }
 
+.game:hover .success {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    position: absolute;
+    color: white;
+}
 .gameText {
     font-size: 15px;
     padding: 5px;
@@ -65,6 +86,17 @@
 }
 
 .game-button {
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 144%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.game-success {
     transition: .5s ease;
     opacity: 1;
     position: absolute;

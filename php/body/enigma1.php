@@ -95,9 +95,6 @@ Enigma 1
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Pista</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
 						</div>
 						<div class="modal-body">
 							La rosa de los vientos tiene que quedar abajo a la izquierda del mapa
@@ -112,15 +109,16 @@ Enigma 1
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Correcto!</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
 						</div>
 						<div class="modal-body">
 							Enhorabuena, has completado el puzzle! Ya puedes pasar a la siguiente pantalla para el 2 nivel.
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+							<form action="/riddle_abp/php/conexion/progres.php" method="POST">
+								<input type="text" name="game" value="1" style="visibility:hidden;">
+								<input type="text" name="enigma" value="1" style="visibility:hidden;">
+								<button type="submit" id="success" class="btn btn-secondary btn-sm" name="completed" >Continuar</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -175,10 +173,8 @@ Enigma 1
 	});
 
 	var image = '/riddle_abp/assets/img/hawaii3.jpg';
-	$(function () {
-		// imagePuzzle.startGame(images, 3); // 3 size       
+	$(function () {	    
 		empezarEnigma(image, 3);
 	});
-
 
 </script>

@@ -1,4 +1,7 @@
-<?php require_once "../templates/master.php" ?>
+<?php require_once "../templates/master.php"; 
+
+include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php"; ?>
+
 
 
 <?php startblock("titulo"); ?>
@@ -25,20 +28,48 @@ Joc
                 <p>Preparativos para la batalla</p>
             </div>
             <a href="enigma1.php">
+                <?php
+                    $game = 1;
+                    $email = "mansoksama@gmail.com";
+                    $var = selectProgressUser($game, $email);  
+                    if($var[0]['progres'] == 0){
+                ?>
                 <div class="game-button play-animation mt-3"></div>
+                    <?php 
+                }else{ ?>
+                    <div class="success"></div>
+                <?php } ?>            
+                
             </a>
         </div>
 
     </div>
 
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
-        <div class="game lockedImg">
+        <?php
+            $game = 1;
+            $email = "mansoksama@gmail.com";
+            $var = selectProgressUser($game, $email);  
+            if($var[0]['progres'] == 0){
+                $locked = "lockedImg";
+            }else{
+                $locked = "";
+            }
+        ?>
+        <div class="game <?php echo $locked ?>">
             <div class="gameText">
-                <h5 class="m-0">Nivel 2</h5>
+                <h5 class="m-0">Nivel 2</h5>                
                 <p>Primera oleada</p>
             </div>
-            <div class="lockHover"></div>
-
+            <?php                           
+                if($var[0]['progres'] == 0){
+                ?>
+                <div class="lockHover"></div>
+                <?php }else{ ?>
+                <a href="enigma1.php">
+                    <div class="game-button play-animation mt-3"></div>
+                </a>            
+            <?php }?>
         </div>
     </div>
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">

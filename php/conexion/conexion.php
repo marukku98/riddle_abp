@@ -85,21 +85,19 @@ function consultaProgresUser($email, $game){
 
     try{    
     //Consulta para insertar a la BD.
-    $sentencia = $con->prepare("select email from proges where id = :game)");
+    $sentencia = $con->prepare("select progres from progres where id = :game and email= :email");
     $sentencia->bindParam(':email', $email); 
     $sentencia->bindParam(':game', $game); 
 
     $sentencia->execute(); 
     $result = $sentencia->fetchAll();
 
-    $value = count($result);
-
     }catch(PDOException $e){
         $_SESSION['error'] = 'Error boludo'; 
     }
 
     //Cerrar conexion
-    return $value;
+    return $result;
 }
 function newProgressUser($game, $email, $progres){
 
@@ -114,9 +112,7 @@ function newProgressUser($game, $email, $progres){
 
     $sentencia->execute();
     }catch(PDOException $e){
-
         $_SESSION['error'] = 'Error boludo'; 
-
     } 
       //Cerrar conexion
       $con = closeBD();
@@ -128,14 +124,12 @@ function updateProgressUser($game, $email, $progres){
 
     try{    
     //Consulta para insertar a la BD.
-    $sentencia = $con->prepare("update into users(username, email, password) values (:username, :email, :password)");
-    $sentencia->bindParam(':username', $username);
+    $sentencia = $con->prepare("update progres set progres = :progres where id = :game and email = :email");
+    $sentencia->bindParam(':game', $game);
     $sentencia->bindParam(':email', $email); 
-    $sentencia->bindParam(':password', $password); 
+    $sentencia->bindParam(':progres', $progres); 
 
     $sentencia->execute();
-
-    $_SESSION['mensaje'] = 'Registro insertado correctamente'; 
 
     }catch(PDOException $e){
 
@@ -145,5 +139,31 @@ function updateProgressUser($game, $email, $progres){
       //Cerrar conexion
       $con = closeBD();
 
+}
+
+function selectProgressUser($game, $email){
+
+    $con = openBD();
+
+    //$_SESSION['user']['email'];
+
+    try{    
+    //Consulta para insertar a la BD.
+    $sentencia = $con->prepare("select progres from progres where id = :game and email = :email");
+    $sentencia->bindParam(':game', $game);
+    $sentencia->bindParam(':email', $email); 
+    $sentencia->execute();
+
+    $result = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+    }catch(PDOException $e){
+
+        $_SESSION['error'] = 'Error boludo'; 
+
+    } 
+      //Cerrar conexion
+      $con = closeBD();
+
+      return $result;
 }
 ?>

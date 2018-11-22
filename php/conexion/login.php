@@ -27,7 +27,7 @@ else{
         'username'=>$res[0]["username"],
         'email'=>$res[0]["email"],
         'role'=>$res[0]["role"]        
-    );
+    );  
 
     header("Location: /riddle_abp/php/body/index.php");
 }

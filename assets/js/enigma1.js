@@ -45,10 +45,8 @@ function movimientos(elem) {
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){    
                 setTimeout(function(){ 
-                    $("#finalModal").modal("show");                      
-                  });                  
-
-                //Enviamos a la BD que el nivel 1 ha sido completado
+                    $("#finalModal").modal({backdrop: 'static', keyboard: false});                      
+                  });                                   
             }
             else {
                 setTimeout(function(){   
