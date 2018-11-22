@@ -9,7 +9,10 @@
 <?php startblock("principal"); ?>
 
 <body>
+
     <div class="container-fluid">
+
+
         <div class="row">
             <div class="sea mt-1">
                 <div class="block"></div>
@@ -19,18 +22,24 @@
                         echo '<button class="box" 
                                       id="'.(($i*10)+$j).'" 
                                       onclick="disparar('.(($i*10)+$j).')"
-                                      style="top:'.(50*($i+1)).'px; left:'.(50*($j+1)).'px;">
+                                      style="top:'.(31.8181818*($i+1)).'px; left:'.(31.8181818*($j+1)).'px;">
                               </button>';
                     } 
                 }
-            ?>
+            ?><button id="ALL">ALL</button>
             </div>
             <div class="sea mt-1"></div>
         </div>
     </div>
+    
     </div>
 
-
 </body>
+
+<script>
+$("#ALL").click(function(){
+    all();
+})
+</script>
 
 <?php endblock(); ?>

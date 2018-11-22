@@ -1,8 +1,8 @@
 .box {
     background-color: #808080;
     position: absolute;
-    height: 50px;
-    width: 50px;
+    height: 31.818181818181px;
+    width: 31.818181818181px;
     border: solid 1px #a5a5a5;
 }
 
@@ -14,8 +14,8 @@
     position: relative;
     background-size: cover;
     background-image: url("/riddle_abp/assets/img/sea.png");
-    height: 550px;
-    width: 550px;
+    height: 350px;
+    width: 350px;
 }
 
 .block {
