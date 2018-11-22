@@ -5,11 +5,11 @@ for (var i = 0; i < 100; i++) {
     cas[i] = ({ pos: i, barco: false, tocado: false });
 }
 
-barcos[0] = colocarBarco(2);
-barcos[1] = colocarBarco(3);
+barcos[0] = colocarBarco(5);
+barcos[1] = colocarBarco(4);
 barcos[2] = colocarBarco(3);
-barcos[3] = colocarBarco(4);
-barcos[4] = colocarBarco(5);
+barcos[3] = colocarBarco(3);
+barcos[4] = colocarBarco(2);
 
 
 function a() {
@@ -17,18 +17,20 @@ function a() {
 }
 
 function colocarBarco(len) {
-    var orientacio = Math.round(Math.random());
+    var orientacio;
     var vertical = 0;
     var choca;
     var x;
     var y;
     var barco = [];
+    var ran = 10 - len;
 
     do {
+        orientacio = Math.round(Math.random());
         choca = false;
         if (orientacio === vertical) {
-            x = Math.floor(Math.random() * (10 - len));
-            y = Math.floor(Math.random() * (10));
+            x = Math.floor(Math.random() * ran);
+            y = Math.floor(Math.random() * 10);
             for (var i = 0; i < len; i++) {
                 if (CheckPos(x + i, y)) {
                     choca = true;
@@ -40,10 +42,10 @@ function colocarBarco(len) {
                 }
             }
         } else {
-            x = Math.floor(Math.random() * (10));
-            y = Math.floor(Math.random() * (10 - len));
+            x = Math.floor(Math.random() * 10);
+            y = Math.floor(Math.random() * ran);
             for (var i = 0; i < len; i++) {
-                if (CheckPos(x + i, y)) {
+                if (CheckPos(x, y + i)) {
                     choca = true;
                 }
             }
@@ -93,10 +95,14 @@ function ocultarBoton(pos) {
 }
 
 function CheckPos(x, y) {
-    var bool = false;
-    var pos = x * 10 + y;
-    if (cas[pos]['barco'] === true) {
-        bool = true;
+    try {
+        var bool = false;
+        var pos = x * 10 + y;
+        if (cas[pos]['barco'] === true) {
+            bool = true;
+        }
+    } catch (err) {
+        alert(err + " / " + pos);
     }
     return bool;
 }
