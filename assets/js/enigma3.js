@@ -1,22 +1,26 @@
-var cas = [];
-var barcos = [];
+var campo_enemigo = [];
+var campo_aliado = [];
+var barcos_enemigos = [];
+var barcos_aliados = [];
 
 for (var i = 0; i < 100; i++) {
-    cas[i] = ({ pos: i, barco: false, tocado: false });
+    campo_enemigo[i] = ({ pos: i, barco: false, tocado: false });
+    campo_aliado[i] = ({ pos: i, barco: false, tocado: false });
 }
 
-barcos[0] = colocarBarco(5);
-barcos[1] = colocarBarco(4);
-barcos[2] = colocarBarco(3);
-barcos[3] = colocarBarco(3);
-barcos[4] = colocarBarco(2);
+barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
+barcos_enemigos[1] = colocarBarco(4, campo_enemigo);
+barcos_enemigos[2] = colocarBarco(3, campo_enemigo);
+barcos_enemigos[3] = colocarBarco(3, campo_enemigo);
+barcos_enemigos[4] = colocarBarco(2, campo_enemigo);
 
+barcos_aliados[0] = colocarBarco(5, campo_aliado);
+barcos_aliados[1] = colocarBarco(4, campo_aliado);
+barcos_aliados[2] = colocarBarco(3, campo_aliado);
+barcos_aliados[3] = colocarBarco(3, campo_aliado);
+barcos_aliados[4] = colocarBarco(2, campo_aliado);
 
-function a() {
-    alert(cas[50]['pos']);
-}
-
-function colocarBarco(len) {
+function colocarBarco(len, campo) {
     var orientacio;
     var vertical = 0;
     var choca;
@@ -32,7 +36,7 @@ function colocarBarco(len) {
             x = Math.floor(Math.random() * ran);
             y = Math.floor(Math.random() * 10);
             for (var i = 0; i < len; i++) {
-                if (CheckPos(x + i, y)) {
+                if (CheckPos(x + i, y, campo)) {
                     choca = true;
                 }
             }
@@ -45,7 +49,7 @@ function colocarBarco(len) {
             x = Math.floor(Math.random() * 10);
             y = Math.floor(Math.random() * ran);
             for (var i = 0; i < len; i++) {
-                if (CheckPos(x, y + i)) {
+                if (CheckPos(x, y + i, campo)) {
                     choca = true;
                 }
             }
@@ -58,24 +62,38 @@ function colocarBarco(len) {
     } while (choca === true);
 
     barco.forEach(function (e) {
-        cas[e]['barco'] = true;
+        campo[e]['barco'] = true;
     });
 
     return barco;
 }
 
-function disparar(pos) {
-    ocultarBoton(pos);
+function disparar(pos, barcos) {
+    var tocado = ComprobarTocado(pos, barcos);
+    ocultarBoton(pos, tocado);
 }
 
 function all() {
     for (var x = 0; x < 100; x++) {
-        ocultarBoton(x);
+        var tocado = ComprobarTocado(x, barcos_enemigos);
+        ocultarBoton(x, tocado);
     }
 }
 
-function ocultarBoton(pos) {
-    if (cas[pos]['barco'] === true) {
+function ComprobarTocado(pos, barcos) {
+    var tocado = false;
+    barcos.forEach(function (barco) {
+        barco.forEach(function (pos_barco) {
+            if (pos_barco == pos) {
+                tocado = true;
+            }
+        });
+    });
+    return tocado;
+}
+
+function ocultarBoton(pos, tocado) {
+    if (tocado) {
         $("#" + pos).css({
             "border-radius": "50%",
             "background": "red",
@@ -83,6 +101,9 @@ function ocultarBoton(pos) {
             "width": "15.909090",
             "transform": "translate(50%,50%)"
         });
+        $('#alert-text').text("TOCADO")
+        $('#alert').attr('class', 'alert alert-danger w-50 m-auto text-center');
+
     } else {
         $("#" + pos).css({
             "border-radius": "50%",
@@ -91,14 +112,16 @@ function ocultarBoton(pos) {
             "width": "15.909090px",
             "transform": "translate(50%,50%)"
         });
+        $('#alert-text').text("AGUA")
+        $('#alert').attr('class', 'alert alert-primary w-50 m-auto text-center');
     }
 }
 
-function CheckPos(x, y) {
+function CheckPos(x, y, campo) {
     try {
         var bool = false;
         var pos = x * 10 + y;
-        if (cas[pos]['barco'] === true) {
+        if (campo[pos]['barco'] === true) {
             bool = true;
         }
     } catch (err) {
