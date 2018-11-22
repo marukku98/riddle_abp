@@ -77,15 +77,15 @@ Enigma 1
 		<p>Resuelve el puzzle del mapa de la isla de Hawaii para poder planificar el ataque!</p>
 
 		<!-- Puzzle -->
-		<div id="collage">
-			<div id="playPanel" style="padding:5px;display:none;">
+		<div id="engima1">
+			<div id="panelJuego">
 				<h3 id="imgTitle">Mapa de Hawaii</h3>
-				<div id="stepBox">
+				<div id="contadorMov">
 					<div>Movimientos:</div>
-					<div class="stepCount">0</div>
+					<div class="movimientos">0</div>
 				</div>
-				<div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
-					<ul id="sortable" class="sortable"></ul>
+				<div class="puzzle">
+					<ul id="puzzGame" class="puzzGame"></ul>
 				</div>
 			</div>
 

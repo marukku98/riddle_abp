@@ -2,9 +2,9 @@ var contador;
 
 function empezarEnigma(image, gridSize){
     gridPuzzle(image, gridSize);
-    $('#playPanel').show();
-    mezclarPiezas('#sortable');
-    movimientos('#sortable li');
+    $('#panelJuego').show();
+    mezclarPiezas('#puzzGame');
+    movimientos('#puzzGame li');
     contador = 0;
 }
 
@@ -21,7 +21,7 @@ function gridPuzzle(image, gridSize) {
             'width': 400 / gridSize,
             'height': 400 / gridSize
         });
-        $('#sortable').append(li);
+        $('#puzzGame').append(li);
     }
 }
 
@@ -40,13 +40,13 @@ function movimientos(elem) {
             var $dragElem = $(ui.draggable).clone().replaceAll(this);
             $(this).replaceAll(ui.draggable);         
             //Recogemos lo que seria el puzzle bien hecho
-            currentList = $('#sortable > li').map(function (i, el) { return $(el).attr('data-value'); });
+            currentList = $('#puzzGame > li').map(function (i, el) { return $(el).attr('data-value'); });
 
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){    
                 setTimeout(function(){ 
                     $("#finalModal").modal({backdrop: 'static', keyboard: false});                      
-                  });                                   
+                  });                                      
             }
             else {
                 setTimeout(function(){   
@@ -56,7 +56,7 @@ function movimientos(elem) {
                   }, 300); 
 
                 contador++;                                        
-                $('.stepCount').text(contador);
+                $('.movimientos').text(contador);
             }
             //Le damos las mismas propiedades a las nuevas piezas movidas            
             movimientos(this);
@@ -85,4 +85,11 @@ function completado(arr) {
         }
     }
     return true;
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
