@@ -54,10 +54,10 @@
           </nav>
 
           <nav class="nav nav-pills bg-main-color">
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="index.php">MENU</a>
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="gamesGrid.php">JUEGOS</a>
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="index.php#scroll">ABOUT</a>
-            <a class="nav-item nav-link text-white mr-3 rounded-0" href="contact.php">CONTACTO</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0 nav-animation" href="index.php">MENU</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0 nav-animation" href="gamesGrid.php">JUEGOS</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0 nav-animation" href="index.php#scroll">ABOUT</a>
+            <a class="nav-item nav-link text-white mr-3 rounded-0 nav-animation" href="contact.php">CONTACTO</a>
           </nav>
         </div>
 
@@ -75,8 +75,8 @@
             <?php
               }else{
             ?>
-              <a class="boton float-right mr-2 ml-2 m-auto" href="register.php">Regístrate</a>
-              <a class="boton boton-login float-right ml-5 m-auto btn-animation" href="login.php">Iniciar Sesión
+              <a class="boton float-right" href="register.php">Regístrate</a>
+              <a class="boton boton-login float-right btn-animation" href="login.php">Iniciar Sesión
               </a>
             <?php
               }

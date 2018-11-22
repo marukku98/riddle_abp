@@ -1,52 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once "../templates/master.php" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<style>
-    .box {
-        background-color: grey;
-        position: absolute;
-        height: 50px;
-        width: 50px;
-        border: solid 1px white;
-    }
+<script src="/riddle_abp/assets/js/enigma3.js"></script>
+<link rel="stylesheet" href="/riddle_abp/assets/css/enigma3.css">
 
-    .box:hover {
-        background-color: #afafaf;
-    }
+<?php startblock("titulo"); ?> Enigma 1
+<?php endblock(); ?>
 
-    button:active {
-        display: nonez;
-        background-color: red;
-    }
-
-    .sea {
-        position: absolute;
-        background-size: cover;
-
-        background-image: url("/riddle_abp/assets/img/sea.png");
-        height: 550px;
-        width: 550px;
-    }
-</style>
+<?php startblock("principal"); ?>
 
 <body>
-    <div class="sea">
-        <?php
-        for ($i=0; $i < 10; $i++) { 
-           for ($j=0; $j < 10; $j++) { 
-                echo '<button class="box" style="top:'.(50*($i+1)).'px; left:'.(50*($j+1)).'px;"></button>';
-           } 
-        }
-    ?>
-    </div>
 
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="sea mt-1">
+                <div class="block"></div>
+                <?php
+                for ($i=0; $i < 10; $i++) { 
+                    for ($j=0; $j < 10; $j++) { 
+                        echo '<button class="box" 
+                                      id="'.(($i*10)+$j).'" 
+                                      onclick="disparar('.(($i*10)+$j).')"
+                                      style="top:'.(31.8181818*($i+1)).'px; left:'.(31.8181818*($j+1)).'px;">
+                              </button>';
+                    } 
+                }
+            ?><button id="ALL">ALL</button>
+            </div>
+            <div class="sea mt-1"></div>
+        </div>
+    </div>
+    
+    </div>
 
 </body>
 
-</html>
+<script>
+$("#ALL").click(function(){
+    all();
+})
+</script>
+
+<?php endblock(); ?>
