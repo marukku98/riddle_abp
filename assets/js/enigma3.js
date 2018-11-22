@@ -19,14 +19,15 @@ function a(){
 function colocarBarco(len){
     var orientacio = Math.round(Math.random());
     var vertical = 0;
-    var choca = false;
+    var choca;
     var x;
     var y;
     var barco = [];
 
     do {
+        choca=false;
         if(orientacio === vertical){
-            x = Math.floor(Math.random()*(10))-len;
+            x = Math.floor(Math.random()*(10-len));
             y = Math.floor(Math.random()*(10));
             for (var i = 0; i < len; i++) {
                 if(CheckPos(x+i,y)){
@@ -40,7 +41,7 @@ function colocarBarco(len){
             }
         }else{
             x = Math.floor(Math.random()*(10));
-            y = Math.floor(Math.random()*(10))-len;
+            y = Math.floor(Math.random()*(10-len));
             for (var i = 0; i < len; i++) {
                 if(CheckPos(x+i,y)){
                    choca=true;
