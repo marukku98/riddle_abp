@@ -19,17 +19,34 @@
 </head>
 
 <style>
-  .btn-outline-primary{
-    color:white;
-    border-color: #EB835B;
+  .btn-primary{
+    border-color: #FB5135;
+    background: #FB5135;
+    box-shadow: 0px 0px 1px black;
+    transition: all 0.2s;
+
+  }
+
+  .btn-primary:hover{
+    border-color: #FB5135;
+    background: #FB5135;
+    box-shadow: 0px 2px 5px black;
+  }
+
+  .boton{
     font-weight: 500;
+    color:white;
     font-family: inherit;
   }
 
+  body, .white-bg > *{
+    background: #eedece;
+  }
 </style>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(45deg, #3A00A8, #5900FF);">
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background: #3d90d1">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
       aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,12 +57,12 @@
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-primary my-2 my-sm-0 border-0" type="submit">Registrate</button>
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Iniciar sessión</button>
+        <button class="bg-transparent border-0 my-2 my-sm boton pr-4" type="submit">Registrate</button>
+        <button class="btn btn-primary my-2 my-sm-0 boton" type="submit">Iniciar sessión</button>
       </form>
     </div>
   </nav>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background: #221F2B">
+  <nav class="navbar navbar-expand-lg navbar-light p-0" style="background: #221F2B">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
       aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -151,7 +168,7 @@
     </a>
   </div>
 
-  <div class="container">
+  <div class="container white-bg">
 
     <hr class="featurette-divider">
 
