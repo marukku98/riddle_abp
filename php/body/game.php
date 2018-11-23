@@ -19,15 +19,6 @@ Joc
     <h2>Attack on Pearl Harbor</h2>
 </div>
 
-<script>
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-</script>
-
 <div class="row">
 
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
@@ -37,8 +28,7 @@ function setCookie(cname, cvalue, exdays) {
                 <h5 class="text m-0">Nivel 1</h5>
                 <p>Preparativos para la batalla</p>
             </div>
-            <a href="enigma1.php">
-            <script>setCookie('enigma1', 1, 3);</script>   
+            <a href="enigma1.php">              
                 <?php                
                     $game = 1;
                     $email = "mansoksama@gmail.com";
@@ -49,9 +39,7 @@ function setCookie(cname, cvalue, exdays) {
                     <?php 
                 }else{ ?>                                      
                     <div class="success"></div>
-
-                <?php } ?>            
-                
+                <?php } ?>                            
             </a>
         </div>
 
@@ -61,8 +49,9 @@ function setCookie(cname, cvalue, exdays) {
         <?php
             $game = 1;
             $email = "mansoksama@gmail.com";
-            $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] != 1){
+            $var = selectProgressUser($game, $email);            
+
+            if($var[0]['progres'] < 1){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -72,16 +61,24 @@ function setCookie(cname, cvalue, exdays) {
             <div class="gameText">
                 <h5 class="m-0">Nivel 2</h5>                
                 <p>Primera oleada</p>
-            </div>
-            <?php                       
-                if($var[0]['progres'] != 1){
+            </div>           
+            <?php      
+                if($var[0]['progres'] < 1){                   
                 ?>
                 <div class="lockHover"></div>                
-                <?php }else{?>   
-                               
-                    <div id="next" class="game-button play-animation mt-3"></div> 
-                                        
-                <?php } ?>  
+                <?php }else{                     
+                    if($var[0]['progres'] >= 2){
+                        $success = "success";                          
+                    }else{
+                        $success = "game-button play-animation mt-3";
+                    }
+                     ?>  
+                                          
+                <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+
+                <!-- game-button play-animation mt-3                                          -->
+            <?php } ?>  
+           
         </div>
     </div>
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
@@ -89,7 +86,7 @@ function setCookie(cname, cvalue, exdays) {
             $game = 1;
             $email = "mansoksama@gmail.com";
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] != 2){
+            if($var[0]['progres'] < 2){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -101,11 +98,18 @@ function setCookie(cname, cvalue, exdays) {
                 <p>Segunda oleada</p>
             </div>
             <?php                       
-                if($var[0]['progres'] != 2){
+                if($var[0]['progres'] < 2){
                 ?>
                 <div class="lockHover"></div>                
-                <?php }else{?>                   
-                    <div id="next" class="game-button play-animation mt-3"></div>                   
+                <?php }else{
+                    if($var[0]['progres'] >= 3){
+                        $success = "success";                          
+                    }else{
+                        $success = "game-button play-animation mt-3";  
+                    } 
+                    
+                    ?>                   
+                    <div id="compEnigma" class="<?php echo $success ?>"></div>                   
                 <?php } ?>  
 
         </div>
@@ -116,7 +120,7 @@ function setCookie(cname, cvalue, exdays) {
             $game = 1;
             $email = "mansoksama@gmail.com";
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] != 3){
+            if($var[0]['progres'] < 3){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -128,11 +132,17 @@ function setCookie(cname, cvalue, exdays) {
                 <p>Las consequencias</p>
             </div>
             <?php                       
-                if($var[0]['progres'] != 3){
+                if($var[0]['progres'] < 3){
                 ?>
                 <div class="lockHover"></div>                
-                <?php }else{?>                   
-                    <div id="next" class="game-button play-animation mt-3"></div>                   
+                <?php }else{                    
+                    if($var[0]['progres'] == 4){
+                        $success = "success";                          
+                    }else{
+                        $success = "game-button play-animation mt-3";  
+                    }                     
+                    ?>                   
+                    <div id="compEnigma" class="<?php echo $success ?>"></div>                   
                 <?php } ?>  
         </div>
        </body>
@@ -161,13 +171,43 @@ function setCookie(cname, cvalue, exdays) {
 
 <script>
 
-$("#next").click(function () {
-    if(<?php echo $_COOKIE["enigma1"] ?> == 1){
-        $("#finalModal").modal("show");   
-    }else{
-        //move ??      
-          
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
+    return "";
+}
+$("#compEnigma").click(function () {
+    var cookie = getCookie('enigma1');
+    var estacio = 2;
+
+    // = getCookie('estacio');
+    
+    if(cookie == 1 && estacio == 1 ){
+        alert('Dirígete al siguiente punto de interés');
+    }else if(cookie == 1 && estacio == 2){
+        window.location="/riddle_abp/php/body/enigma2.php";
+    }else if(cookie == 2 && estacio == 2){
+        alert('Dirígete al siguiente punto de interés');
+    }else if(cookie == 2 && estacio == 3){
+        window.location="/riddle_abp/php/body/enigma3.php";
+    }        		
 });
 
 </script>

@@ -12,8 +12,8 @@ Enigma 1
 
 <body>
 
-	<div class="total">
-		<div class="container first">
+	<!-- <div class="total"> -->
+		<!-- <div class="container first">
 
 			<h3>La guerra de Pear Harbor</h3>
 
@@ -34,10 +34,10 @@ Enigma 1
 
 			<button class="btn btn-secondary btn-sm carta">Leer carta del almirante</button><br><br>
 
-		</div>
+		</div> -->
 
 
-		<div class="container" id="contain" style="display:none;">
+		<!-- <div class="container" id="contain" style="display:none;">
 			<section id="content">
 				<form action="">
 					<h3>Carta del almirante Yamamoto al capitán Genda pidiéndole que estudie la viabilidad de un ataque
@@ -51,11 +51,9 @@ Enigma 1
 					sería un grupo de acorazados estadounidenses… No sería fácil llevar a cabo algo así. Pero estoy
 					decidido a darlo todo para realizar este plan, supervisando yo mismo las divisiones aéreas. Me
 					gustaría que investigara pormenorizadamente la viabilidad de un plan de estas características.
-				</form>
-				<!-- form -->
+				</form>			
 
-			</section>
-			<!-- content -->
+			</section>			
 			<button class="btn btn-success bt-sm" id="hide" style="float:right;">Leído</button>
 		</div>
 
@@ -68,8 +66,7 @@ Enigma 1
 			<button class="btn btn-info btnMapa">Estudiar mapa</button>
 		</div>
 
-
-	</div>
+	</div> -->
 
 	<div class="mapa">
 
@@ -87,6 +84,9 @@ Enigma 1
 				<div class="puzzle">
 					<ul id="puzzGame" class="puzzGame"></ul>
 				</div>
+			</div>
+			<div class="next">
+				<button id="nextPuzzle">Next</button>
 			</div>
 
 			<!-- Modal -->
@@ -135,45 +135,52 @@ Enigma 1
 <script type="text/javascript">
 
 	$(document).ready(function () {
-		$("#uno").hide();
-		$("#2").hide();
-		$(".btnMapa").hide();
-		$(".mapa").hide();
-		$(".content").hide();
+		// $("#uno").hide();
+		// $("#2").hide();
+		// $(".btnMapa").hide();
+		// $(".mapa").hide();
+		// $(".content").hide();
 
-		$(".carta").click(function () {
-			$("#contain").fadeIn(1000); //$("#contain").slideDown(1000);
-		});
+		// $(".carta").click(function () {
+		// 	$("#contain").fadeIn(1000); //$("#contain").slideDown(1000);
+		// });
 
-		$("#hide").click(function () {
-			$("#contain").hide(1000);
-			$(".first").hide(1000);
-			$("#uno").fadeIn();
+		// $("#hide").click(function () {
+		// 	$("#contain").hide(1000);
+		// 	$(".first").hide(1000);
+		// 	$("#uno").fadeIn();
 
-			var miVar = setInterval(function () { callback2() }, 2000);
-			var miVar2 = setInterval(function () { callback3() }, 5000);
-		});
+		// 	var miVar = setInterval(function () { callback2() }, 2000);
+		// 	var miVar2 = setInterval(function () { callback3() }, 5000);
+		// });
 
-		function callback2() {
-			$("#2").fadeIn(3000);
-		}
-		function callback3() {
-			$(".btnMapa").show();
-		}
+		// function callback2() {
+		// 	$("#2").fadeIn(3000);
+		// }
+		// function callback3() {
+		// 	$(".btnMapa").show();
+		// }
 
-		$(".btnMapa").click(function () {
-			$(".total").hide(1000);
-			$(".mapa").hide();
-			$(".mapa").fadeIn(1000);
-		});
+		// $(".btnMapa").click(function () {
+		// 	$(".total").hide(1000);
+		// 	$(".mapa").hide();
+		// 	$(".mapa").fadeIn(1000);
+		// });
 
-		$(".puzzlee").click(function () {
-			$(".content").fadeIn(1000);
-		});
+		// $(".puzzlee").click(function () {
+		// 	$(".content").fadeIn(1000);
+		// });
+
+		empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 4);
 	});
 
-	var image = '/riddle_abp/assets/img/hawaii3.jpg';
-	$(function () {	    
+	
+	// $(function () {	    
+	// 	empezarEnigma(image, 3);
+	// });
+
+	$("#nextPuzzle").click(function () {
+		var image = '/riddle_abp/assets/img/puzzle2Scale.png';
 		empezarEnigma(image, 3);
 	});
 

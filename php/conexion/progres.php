@@ -6,18 +6,22 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 
 
 if(isset($_POST['gameStart'])){
-    //Cogemos el email de user y el juego que va a hacer
-    $game = $_POST['game'];
-    $email = "mansoksama@gmail.com";
 
-    $verificar = consultaProgresUser($email, $game);
-
-    if(count($verificar) == 0){      
-        newProgressUser($game, $email, 0);
-        header('Location: /riddle_abp/php/body/game.php');  
+    if(!isset($_SESSION['user'])){
+        header('Location: /riddle_abp/php/body/login.php'); 
     }else{
-        //update
-        header('Location: /riddle_abp/php/body/game.php');
+        $game = $_POST['game'];
+        $email = "mansoksama@gmail.com";
+
+        $verificar = consultaProgresUser($email, $game);
+
+        if(count($verificar) == 0){      
+            newProgressUser($game, $email, 0);
+            header('Location: /riddle_abp/php/body/game.php');  
+        }else{
+            //update
+            header('Location: /riddle_abp/php/body/game.php');
+        }
     }
 }
 

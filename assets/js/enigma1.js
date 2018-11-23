@@ -45,7 +45,9 @@ function movimientos(elem) {
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){    
                 setTimeout(function(){ 
-                    $("#finalModal").modal({backdrop: 'static', keyboard: false});                      
+                    //setCookie('enigma1', 1, 3);
+                    alert('Correcte!');
+                    //$("#finalModal").modal({backdrop: 'static', keyboard: false});                      
                   });                                      
             }
             else {
