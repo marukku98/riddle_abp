@@ -2,6 +2,8 @@ var campo_enemigo = [];
 var campo_aliado = [];
 var barcos_enemigos = [];
 var barcos_aliados = [];
+var hundidos = 0;
+var tiros = 70;
 
 for (var i = 0; i < 100; i++) {
     campo_enemigo[i] = ({ pos: i, barco: false, tocado: false });
@@ -68,26 +70,41 @@ function colocarBarco(len, campo) {
     return barco;
 }
 
-function disparar(pos, barcos) {
-    var tocado = ComprobarTocado(pos, barcos);
-    ocultarBoton(pos, tocado);
+function disparar(pos, barcos, campo) {
+    if(hundidos < 5 && tiros != 0){
+        tiros--;
+        campo[pos]['tocado'] = true;
+        var tocado = ComprobarTocado(pos, barcos);
+        ocultarBoton(pos, tocado[0]);
+        if(tocado[0]){
+            CheckEstadoBarco(tocado[1], barcos, campo);
+        }
+    }
+    else if(tiros == 0 && hundidos != 5){
+        $('#alert-text').text("DERROTA")
+        $('#alert').attr('class', 'alert alert-dark w-25 m-auto text-center'); 
+    }
 }
 
 function all() {
     for (var x = 0; x < 100; x++) {
         var tocado = ComprobarTocado(x, barcos_enemigos);
-        ocultarBoton(x, tocado);
+        ocultarBoton(x, tocado[0]);
     }
 }
 
 function ComprobarTocado(pos, barcos) {
-    var tocado = false;
+    var tocado = [];
+    tocado[0] = false;
+    var indice = 0;
     barcos.forEach(function (barco) {
         barco.forEach(function (pos_barco) {
             if (pos_barco == pos) {
-                tocado = true;
+                tocado[0] = true;
+                tocado[1] = indice;
             }
         });
+        indice++;
     });
     return tocado;
 }
@@ -102,7 +119,7 @@ function ocultarBoton(pos, tocado) {
             "transform": "translate(50%,50%)"
         });
         $('#alert-text').text("TOCADO")
-        $('#alert').attr('class', 'alert alert-danger w-50 m-auto text-center');
+        $('#alert').attr('class', 'alert alert-danger w-25 m-auto text-center');
 
     } else {
         $("#" + pos).css({
@@ -113,7 +130,7 @@ function ocultarBoton(pos, tocado) {
             "transform": "translate(50%,50%)"
         });
         $('#alert-text').text("AGUA")
-        $('#alert').attr('class', 'alert alert-primary w-50 m-auto text-center');
+        $('#alert').attr('class', 'alert alert-primary w-25 m-auto text-center');
     }
 }
 
@@ -128,4 +145,24 @@ function CheckPos(x, y, campo) {
         alert(err + " / " + pos);
     }
     return bool;
+}
+
+function CheckEstadoBarco(num_barco, barcos, campo){
+    var hundido = true;
+    barcos[num_barco].forEach(function(pos){
+        if(campo[pos]['tocado']==false){
+            hundido = false;
+        }
+    });
+
+    if(hundido){
+        hundidos++;
+        if(hundidos == 5){
+            $('#alert-text').text("VICTORIA")
+            $('#alert').attr('class', 'alert alert-success w-25 m-auto text-center');
+        }else{
+            $('#alert-text').text("TOCADO Y HUNDIDO")
+            $('#alert').attr('class', 'alert alert-warning w-35 m-auto text-center');
+        }
+    }
 }
