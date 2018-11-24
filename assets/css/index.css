@@ -2,9 +2,7 @@
     margin-left: 50px;
 }
 
-.slide {
-    height: 500px;
-}
+.slide {}
 
 .shadow-effect {
     box-shadow: 0px 0px 10px black;
