@@ -11,7 +11,7 @@
     width: 200px;
     position: relative;
     border-radius: 5px;
-    border: solid 1px lightgrey;
+    box-shadow: 1px 1px 5px grey;
     color: white;
     overflow: hidden;
 }
@@ -61,6 +61,7 @@
     position: absolute;
     color: white;
 }
+
 .gameText {
     font-size: 15px;
     padding: 5px;

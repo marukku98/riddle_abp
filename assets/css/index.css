@@ -16,7 +16,7 @@
 }
 
 .nav-item:hover {
-    background-color: rgb(0, 172, 211);
+    background-color: #2c2933;
 }
 
 .boton {
@@ -31,39 +31,54 @@
 }
 
 .boton-login {
-    border: solid 1px white;
-    border-radius: .25rem;
-    background: transparent;
+    border-color: #DA3F62;
+    background: #DA3F62;
+    transition: all 0.2s;
+    padding: .5rem .75rem .375rem .75rem;
 }
 
-.bg-main-color {
-    background-color: #32CBED;
+.boton-login:hover {
+    border-color: #DA3F62;
+    background: #DA3F62;
+    box-shadow: 0px 2px 5px #1F1F1F;
 }
 
-.btn-animation {
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
+.boton {
+    font-weight: 500;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.btn-animation:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: -100%;
-    background-color: white;
-    transition: all 0.3s;
+body,
+.white-bg>* {
+    background: #eedece;
 }
 
-.btn-animation:hover:before {
-    left: 0;
-    z-index: -1;
+.text-font {
+    font-family: 'Open Sans', sans-serif;
 }
 
-.btn-animation:hover {
-    font-style: unset;
-    color: #32CBED;
-    transition: all 0.3s;
+.title-font {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.bg-main {
+    background: #2abb9a;
+}
+
+.bg-second {
+    background: #221F2B
+}
+
+.bg-body {
+    background: #e0f5f0;
+}
+
+.list-group-item {
+    background: #e0f5f0;
+}
+
+.card {
+    box-shadow: 1px 1px 5px grey;
+    border: unset;
 }

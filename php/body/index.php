@@ -47,13 +47,13 @@ Index
     <span class="sr-only">Next</span>
   </a>
 </div>
+<a name="scroll"></a>
 
-<div class="">
+<h3 style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
+
   <div class="container">
     <!-- START THE FEATURETTES -->
-    <a name="scroll"></a>
 
-    <h3 style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
     <div class="row featurette">
       <div class="col-md-7 m-auto">
         <h2 class="featurette-heading">Artur Alcoverro <span class="text-muted">It'll blow your mind.</span></h2>
@@ -88,7 +88,7 @@ Index
 
       </div>
       <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Toni_Avatar.jpeg"
+        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Toni_Avatar.png"
           alt="Generic placeholder image">
       </div>
     </div>
