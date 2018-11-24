@@ -8,15 +8,15 @@ Contacto
 
 <?php startblock("principal"); ?>
 
-<div id="contacto" class="card col-lg-7 offset-lg-3 bg-light mb-2 mt-2 p-0">
+<div id="contacto" class="card col-lg-7 offset-lg-3 bg-light mb-2 mt-4 p-0">
   <!-- <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/icon.jpg" class="logo" width="50px" height="50px"></a>
   <p>No dudes en contactar con nosotros si tienes cualquier problema o duda.</p><br> -->
   
   <div class="card-header">
-    <h3 class="text-center m-0">Formulario de Contacto</h3>
+    <h3 class="text-center m-0 title-font">FORMULARIO DE CONTACTO</h3>
   </div>
 
-  <div class="card-body p4 ">
+  <div class="card-body p4 text-font">
     <form action="../conexion/correo.php" method="post">
       <div class="form-group">
         <label for="labelName">Nombre</label>
@@ -41,7 +41,7 @@ Contacto
         <textarea class="form-control autoExpand" name="message" min-rows="5" rows="4" placeholder="Mensaje a enviar..." required></textarea>
       </div>
       <div class="form-group mb-0">
-        <input type="submit" class="btn btn-primary btnSubmit col-12" name="submit" value="Enviar Mensaje">
+        <input type="submit" class="btn btn-primary btnSubmit boton boton-login float-right" name="submit" value="Enviar Mensaje">
       </div>
     </form>
   </div>

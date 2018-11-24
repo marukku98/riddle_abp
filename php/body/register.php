@@ -6,9 +6,9 @@
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
-   <div class="card" style="width: 20rem;">
+   <div class="card text-font" style="width: 20rem;">
        <div class="card-body">
-           <h4 class="card-title">Crea tu cuenta</h4>
+           <h4 class="card-title title-font">Crea tu cuenta</h4>
 
            
            <?php 
@@ -38,7 +38,7 @@
                    <input type="password" class="form-control col-12"  placeholder="Repeat password"  name="password2" id="password" required>
                </div><br>
                <div class="form-group row">                      
-                   <button type="submit" name="insertarUser" class="btn btn-primary col-12">Registrate</button>
+                   <button type="submit" name="insertarUser" class="btn btn-primary col-12 boton boton-login">Registrate</button>
                </div> 
 
                <p class="text-center">Ya tienes cuenta? <a href="login.php">Inicia sesión.</a></p>

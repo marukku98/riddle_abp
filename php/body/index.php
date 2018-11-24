@@ -18,8 +18,8 @@ Index
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/bg-game.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption text-left">
-          <h1>Pear Harbor</h1>
-          <p>Revive el ataque militar de Japón contra Estados Unidos en una base naval en Hawaii. </p>
+          <h1 class="title-font">PEARL HARBOR</h1>
+          <p class="text-font">Revive el ataque militar de Japón contra Estados Unidos en una base naval en Hawaii. </p>
         </div>
       </div>
     </div>
@@ -49,16 +49,16 @@ Index
 </div>
 <a name="scroll"></a>
 
-<h3 style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
+<h3 class="title-font" style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
 
   <div class="container">
     <!-- START THE FEATURETTES -->
 
     <div class="row featurette">
       <div class="col-md-7 m-auto">
-        <h2 class="featurette-heading">Artur Alcoverro <span class="text-muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. </p>
-        <ul class="list-group list-group-flush">
+        <h2 class="featurette-heading title-font">Artur Alcoverro <span class="text-muted">senpai.</span></h2>
+        <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. </p>
+        <ul class="list-group list-group-flush text-font">
           <li class="list-group-item"><i class="far fa-envelope"></i> artur.bcn1998@gmail.com</li>
           <li class="list-group-item"><i class="fab fa-linkedin"></i> Artur Alcoverro</li>
           <li class="list-group-item"><i class="fab fa-twitter-square"></i> @ArturAlcoverro</li>
@@ -75,12 +75,12 @@ Index
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2 m-auto">
-        <h2 class="featurette-heading">Toni Altamirano
+        <h2 class="featurette-heading title-font">Toni Altamirano
           <p><span class="text-muted">Prove yourself and Rise</span></p>
         </h2>
-        <p class="lead">Programador back-end y front-end.</p>
+        <p class="lead text-font">Programador back-end y front-end.</p>
 
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush text-font">
           <li class="list-group-item"><i class="far fa-envelope"></i> mansoksama@gmail.com</li>
           <li class="list-group-item"><i class="fab fa-linkedin"></i> Toni Altamirano</li>
           <li class="list-group-item"><i class="fab fa-twitter-square"></i> @Mansok</li>
@@ -97,11 +97,11 @@ Index
 
     <div class="row featurette">
       <div class="col-md-7 m-auto">
-        <h2 class="featurette-heading">Marc González <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+        <h2 class="featurette-heading title-font">Marc González <span class="text-muted">Checkomeito.</span></h2>
+        <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
           semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
           commodo.</p>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush text-font">
           <li class="list-group-item"><i class="far fa-envelope"></i> marc.gonzalez.sds@gmail.com</li>
           <li class="list-group-item"><i class="fab fa-linkedin"></i> Marc González</li>
           <li class="list-group-item"><i class="fab fa-twitter-square"></i> </li>
@@ -117,12 +117,12 @@ Index
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2 m-auto">
-        <h2 class="featurette-heading">Martí Soler <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
+        <h2 class="featurette-heading title-font">Martí Soler <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
           semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
           commodo.</p>
 
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush text-font">
           <li class="list-group-item"><i class="far fa-envelope"></i> emdicmarti@gmail.com</li>
           <li class="list-group-item"><i class="fab fa-linkedin"></i> Martí Soler</li>
           <li class="list-group-item"><i class="fab fa-twitter-square"></i></li>
