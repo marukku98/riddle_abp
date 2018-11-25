@@ -2,6 +2,9 @@ var campo_enemigo = [];
 var barcos_enemigos = [];
 var hundidos = 0;
 var tiros = 70;
+var num_kamikazes = 1;
+var kamikaze = false;
+
 
 for (var i = 0; i < 100; i++) {
     campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false });
@@ -56,7 +59,7 @@ function colocarBarco(len, campo) {
 
     barco.forEach(function (e) {
         campo[e]['ocupado'] = true;
-        var around = getAround(e, false);
+        var around = getAround(e, true);
         around.forEach(function (e) {
             campo[e]['ocupado'] = true;
         });
@@ -65,8 +68,19 @@ function colocarBarco(len, campo) {
     return barco;
 }
 
+function kamikaze(pos, barcos, campo) {
+    var isTocado = false;
+    var isHundido = false;
+    var casillas = getAround(pos, true);
+    casillas[casillas.length] = pos;
+
+    casillas.forEach(function (pos) {
+        var tocado = ComprobarTocado(pos, barcos_enemigos);
+        ocultarBoton(pos, tocado[0]);
+    });
+}
+
 function disparar(pos, barcos, campo) {
-    getAround(pos);
     if (hundidos < 5 && tiros != 0) {
         tiros--;
         campo[pos]['tocado'] = true;
@@ -76,7 +90,7 @@ function disparar(pos, barcos, campo) {
             CheckEstadoBarco(tocado[1], barcos, campo);
         }
     }
-    else if (tiros == 0 && hundidos != 5) {
+    else if (tiros == 0) {
         $('#alert-text').text("DERROTA")
         $('#alert').attr('class', 'alert alert-dark w-25 m-auto text-center');
     }
@@ -154,6 +168,7 @@ function CheckEstadoBarco(num_barco, barcos, campo) {
     if (hundido) {
         hundidos++;
         if (hundidos == 5) {
+            all();
             $('#alert-text').text("VICTORIA")
             $('#alert').attr('class', 'alert alert-success w-25 m-auto text-center');
         } else {
