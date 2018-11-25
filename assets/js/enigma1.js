@@ -11,9 +11,10 @@ function empezarEnigma(image, gridSize){
 }
 
 function reinicio(){
-    if(timer == 5){
+    if(timer == 6){
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
+        timer = 0;
     }
 }
 
@@ -66,7 +67,8 @@ function movimientos(elem) {
                 setTimeout(function(){ 
                     //setCookie('enigma1', 1, 3);
                     this.contador = 0;
-                    alert('Correcte!');
+                    //alert('Correcte!');
+                    $("#finalModal").modal({backdrop: 'static', keyboard: false});  
                     $('.next').show();
                    
                     //$("#finalModal").modal({backdrop: 'static', keyboard: false});                      
