@@ -7,9 +7,9 @@ Login
 <?php endblock();?>
 
 <?php startblock("principal"); ?>
-<div class="card" style="width: 20rem;">
+<div class="card text-font" style="width: 20rem;">
     <div class="card-body">
-        <h4 class="card-title">Inicia sesión</h4>
+        <h4 class="card-title title-font">Inicia sesión</h4>
         <?php 
             if(isset($_SESSION['error'])){
                 echo "<p class='error mb-1 ml-1'>".$_SESSION['error']."</p>";
@@ -38,7 +38,7 @@ Login
             <br>
 
             <div class="form-group row">
-                <button type="submit" name="" class="btn btn-primary col-12">Entrar</button>
+                <button type="submit" name="" class="btn btn-primary col-12 boton boton-login ">Entrar</button>
             </div>
 
             <p class="text-center">No tienes cuenta? <a href="register.php">Registrate!</a></p>
