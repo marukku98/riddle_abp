@@ -76,7 +76,7 @@ Enigma 1
 		<!-- Puzzle -->
 		<div id="engima1">
 			<div id="panelJuego">
-				<h3 id="imgTitle">Mapa de Hawaii</h3>
+				<h3 id="imgTitle">Estudiando los mapas</h3>
 				<div id="contadorMov">
 					<div>Movimientos:</div>
 					<div class="movimientos">0</div>
@@ -86,7 +86,7 @@ Enigma 1
 				</div>
 			</div>
 			<div class="next">
-				<button id="nextPuzzle">Next</button>
+				<button id="newPhoto" type="button" class="btn btn-dark">Siguiente</button>
 			</div>
 
 			<!-- Modal -->
@@ -170,18 +170,28 @@ Enigma 1
 		// $(".puzzlee").click(function () {
 		// 	$(".content").fadeIn(1000);
 		// });
+		// var images = [
+        //         { src: '/riddle_abp/assets/img/hawaii3.jpg', title: 'Hawaii' },
+        //         { src: '/riddle_abp/assets/img/puzzle2Scale.png', title: 'Kanto' }
+        //     ];
 
-		empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 4);
+		empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 3);
 	});
+
+	 	$(function () {	
+			$('#newPhoto').click(function () {
+				empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', 3);
+			});
+    	});
 
 	
 	// $(function () {	    
 	// 	empezarEnigma(image, 3);
 	// });
 
-	$("#nextPuzzle").click(function () {
-		var image = '/riddle_abp/assets/img/puzzle2Scale.png';
-		empezarEnigma(image, 3);
-	});
+	// $("#newPhoto").click(function () {
+	// 	var image = '/riddle_abp/assets/img/puzzle2Scale.png';
+	// 	empezarEnigma(image, 3);
+	// });
 
 </script>

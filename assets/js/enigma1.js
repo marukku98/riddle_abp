@@ -5,11 +5,12 @@ function empezarEnigma(image, gridSize){
     $('#panelJuego').show();
     mezclarPiezas('#puzzGame');
     movimientos('#puzzGame li');
-    contador = 0;
+    this.contador = 0;
 }
 
 function gridPuzzle(image, gridSize) {
     var percentage = 100 / (gridSize - 1);
+    $('#puzzGame').empty();
     //Con este for vamos a crear una tabla segun la size
     for (var i = 0; i < gridSize * gridSize; i++) {
         var xpos = (percentage * (i % gridSize)) + '%';
