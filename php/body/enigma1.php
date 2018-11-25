@@ -81,10 +81,21 @@ Enigma 1
 					<div>Movimientos:</div>
 					<div class="movimientos">0</div>
 				</div>
+				<div id="timeBox">
+					<div>Tiempo:</div> 
+					<div id="number">0</div> seg
+                </div>
+				<div id="timeBox">
+					<input type="checkbox" name="time" id="time"  value="3" /> <label for="time">Contrareloj</label>
+                </div>
+				<p id="levelPanel">
+					<input type="radio" name="level" id="easy"  value="3" /> <label for="easy">Normal</label>
+					<input type="radio" name="level" id="medium" value="4" /> <label for="medium">Dificil</label>			
+           		</p>
 				<div class="puzzle">
 					<ul id="puzzGame" class="puzzGame"></ul>
 				</div>
-			</div>
+			</div>		
 			<div class="next">
 				<button id="newPhoto" type="button" class="btn btn-dark">Siguiente</button>
 			</div>
@@ -178,12 +189,17 @@ Enigma 1
 		empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 3);
 	});
 
-	 	$(function () {	
-			$('#newPhoto').click(function () {
-				empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', 3);
-			});
-    	});
-
+	$(function () {		
+		$('#newPhoto').click(function () {
+			$('#levelPanel').show();
+			empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', 3);
+		});
+	});
+	
+	$('#levelPanel :radio').change(function (e) {
+		var gridSize = $('#levelPanel :radio:checked').val();
+		empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', gridSize);
+	});
 	
 	// $(function () {	    
 	// 	empezarEnigma(image, 3);

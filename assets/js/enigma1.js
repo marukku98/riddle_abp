@@ -1,12 +1,30 @@
 var contador;
+var timer = 0;
 
 function empezarEnigma(image, gridSize){
+    startTime = new Date().getTime();
     gridPuzzle(image, gridSize);
     $('#panelJuego').show();
     mezclarPiezas('#puzzGame');
-    movimientos('#puzzGame li');
+    movimientos('#puzzGame li');    
     this.contador = 0;
 }
+
+function reinicio(){
+    if(timer == 5){
+        mezclarPiezas('#puzzGame');
+        movimientos('#puzzGame li');
+    }
+}
+
+//Timer
+var l = document.getElementById("number");
+window.setInterval(function(){
+    reinicio();
+    l.innerHTML = timer;
+    timer++;
+   
+},1000);
 
 function gridPuzzle(image, gridSize) {
     var percentage = 100 / (gridSize - 1);
@@ -47,11 +65,14 @@ function movimientos(elem) {
             if (completado(currentList)){    
                 setTimeout(function(){ 
                     //setCookie('enigma1', 1, 3);
+                    this.contador = 0;
                     alert('Correcte!');
+                    $('.next').show();
+                   
                     //$("#finalModal").modal({backdrop: 'static', keyboard: false});                      
                   });                                      
             }
-            else {
+            else {      
                 setTimeout(function(){   
                     if(contador == 10){
                         $("#pistaModal").modal("show"); 
