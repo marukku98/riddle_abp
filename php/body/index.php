@@ -18,8 +18,8 @@ Index
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/bg-game.jpg" alt="First slide">
       <div class="container">
         <div class="carousel-caption text-left">
-          <h1 class="title-font">PEARL HARBOR</h1>
-          <p class="text-font">Revive el ataque militar de Japón contra Estados Unidos en una base naval en Hawaii. </p>
+          <h1 class="title-font title-corousel">PEARL HARBOR</h1>
+          <p class="text-font text-corousel">Revive el ataque militar de Japón contra Estados Unidos en una base naval en Hawaii.</p>
         </div>
       </div>
     </div>
@@ -47,94 +47,117 @@ Index
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<div class="container mt-5 mb-5">
+<div class="row text-center text-font">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="title-font mt-3">Diviertete</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="title-font mt-3">Aprende</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="title-font mt-3">Comparte</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          </div><!-- /.col-lg-4 -->
+        </div>
+</div>
+
 <a name="scroll"></a>
 
-<h3 class="title-font" style="text-align: center; margin: 20px;">MEET OUR TEAM</h3>
+<h3 class="title-font header" style="text-align: center;">MEET OUR TEAM</h3>
 
-  <div class="container">
-    <!-- START THE FEATURETTES -->
+<div class="container">
+  <!-- START THE FEATURETTES -->
 
-    <div class="row featurette">
-      <div class="col-md-7 m-auto">
-        <h2 class="featurette-heading title-font">Artur Alcoverro <span class="text-muted">senpai.</span></h2>
-        <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. </p>
-        <ul class="list-group list-group-flush text-font">
-          <li class="list-group-item"><i class="far fa-envelope"></i> artur.bcn1998@gmail.com</li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> Artur Alcoverro</li>
-          <li class="list-group-item"><i class="fab fa-twitter-square"></i> @ArturAlcoverro</li>
-        </ul>
+  <div class="row featurette">
+    <div class="col-md-7 m-auto">
+      <h2 class="featurette-heading title-font">Artur Alcoverro <span class="text-muted">senpai.</span></h2>
+      <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. </p>
+      <ul class="list-group list-group-flush text-font">
+        <li class="list-group-item"><i class="far fa-envelope"></i> artur.bcn1998@gmail.com</li>
+        <li class="list-group-item"><i class="fab fa-linkedin"></i> Artur Alcoverro</li>
+        <li class="list-group-item"><i class="fab fa-twitter-square"></i> @ArturAlcoverro</li>
+      </ul>
 
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Artur_Avatar.png"
-          alt="Generic placeholder image">
-      </div>
     </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2 m-auto">
-        <h2 class="featurette-heading title-font">Toni Altamirano
-          <p><span class="text-muted">Prove yourself and Rise</span></p>
-        </h2>
-        <p class="lead text-font">Programador back-end y front-end.</p>
-
-        <ul class="list-group list-group-flush text-font">
-          <li class="list-group-item"><i class="far fa-envelope"></i> mansoksama@gmail.com</li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> Toni Altamirano</li>
-          <li class="list-group-item"><i class="fab fa-twitter-square"></i> @Mansok</li>
-        </ul>
-
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Toni_Avatar.png"
-          alt="Generic placeholder image">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 m-auto">
-        <h2 class="featurette-heading title-font">Marc González <span class="text-muted">Checkomeito.</span></h2>
-        <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-          commodo.</p>
-        <ul class="list-group list-group-flush text-font">
-          <li class="list-group-item"><i class="far fa-envelope"></i> marc.gonzalez.sds@gmail.com</li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> Marc González</li>
-          <li class="list-group-item"><i class="fab fa-twitter-square"></i> </li>
-        </ul>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto" src="/riddle_abp/assets/img/Marc_Avatar.png" data-src="holder.js/500x500/auto"
-          alt="Generic placeholder image">
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2 m-auto">
-        <h2 class="featurette-heading title-font">Martí Soler <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod
-          semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-          commodo.</p>
-
-        <ul class="list-group list-group-flush text-font">
-          <li class="list-group-item"><i class="far fa-envelope"></i> emdicmarti@gmail.com</li>
-          <li class="list-group-item"><i class="fab fa-linkedin"></i> Martí Soler</li>
-          <li class="list-group-item"><i class="fab fa-twitter-square"></i></li>
-        </ul>
-
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Marti_Avatar.png"
-          alt="Generic placeholder image">
-      </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Artur_Avatar.png"
+        alt="Generic placeholder image">
     </div>
   </div>
 
-  <!-- /END THE FEATURETTES -->
-  <?php endblock(); ?>
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2 m-auto">
+      <h2 class="featurette-heading title-font">Toni Altamirano
+        <p><span class="text-muted">Prove yourself and Rise</span></p>
+      </h2>
+      <p class="lead text-font">Programador back-end y front-end.</p>
+
+      <ul class="list-group list-group-flush text-font">
+        <li class="list-group-item"><i class="far fa-envelope"></i> mansoksama@gmail.com</li>
+        <li class="list-group-item"><i class="fab fa-linkedin"></i> Toni Altamirano</li>
+        <li class="list-group-item"><i class="fab fa-twitter-square"></i> @Mansok</li>
+      </ul>
+
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Toni_Avatar.png"
+        alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 m-auto">
+      <h2 class="featurette-heading title-font">Marc González <span class="text-muted">Checkomeito.</span></h2>
+      <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+        euismod
+        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+        commodo.</p>
+      <ul class="list-group list-group-flush text-font">
+        <li class="list-group-item"><i class="far fa-envelope"></i> marc.gonzalez.sds@gmail.com</li>
+        <li class="list-group-item"><i class="fab fa-linkedin"></i> Marc González</li>
+        <li class="list-group-item"><i class="fab fa-twitter-square"></i> </li>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" src="/riddle_abp/assets/img/Marc_Avatar.png" data-src="holder.js/500x500/auto"
+        alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2 m-auto">
+      <h2 class="featurette-heading title-font">Martí Soler <span class="text-muted">See for yourself.</span></h2>
+      <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+        euismod
+        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+        commodo.</p>
+
+      <ul class="list-group list-group-flush text-font">
+        <li class="list-group-item"><i class="far fa-envelope"></i> emdicmarti@gmail.com</li>
+        <li class="list-group-item"><i class="fab fa-linkedin"></i> Martí Soler</li>
+        <li class="list-group-item"><i class="fab fa-twitter-square"></i></li>
+      </ul>
+
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Marti_Avatar.png"
+        alt="Generic placeholder image">
+    </div>
+  </div>
+</div>
+
+<!-- /END THE FEATURETTES -->
+<?php endblock(); ?>
