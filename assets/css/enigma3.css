@@ -42,3 +42,25 @@
 .w-35 {
     width: 35% !important
 }
+
+.btn-kamikaze{
+    position: relative;
+    height: 70px;
+    width: 100px;
+    background:red;
+    border:solid 2px white;
+    border-radius: 5px;
+}
+
+.btn-kamikaze:before{
+    content: "";
+    padding: 4px;
+    position: absolute;
+    top: 0;
+    left: 22%;
+    height: 100%;
+    width: 55%;
+    background: url("/riddle_abp/assets/img/kamikaze.png");
+    background-size: cover;
+}
+

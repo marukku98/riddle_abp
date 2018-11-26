@@ -1,9 +1,9 @@
 var campo_enemigo = [];
 var barcos_enemigos = [];
 var hundidos = 0;
-var tiros = 70;
+var tiros = 20;
 var num_kamikazes = 1;
-var kamikaze = true;
+var kamikaze = false;
 var victoria = false;
 
 
@@ -100,10 +100,12 @@ function disparar(pos, barcos, campo) {
         dispararKamikaze(pos, barcos, campo);
         kamikaze = false;
         num_kamikazes--;
+        setKamikazes(num_kamikazes);
     }
     else{
         if (hundidos < 5 && tiros != 0) {
             tiros--;
+            setMisiles(tiros);
             campo[pos]['tocado'] = true;
             var tocado = ComprobarTocado(pos, barcos);
             ocultarBoton(pos, tocado[0]);
@@ -288,5 +290,22 @@ function feedback(msg) {
 
         default:
             break;
+    }
+}
+
+function setMisiles(num){
+    $('#misiles').text('Misiles: '+num);
+}
+
+function setKamikazes(num){
+    $('#kamikaes').text('Kamikazes: '+num);
+}
+
+function toggleKamikaze(){
+    if(kamikaze){
+        kamikaze = false;
+    }
+    else{
+        kamikaze = true;
     }
 }
