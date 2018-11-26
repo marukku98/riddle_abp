@@ -27,12 +27,10 @@ if(isset($_POST['gameStart'])){
 }
 
 if(isset($_POST['completed'])){
-
     $game = $_POST['game'];
     $progres = $_POST['enigma'];
     $email = "mansoksama@gmail.com";
     updateProgressUser($game, $email, $progres);
-    header('Location: /riddle_abp/php/body/game.php');  
-
+    header('Location: /riddle_abp/php/body/game.php'); 
 }
 ?>

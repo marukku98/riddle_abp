@@ -195,10 +195,8 @@ function getCookie(cname) {
 }
 $("#compEnigma").click(function () {
     var cookie = getCookie('enigma1');
-    var estacio = 2;
+    var estacio = getCookie('estacio');
 
-    // = getCookie('estacio');
-    
     if(cookie == 1 && estacio == 1 ){
         alert('Dirígete al siguiente punto de interés');
     }else if(cookie == 1 && estacio == 2){

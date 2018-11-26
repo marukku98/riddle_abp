@@ -76,16 +76,15 @@ function movimientos(elem) {
 
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){    
-                setTimeout(function(){ 
-                    //setCookie('enigma1', 1, 3);
-                    //actualisar BD
-
+                setTimeout(function(){
                     this.contador = 0;
                     timer = 0;                    
                     if(num == 1){
                         $("#correcte").modal("show"); 
                         $('.next').show();
                     }else{
+                        setCookie('enigma1', 1, 1);
+                        setCookie('estacio', 1, 1);
                         $("#finalModal").modal({backdrop: 'static', keyboard: false});  
                     }
                     endTime();                  

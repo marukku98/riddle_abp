@@ -97,7 +97,8 @@ Enigma 1
 				<div class="puzzle">
 					<ul id="puzzGame" class="puzzGame"></ul>
 				</div>
-			</div>		
+			</div>
+			
 			<div class="next">
 				<button id="newPhoto" type="button" class="btn btn-dark">Siguiente</button>
 			</div>
