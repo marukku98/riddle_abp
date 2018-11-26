@@ -8,6 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 if(isset($_POST['gameStart'])){
 
     if(!isset($_SESSION['user'])){
+        $_SESSION['lastPage'] = "gamesGrid.php";
         header('Location: /riddle_abp/php/body/login.php'); 
     }else{
         $game = $_POST['game'];

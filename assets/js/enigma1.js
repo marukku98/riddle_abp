@@ -1,17 +1,22 @@
 var contador;
-var timer = 0;
+var timer = 1;
+var modo;
+var num;
+var control;
 
-function empezarEnigma(image, gridSize){
-    startTime = new Date().getTime();
+function empezarEnigma(image, gridSize, modo, num){
+    startTime();
     gridPuzzle(image, gridSize);
     $('#panelJuego').show();
     mezclarPiezas('#puzzGame');
     movimientos('#puzzGame li');    
     this.contador = 0;
+    this.modo = modo;
+    this.num = num;
 }
 
 function reinicio(){
-    if(timer == 6){
+    if(timer == 10){
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
         timer = 0;
@@ -19,13 +24,20 @@ function reinicio(){
 }
 
 //Timer
-var l = document.getElementById("number");
-window.setInterval(function(){
-    reinicio();
-    l.innerHTML = timer;
-    timer++;
-   
-},1000);
+function startTime(){
+    var l = document.getElementById("number");
+    control = window.setInterval(function(){
+        if(modo){
+            reinicio();
+        }       
+        l.innerHTML = timer;
+        timer++;    
+    },1000);
+}
+
+function endTime(){
+    clearTimeout(control);
+}
 
 function gridPuzzle(image, gridSize) {
     var percentage = 100 / (gridSize - 1);
@@ -66,21 +78,33 @@ function movimientos(elem) {
             if (completado(currentList)){    
                 setTimeout(function(){ 
                     //setCookie('enigma1', 1, 3);
+                    //actualisar BD
+
                     this.contador = 0;
-                    //alert('Correcte!');
-                    $("#finalModal").modal({backdrop: 'static', keyboard: false});  
-                    $('.next').show();
-                   
-                    //$("#finalModal").modal({backdrop: 'static', keyboard: false});                      
+                    timer = 0;                    
+                    if(num == 1){
+                        $("#correcte").modal("show"); 
+                        $('.next').show();
+                    }else{
+                        $("#finalModal").modal({backdrop: 'static', keyboard: false});  
+                    }
+                    endTime();                  
                   });                                      
             }
-            else {      
-                setTimeout(function(){   
-                    if(contador == 10){
-                        $("#pistaModal").modal("show"); 
-                    }                       
-                  }, 300); 
-
+            else {
+                if(num == 1){
+                    setTimeout(function(){                    
+                        if(contador == 10){                      
+                           $("#pistaModal").modal("show");
+                        }                       
+                      }, 300); 
+                }else{
+                    setTimeout(function(){                    
+                        if(contador == 20){                      
+                            $("#pistaModal2").modal("show");
+                        }                       
+                      }, 300); 
+                }
                 contador++;                                        
                 $('.movimientos').text(contador);
             }
@@ -92,6 +116,7 @@ function movimientos(elem) {
 }
 
 function mezclarPiezas(ul) {
+    
     var $elems = $(ul).children(),
         $parents = $elems.parent();
 

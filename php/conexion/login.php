@@ -29,7 +29,14 @@ else{
         'role'=>$res[0]["role"]        
     );  
 
-    header("Location: /riddle_abp/php/body/index.php");
+    if(isset($_SESSION['lastPage'])){
+        header("Location: /riddle_abp/php/body/" . $_SESSION['lastPage']);
+        unset($_SESSION['lastPage']);
+    }else{
+        header("Location: /riddle_abp/php/body/index.php");
+    }
+
+    
 }
 
 ?>

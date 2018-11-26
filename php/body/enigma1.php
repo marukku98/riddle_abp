@@ -71,7 +71,9 @@ Enigma 1
 	<div class="mapa">
 
 		<h3>Mapa de la zona de guerra</h3>
-		<p>Resuelve el puzzle del mapa de la isla de Hawaii para poder planificar el ataque!</p>
+		<p>Resuelve los puzzles de los mapas geográficos para poder planificar el ataque!</p>
+		<button class="btn btn-info" type="button" data-toggle="modal" data-target="#reglasModal">Reglas</button>
+		<button class="btn btn-success" type="button" id="play">Jugar</button>
 
 		<!-- Puzzle -->
 		<div id="engima1">
@@ -85,13 +87,13 @@ Enigma 1
 					<div>Tiempo:</div> 
 					<div id="number">0</div> seg
                 </div>
-				<div id="timeBox">
+				<!-- <div id="timeBox">
 					<input type="checkbox" name="time" id="time"  value="3" /> <label for="time">Contrareloj</label>
                 </div>
 				<p id="levelPanel">
 					<input type="radio" name="level" id="easy"  value="3" /> <label for="easy">Normal</label>
 					<input type="radio" name="level" id="medium" value="4" /> <label for="medium">Dificil</label>			
-           		</p>
+           		</p> -->
 				<div class="puzzle">
 					<ul id="puzzGame" class="puzzGame"></ul>
 				</div>
@@ -115,6 +117,34 @@ Enigma 1
 			</div>
 
 			<!-- Modal -->
+			<div class="modal fade" id="pistaModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Pista</h5>
+						</div>
+						<div class="modal-body">
+							La liena divisoria tiene que quedar a la mitad
+						</div>
+					</div>
+				</div>
+			</div>
+
+				<!-- Modal -->
+			<div class="modal fade" id="correcte" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Correcte</h5>
+						</div>
+						<div class="modal-body">
+							Ya puedes pasar al puzzle final!
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal -->
 			<div class="modal fade" id="finalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -122,21 +152,41 @@ Enigma 1
 							<h5 class="modal-title" id="exampleModalLabel">Correcto!</h5>
 						</div>
 						<div class="modal-body">
-							Enhorabuena, has completado el puzzle! Ya puedes pasar a la siguiente pantalla para el 2 nivel.
+							Enhorabuena, has completado el juego! Ya puedes pasar a la siguiente pantalla para el 2 nivel.
 						</div>
 						<div class="modal-footer">
-							<form action="/riddle_abp/php/conexion/progres.php" method="POST">
-								<input type="text" name="game" value="1" style="visibility:hidden;">
-								<input type="text" name="enigma" value="1" style="visibility:hidden;">
-								<button type="submit" id="success" class="btn btn-secondary btn-sm" name="completed" >Continuar</button>
-							</form>
+						<form action="/riddle_abp/php/conexion/progres.php" method="POST">
+							<input type="text" name="game" value="1" style="visibility:hidden;">
+							<input type="text" name="enigma" value="1" style="visibility:hidden;">
+							<button type="submit" id="success" class="btn btn-secondary btn-sm" name="completed" >Continuar</button>
+						</form>
 						</div>
 					</div>
 				</div>
 			</div>
 
+			<!-- Modal pistas -->
+			<div class="modal fade" id="reglasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Reglas del juego</h5>
+						</div>
+						<div class="modal-body">
+							<ul class="list-group">
+								<li class="list-group-item">Habrá un total de 2 puzzles</li>
+								<li class="list-group-item">Uno de los puzzles tendrá dificultad normal (3x3) y el otro de (4x4)</li>
+								<li class="list-group-item">Uno de los puzzles tendrá modo contrareloj que si llega a cierto tiempo
+								se volverá a mezclar el puzzle, no te diremos cual. ¿Eres lo suficientemente rápido?</li>								
+							</ul>
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="dismiss" class="btn btn-secondary btn-sm" name="completed" data-dismiss="modal">Aceptar</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-
 	</div>
 	<!-- container -->
 </body>
@@ -144,6 +194,7 @@ Enigma 1
 <?php endblock(); ?>
 
 <script type="text/javascript">
+
 
 	$(document).ready(function () {
 		// $("#uno").hide();
@@ -184,22 +235,26 @@ Enigma 1
 		// var images = [
         //         { src: '/riddle_abp/assets/img/hawaii3.jpg', title: 'Hawaii' },
         //         { src: '/riddle_abp/assets/img/puzzle2Scale.png', title: 'Kanto' }
-        //     ];
+        //     ];	
+	});	
 
-		empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 3);
-	});
+	$("#play").click(function () {
+		empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 3, true, 1);
+		document.getElementById('play').disabled=true;	
+	});	
 
 	$(function () {		
 		$('#newPhoto').click(function () {
 			$('#levelPanel').show();
-			empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', 3);
+			empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', 4, false, 2);
+			document.getElementById('newPhoto').disabled=true;
 		});
 	});
 	
-	$('#levelPanel :radio').change(function (e) {
-		var gridSize = $('#levelPanel :radio:checked').val();
-		empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', gridSize);
-	});
+	// $('#levelPanel :radio').change(function (e) {
+	// 	var gridSize = $('#levelPanel :radio:checked').val();
+	// 	empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', gridSize);
+	// });
 	
 	// $(function () {	    
 	// 	empezarEnigma(image, 3);
