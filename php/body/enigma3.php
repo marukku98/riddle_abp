@@ -16,13 +16,12 @@
 
         <div class="row">
             <div class="m-auto">
-            <div id="misiles"></div>
-            <script>setMisiles(tiros);</script>
-            <div id="kamikaes"></div>
-            <script>setKamikazes(num_kamikazes);</script>
+                <div id="misiles"></div>
+                <script>setMisiles(tiros);</script>
+                <div id="kamikaes"></div>
+                <script>setKamikazes(num_kamikazes);</script>
 
-            <button class="btn-kamikaze" onclick="toggleKamikaze();"></button>
-            
+                <button class="btn-kamikaze" onclick="toggleKamikaze();"></button>
                 <div class="sea mt-1">
                     <div class="block"></div>
                     <?php
@@ -47,13 +46,13 @@
                 </div>
 
             </div>
-            </div>
-            <div class="row mt-3" style="margin-left: 30px;">
-                <div id="alert" class="alert alert-primary m-auto text-center" role="alert">
-                    <h3 id="alert-text" style="font-size:2vw;">-</h3>
-                </div>
+        </div>
+        <div class="row mt-3" style="margin-left: 30px;">
+            <div id="alert" class="alert alert-primary m-auto text-center" role="alert">
+                <h3 id="alert-text" style="font-size:2vw;">-</h3>
             </div>
         </div>
+    </div>
 
     </div>
 

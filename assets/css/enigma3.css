@@ -43,16 +43,18 @@
     width: 35% !important
 }
 
-.btn-kamikaze{
+.btn-kamikaze {
     position: relative;
-    height: 70px;
-    width: 100px;
-    background:red;
-    border:solid 2px white;
+    height: 50px;
+    width: 80px;
+    background: url("/riddle_abp/assets/img/kamikaze-btn.jpg");
+    background-size: cover;
+    background-position: center;
+    border: solid 2px white;
     border-radius: 5px;
 }
 
-.btn-kamikaze:before{
+/* .btn-kamikaze:before {
     content: "";
     padding: 4px;
     position: absolute;
@@ -60,7 +62,24 @@
     left: 22%;
     height: 100%;
     width: 55%;
-    background: url("/riddle_abp/assets/img/kamikaze.png");
+    background: url("/riddle_abp/assets/img/kamikaze-btn.jpg");
     background-size: cover;
 }
 
+*/
+
+.fuego {
+    position: absolute;
+    height: 31.818181818181px;
+    width: 31.818181818181px;
+    background: url('https://i.imgur.com/XB8X1xa.gif');
+    background-size: cover;
+}
+
+.agua {
+    position: absolute;
+    height: 31.818181818181px;
+    width: 31.818181818181px;
+    background: url('https://i.imgur.com/mrAAKhA.gif');
+    background-size: cover;
+}
