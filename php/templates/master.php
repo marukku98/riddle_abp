@@ -55,13 +55,17 @@
       <?php
         if(isset($_SESSION['user'])){
       ?>
-      <select class="float-right">
-        <option selected hidden>
-          <?php echo $_SESSION['user']['username']; ?>
-        </option>
-        <option value="sydney">Perfil</option>
-        <option value="melbourne">Cerrar sesión</option>
-      </select>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+        <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php echo $_SESSION['user']['username'];?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
+        </div>
+      </div>
       <?php
         }else{
       ?>

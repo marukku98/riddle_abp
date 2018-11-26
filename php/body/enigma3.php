@@ -1,8 +1,8 @@
 <?php require_once "../templates/master.php" ?>
 
 <?php startblock("css"); ?>
-<script src="/riddle_abp/assets/js/enigma3.js"></script>
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma3.css">
+<script src="/riddle_abp/assets/js/enigma3.js"></script>
 <?php endblock(); ?>
 
 <?php startblock("titulo"); ?> Enigma 3
@@ -16,7 +16,13 @@
 
         <div class="row">
             <div class="m-auto">
+            <div id="misiles"></div>
+            <script>setMisiles(tiros);</script>
+            <div id="kamikaes"></div>
+            <script>setKamikazes(num_kamikazes);</script>
 
+            <button class="btn-kamikaze" onclick="toggleKamikaze();"></button>
+            
                 <div class="sea mt-1">
                     <div class="block"></div>
                     <?php

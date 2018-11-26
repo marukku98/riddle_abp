@@ -91,7 +91,7 @@ Enigma 1
 					<input type="checkbox" name="time" id="time"  value="3" /> <label for="time">Contrareloj</label>
                 </div>
 				<p id="levelPanel">
-					<input type="radio" name="level" id="easy"  value="3" /> <label for="easy">Normal</label>
+					<input type="radio" name="level" id="easy" checked value="3" /> <label for="easy">Normal</label>
 					<input type="radio" name="level" id="medium" value="4" /> <label for="medium">Dificil</label>			
            		</p> -->
 				<div class="puzzle">

@@ -1,13 +1,14 @@
 var campo_enemigo = [];
-var campo_aliado = [];
 var barcos_enemigos = [];
-var barcos_aliados = [];
 var hundidos = 0;
-var tiros = 70;
+var tiros = 20;
+var num_kamikazes = 1;
+var kamikaze = false;
+var victoria = false;
+
 
 for (var i = 0; i < 100; i++) {
-    campo_enemigo[i] = ({ pos: i, barco: false, tocado: false });
-    campo_aliado[i] = ({ pos: i, barco: false, tocado: false });
+    campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false });
 }
 
 barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
@@ -15,12 +16,6 @@ barcos_enemigos[1] = colocarBarco(4, campo_enemigo);
 barcos_enemigos[2] = colocarBarco(3, campo_enemigo);
 barcos_enemigos[3] = colocarBarco(3, campo_enemigo);
 barcos_enemigos[4] = colocarBarco(2, campo_enemigo);
-
-barcos_aliados[0] = colocarBarco(5, campo_aliado);
-barcos_aliados[1] = colocarBarco(4, campo_aliado);
-barcos_aliados[2] = colocarBarco(3, campo_aliado);
-barcos_aliados[3] = colocarBarco(3, campo_aliado);
-barcos_aliados[4] = colocarBarco(2, campo_aliado);
 
 function colocarBarco(len, campo) {
     var orientacio;
@@ -64,25 +59,63 @@ function colocarBarco(len, campo) {
     } while (choca === true);
 
     barco.forEach(function (e) {
-        campo[e]['barco'] = true;
+        campo[e]['ocupado'] = true;
+        var around = getAround(e, true);
+        around.forEach(function (e) {
+            campo[e]['ocupado'] = true;
+        });
     });
 
     return barco;
 }
 
-function disparar(pos, barcos, campo) {
-    if(hundidos < 5 && tiros != 0){
-        tiros--;
+function dispararKamikaze(pos, barcos, campo) {
+    var isTocado = false;
+    var isHundido = false;
+    var casillas = getAround(pos, true);
+    casillas[casillas.length] = pos;
+    
+    casillas.forEach(function (pos) {
         campo[pos]['tocado'] = true;
-        var tocado = ComprobarTocado(pos, barcos);
+        var tocado = ComprobarTocado(pos, barcos_enemigos);
         ocultarBoton(pos, tocado[0]);
-        if(tocado[0]){
-            CheckEstadoBarco(tocado[1], barcos, campo);
+        if (tocado[0]) {
+            isTocado = true;
+            if(CheckEstadoBarco(tocado[1], barcos, campo)){
+                isHundido = true;
+            }
         }
+    });
+
+    if(isHundido && victoria == false){
+        feedback(2);
     }
-    else if(tiros == 0 && hundidos != 5){
-        $('#alert-text').text("DERROTA")
-        $('#alert').attr('class', 'alert alert-dark w-25 m-auto text-center'); 
+    else if (isTocado){
+        feedback(1);
+    }
+}
+
+function disparar(pos, barcos, campo) {
+    if(kamikaze && num_kamikazes!=0){
+        dispararKamikaze(pos, barcos, campo);
+        kamikaze = false;
+        num_kamikazes--;
+        setKamikazes(num_kamikazes);
+    }
+    else{
+        if (hundidos < 5 && tiros != 0) {
+            tiros--;
+            setMisiles(tiros);
+            campo[pos]['tocado'] = true;
+            var tocado = ComprobarTocado(pos, barcos);
+            ocultarBoton(pos, tocado[0]);
+            if (tocado[0]) {
+                CheckEstadoBarco(tocado[1], barcos, campo);
+            }
+        }
+        else if (tiros == 0) {
+            feedback(3); //derrota
+        }
     }
 }
 
@@ -110,6 +143,7 @@ function ComprobarTocado(pos, barcos) {
 }
 
 function ocultarBoton(pos, tocado) {
+    $("#" + pos).attr("disabled","disabled");
     if (tocado) {
         $("#" + pos).css({
             "border-radius": "50%",
@@ -118,8 +152,7 @@ function ocultarBoton(pos, tocado) {
             "width": "15.909090",
             "transform": "translate(50%,50%)"
         });
-        $('#alert-text').text("TOCADO")
-        $('#alert').attr('class', 'alert alert-danger w-25 m-auto text-center');
+        feedback(1); //tocado
 
     } else {
         $("#" + pos).css({
@@ -129,8 +162,7 @@ function ocultarBoton(pos, tocado) {
             "width": "15.909090px",
             "transform": "translate(50%,50%)"
         });
-        $('#alert-text').text("AGUA")
-        $('#alert').attr('class', 'alert alert-primary w-25 m-auto text-center');
+        feedback(0); //agua
     }
 }
 
@@ -138,7 +170,7 @@ function CheckPos(x, y, campo) {
     try {
         var bool = false;
         var pos = x * 10 + y;
-        if (campo[pos]['barco'] === true) {
+        if (campo[pos]['ocupado'] === true) {
             bool = true;
         }
     } catch (err) {
@@ -147,22 +179,133 @@ function CheckPos(x, y, campo) {
     return bool;
 }
 
-function CheckEstadoBarco(num_barco, barcos, campo){
+function CheckEstadoBarco(num_barco, barcos, campo) {
     var hundido = true;
-    barcos[num_barco].forEach(function(pos){
-        if(campo[pos]['tocado']==false){
+    barcos[num_barco].forEach(function (pos) {
+        if (campo[pos]['tocado'] == false) {
             hundido = false;
         }
     });
 
-    if(hundido){
+    if (hundido) {
         hundidos++;
-        if(hundidos == 5){
-            $('#alert-text').text("VICTORIA")
-            $('#alert').attr('class', 'alert alert-success w-25 m-auto text-center');
-        }else{
+        if (hundidos == 5) {
+            all();
+            victoria = true;
+            feedback(4);//victoria
+        } else {
+            feedback(2);//tocado y hundido
+        }
+    }
+    return hundido;
+}
+
+function getAround(pos, diagonales) {
+    var x = Math.floor(pos / 10);
+    var y = pos - (x * 10);
+    var around = [];
+
+    if (x != 0) {
+        //nord
+        around[around.length] = getPos(x - 1, y);
+        if (y != 9 && diagonales) {
+            //nord-est
+            around[around.length] = getPos(x - 1, y + 1);
+        }
+        if (y != 0 && diagonales) {
+            //nord-oest
+            around[around.length] = getPos(x - 1, y - 1);
+        }
+    }
+
+    if (x != 9) {
+        //sud
+        around[around.length] = getPos(x + 1, y);
+        if (y != 9 && diagonales) {
+            //sud-est
+            around[around.length] = getPos(x + 1, y + 1);
+        }
+        if (y != 0 && diagonales) {
+            //sud-oest
+            around[around.length] = getPos(x + 1, y - 1);
+        }
+    }
+
+    if (y != 9) {
+        //est
+        around[around.length] = getPos(x, y + 1);
+    }
+    if (y != 0) {
+        //oest
+        around[around.length] = getPos(x, y - 1);
+    }
+
+    return around;
+}
+
+function getPos(x, y) {
+    return ((x * 10) + y);
+}
+
+/**
+ * 0:agua
+ * 1:tocado
+ * 2:hundido
+ * 3:derrota
+ * 4:victoria 
+ * @param {*} msg 
+ */
+function feedback(msg) {
+    var agua     = 0;
+    var tocado   = 1;
+    var hundido  = 2;
+    var derrota  = 3;
+    var victoria = 4;
+
+    switch (msg) {
+        case tocado:
+            $('#alert-text').text("TOCADO")
+            $('#alert').attr('class', 'alert alert-danger w-25 m-auto text-center');
+            break;
+
+        case hundido:
             $('#alert-text').text("TOCADO Y HUNDIDO")
             $('#alert').attr('class', 'alert alert-warning w-35 m-auto text-center');
-        }
+            break;
+
+        case derrota:
+            $('#alert-text').text("DERROTA")
+            $('#alert').attr('class', 'alert alert-dark w-25 m-auto text-center');
+            break;
+
+        case victoria:
+            $('#alert-text').text("VICTORIA")
+            $('#alert').attr('class', 'alert alert-success w-25 m-auto text-center');
+            break;
+
+        case agua:
+            $('#alert-text').text("AGUA")
+            $('#alert').attr('class', 'alert alert-primary w-25 m-auto text-center');
+            break;
+
+        default:
+            break;
+    }
+}
+
+function setMisiles(num){
+    $('#misiles').text('Misiles: '+num);
+}
+
+function setKamikazes(num){
+    $('#kamikaes').text('Kamikazes: '+num);
+}
+
+function toggleKamikaze(){
+    if(kamikaze){
+        kamikaze = false;
+    }
+    else{
+        kamikaze = true;
     }
 }
