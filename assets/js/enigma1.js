@@ -82,7 +82,7 @@ function movimientos(elem) {
                     if(num == 1){
                         //gif
                         animationComplete(true);
-                        //$("#correcte").modal("show"); 
+                        $("#correcte").modal("show"); 
                         $('.next').show();
                     }else{
                         setCookie('enigma1', 1, 1);
@@ -155,7 +155,6 @@ function animationComplete(animation){
             "height": "100%",
             "width": "100%",
             "background": "url('/riddle_abp/assets/img/lvl-complete.gif')"    
-        });
-    
+        });    
     }
 }
