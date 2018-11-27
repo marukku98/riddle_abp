@@ -50,7 +50,7 @@
     background: url("/riddle_abp/assets/img/kamikaze-btn.jpg");
     background-size: cover;
     background-position: center;
-    border: solid 2px white;
+    border: solid 1px red;
     border-radius: 5px;
 }
 

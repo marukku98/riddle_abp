@@ -19,7 +19,7 @@
                 <div class="row m-auto">
                     <div>
                         <div id="">
-                            <h3 class="title-font" id="misiles"></h3>
+                            <h3 class="" id="misiles"></h3>
                         </div>
                         <script>setMisiles(tiros);</script>
                     </div>
