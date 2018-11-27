@@ -93,10 +93,17 @@ Enigma 1
 				<p id="levelPanel">
 					<input type="radio" name="level" id="easy" checked value="3" /> <label for="easy">Normal</label>
 					<input type="radio" name="level" id="medium" value="4" /> <label for="medium">Dificil</label>			
-           		</p> -->
-				<div class="puzzle">
-					<ul id="puzzGame" class="puzzGame"></ul>
+				   </p> -->
+				   
+				<div class="animation">
+					<div class="gif">			
+						</div>
+					<div class="puzzle">					
+						<ul id="puzzGame" class="puzzGame"></ul>
+					</div>
+					
 				</div>
+
 			</div>
 			
 			<div class="next">

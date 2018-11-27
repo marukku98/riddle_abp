@@ -80,7 +80,9 @@ function movimientos(elem) {
                     this.contador = 0;
                     timer = 0;                    
                     if(num == 1){
-                        $("#correcte").modal("show"); 
+                        //gif
+                        animationComplete(true);
+                        //$("#correcte").modal("show"); 
                         $('.next').show();
                     }else{
                         setCookie('enigma1', 1, 1);
@@ -142,4 +144,18 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function animationComplete(animation){
+    if (animation) {
+        $(".gif").css({
+            "top": "0",
+            "z-index": "20",
+            "position": "absolute",
+            "height": "100%",
+            "width": "100%",
+            "background": "url('/riddle_abp/assets/img/lvl-complete.gif')"    
+        });
+    
+    }
 }
