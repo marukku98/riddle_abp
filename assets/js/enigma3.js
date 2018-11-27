@@ -330,11 +330,11 @@ function feedback(msg) {
 }
 
 function setMisiles(num) {
-    $('#misiles').text('Misiles: ' + num);
+    $('#misiles').text('Misiles: ' + num )
 }
 
 function setKamikazes(num) {
-    $('#kamikaes').text('Kamikazes: ' + num);
+    $('#kamikaes').text('Kamikazes: ' + num );
 }
 
 function toggleKamikaze() {

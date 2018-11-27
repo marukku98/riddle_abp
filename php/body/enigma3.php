@@ -14,14 +14,17 @@
 
     <div class="container-fluid">
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="m-auto">
-                <div id="misiles"></div>
-                <script>setMisiles(tiros);</script>
-                <div id="kamikaes"></div>
-                <script>setKamikazes(num_kamikazes);</script>
-
-                <button class="btn-kamikaze" onclick="toggleKamikaze();"></button>
+                <div class="row m-auto">
+                    <div>
+                        <div id="">
+                            <h3 class="title-font" id="misiles"></h3>
+                        </div>
+                        <script>setMisiles(tiros);</script>
+                    </div>
+                    <button class="btn-kamikaze ml-4" onclick="toggleKamikaze();"></button>
+                </div>
                 <div class="sea mt-1">
                     <div class="block"></div>
                     <?php
