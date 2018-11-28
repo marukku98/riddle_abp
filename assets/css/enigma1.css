@@ -12,6 +12,7 @@
   position: relative;
 }
 
+
 .bg-body::after{
   position: absolute;
   background-size: cover;
@@ -28,7 +29,6 @@
 .first{
   margin-top: 30px;
   width: 100%;
-  /* font-weight: bold; */
 }
 
 .first > p{
@@ -36,8 +36,11 @@
 }
 
 h3 {
-  font-size: 18px;
-  color: #563D64;
+  font-size: 28px;
+}
+
+h6{
+  font-weight: bold;
 }
 
 .clearfix:after,
@@ -69,7 +72,7 @@ form:after {
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   width: 400px;
-  z-index: 3;  
+  z-index: 3;   
   font-family: 'Letter', 'sans-serif';
   text-align: justify;
 }
@@ -105,14 +108,6 @@ form:after {
 #content form {
   margin: 0 20px;
   position: relative
-}
-
-.modal-content {
-  background-color: rgba(255, 255, 255, 0); 
-  background-clip: padding-box;
-  border: 0px solid rgba(0, 0, 0, .2);
-  border-radius: .3rem;
-  outline: 0;
 }
 
 .btnMapa{

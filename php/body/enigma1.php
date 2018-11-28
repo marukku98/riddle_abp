@@ -1,6 +1,7 @@
 <?php require_once "../templates/master.php" ?>
 
 <script src="/riddle_abp/assets/js/jquery-ui.js"></script>
+<script src="/riddle_abp/assets/js/jquery.ui.touch-punch.min.js"></script>
 <script src="/riddle_abp/assets/js/enigma1.js"></script>
 
 <?php startblock("titulo"); ?>
@@ -15,7 +16,7 @@ Enigma 1
 	<div class="total">
 		<div class="container first">
 
-			<h3 class="japan-font">La guerra de Pear Harbor</h3>
+			<h3 class="japan-font">La guerra de Pearl Harbor</h3>
 
 			<p>El ataque a Pearl Harbor fue una ofensiva militar sorpresa efectuada por la Armada Imperial Japonesa
 				contra la base naval de los Estados Unidos en Pearl Harbor (Hawái) en la mañana del domingo 7 de
@@ -24,7 +25,7 @@ Enigma 1
 				planeando realizar en el Sureste Asiático contra
 				las posesiones ultramarinas del Reino Unido, Francia, Países Bajos y Estados Unidos. </p>
 
-			<h3>Plan de ataque</h3>
+			<h3 class="japan-font">Plan de ataque</h3>
 
 			<p>El Almirante Isoroku Yamamoto a causa de una enfermedad no podrá dirigir el ejército de japón contra la
 				guerra a EE.UU. Por eso tu, el
@@ -33,20 +34,20 @@ Enigma 1
 			<p>Esta es la carta que te ha dejado el almirante</p>
 
 			<button class="btn btn-secondary btn-sm carta" data-toggle="modal" data-target="#exampleModaal">Leer carta del almirante</button><br><br>
-
+			<button type="button" class="btn btn-primary btn-sm" id="step">Resolver mapas</button>
 		</div> 
 
 
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModaal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">				
+				<div class="modal-content bg-transparent border-0">				
 					<div class="modal-body">
 						<div class="container" id="contain" style="display:none;">
 						<section id="content">
 							<form action="">
-							<h3>Carta del almirante Yamamoto al capitán Genda pidiéndole que estudie la viabilidad de un ataque
-									aéreo a Pearl Harbor.</h3>						
+							<h6>Carta del almirante Yamamoto al capitán Genda pidiéndole que estudie la viabilidad de un ataque
+									aéreo a Pearl Harbor.</h6>						
 								Febrero de 1941.
 								Dependiendo de los cambios que se produzcan en la situación internacional, podríamos vernos
 								arrastrados a luchar con Estados Unidos. Si Japón y Estados Unidos fueran a la guerra, tendríamos
@@ -63,18 +64,6 @@ Enigma 1
 				</div>
 			</div>
 		</div>
-
-		
-
-		<div class="form-row">
-			<div id="uno"><img src="/riddle_abp/assets/img/1speeach1.png" alt="Error" height="300px"></div>
-
-			<div id="2" style="float:right;"><img src="/riddle_abp/assets/img/speeach2.png" alt="Error" height="390px"></div>
-		</div>
-		<div class="container contBtn">
-			<button class="btn btn-info btnMapa">Estudiar mapa</button>
-		</div>
-
 	</div> 
 
 	<div class="mapa">
@@ -96,15 +85,7 @@ Enigma 1
 				<div id="timeBox">
 					<div>Tiempo:</div> 
 					<div id="number">0</div> seg
-                </div>
-				<!-- <div id="timeBox">
-					<input type="checkbox" name="time" id="time"  value="3" /> <label for="time">Contrareloj</label>
-                </div>
-				<p id="levelPanel">
-					<input type="radio" name="level" id="easy" checked value="3" /> <label for="easy">Normal</label>
-					<input type="radio" name="level" id="medium" value="4" /> <label for="medium">Dificil</label>			
-				   </p> -->
-				   
+                </div>				   
 				<div class="animation">
 					<div class="gif">			
 						</div>
@@ -215,33 +196,33 @@ Enigma 1
 
 
 	$(document).ready(function () {
-		$("#uno").hide();
-		$("#2").hide();
 		$(".btnMapa").hide();
 		$(".mapa").hide();
 		$(".content").hide();
+		$("#step").hide();
 
 		$(".carta").click(function () {
-			$("#contain").fadeIn(1000); //$("#contain").slideDown(1000);
+			$("#contain").fadeIn(1000);
+			$("#step").show();
 		});
 
-		$("#hide").click(function () {
+		$("#step").click(function () {
+			$("#contain").hide(1000);
+			$(".first").hide(1000);
+			$(".mapa").fadeIn(1000);
 
-			alert('sdfdsf');
-			// $("#contain").hide(1000);
-			// $(".first").hide(1000);
 			// $("#uno").fadeIn();
 
 			// var miVar = setInterval(function () { callback2() }, 2000);
 			// var miVar2 = setInterval(function () { callback3() }, 5000);
 		});
 
-		function callback2() {
-			$("#2").fadeIn(3000);
-		}
-		function callback3() {
-			$(".btnMapa").show();
-		}
+		// function callback2() {
+		// 	$("#2").fadeIn(3000);
+		// }
+		// function callback3() {
+		// 	$(".btnMapa").show();
+		// }
 
 		$(".btnMapa").click(function () {
 			$(".total").hide(1000);
