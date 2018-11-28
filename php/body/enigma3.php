@@ -19,9 +19,9 @@
         <div class="m-auto bg-card">
             <div class="row ml-box">
                 <div class="col">
-                    <div>
-                        <h5 class="text-center">Misiles</h5>
-                        <h3 class="text-center" id="misiles"></h3>
+                    <div style="display: inline-flex;">
+                        <img src="/riddle_abp/assets/img/misil-icon.png" height="50px" alt="">
+                        <h3 class="text-center mt-2 ml-2" id="misiles"></h3>
                     </div>
                     <script>setMisiles(tiros);</script>
                 </div>
@@ -54,10 +54,13 @@
             ?>
             </div>
             <div class="row mt-3 ml-box" style="margin-left: 30px;">
-                <div id="alert m-auto" class="m-auto">
+                <div id="alert m-auto" class="m-auto" style="color: transparent;">
                     <h1 id="alert-text" class="title-font">.</h1>
                 </div>
             </div>
+            <script>
+                flag();
+            </script>
 
         </div>
     </div>

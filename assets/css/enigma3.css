@@ -28,11 +28,16 @@
     position: absolute;
     height: 36.36363636363636px;
     width: 36.36363636363636px;
-    border: solid 1px #a5a5a5;    
+    border: solid 1px #a5a5a5;  
 }
 
 .box:hover {
     background-color: #a5a5a5;
+}
+
+.flag{
+    background-image: url("/riddle_abp/assets/img/flag.png");
+    background-size: cover;
 }
 
 /* .box:after {
