@@ -151,8 +151,8 @@ function ocultarBoton(pos, tocado, gif) {
 
                 "border": "0px",
                 "position": "absolute",
-                "height": "40.818181818181px",
-                "width": "40.818181818181px",
+                "height": "43.818181818181px",
+                "width": "43.818181818181px",
                 "background": "url('https://imgur.com/WhyJUjH.gif?a=" + Math.random() + "')",
                 "background-size": "cover",
                 "z-index": "2",
@@ -165,8 +165,8 @@ function ocultarBoton(pos, tocado, gif) {
                 "border": "1px",
                 "border-radius": "50%",
                 "background": "red",
-                "height": "15.909090px",
-                "width": "15.909090",
+                "height": "18.181818px",
+                "width": "18.181818",
                 "transform": "translate(50%,50%)"
             });
         }, time)
@@ -178,12 +178,12 @@ function ocultarBoton(pos, tocado, gif) {
             $("#" + pos).css({
                 "border": "0px",
                 "position": "absolute",
-                "height": "40.818181818181px",
-                "width": "40.818181818181px",
+                "height": "43.818181818181px",
+                "width": "43.818181818181px",
                 "background": "url('https://i.imgur.com/mrAAKhA.gif?a=" + Math.random() + "')",
                 "background-size": "cover",
                 "z-index": "2",
-                "transform": "translate(-10%,-10%)"
+                "transform": "translate(-7%,-7%)"
             });
             time = 550;
         }
@@ -193,8 +193,8 @@ function ocultarBoton(pos, tocado, gif) {
                 "border": "1px",
                 "border-radius": "50%",
                 "background": "white",
-                "height": "15.909090px",
-                "width": "15.909090px",
+                "height": "18.181818px",
+                "width": "18.181818px",
                 "transform": "translate(50%,50%)"
             });
         }, time)
@@ -301,27 +301,27 @@ function feedback(msg) {
     switch (msg) {
         case tocado:
             $('#alert-text').text("TOCADO")
-            $('#alert').attr('class', 'alert alert-danger w-25 m-auto text-center');
+            $('#alert-text').css({ "color": "#FF7F50" });
             break;
 
         case hundido:
-            $('#alert-text').text("TOCADO Y HUNDIDO")
-            $('#alert').attr('class', 'alert alert-warning w-35 m-auto text-center');
+            $('#alert-text').text("HUNDIDO")
+            $('#alert-text').css({ "color": "#B22222" });
             break;
 
         case derrota:
             $('#alert-text').text("DERROTA")
-            $('#alert').attr('class', 'alert alert-dark w-25 m-auto text-center');
+            $('#alert-text').attr('class', 'alert alert-darktext-center w-25');
             break;
 
         case victoria:
             $('#alert-text').text("VICTORIA")
-            $('#alert').attr('class', 'alert alert-success w-25 m-auto text-center');
+            $('#alert-text').attr('class', 'alert alert-success text-center w-25');
             break;
 
         case agua:
             $('#alert-text').text("AGUA")
-            $('#alert').attr('class', 'alert alert-primary w-25 m-auto text-center');
+            $('#alert-text').css({ "color": "#1E90FF" });
             break;
 
         default:
@@ -330,11 +330,11 @@ function feedback(msg) {
 }
 
 function setMisiles(num) {
-    $('#misiles').text('Misiles: ' + num )
+    $('#misiles').text(num)
 }
 
 function setKamikazes(num) {
-    $('#kamikaes').text('Kamikazes: ' + num );
+    $('#kamikaes').text(num);
 }
 
 function toggleKamikaze() {
@@ -344,4 +344,20 @@ function toggleKamikaze() {
     else {
         kamikaze = true;
     }
+}
+
+function restart() {
+    hundidos = 0;
+    tiros = 35;
+    num_kamikazes = 1;
+
+    for (var i = 0; i < 100; i++) {
+        campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false });
+    }
+    barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
+    barcos_enemigos[1] = colocarBarco(4, campo_enemigo);
+    barcos_enemigos[2] = colocarBarco(3, campo_enemigo);
+    barcos_enemigos[3] = colocarBarco(3, campo_enemigo);
+    barcos_enemigos[4] = colocarBarco(2, campo_enemigo);
+
 }

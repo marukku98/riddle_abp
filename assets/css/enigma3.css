@@ -1,9 +1,35 @@
+.bg-body {
+    background: white
+}
+
+.bg-card {
+    padding: 30px 50px 30px 30px;
+    background: #ffffffad;
+    border-radius: 5px;
+    box-shadow: 0 0 5px;
+}
+
+.bg-body::after {
+    position: absolute;
+    background-image: url(https://images.alphacoders.com/695/thumb-1920-69561.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    content: "";
+    opacity: 0.15;
+    top: 10%;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
 .box {
     background-color: #808080;
     position: absolute;
-    height: 31.818181818181px;
-    width: 31.818181818181px;
+    height: 36.36363636363636px;
+    width: 36.36363636363636px;
     border: solid 1px #a5a5a5;
+    cursor: url('https://imgur.com/E82B0LQ.png') 50 50, pointer;
 }
 
 .box:hover {
@@ -25,8 +51,8 @@
     position: relative;
     background-size: cover;
     background-image: url("/riddle_abp/assets/img/sea.png");
-    height: 350px;
-    width: 350px;
+    height: 400px;
+    width: 400px;
 }
 
 .block {
@@ -44,14 +70,26 @@
 }
 
 .btn-kamikaze {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 15%;
     height: 50px;
-    width: 80px;
+    width: 110px;
     background: url("/riddle_abp/assets/img/kamikaze-btn.jpg");
     background-size: cover;
     background-position: center;
     border: solid 1px red;
     border-radius: 5px;
+    transform: translate(0, -50%);
+    cursor: url('https://imgur.com/E82B0LQ.png'), pointer;
+}
+
+.btn-kamikaze:hover {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 12px 0 rgba(0, 0, 0, 0.6);
+}
+
+.btn-kamikaze:active {
+    box-shadow: 0 0 0;
 }
 
 /* .btn-kamikaze:before {
@@ -70,16 +108,20 @@
 
 .fuego {
     position: absolute;
-    height: 31.818181818181px;
-    width: 31.818181818181px;
+    height: 36.36363636363636px;
+    width: 36.36363636363636px;
     background: url('https://i.imgur.com/XB8X1xa.gif');
     background-size: cover;
 }
 
 .agua {
     position: absolute;
-    height: 31.818181818181px;
-    width: 31.818181818181px;
+    height: 36.36363636363636px;
+    width: 36.36363636363636px;
     background: url('https://i.imgur.com/mrAAKhA.gif');
     background-size: cover;
+}
+
+.ml-box {
+    margin-left: 36.36363636363636px;
 }
