@@ -29,7 +29,7 @@
     height: 36.36363636363636px;
     width: 36.36363636363636px;
     border: solid 1px #a5a5a5;
-    cursor: url('https://imgur.com/E82B0LQ.png') 50 50, pointer;
+    cursor: url('https://imgur.com/K5V7u5X.png') 50 50, pointer;
 }
 
 .box:hover {
@@ -81,7 +81,6 @@
     border: solid 1px red;
     border-radius: 5px;
     transform: translate(0, -50%);
-    cursor: url('https://imgur.com/E82B0LQ.png'), pointer;
 }
 
 .btn-kamikaze:hover {
