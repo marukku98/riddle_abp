@@ -1,14 +1,38 @@
 /*Enigma*/
-body{
-  background: #DCDDDF url(http://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
-}
 
+@font-face{
+  font-family: 'Letter';
+  src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
+}
 .total {
   color: #000;
   font: 14px Arial;
   margin: 0 auto;
   padding: 0;
   position: relative;
+}
+
+.bg-body::after{
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  height: 150%;
+  top: 0;
+  background-repeat: no-repeat;
+  content:"";
+  z-index: -1;
+  opacity: 0.3;
+  background: url('https://i.pinimg.com/originals/df/ba/37/dfba374fec3d957b2485909f9d95427f.jpg');
+}
+
+.first{
+  margin-top: 30px;
+  width: 100%;
+  /* font-weight: bold; */
+}
+
+.first > p{
+  text-align : justify;
 }
 
 h3 {
@@ -26,9 +50,9 @@ form:after {
 }
 
 .container {
-  margin: 25px auto;
   position: relative;
-  width: 900px;
+  width: 100%;
+  /* background: url('https://previews.123rf.com/images/andreykuzmin/andreykuzmin1704/andreykuzmin170400092/75944489-antiguo-fondo-de-mapa-en-blanco-con-br%C3%BAjula-concepto-de-aventura-o-descubrimiento-.jpg') */
 }
 
 #content {
@@ -45,6 +69,9 @@ form:after {
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   width: 400px;
+  z-index: 3;  
+  font-family: 'Letter', 'sans-serif';
+  text-align: justify;
 }
 
 #content:after,
@@ -78,6 +105,14 @@ form:after {
 #content form {
   margin: 0 20px;
   position: relative
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0); 
+  background-clip: padding-box;
+  border: 0px solid rgba(0, 0, 0, .2);
+  border-radius: .3rem;
+  outline: 0;
 }
 
 .btnMapa{

@@ -12,10 +12,10 @@ Enigma 1
 
 <body>
 
-	<!-- <div class="total"> -->
-		<!-- <div class="container first">
+	<div class="total">
+		<div class="container first">
 
-			<h3>La guerra de Pear Harbor</h3>
+			<h3 class="japan-font">La guerra de Pear Harbor</h3>
 
 			<p>El ataque a Pearl Harbor fue una ofensiva militar sorpresa efectuada por la Armada Imperial Japonesa
 				contra la base naval de los Estados Unidos en Pearl Harbor (Hawái) en la mañana del domingo 7 de
@@ -32,30 +32,39 @@ Enigma 1
 
 			<p>Esta es la carta que te ha dejado el almirante</p>
 
-			<button class="btn btn-secondary btn-sm carta">Leer carta del almirante</button><br><br>
+			<button class="btn btn-secondary btn-sm carta" data-toggle="modal" data-target="#exampleModaal">Leer carta del almirante</button><br><br>
 
-		</div> -->
+		</div> 
 
 
-		<!-- <div class="container" id="contain" style="display:none;">
-			<section id="content">
-				<form action="">
-					<h3>Carta del almirante Yamamoto al capitán Genda pidiéndole que estudie la viabilidad de un ataque
-						aéreo a Pearl Harbor.</h3>
-					Febrero de 1941.
-					Dependiendo de los cambios que se produzcan en la situación internacional, podríamos vernos
-					arrastrados a luchar con Estados Unidos. Si Japón y Estados Unidos fueran a la guerra, tendríamos
-					que recurrir a una táctica radical… Deberíamos intentar, con toda la fuerza de nuestras Primera y
-					Segunda Divisiones Aéreas, asestar un golpe a la flota estadounidense en Hawái, de forma, que
-					durante un tiempo, Estados Unidos no pudiera avanzar hacia el Pacífico occidental. Nuestro objetivo
-					sería un grupo de acorazados estadounidenses… No sería fácil llevar a cabo algo así. Pero estoy
-					decidido a darlo todo para realizar este plan, supervisando yo mismo las divisiones aéreas. Me
-					gustaría que investigara pormenorizadamente la viabilidad de un plan de estas características.
-				</form>			
-
-			</section>			
-			<button class="btn btn-success bt-sm" id="hide" style="float:right;">Leído</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModaal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">				
+					<div class="modal-body">
+						<div class="container" id="contain" style="display:none;">
+						<section id="content">
+							<form action="">
+							<h3>Carta del almirante Yamamoto al capitán Genda pidiéndole que estudie la viabilidad de un ataque
+									aéreo a Pearl Harbor.</h3>						
+								Febrero de 1941.
+								Dependiendo de los cambios que se produzcan en la situación internacional, podríamos vernos
+								arrastrados a luchar con Estados Unidos. Si Japón y Estados Unidos fueran a la guerra, tendríamos
+								que recurrir a una táctica radical… Deberíamos intentar, con toda la fuerza de nuestras Primera y
+								Segunda Divisiones Aéreas, asestar un golpe a la flota estadounidense en Hawái, de forma, que
+								durante un tiempo, Estados Unidos no pudiera avanzar hacia el Pacífico occidental. Nuestro objetivo
+								sería un grupo de acorazados estadounidenses… No sería fácil llevar a cabo algo así. Pero estoy
+								decidido a darlo todo para realizar este plan, supervisando yo mismo las divisiones aéreas. Me
+								gustaría que investigara pormenorizadamente la viabilidad de un plan de estas características.
+							</form>	
+						</section>	
+						</div>
+					</div>			
+				</div>
+			</div>
 		</div>
+
+		
 
 		<div class="form-row">
 			<div id="uno"><img src="/riddle_abp/assets/img/1speeach1.png" alt="Error" height="300px"></div>
@@ -66,12 +75,13 @@ Enigma 1
 			<button class="btn btn-info btnMapa">Estudiar mapa</button>
 		</div>
 
-	</div> -->
+	</div> 
 
 	<div class="mapa">
 
 		<h3>Mapa de la zona de guerra</h3>
-		<p>Resuelve los puzzles de los mapas geográficos para poder planificar el ataque!</p>
+		<p>Desencripta los mapas que te ha enviado el Contraalmirante Takijiro Onishi, para poder situaros y reconocer
+		la zona!</p>
 		<button class="btn btn-info" type="button" data-toggle="modal" data-target="#reglasModal">Reglas</button>
 		<button class="btn btn-success" type="button" id="play">Jugar</button>
 
@@ -181,11 +191,11 @@ Enigma 1
 							<h5 class="modal-title" id="exampleModalLabel">Reglas del juego</h5>
 						</div>
 						<div class="modal-body">
-							<ul class="list-group">
-								<li class="list-group-item">Habrá un total de 2 puzzles</li>
-								<li class="list-group-item">Uno de los puzzles tendrá dificultad normal (3x3) y el otro de (4x4)</li>
-								<li class="list-group-item">Uno de los puzzles tendrá modo contrareloj que si llega a cierto tiempo
-								se volverá a mezclar el puzzle, no te diremos cual. ¿Eres lo suficientemente rápido?</li>								
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Hay un total de dos mapas por desencriptar.</li>
+								<li class="list-group-item">Uno de los mapas está encriptado de 3x3 y otro tiene más seguridad y es de 4x4.</li>
+								<li class="list-group-item">Uno de ellos está programado para que en x tiempo se reinicie si tardas mucho en 
+								desencriptarlo. ¿Eres lo suficientemente rápido?</li>								
 							</ul>
 						</div>
 						<div class="modal-footer">
@@ -205,41 +215,43 @@ Enigma 1
 
 
 	$(document).ready(function () {
-		// $("#uno").hide();
-		// $("#2").hide();
-		// $(".btnMapa").hide();
-		// $(".mapa").hide();
-		// $(".content").hide();
+		$("#uno").hide();
+		$("#2").hide();
+		$(".btnMapa").hide();
+		$(".mapa").hide();
+		$(".content").hide();
 
-		// $(".carta").click(function () {
-		// 	$("#contain").fadeIn(1000); //$("#contain").slideDown(1000);
-		// });
+		$(".carta").click(function () {
+			$("#contain").fadeIn(1000); //$("#contain").slideDown(1000);
+		});
 
-		// $("#hide").click(function () {
-		// 	$("#contain").hide(1000);
-		// 	$(".first").hide(1000);
-		// 	$("#uno").fadeIn();
+		$("#hide").click(function () {
 
-		// 	var miVar = setInterval(function () { callback2() }, 2000);
-		// 	var miVar2 = setInterval(function () { callback3() }, 5000);
-		// });
+			alert('sdfdsf');
+			// $("#contain").hide(1000);
+			// $(".first").hide(1000);
+			// $("#uno").fadeIn();
 
-		// function callback2() {
-		// 	$("#2").fadeIn(3000);
-		// }
-		// function callback3() {
-		// 	$(".btnMapa").show();
-		// }
+			// var miVar = setInterval(function () { callback2() }, 2000);
+			// var miVar2 = setInterval(function () { callback3() }, 5000);
+		});
 
-		// $(".btnMapa").click(function () {
-		// 	$(".total").hide(1000);
-		// 	$(".mapa").hide();
-		// 	$(".mapa").fadeIn(1000);
-		// });
+		function callback2() {
+			$("#2").fadeIn(3000);
+		}
+		function callback3() {
+			$(".btnMapa").show();
+		}
 
-		// $(".puzzlee").click(function () {
-		// 	$(".content").fadeIn(1000);
-		// });
+		$(".btnMapa").click(function () {
+			$(".total").hide(1000);
+			$(".mapa").hide();
+			$(".mapa").fadeIn(1000);
+		});
+
+		$(".puzzlee").click(function () {
+			$(".content").fadeIn(1000);
+		});
 		// var images = [
         //         { src: '/riddle_abp/assets/img/hawaii3.jpg', title: 'Hawaii' },
         //         { src: '/riddle_abp/assets/img/puzzle2Scale.png', title: 'Kanto' }

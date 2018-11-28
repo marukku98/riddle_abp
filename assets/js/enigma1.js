@@ -39,7 +39,7 @@ function endTime(){
     clearTimeout(control);
 }
 
-function gridPuzzle(image, gridSize) {
+function gridPuzzle(image, gridSize) {  
     var percentage = 100 / (gridSize - 1);
     $('#puzzGame').empty();
     //Con este for vamos a crear una tabla segun la size
@@ -79,15 +79,16 @@ function movimientos(elem) {
                 setTimeout(function(){
                     this.contador = 0;
                     timer = 0;                    
-                    if(num == 1){
-                        //gif
+                    if(num == 1){                        
                         animationComplete(true);
-                        $("#correcte").modal("show"); 
-                        $('.next').show();
+                        //setTimeout(function () { $("#correcte").modal("show"); }, 1000);
+                        setTimeout(function () { $("#correcte").modal("show"); animationQuit(); }, 1000);
+                        $('.next').show();                        
                     }else{
                         setCookie('enigma1', 1, 1);
                         setCookie('estacio', 1, 1);
-                        $("#finalModal").modal({backdrop: 'static', keyboard: false});  
+                        animationComplete(true);
+                        setTimeout(function () { $("#finalModal").modal({backdrop: 'static', keyboard: false}); animationQuit();  }, 1000);
                     }
                     endTime();                  
                   });                                      
@@ -154,7 +155,18 @@ function animationComplete(animation){
             "position": "absolute",
             "height": "100%",
             "width": "100%",
-            "background": "url('/riddle_abp/assets/img/lvl-complete.gif')"    
+            "background": "url('/riddle_abp/assets/img/lvl-complete.gif?a=" + Math.random() + "')"    
         });    
     }
+}
+
+function animationQuit(){
+    $(".gif").css({
+        "top": "0",
+        "z-index": "-2",
+        "position": "absolute",
+        "height": "100%",
+        "width": "100%",
+        "background": "url('/riddle_abp/assets/img/lvl-complete.gif?a=" + Math.random() + "')"    
+    });   
 }
