@@ -20,8 +20,8 @@
             <div class="row ml-box">
                 <div class="col">
                     <div style="display: inline-flex;">
-                        <img src="/riddle_abp/assets/img/misil-icon.png" height="50px" alt="">
-                        <h3 class="text-center mt-2 ml-2" id="misiles"></h3>
+                        <img src="/riddle_abp/assets/img/misil-icon.png" height="40px" alt="">
+                        <h3 class="text-center ml-2" id="misiles"></h3>
                     </div>
                     <script>setMisiles(tiros);</script>
                 </div>
