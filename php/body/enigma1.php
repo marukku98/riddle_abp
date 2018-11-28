@@ -77,7 +77,7 @@ Enigma 1
 		<!-- Puzzle -->
 		<div id="engima1">
 			<div id="panelJuego">
-				<h3 id="imgTitle">Estudiando los mapas</h3>
+				<h3 id="imgTitle">Reorganizando los mapas</h3>
 				<div id="contadorMov">
 					<div>Movimientos:</div>
 					<div class="movimientos">0</div>

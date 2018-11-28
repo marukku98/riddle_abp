@@ -193,6 +193,7 @@ function getCookie(cname) {
     }
     return "";
 }
+
 $("#compEnigma").click(function () {
     var cookie = getCookie('enigma1');
     var estacio = getCookie('estacio');
