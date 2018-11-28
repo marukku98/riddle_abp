@@ -26,7 +26,7 @@
                     <script>setMisiles(tiros);</script>
                 </div>
                 <div class="col">
-                    <button class="btn-kamikaze ml-4 float-right" onclick="toggleKamikaze();"></button>
+                    <button class="btn-kamikaze btn-kamikaze-hover ml-4 float-right" onclick="toggleKamikaze();"></button>
                 </div>
 
             </div>

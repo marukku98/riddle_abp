@@ -93,12 +93,18 @@ function dispararKamikaze(pos, barcos, campo) {
     else if (isTocado) {
         feedback(1);
     }
+    $(".btn-kamikaze").css({
+        '-webkit-filter':'grayscale(100%)',
+        'filter':'grayscale(100%)'
+    });
+    $(".btn-kamikaze").prop("disabled",true);
+    $(".btn-kamikaze-hover").removeClass("btn-kamikaze-hover");
 }
 
 function disparar(pos, barcos, campo) {
     if (kamikaze && num_kamikazes != 0) {
         dispararKamikaze(pos, barcos, campo);
-        kamikaze = false;
+        toggleKamikaze();
         num_kamikazes--;
         setKamikazes(num_kamikazes);
     }
@@ -340,9 +346,15 @@ function setKamikazes(num) {
 function toggleKamikaze() {
     if (kamikaze) {
         kamikaze = false;
+        for (var i = 0; i < 100; i++) {
+            $('#'+i).attr('class','box');
+        }
     }
     else {
         kamikaze = true;
+        for (var i = 0; i < 100; i++) {
+            $('#'+i).attr('class','box kamikaze-cursor');
+        }
     }
 }
 
@@ -351,8 +363,11 @@ function restart() {
     tiros = 35;
     num_kamikazes = 1;
 
-    for (var i = 0; i < 100; i++) {
-        campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false });
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            $('#'+i).attr('style', 'top:'+(36.36363636363636*(j+1))+'px; left:'+(36.36363636363636*(i+1))+'px;');
+            $('#'+i).attr('class','box');
+        }            
     }
     barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
     barcos_enemigos[1] = colocarBarco(4, campo_enemigo);
