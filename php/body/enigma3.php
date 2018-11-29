@@ -45,6 +45,7 @@
                         }
                     ?>
                 <button id="ALL">ALL</button>
+                <button id="reset">reset</button>
                 <?php
                 if(isset($_SESSION['user'])){ 
                     if($_SESSION['user']['rol'] == 1){
@@ -57,7 +58,7 @@
                 <div id="alert" class="m-auto" style="color: transparent;">
                     <h1 id="alert-text" class="title-font">.</h1>
                 </div>
-                <div id="kamikaze-alert" class="m-auto kamikaze-alert" style="">
+                <div id="kamikaze-alert" class="m-auto kamikaze-alert invisible" style="">
                     <h1 id="kamikaze-text" class="title-font text-center">.</h1>
                 </div>
             </div>
@@ -79,6 +80,10 @@
 <script>
     $("#ALL").click(function () {
         all();
+    })
+
+    $("#reset").click(function () {
+        restart();
     })
 </script>
 

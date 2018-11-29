@@ -344,18 +344,21 @@ function feedback(msg) {
     }
 }
 
-function feedbackKamikaze(active) {
+function feedbackKamikaze(active){
     if (active) {
         $('#kamikaze-alert').removeClass('invisible');
         $('#alert').addClass('invisible');
         $('#kamikaze-text').text("KAMIKAZE ACTIVADO");
-        intermitente = setInterval(function () {
+        $('#kamikaze-text').css({ "color": "red" });
+        setTimeout(function () {
             $('#kamikaze-text').css({ "color": "#00000000" });
+        }, 300);
+        intermitente = setInterval(function () {
+            $('#kamikaze-text').css({ "color": "red" });
             setTimeout(function () {
-                $('#kamikaze-text').css({ "color": "red" });
+                $('#kamikaze-text').css({ "color": "#00000000" });
             }, 300);
         }, 600);
-        break;
     }else{
         $('#kamikaze-alert').addClass('invisible');
         $('#alert').removeClass('invisible');
@@ -396,18 +399,26 @@ function restart() {
     hundidos = 0;
     tiros = 35 + (intentos * 5);
     num_kamikazes = 1;
+    kamikaze = false;
+    victoria = false;
 
-    for (var i = 0; i < 10; i++) {
-        for (var j = 0; j < 10; j++) {
-            $('#' + i).attr('style', 'top:' + (36.36363636363636 * (j + 1)) + 'px; left:' + (36.36363636363636 * (i + 1)) + 'px;');
-            $('#' + i).attr('class', 'box');
-        }
+    for (var i = 0; i < 100; i++) {
+        campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false, bandera: false });
     }
+
     barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
     barcos_enemigos[1] = colocarBarco(4, campo_enemigo);
     barcos_enemigos[2] = colocarBarco(3, campo_enemigo);
     barcos_enemigos[3] = colocarBarco(3, campo_enemigo);
     barcos_enemigos[4] = colocarBarco(2, campo_enemigo);
+
+    for (var x = 0; x < 10; x++) {
+        for (var j = 0; j < 10; j++) {
+            $('#' + (x*10+j)).attr('style', 'top:' + (36.36363636363636 * (x + 1)) + 'px; left:' + (36.36363636363636 * (j + 1)) + 'px;');
+            $('#' + (x*10+j)).attr('class', 'box');
+        }
+    }
+
 }
 
 function flag() {
