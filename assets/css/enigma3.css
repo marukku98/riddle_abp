@@ -95,6 +95,15 @@
     box-shadow: 0 0 0;
 }
 
+.kamikaze-alert{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    visibility: unset;    
+}
+
 /* .btn-kamikaze:before {
     content: "";
     padding: 4px;
@@ -132,3 +141,4 @@
 .kamikaze-cursor{
     cursor: url('https://imgur.com/K5V7u5X.png') 50 50, pointer;
 }
+

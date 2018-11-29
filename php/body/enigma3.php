@@ -53,9 +53,12 @@
                 }
             ?>
             </div>
-            <div class="row mt-3 ml-box" style="margin-left: 30px;">
-                <div id="alert m-auto" class="m-auto" style="color: transparent;">
+            <div class="row mt-3 ml-box position-relative" style="margin-left: 30px;">
+                <div id="alert" class="m-auto" style="color: transparent;">
                     <h1 id="alert-text" class="title-font">.</h1>
+                </div>
+                <div id="kamikaze-alert" class="m-auto kamikaze-alert" style="">
+                    <h1 id="kamikaze-text" class="title-font text-center">.</h1>
                 </div>
             </div>
             <script>

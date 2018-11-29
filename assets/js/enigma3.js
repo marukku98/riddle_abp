@@ -306,25 +306,20 @@ function feedback(msg) {
     var tocado = 1;
     var hundido = 2;
     var derrota = 3;
-    var victoria = 4;
-    var kamikaze = 5;
-    clearInterval (intermitente);
+
+    clearInterval(intermitente);
 
     switch (msg) {
         case tocado:
             $('#alert-text').text("TOCADO")
             $('#alert-text').css({ "color": "#FF7F50" });
-            setTimeout(function(){
-                $('#alert-text').css({ "color": "#FF7F50" });
-            }, 300)
+
             break;
 
         case hundido:
             $('#alert-text').text("HUNDIDO")
             $('#alert-text').css({ "color": "#B22222" });
-            setTimeout(function(){
-                $('#alert-text').css({ "color": "#B22222" });
-            }, 300)
+
             break;
 
         case derrota:
@@ -340,23 +335,7 @@ function feedback(msg) {
         case agua:
             $('#alert-text').text("AGUA")
             $('#alert-text').css({ "color": "#1E90FF" });
-            setTimeout(function(){
-                $('#alert-text').css({ "color": "#1E90FF" });
-            }, 300)
-            break;
 
-        case kamikaze:
-            $('#alert-text').text("KAMIKAZE ACTIVADO")
-            $('#alert-text').css({ "color": "#00000000" });
-            setTimeout(function(){
-                $('#alert-text').css({ "color": "red" });
-            },300);            
-            intermitente=setInterval(function(){
-                $('#alert-text').css({ "color": "#00000000" });
-                setTimeout(function(){
-                    $('#alert-text').css({ "color": "red" });
-                }, 300);
-            }, 600)
             break;
 
         default:
@@ -365,8 +344,30 @@ function feedback(msg) {
     }
 }
 
+function feedbackKamikaze(active) {
+    if (active) {
+        $('#kamikaze-alert').removeClass('invisible');
+        $('#alert').addClass('invisible');
+        $('#kamikaze-text').text("KAMIKAZE ACTIVADO");
+        intermitente = setInterval(function () {
+            $('#kamikaze-text').css({ "color": "#00000000" });
+            setTimeout(function () {
+                $('#kamikaze-text').css({ "color": "red" });
+            }, 300);
+        }, 600);
+        break;
+    }else{
+        $('#kamikaze-alert').addClass('invisible');
+        $('#alert').removeClass('invisible');
+        clearInterval(intermitente);
+        setTimeout(function(){
+            $('#kamikaze-text').css({ "color": "#00000000" });
+        },600);
+    }
+}
+
 function setMisiles(num) {
-    $('#misiles').text(" : " + num)
+    $('#misiles').text("  x" + num)
 }
 
 function setKamikazes(num) {
@@ -375,14 +376,14 @@ function setKamikazes(num) {
 
 function toggleKamikaze() {
     if (kamikaze) {
-        feedback(-1);
+        feedbackKamikaze(false);
         kamikaze = false;
         for (var i = 0; i < 100; i++) {
             $('#' + i).removeClass('kamikaze-cursor');
         }
     }
     else {
-        feedback(5);
+        feedbackKamikaze(true);
         kamikaze = true;
         for (var i = 0; i < 100; i++) {
             $('#' + i).addClass('kamikaze-cursor');
@@ -393,7 +394,7 @@ function toggleKamikaze() {
 function restart() {
     intentos++;
     hundidos = 0;
-    tiros = 35 + (intentos*10);
+    tiros = 35 + (intentos * 5);
     num_kamikazes = 1;
 
     for (var i = 0; i < 10; i++) {

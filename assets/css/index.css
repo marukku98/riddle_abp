@@ -17,7 +17,7 @@
 }
 
 .nav-item:hover {
-    background-color: #2c2933;
+    background-color: #333333;
 }
 
 .boton {
@@ -32,27 +32,23 @@
 }
 
 .boton-login {
-    border-color: #DA3F62;
-    background: #DA3F62;
+    border-color: #cc3355;
+    background: #cc3355;
     transition: all 0.2s;
     padding: .5rem .75rem .375rem .75rem;
 }
 
 .boton-login:hover {
-    border-color: #DA3F62;
-    background: #DA3F62;
-    box-shadow: 0px 2px 5px #1F1F1F;
+    border-color: #cc3355;
+    background: #cc3355;
+   box-shadow: 0px 2px 5px #1F1F1F;
 }
 
 .boton-login:active {
-    border-color: #DA3F62;
-    background: #DA3F62;
     box-shadow: 0px 2px 5px #1F1F1F;
 }
 
 .boton-login:focus {
-    border-color: #DA3F62;
-    background: #DA3F62;
     box-shadow: 0px 2px 5px #1F1F1F;
 }
 
@@ -80,19 +76,19 @@ body,
 }
 
 .bg-main {
-    background: #2abb9a;
+    background: #40bfa1;
 }
 
 .bg-second {
-    background: #221F2B
+    background: #001712;
 }
 
 .bg-body {
-    background: #e0f5f0;
+    background: #f3fffc;
 }
 
 .list-group-item {
-    background: #e0f5f0;
+    background: #f3fffc;
 }
 
 .card {
