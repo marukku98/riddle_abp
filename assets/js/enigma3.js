@@ -119,6 +119,7 @@ function disparar(pos, barcos, campo) {
                 }
             }
             else if (tiros == 0) {
+                all();
                 feedback(3); //derrota
             }
         }
@@ -295,7 +296,6 @@ function getPos(x, y) {
  * 2:hundido
  * 3:derrota
  * 4:victoria 
- * 5:kamikaze
  * @param {*} msg 
  */
 function feedback(msg) {
@@ -303,6 +303,7 @@ function feedback(msg) {
     var tocado = 1;
     var hundido = 2;
     var derrota = 3;
+    var victoria = 4;
 
     clearInterval(intermitente);
 
@@ -310,29 +311,24 @@ function feedback(msg) {
         case tocado:
             $('#alert-text').text("TOCADO")
             $('#alert-text').css({ "color": "#FF7F50" });
-
             break;
 
         case hundido:
             $('#alert-text').text("HUNDIDO")
             $('#alert-text').css({ "color": "#B22222" });
-
             break;
 
         case derrota:
-            $('#alert-text').text("DERROTA")
-            $('#alert-text').attr('class', 'alert alert-darktext-center w-25');
+            win(false);
             break;
 
         case victoria:
-            $('#alert-text').text("VICTORIA")
-            $('#alert-text').attr('class', 'alert alert-success text-center w-25');
+            win(true);
             break;
 
         case agua:
             $('#alert-text').text("AGUA")
             $('#alert-text').css({ "color": "#1E90FF" });
-
             break;
 
         default:
@@ -401,6 +397,8 @@ function restart() {
 
     setMisiles(tiros);
 
+    $(".end").removeClass("end-on");
+
     $(".btn-kamikaze").removeClass("greyscale");
     $(".btn-kamikaze").prop("disabled", false);
     $(".btn-kamikaze").addClass("btn-kamikaze-hover");
@@ -444,14 +442,17 @@ function flag() {
 }
 
 function win(win) {
+    $(".end").addClass("end-on");
     if (win) {
-        $(".end").addClass("end-on");
         $(".end-text").text("VICTORIA");
+        $(".end-text").css({ "color": "#00c400" });
+        $(".btn-win").removeClass("invisible");
+        $(".btn-lose").addClass("invisible");
     }
     else {
-        $(".end").addClass("end-on");
         $(".end-text").text("DERROTA");
         $(".end-text").css({ "color": "red" });
-
+        $(".btn-win").addClass("invisible");
+        $(".btn-lose").removeClass("invisible");
     }
 }

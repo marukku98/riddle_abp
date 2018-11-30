@@ -18,12 +18,12 @@
     <div class="row mt-3">
         <div class="m-auto bg-card">
             <div class="end">
-                <h3 class="end-text">VICTORIA</h3>
-                <button class="btn-lose"></button>
+                <h3 class="end-text japan-font"></h3>
+                <button class="btn-lose" onclick="restart();"></button>
                 <form action="/riddle_abp/php/conexion/progres.php" method="POST">
-                    <input type="hidden" name="game" value="1">
-                    <input type="hidden" name="enigma" value="1">
-                    <button type="submit" id="success" class="btn-win" name="completed">Continuar</button>
+                    <input type="hidden" name="game" value="2">
+                    <input type="hidden" name="enigma" value="2">
+                    <button type="submit" id="success" class="btn-win" name="completed"></button>
                 </form>
             </div>
             <div class="row ml-box pb-3">
@@ -53,10 +53,10 @@
                             } 
                         }
                     ?>
-                <button id="ALL">ALL</button>
+                <!-- <button id="ALL">ALL</button>
                 <button id="reset">reset</button>
                 <button id="win">win</button>
-                <button id="lose">lose</button>
+                <button id="lose">lose</button> -->
                 <?php
                 if(isset($_SESSION['user'])){ 
                     if($_SESSION['user']['rol'] == 1){

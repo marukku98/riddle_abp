@@ -1,3 +1,4 @@
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 .bg-body {
     background: white;
 }
@@ -29,11 +30,10 @@
 }
 
 .end-text {
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 50px;
     color: #00c400;
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -52,7 +52,56 @@
     left: 51.5%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    transition: all 0.3s;
+}
+
+.btn-win {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.507);
+    border-radius: 5px;
+    height: 35px;
+    width: 90px;
+    background: #09a309;
+    position: absolute;
+    top: 70%;
+    left: 51.5%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+.btn-win:before {
+    content: "Continuar";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 3px;
+    left: 0%;
+    transition: left 0.3s;
+    color: white;
+}
+
+.btn-win:after {
+    font-size: 20px;
+    font-family: 'Ionicons';
+    content: '\f30f';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 2px;
+    left: -100%;
+    transition: left 0.3s;
+    color: white;
+}
+
+.btn-win:hover:before {
+    left: 100%;
+    z-index: -1;
+}
+
+.btn-win:hover:after {
+    left: -0%;
+    z-index: -1;
 }
 
 @keyframes rotate {
@@ -150,6 +199,7 @@
     border: solid 1px red;
     border-radius: 5px;
     transform: translate(0, -50%);
+    transition: all 0.2s;
 }
 
 .btn-kamikaze-hover:hover {
