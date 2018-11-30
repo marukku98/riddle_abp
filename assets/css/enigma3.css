@@ -20,7 +20,7 @@
     width: 100%;
     top: 30%;
     left: -115%;
-    background: #070707;
+    background: #070707e0;
     z-index: 100;
     transition: all 0.3s;
 }
