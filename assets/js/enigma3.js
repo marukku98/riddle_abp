@@ -94,10 +94,7 @@ function dispararKamikaze(pos, barcos, campo) {
     else if (isTocado) {
         feedback(1);
     }
-    $(".btn-kamikaze").css({
-        '-webkit-filter': 'grayscale(100%)',
-        'filter': 'grayscale(100%)'
-    });
+    $(".btn-kamikaze").addClass("greyscale");
     $(".btn-kamikaze").prop("disabled", true);
     $(".btn-kamikaze-hover").removeClass("btn-kamikaze-hover");
 }
@@ -152,7 +149,7 @@ function ComprobarTocado(pos, barcos) {
 }
 
 function ocultarBoton(pos, tocado, gif) {
-    $("#" + pos).attr("disabled", "disabled");
+    $("#" + pos).prop('disabled', true);
     var time = 0;
     if (tocado) {
         if (gif) {
@@ -344,7 +341,7 @@ function feedback(msg) {
     }
 }
 
-function feedbackKamikaze(active){
+function feedbackKamikaze(active) {
     if (active) {
         $('#kamikaze-alert').removeClass('invisible');
         $('#alert').addClass('invisible');
@@ -359,13 +356,13 @@ function feedbackKamikaze(active){
                 $('#kamikaze-text').css({ "color": "#00000000" });
             }, 300);
         }, 600);
-    }else{
+    } else {
         $('#kamikaze-alert').addClass('invisible');
         $('#alert').removeClass('invisible');
         clearInterval(intermitente);
-        setTimeout(function(){
+        setTimeout(function () {
             $('#kamikaze-text').css({ "color": "#00000000" });
-        },600);
+        }, 600);
     }
 }
 
@@ -402,8 +399,15 @@ function restart() {
     kamikaze = false;
     victoria = false;
 
+    setMisiles(tiros);
+
+    $(".btn-kamikaze").removeClass("greyscale");
+    $(".btn-kamikaze").prop("disabled", false);
+    $(".btn-kamikaze").addClass("btn-kamikaze-hover");
+
     for (var i = 0; i < 100; i++) {
         campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false, bandera: false });
+        $('#' + i).prop('disabled', false);
     }
 
     barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
@@ -414,11 +418,10 @@ function restart() {
 
     for (var x = 0; x < 10; x++) {
         for (var j = 0; j < 10; j++) {
-            $('#' + (x*10+j)).attr('style', 'top:' + (36.36363636363636 * (x + 1)) + 'px; left:' + (36.36363636363636 * (j + 1)) + 'px;');
-            $('#' + (x*10+j)).attr('class', 'box');
+            $('#' + (x * 10 + j)).attr('style', 'top:' + (36.36363636363636 * (x + 1)) + 'px; left:' + (36.36363636363636 * (j + 1)) + 'px;');
+            $('#' + (x * 10 + j)).attr('class', 'box');
         }
     }
-
 }
 
 function flag() {
@@ -438,4 +441,17 @@ function flag() {
         });
     }
 
+}
+
+function win(win) {
+    if (win) {
+        $(".end").addClass("end-on");
+        $(".end-text").text("VICTORIA");
+    }
+    else {
+        $(".end").addClass("end-on");
+        $(".end-text").text("DERROTA");
+        $(".end-text").css({ "color": "red" });
+
+    }
 }

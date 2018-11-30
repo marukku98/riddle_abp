@@ -17,7 +17,7 @@
 }
 
 .nav-item:hover {
-    background-color: #333333;
+    background-color: #08231d;
 }
 
 .boton {
@@ -41,7 +41,7 @@
 .boton-login:hover {
     border-color: #cc3355;
     background: #cc3355;
-   box-shadow: 0px 2px 5px #1F1F1F;
+    box-shadow: 0px 2px 5px #1F1F1F;
 }
 
 .boton-login:active {

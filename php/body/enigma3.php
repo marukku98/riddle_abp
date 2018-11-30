@@ -17,7 +17,16 @@
 
     <div class="row mt-3">
         <div class="m-auto bg-card">
-            <div class="row ml-box">
+            <div class="end">
+                <h3 class="end-text">VICTORIA</h3>
+                <button class="btn-lose"></button>
+                <form action="/riddle_abp/php/conexion/progres.php" method="POST">
+                    <input type="hidden" name="game" value="1">
+                    <input type="hidden" name="enigma" value="1">
+                    <button type="submit" id="success" class="btn-win" name="completed">Continuar</button>
+                </form>
+            </div>
+            <div class="row ml-box pb-3">
                 <div class="col">
                     <div style="display: inline-flex;">
                         <img src="/riddle_abp/assets/img/misil-icon.png" height="40px" alt="">
@@ -46,6 +55,8 @@
                     ?>
                 <button id="ALL">ALL</button>
                 <button id="reset">reset</button>
+                <button id="win">win</button>
+                <button id="lose">lose</button>
                 <?php
                 if(isset($_SESSION['user'])){ 
                     if($_SESSION['user']['rol'] == 1){
@@ -58,7 +69,7 @@
                 <div id="alert" class="m-auto" style="color: transparent;">
                     <h1 id="alert-text" class="title-font">.</h1>
                 </div>
-                <div id="kamikaze-alert" class="m-auto kamikaze-alert invisible" style="">
+                <div id="kamikaze-alert" class="m-auto kamikaze-alert invisible">
                     <h1 id="kamikaze-text" class="title-font text-center">.</h1>
                 </div>
             </div>
@@ -84,6 +95,14 @@
 
     $("#reset").click(function () {
         restart();
+    })
+
+    $("#win").click(function () {
+        win(true);
+    })
+
+    $("#lose").click(function () {
+        win(false);
     })
 </script>
 
