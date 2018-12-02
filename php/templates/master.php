@@ -19,6 +19,7 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">
 
@@ -56,14 +57,18 @@
         if(isset($_SESSION['user'])){
       ?>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-        <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo $_SESSION['user']['username'];?>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Cerrar sesión</a>
-        </div>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+        <i class="material-icons text-white" style="font-size: 30px">
+          account_circle
+        </i>
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
+            <?php echo ucfirst($_SESSION['user']['username']);?>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/riddle_abp/php/conexion/signout.php">Cerrar sesión</a>
+          </div>
         </div>
       </div>
       <?php
