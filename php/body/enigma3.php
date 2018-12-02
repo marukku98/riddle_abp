@@ -62,6 +62,9 @@
                     // echo json_encode($_SESSION['user']);
                     if($_SESSION['user']['role'] == 1){
                         echo '<button id="ALL">ALL</button>';
+                        echo '<button id="reset">reset</button>';
+                        echo '<button id="win">win</button>';
+                        echo '<button id="lose">lose</button>';
                     }
                 }
             ?>
@@ -75,8 +78,8 @@
                 </div>
             </div>
 
-            <!-- Modal -->
-            <div id="modal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            <!-- Modal 1 -->
+            <div id="modal1" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -86,7 +89,38 @@
                         </div>
                         <div class="modal-body">
                             El siguiente enigma esta basado en el tradicional <b>'Hundir la flota'</b>, aunque lo hemos
-                            adaptado a un solo jugador y le hemos añadido mecanicas totalmente originales
+                            adaptado a un solo jugador y le hemos añadido mecanicas totalmente originales. Veamoslas...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Siguiente</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2 -->
+            <div id="modal2" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Mecanicas</h5>
+
+                        </div>
+                        <div class="modal-body">
+                            <p class="mb-0"><b>Municion. </b>El numero de disparos es limitado, si te quedas sin
+                                pierdes.</p>
+                            <img class="m-auto d-block" src="/riddle_abp/assets/img/ammo_pic.png" height="60px" style="margin-bottom: 30px !important">
+                            <p class="mb-0"><b>Kamikaze. </b>Apretano este boton activaras/desactivaras el modo
+                                kamikaze,
+                                un disparo en area muy util. Solo tienes uno, asi que usalo con cabeza.</p>
+                            <img class="m-auto d-block" src="/riddle_abp/assets/img/kamikaze_pic.png" height="60px"
+                                style="margin-bottom: 30px !important">
+                            <p><b>Banderas. </b>Haciendo click derecho podras marcar y bloquear las casillas donde
+                                sepas que no hay barcos.</p>
+                            <img class="m-auto d-block" src="/riddle_abp/assets/img/flag_pic.png" height="80px" style="margin-bottom: 30px !important">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary">Siguiente</button>
@@ -97,10 +131,11 @@
                 </div>
             </div>
             <script>
-                $("#modal").modal({
+                $("#modal2").modal({
                     backdrop: 'static',
                     keyboard: false
                 });
+
                 flag();
             </script>
 
@@ -112,8 +147,6 @@
 </div>
 
 </div>
-
-
 
 <script>
     $("#ALL").click(function () {

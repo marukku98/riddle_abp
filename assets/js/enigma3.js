@@ -1,7 +1,7 @@
 var campo_enemigo = [];
 var barcos_enemigos = [];
 var hundidos = 0;
-var tiros = 35;
+var tiros = 40;
 var num_kamikazes = 1;
 var kamikaze = false;
 var victoria = false;
@@ -390,7 +390,7 @@ function toggleKamikaze() {
 function restart() {
     intentos++;
     hundidos = 0;
-    tiros = 35 + (intentos * 5);
+    tiros = 40 + (intentos * 5);
     num_kamikazes = 1;
     kamikaze = false;
     victoria = false;
