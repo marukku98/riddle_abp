@@ -15,11 +15,11 @@ Joc
 
 <?php startblock("principal"); ?>
 
-<div class="container title">
-    <h2>Attack on Pearl Harbor</h2>
+<div class="container title title-font ml-0">
+    <h2>ATAQUE A PEARL HARVOR</h2>
 </div>
 
-<div class="row">
+<div class="row text-font">
 
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
 

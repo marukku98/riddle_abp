@@ -423,7 +423,6 @@ function restart() {
 }
 
 function flag() {
-
     for (var i = 0; i < 100; i++) {
         $('#' + i).contextmenu(function () {
             if (campo_enemigo[this.id]['bandera'] == true) {
