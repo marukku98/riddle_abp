@@ -28,25 +28,26 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
-                    <div class="card-body p-0">
-                        <h5 class="card-title next m-0">Próximamente</h5>                        
+                    <img class="card-img-top" src="/riddle_abp/assets/img/Sachsenhausen.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">El campo de concentración de Sachsenhausen</h5>
+                        <button type="submit" class="btn btn-secondary float-end" name="gameStart" disabled>Próximamente</button>            
                     </div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
+                <img class="card-img-top opacity" src="/riddle_abp/assets/img/proximamente-grid.png" alt="Card image cap">
                     <div class="card-body p-0">
-                        <h5 class="card-title next m-0">Próximamente</h5>        
+                             
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4    col-lg-4 col-md-6 col-sm-12 p-3">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3 ">
                 <div class="card rounded-0">
-                    <img class="card-img-top" src="/riddle_abp/assets/img/picGame1.jpg" alt="Card image cap">
+                <img class="card-img-top opacity" src="/riddle_abp/assets/img/proximamente-grid.png" alt="Card image cap">
                     <div class="card-body p-0">
-                        <h5 class="card-title next m-0">Próximamente</h5>
+                       
                     </div>
                 </div>
             </div>
