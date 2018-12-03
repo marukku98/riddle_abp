@@ -2,19 +2,20 @@
     session_start();
     $direccion = $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/";
     $carpeta = "/riddle_abp/";
-
     require_once $direccion . "php/librerias/ti.php";
-?>
+    startblock("php");
+    endblock();
+    ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
     <?php startblock("titulo"); ?>
-
     <?php endblock(); ?>
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,6 @@
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">
 
   <?php startblock("css"); ?>
-
   <?php endblock(); ?>
 
   <script src="<?php echo $carpeta; ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -41,7 +41,6 @@
 </head>
 
 <style>
-
 </style>
 
 <body class="bg-body">
@@ -49,8 +48,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-main">
       <img class="mt-2 mb-2" src="/riddle_abp/assets/img/TITULO.png" height="50">
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <?php
@@ -62,8 +61,8 @@
           account_circle
         </i>
         <div class="dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" style="font-size: 20px;">
             <?php echo ucfirst($_SESSION['user']['username']);?>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -91,7 +90,9 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0  title-font">
           <li class="nav-item">
-            <a class="nav-link text-white mr-4 pl-3" href="index.php">MENU<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-white mr-4 pl-3" href="index.php">MENU
+              <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white mr-4 pl-3" href="gamesGrid.php">JUEGOS</a>
@@ -102,6 +103,17 @@
           <li class="nav-item">
             <a class="nav-link text-white mr-4 pl-3" href="contact.php">CONTACTO</a>
           </li>
+          <?php
+            if(isset($_SESSION['user'])){
+              if($_SESSION['user']['role'] == 1){
+                ?>
+              <li class="nav-item bg-danger">
+                <a class="nav-link text-white mr-4 pl-3" href="admin.php">ADMIN</a>
+              </li>
+          <?php
+              }
+            }
+          ?>
 
         </ul>
       </div>
@@ -111,7 +123,6 @@
 
   <div class="container">
     <?php startblock('principal'); ?>
-
     <?php endblock(); ?>
   </div>
 
