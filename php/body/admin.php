@@ -12,7 +12,11 @@
 <?php startblock("titulo"); ?> Contacto
 <?php endblock(); ?>
 
-<?php startblock("principal"); ?>
+<?php startblock("principal");
+echo "hola";
+if(isset($_SESSION['bderror'])){
+    echo $_SESSION['bderror'];
+}?>
 <div class="card border-primary mt-3 mb-2">
             <div class="card-header">
                 <h4>Usuarios</h4>
@@ -31,28 +35,29 @@
             <tbody>");
             
             foreach ($users as $user) {
-                if(isset($user)){                            
+                if(isset($user)){ 
+                        
                     echo("<tr>
-                            <td>
-                            <input value='".$user["username"]."' type='text' class='form-control' name='update[id_ciudad]' id='txtHotel' readonly>                        
-                            
-                            </td>
-                            <td>".$user["email"]."</td>
-
-                            <td class='with-td'>
-                                <form class='float-right' action='adminusers.php' method='post'>
-                                    <button type='sumit' class='btn btn-info btn-sm with-td'>EDITAR</button>
-                                    <input type='hidden' value ='".$user["email"]."' name='edit[email]'> 
-                                </form>
+                            <form class='float-right' action='/riddle_abp/php/conexion/adminusers.php' method='post'>
+                                <td>
+                                <input value='".$user["username"]."' type='text' class='form-control' name='edit[email]' id='txtHotel'>                        
                                 
-                            </td>
-    
-                            <td class='with-td'>
-                                <form class='float-right' action='adminusers.php' method='post'>
-                                    <button type='sumit' class='btn btn-danger btn-sm with-td'>BORRAR</button>
-                                    <input type='hidden' value ='".$user["email"]."' name='delete[emial]'> 
-                                </form>                                                
-                            </td>
+                                </td>
+                                <td>".$user["email"]."</td>
+
+                                <td class='with-td'>
+                                    <button type='sumit' class='btn btn-info btn-sm with-td'>GUARDAR</button>
+                                    <input type='hidden' value ='".$user["email"]."' name='edit[email]'> 
+                                                                   
+                                </td>
+                            </form>
+        
+                                <td class='with-td'>
+                                    <form class='float-right' action='/riddle_abp/php/conexion/adminusers.php' method='post'>
+                                        <button type='sumit' class='btn btn-danger btn-sm with-td'>BORRAR</button>
+                                        <input type='hidden' value ='".$user["email"]."' name='delete[emial]'>                                                                                 
+                                    </form> 
+                                </td>
                         </tr>");                                                                                                
                 } 
             }

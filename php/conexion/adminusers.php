@@ -11,7 +11,7 @@ if(isset($_POST['delete'])){
     header('Location: /riddle_abp/php/body/admin.php');
 }
 elseif(isset($_POST['edit'])){
-
+    
 }
 
 function openBD(){
@@ -53,7 +53,21 @@ function deleteUserByID($email){
         $sentencia->bindParam(':email', $email);    
         $sentencia->execute();
     }catch(PDOException $e){
-        
+        $_SESSION['bd_error']= 'delete error';        
+    }
+
+    $conn = closeBD();
+}
+
+function editUser($email, $name){
+    $conn = OpenBD();
+    try{
+        $sentencia = $conn->prepare("update users set username = :name where email = :email");
+        $sentencia->bindParam(':name', $name);
+        $sentencia->bindParam(':email', $email);
+        $sentencia->execute();
+    }catch(PDOException $e){
+        $_SESSION['bd_error']= 'edit error';
     }
 
     $conn = closeBD();
