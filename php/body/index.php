@@ -50,7 +50,7 @@
 <div class="container mt-5 mb-5">
   <div class="row text-center text-font">
     <div class="col-lg-4">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
+      <img class="rounded-circle" src="/riddle_abp/assets/img/diviertete.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Diviertete</h2>
       <p>Disfruta de nuestros juegos únicos y familiares. Entreteneos investigando como resolver nuestros enigmas
@@ -58,7 +58,7 @@
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
+      <img class="rounded-circle" src="/riddle_abp/assets/img/aprendee.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Aprende</h2>
       <p>Aprende los acontecimientos más relevantes de la historia con nuestros enigmas. Infórmate de cuando, donde y porque sucedió cada hecho.
@@ -66,7 +66,7 @@
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
+      <img class="rounded-circle" src="/riddle_abp/assets/img/compartee.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Comparte</h2>
       <p>Comparte con tus amigos y familiares la experencia que has tenido con nuestros juegos. Anímalos a prender nuevos hechos mientras pasan un buen rato.
