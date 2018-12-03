@@ -176,7 +176,8 @@ Enigma 1
 								<li class="list-group-item">Hay un total de dos mapas por desencriptar.</li>
 								<li class="list-group-item">Uno de los mapas está encriptado de 3x3 y otro tiene más seguridad y es de 4x4.</li>
 								<li class="list-group-item">Uno de ellos está programado para que en x tiempo se reinicie si tardas mucho en 
-								desencriptarlo. ¿Eres lo suficientemente rápido?</li>								
+								desencriptarlo. ¿Eres lo suficientemente rápido?</li>
+								<li class="list-group-item">Arrastra las piezas para intercambiarlas y resolver el puzzle!</li>						
 							</ul>
 						</div>
 						<div class="modal-footer">

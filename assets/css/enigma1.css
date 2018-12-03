@@ -26,6 +26,10 @@
   background: url('https://i.pinimg.com/originals/df/ba/37/dfba374fec3d957b2485909f9d95427f.jpg');
 }
 
+.list-group-item{
+  background: transparent;
+}
+
 .first{
   margin-top: 30px;
   width: 100%;
