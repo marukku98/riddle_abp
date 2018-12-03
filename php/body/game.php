@@ -198,15 +198,15 @@ $("#compEnigma").click(function () {
     var cookie = getCookie('enigma1');
     var estacio = getCookie('estacio');
 
-    if(cookie == 1 && estacio == 1 ){
+    if(cookie == estacio){
         alert('Dirígete al siguiente punto de interés');
     }else if(cookie == 1 && estacio == 2){
-        window.location="/riddle_abp/php/body/enigma2.php";
-    }else if(cookie == 2 && estacio == 2){
-        alert('Dirígete al siguiente punto de interés');
+        window.location="/riddle_abp/php/body/enigma2.php";    
     }else if(cookie == 2 && estacio == 3){
         window.location="/riddle_abp/php/body/enigma3.php";
-    }        		
+    }else if(cookie == 3 && estacio == 4){
+        window.location="/riddle_abp/php/body/enigma4.php";
+    }    		
 });
 
 </script>
