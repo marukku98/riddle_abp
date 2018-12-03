@@ -53,21 +53,24 @@
       <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Diviertete</h2>
-      <p>Diviertete y muerete. </p>
+      <p>Disfruta de nuestros juegos únicos y familiares. Entreteneos investigando como resolver nuestros enigmas
+      de la forma más eficaz posible. Serás capaz de completarlos todos?</p>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Aprende</h2>
-      <p>Aprende y colorea.</p>
+      <p>Aprende los acontecimientos más relevantes de la historia con nuestros enigmas. Infórmate de cuando, donde y porque sucedió cada hecho.
+      Todo de una forma muy fácil y senzilla, simplemente mientras juegas. </p>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Comparte</h2>
-      <p>Comparte y drogarte</p>
+      <p>Comparte con tus amigos y familiares la experencia que has tenido con nuestros juegos. Anímalos a prender nuevos hechos mientras pasan un buen rato.
+     </p>
     </div>
     <!-- /.col-lg-4 -->
   </div>
