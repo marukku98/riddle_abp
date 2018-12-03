@@ -105,7 +105,7 @@
           </li>
           <?php
             if(isset($_SESSION['user'])){
-              if($_SESSION['user']['role'] == 1){
+              if($_SESSION['user']['role'] > 0){
                 ?>
               <li class="nav-item bg-danger">
                 <a class="nav-link text-white mr-4 pl-3" href="admin.php">ADMIN</a>

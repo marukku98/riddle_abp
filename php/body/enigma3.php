@@ -130,6 +130,28 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal 1 -->
+            <div id="modal1" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Como jugar?</h5>
+
+                        </div>
+                        <div class="modal-body">
+                            El siguiente enigma esta basado en el tradicional <b>'Hundir la flota'</b>, aunque lo hemos
+                            adaptado a un solo jugador y le hemos añadido mecanicas totalmente originales. Veamoslas...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Siguiente</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <script>
                 $("#modal2").modal({
                     backdrop: 'static',

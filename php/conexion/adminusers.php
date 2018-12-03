@@ -1,17 +1,13 @@
 <?php
-      if(isset($_SESSION['user'])){
+
+function checkUser(){
+    if(isset($_SESSION['user'])){
         if($_SESSION['user']['role'] != 1 && $_SESSION['user']['role'] != 2){
             header('Location: /riddle_abp/php/body/index.php');            
         }
-      }else{
+    }else{
         header('Location: /riddle_abp/php/body/index.php');
-      }
-if(isset($_POST['delete'])){
-    deleteUserByID($_POST['delete']['email']);
-    header('Location: /riddle_abp/php/body/admin.php');
-}
-elseif(isset($_POST['edit'])){
-    
+    }
 }
 
 function openBD(){
@@ -66,6 +62,24 @@ function editUser($email, $name){
         $sentencia->bindParam(':name', $name);
         $sentencia->bindParam(':email', $email);
         $sentencia->execute();
+    }catch(PDOException $e){
+        $_SESSION['bd_error']= 'edit error';
+    }
+
+    $conn = closeBD();
+}
+
+function changePermission($email, $role){
+    $conn = OpenBD();
+    try{
+        if($role==1){
+            $sentencia = $conn->prepare("update users set role = 0 where email = :email");
+        }elseif($role==0){
+            $sentencia = $conn->prepare("update users set role = 1 where email = :email");
+        }
+        $sentencia->bindParam(':email', $email);
+        $sentencia->execute();
+
     }catch(PDOException $e){
         $_SESSION['bd_error']= 'edit error';
     }

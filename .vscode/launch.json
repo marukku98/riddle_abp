@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome",
-            "url": "http://localhost:8080/riddle_abp/php/body",
+            "url": "http://localhost:8080/riddle_abp/php/body/admin.php",
             "webRoot": "${workspaceFolder}"
         },
         {
