@@ -35,7 +35,7 @@
                     <script>setMisiles(tiros);</script>
                 </div>
                 <div class="col">
-                    <button class="btn-kamikaze btn-kamikaze-hover ml-4 float-right" onclick="toggleKamikaze();"></button>
+                    <button title="" class="btn-kamikaze btn-kamikaze-hover ml-4 float-right" onclick="toggleKamikaze();"></button>
                 </div>
 
             </div>
@@ -92,8 +92,7 @@
                             adaptado a un solo jugador y le hemos añadido mecanicas totalmente originales. Veamoslas...
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Siguiente</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button id="modal-btn-1" type="button" class="btn btn-success" data-dismiss="modal">Siguiente</button>
 
                         </div>
                     </div>
@@ -110,7 +109,7 @@
 
                         </div>
                         <div class="modal-body">
-                            <p class="mb-0"><b>Municion. </b>El numero de disparos es limitado, si te quedas sin
+                            <p class="mb-0"><b>Municion. </b>El numero de misiles es limitado, si te quedas sin
                                 pierdes.</p>
                             <img class="m-auto d-block" src="/riddle_abp/assets/img/ammo_pic.png" height="60px" style="margin-bottom: 30px !important">
                             <p class="mb-0"><b>Kamikaze. </b>Apretano este boton activaras/desactivaras el modo
@@ -123,42 +122,36 @@
                             <img class="m-auto d-block" src="/riddle_abp/assets/img/flag_pic.png" height="80px" style="margin-bottom: 30px !important">
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Siguiente</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button id="modal-btn-2" type="button" class="btn btn-success" data-dismiss="modal">Siguiente</button>
 
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Modal 1 -->
-            <div id="modal1" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            <!-- Modal 3 -->
+            <div id="modal3" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Como jugar?</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">El enemigo</h5>
 
                         </div>
                         <div class="modal-body">
-                            El siguiente enigma esta basado en el tradicional <b>'Hundir la flota'</b>, aunque lo hemos
-                            adaptado a un solo jugador y le hemos añadido mecanicas totalmente originales. Veamoslas...
+                            <p>La flota estadounidense esta compuesta por 5 barcos uno de 2 bloques de longuitud, 2 de 3, uno de 4 y otro de 5.
+                            <br>Estos, para evitar accidentes, mantienen una distancia de como minimo un bloque como puedes ver en esta imagen.</p>
+                            <img class="m-auto d-block" src="/riddle_abp/assets/img/grid.png" height="250px">
+                            <p><br>Ahora ya dispones de toda la información necesaria para diriguir el ataque. Mucha suerte!</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Siguiente</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
+                            <button id="modal-btn-3" type="button" class="btn btn-success" data-dismiss="modal">JUGAR</button>
                         </div>
                     </div>
                 </div>
             </div>
             <script>
-                $("#modal2").modal({
-                    backdrop: 'static',
-                    keyboard: false
-                });
 
-                flag();
             </script>
 
         </div>
@@ -171,21 +164,7 @@
 </div>
 
 <script>
-    $("#ALL").click(function () {
-        all();
-    })
-
-    $("#reset").click(function () {
-        restart();
-    })
-
-    $("#win").click(function () {
-        win(true);
-    })
-
-    $("#lose").click(function () {
-        win(false);
-    })
+    LoadGame();
 </script>
 
 <?php endblock(); ?>

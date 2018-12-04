@@ -69,7 +69,7 @@
                                 echo ("<button type='sumit' class='btn btn-secondary btn-sm with-td'>QUITAR PERMISO</button>");
                             }
                             elseif($user['role'] == 0){
-                                echo ("<button type='sumit' class='btn btn-succes btn-sm with-td'>DAR PERMISO</button>");
+                                echo ("<button type='sumit' class='btn btn-success btn-sm with-td'>DAR PERMISO</button>");
                             }
                             echo ("  <input type='hidden' value ='".$user["email"]."' name='change[email]'>                                                                                 
                                     <input type='hidden' value ='".$user["role"]."' name='change[role]'>                                                                                 

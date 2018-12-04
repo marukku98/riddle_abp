@@ -455,3 +455,46 @@ function win(win) {
         $(".btn-lose").removeClass("invisible");
     }
 }
+
+function LoadGame() {
+    $("#ALL").click(function () {
+        all();
+    })
+
+    $("#reset").click(function () {
+        restart();
+    })
+
+    $("#win").click(function () {
+        win(true);
+    })
+
+    $("#lose").click(function () {
+        win(false);
+    })
+
+    tutorial();
+
+    flag();
+}
+
+function tutorial() {
+    $("#modal1").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+
+    $("#modal-btn-1").click(function () {
+        $("#modal2").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    });
+
+    $("#modal-btn-2").click(function () {
+        $("#modal3").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    });
+}
