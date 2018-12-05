@@ -15,8 +15,8 @@ function empezarEnigma(image, gridSize, modo, num){
     this.num = num;
 }
 
-function reinicio(){
-    if(timer == 10){
+function reinicio(){   
+    if(timer == 10){    
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
         timer = 0;
@@ -72,7 +72,9 @@ function movimientos(elem) {
             var $dragElem = $(ui.draggable).clone().replaceAll(this);
             $(this).replaceAll(ui.draggable);         
             //Recogemos lo que seria el puzzle bien hecho
-            currentList = $('#puzzGame > li').map(function (i, el) { return $(el).attr('data-value'); });
+            currentList = $('#puzzGame > li').map(function (i, el){ 
+                return $(el).attr('data-value'); 
+            });
 
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){    
@@ -82,13 +84,19 @@ function movimientos(elem) {
                     if(num == 1){                        
                         animationComplete(true);
                         //setTimeout(function () { $("#correcte").modal("show"); }, 1000);
-                        setTimeout(function () { $("#correcte").modal("show"); animationQuit(); }, 1000);
+                        setTimeout(function () { 
+                            $("#correcte").modal("show"); 
+                            animationQuit(); 
+                        }, 1000);
                         $('.next').show();                        
                     }else{
                         setCookie('enigma1', 1, 1);
                         setCookie('estacio', 1, 1);
-                        animationComplete(true);
-                        setTimeout(function () { $("#finalModal").modal({backdrop: 'static', keyboard: false}); animationQuit();  }, 1000);
+                        animationComplete(true);                        
+                        setTimeout(function () { 
+                            $("#finalModal").modal({backdrop: 'static', keyboard: false}); 
+                            animationQuit();  
+                        }, 1000);
                     }
                     endTime();                  
                   });                                      
@@ -117,8 +125,7 @@ function movimientos(elem) {
     });
 }
 
-function mezclarPiezas(ul) {
-    
+function mezclarPiezas(ul) {    
     var $elems = $(ul).children(),
         $parents = $elems.parent();
 
@@ -132,11 +139,13 @@ function mezclarPiezas(ul) {
 }
 
 function completado(arr) {
-    for (var i = 0; i < arr.length - 1; i++) {
-        if (arr[i] != i){
+    var i = -1;
+    for (var elem in arr) {
+        i++;
+        if(arr[elem] != i && i < arr.length -1){            
             return false;
         }
-    }
+      }
     return true;
 }
 

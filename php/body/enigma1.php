@@ -217,14 +217,7 @@ Enigma 1
 			// var miVar = setInterval(function () { callback2() }, 2000);
 			// var miVar2 = setInterval(function () { callback3() }, 5000);
 		});
-
-		// function callback2() {
-		// 	$("#2").fadeIn(3000);
-		// }
-		// function callback3() {
-		// 	$(".btnMapa").show();
-		// }
-
+	
 		$(".btnMapa").click(function () {
 			$(".total").hide(1000);
 			$(".mapa").hide();
@@ -252,19 +245,5 @@ Enigma 1
 			document.getElementById('newPhoto').disabled=true;
 		});
 	});
-	
-	// $('#levelPanel :radio').change(function (e) {
-	// 	var gridSize = $('#levelPanel :radio:checked').val();
-	// 	empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', gridSize);
-	// });
-	
-	// $(function () {	    
-	// 	empezarEnigma(image, 3);
-	// });
-
-	// $("#newPhoto").click(function () {
-	// 	var image = '/riddle_abp/assets/img/puzzle2Scale.png';
-	// 	empezarEnigma(image, 3);
-	// });
 
 </script>
