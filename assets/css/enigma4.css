@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+.bg-body::after{
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 130%;
+    top: 0;
+    background-repeat: no-repeat;
+    content:"";
+    z-index: -1;
+    opacity: 0.3;
+    background: url(../img/bg-game4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#joc{
+    min-height: 500px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+#joc hr{
+    background-color: white;
+}
+
+#joc h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+    
+}
+
+#joc{
+    height: 600px;
+    width: 900px;
+    display: block;
+    position: relative;
+    border: 1px solid black;
+    background: url(../img/enigma4/sea.jpg);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 0 0;
+    animation: moving 2000s linear infinite;
+    overflow: hidden;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#joc::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/enigma4/parallax.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 0 0;
+    animation: moving 1000s linear infinite;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+@keyframes moving{
+    from { background-position: 0%; }
+    to { background-position: 35000%; }
+}
+
+#joc, #explicacio, #gameover{
+    border-radius: 10px;
+}
+
+#gameover{
+    visibility: hidden;
+    transition: visibility 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#explicacio, #gameover{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    opacity: 0.8;
+    color:white;
+    text-align: center;
+    user-select: none;
+}
+
+#explicacio p{
+    font-size: 15px;
+}
+
+#explicacio-powerups{
+     display: flex !important;
+     justify-content: center;
+     margin-bottom: 20px;
+}
+
+#explicacio-powerups .powerup{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#explicacio-avions{
+    display:flex; 
+    justify-content:center;
+}
+
+.explicacio-avio{
+    width: 160px;
+    position: relative;
+}
+
+.explicacio-avio img{
+    height: 30px;
+}
+
+#explicacio .btnBit{
+    margin: auto;
+}
+
+.btnBit{
+    height: 50px;
+    border: 2px solid white;
+    background-color: orange;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#panel {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    position: relative;
+    margin: 0px;
+    padding: 10px;
+    z-index: 6;
+    min-height: 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#panel-vidas{
+    max-width: 150px;
+}
+
+.panel-separator{
+    padding-right: 20px;
+    margin-right: 20px;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+#panel > div{
+    display: inline-block;
+}
+
+#panel-score {
+    font-size: 18px;
+}
+
+#panel p {
+    margin: 0;
+}
+
+.sprite{
+    position: absolute;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    z-index: 2;
+}
+
+.vida, #avio{
+    background: url(../img/enigma4/avion-jp.png);
+}
+
+#avio{
+    width: 73px;
+    height: 50px;
+    transition: transform 0.5s;
+}
+
+.vida{
+    display: inline-block;
+    width: 50px;
+    height: 34px;
+    position: initial;
+}
+
+.up{
+    transform: rotate(10deg);
+}
+
+.down{
+    transform: rotate(-10deg);
+}
+
+.normal{
+    transform: rotate(0deg);
+}
+
+.enemic-1{
+    width: 93px;
+    height: 34px;
+    background: url(../img/enigma4/A6M.png);
+    background-size: cover;
+}
+
+.enemic-2{
+    width: 103px;
+    height: 41px;
+    background: url(../img/enigma4/N1KJ.png);
+    background-size: cover;
+}
+
+.enemic-3{
+    width: 93px;
+    height: 34px;
+    background: url(../img/enigma4/A6M-k.png);
+    background-size: cover;
+}
+
+.dispar, .dispar-en{
+    width: 20px;
+    height: 12px;
+    background: url(../img/enigma4/bala.png);
+}
+
+.dispar-en{
+    transform: rotate(180deg);
+}
+
+.explosion{
+    width: 96px !important;
+    height: 96px !important;
+    background: url(../img/enigma4/explosion.png) left !important;
+    animation: exp 1.5s steps(15) infinite;
+    z-index: 4 !important;
+}
+
+@keyframes exp{
+    100% { background-position: -1440px; };
+}
+
+.explosion-d{
+    width: 32px !important;
+    height: 32px !important;
+    background-image: url(../img/enigma4/explosion-d.png) !important;
+    animation: exp-d 1s steps(8);
+    z-index: 4 !important;
+}
+
+@keyframes exp-d {
+    100% { background-position: -256px; };
+}
+
+
+.healthbar {
+    width: 84px;
+    height: 10px;
+    background-color: red;
+    position: relative;
+    bottom: 20px;
+
+    border-radius: 10px;
+
+    padding: 0;
+}
+
+.healthbar .healthbar-restante{
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    border-radius: 10px;
+}
+
+
+.powerup{
+    width:35px;
+    height: 35px;
+    background-color:red;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50px;
+    padding: 5px;
+    font-size: 10px;
+}
+
+#panel-powerup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#panel-powerup div{
+    /* display: inline-block !important; */
+    float:left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.f-img{
+    max-width:100%;
+    max-height: 100%;
+}
+
+.warning{
+    width: 60px;
+    height: 47px;
+    background: url(../img/enigma4/warning.png);
+    animation: parpadeo 1s linear infinite;
+}
+
+@keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
