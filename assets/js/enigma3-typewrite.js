@@ -1,23 +1,32 @@
-function write(id, text){
-    var speed = 40;
+function write(id, text, speed) {
     var loop;
     var i = 0;
 
-    loop = setInterval(function(){
+    loop = setInterval(function () {
         document.getElementById(id).innerHTML += text.charAt(i);
         i++;
         if (i == text.length) {
-            clearInterval(loop);            
+            clearInterval(loop);
         }
-    },speed)
+    }, speed)
 }
-function showText(){
-    write("titulo" ,"Pearl Harbor, ");
-    setTimeout(function(){
-        write("titulo" ,"7 de diciembre de 1941.");
+function showText() {
+    write("titulo-enunciado", "Pearl Harbor, ", 40);
+    setTimeout(function () {
+        write("titulo-enunciado", "7 de diciembre de 1941.", 40);
     }, 800);
 
-    setTimeout(function(){
-        write("oleada" ,"Primera Oleada");
+    setTimeout(function () {
+        write("subtitulo-enunciado", "Primera Oleada", 40);
     }, 2000);
+
+    setTimeout(function () {
+        write("texto-enunciado", 
+              "El comandante Mitsuo Fuchida, encargado de dirigir la fuerza aérea, " +
+              "te ha encargado planear el ataque contra una flota estadounidense. " +
+              "Para conseguir-lo Fuchida te ha asignado un escuadrón compuesto por " + 
+              "varios bombarderos Nakajima B5N. "+
+              "De entre todos los pilotos de tu escuadrón, uno te ha informado que estaría dispuesto " +
+              "a sacrificar su vida para asegurar la victoria (un Kamikaze).", 20
+    );}, 2800);
 }

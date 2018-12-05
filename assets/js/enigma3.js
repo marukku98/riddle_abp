@@ -481,7 +481,7 @@ function LoadGame() {
 function tutorial() {
     $("#modal1").modal({
         backdrop: 'static',
-        keyboard: false
+        keyboard: false,
     });
 
     $("#modal-btn-1").click(function () {

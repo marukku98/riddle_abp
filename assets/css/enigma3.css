@@ -8,6 +8,10 @@
     src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
 }
 
+.modal {
+    overflow-y:scroll;
+}
+
 .font-letter{
     font-family:'Source Serif Pro', serif;
 }

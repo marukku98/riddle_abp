@@ -18,10 +18,13 @@
 
     <div class="m-4">
         <div class="row">
-            <h3 id="titulo" class="font-letter font-weight-bold"></h3>
+            <h3 id="titulo-enunciado" class="font-letter font-weight-bold"></h3>
         </div>
         <div class="row">
-            <h4 id="oleada" class="font-letter font-weight-bold"></h4>
+            <h4 id="subtitulo-enunciado" class="font-letter font-weight-bold"></h4>
+        </div>
+        <div class="row">
+            <p id="texto-enunciado" class="font-letter font-weight-bold"></p>
         </div>
     </div>
 
@@ -182,7 +185,7 @@
 
 <script>
     showText();
-    //LoadGame();
+    LoadGame();
 </script>
 
 <?php endblock(); ?>
