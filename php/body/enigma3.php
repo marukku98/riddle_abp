@@ -3,6 +3,7 @@
 <?php startblock("css"); ?>
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma3.css">
 <script src="/riddle_abp/assets/js/enigma3.js"></script>
+<script src="/riddle_abp/assets/js/enigma3-typewrite.js"></script>
 <?php endblock(); ?>
 
 <?php startblock("titulo"); ?> Enigma 3
@@ -15,6 +16,15 @@
 
 <div class="container-fluid">
 
+    <div class="m-4">
+        <div class="row">
+            <h3 id="titulo" class="font-letter font-weight-bold"></h3>
+        </div>
+        <div class="row">
+            <h4 id="oleada" class="font-letter font-weight-bold"></h4>
+        </div>
+    </div>
+
     <div class="row mt-3">
         <div class="m-auto bg-card">
             <div class="end">
@@ -26,9 +36,9 @@
                     <button type="submit" id="success" class="btn-win" name="completed"></button>
                 </form>
             </div>
-            <div class="row ml-box pb-3">
+            <div class="row ml-box pb-1">
                 <div class="col">
-                    <div style="display: inline-flex;">
+                    <div class="mt-2" style="display: inline-flex;">
                         <img src="/riddle_abp/assets/img/misil-icon.png" height="40px" alt="">
                         <h3 class="text-center ml-2" id="misiles"></h3>
                     </div>
@@ -171,7 +181,8 @@
 </div>
 
 <script>
-    LoadGame();
+    showText();
+    //LoadGame();
 </script>
 
 <?php endblock(); ?>

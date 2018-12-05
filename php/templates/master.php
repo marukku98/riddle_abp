@@ -19,7 +19,7 @@
     <?php endblock(); ?>
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans|Roboto|Source+Serif+Pro" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">

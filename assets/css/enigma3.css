@@ -3,6 +3,15 @@
     background: white;
 }
 
+@font-face{
+    font-family: 'Letter';
+    src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
+}
+
+.font-letter{
+    font-family:'Source Serif Pro', serif;
+}
+
 .bg-card {
     position: relative;
     padding: 20px 40px 10px 20px;
