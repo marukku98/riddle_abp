@@ -78,7 +78,7 @@
 
 <a name="scroll"></a>
 
-<h3 class="title-font header" style="text-align: center;">MEET OUR TEAM</h3>
+<h3 class="title-font header" style="text-align: center;">SOBRE NOSOTROS</h3>
 
 <div class="container">
   <!-- START THE FEATURETTES -->
