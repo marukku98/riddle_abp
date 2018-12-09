@@ -17,7 +17,7 @@
 }
 
 .nav-item:hover {
-    background-color: #08231d;
+    background-color: #202927;
 }
 
 .boton {
@@ -80,7 +80,7 @@ body,
 }
 
 .bg-second {
-    background: #001712;
+    background: #161f1d;
 }
 
 .bg-body {
@@ -107,7 +107,6 @@ body,
 }
 
 .header {
-    background: #221f2b;
     color: white;
     font-size: 40px;
     padding: 15px;

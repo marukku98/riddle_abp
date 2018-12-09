@@ -12,7 +12,7 @@ if(isset($_POST['gameStart'])){
         header('Location: /riddle_abp/php/body/login.php'); 
     }else{
         $game = $_POST['game'];
-        $email = "mansoksama@gmail.com";
+        $email = $_SESSION['user']['email'];
 
         $verificar = consultaProgresUser($email, $game);
 
@@ -30,7 +30,7 @@ if(isset($_POST['gameStart'])){
 if(isset($_POST['completed'])){
     $game = $_POST['game'];
     $progres = $_POST['enigma'];
-    $email = "mansoksama@gmail.com";
+    $email = $_SESSION['user']['email'];
     updateProgressUser($game, $email, $progres);
     header('Location: /riddle_abp/php/body/game.php'); 
 }

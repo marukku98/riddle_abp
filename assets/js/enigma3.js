@@ -97,32 +97,41 @@ function dispararKamikaze(pos, barcos, campo) {
     $(".btn-kamikaze").addClass("greyscale");
     $(".btn-kamikaze").prop("disabled", true);
     $(".btn-kamikaze-hover").removeClass("btn-kamikaze-hover");
+
+    toggleKamikaze();
+    num_kamikazes--;
+    setKamikazes(num_kamikazes);
 }
 
-function disparar(pos, barcos, campo) {
-    if (campo[pos]['bandera'] == false) {
-        if (kamikaze && num_kamikazes != 0) {
-            dispararKamikaze(pos, barcos, campo);
-            toggleKamikaze();
-            num_kamikazes--;
-            setKamikazes(num_kamikazes);
+function dispararMisil(pos, barcos, campo) {
+    tiros--;
+    setMisiles(tiros);
+    campo[pos]['tocado'] = true;
+    var tocado = ComprobarTocado(pos, barcos);
+    ocultarBoton(pos, tocado[0], true);
+    if (tocado[0]) {
+        CheckEstadoBarco(tocado[1], barcos, campo);
+    }
+}
+
+function disparar(campo, pos, TipoDisparo) {
+    if (hundidos < 5 && tiros != 0) {
+        if (campo[pos]['bandera'] == false) {
+            TipoDisparo();
         }
-        else {
-            if (hundidos < 5 && tiros != 0) {
-                tiros--;
-                setMisiles(tiros);
-                campo[pos]['tocado'] = true;
-                var tocado = ComprobarTocado(pos, barcos);
-                ocultarBoton(pos, tocado[0], true);
-                if (tocado[0]) {
-                    CheckEstadoBarco(tocado[1], barcos, campo);
-                }
-            }
-            else if (tiros == 0) {
-                all();
-                feedback(3); //derrota
-            }
-        }
+    }
+    else if (tiros == 0) {
+        all();
+        feedback(3); //derrota
+    }
+}
+
+function apuntar(pos, barcos, campo) {
+    if (kamikaze && num_kamikazes != 0) {
+        disparar(campo, pos, dispararKamikaze(pos, barcos, campo));
+    }
+    else {
+        disparar(campo, pos, dispararMisil(pos, barcos, campo));
     }
 }
 
@@ -375,14 +384,34 @@ function toggleKamikaze() {
         feedbackKamikaze(false);
         kamikaze = false;
         for (var i = 0; i < 100; i++) {
-            $('#' + i).removeClass('kamikaze-cursor');
+            $('#' + i).unbind('mouseenter mouseleave')
+            $("#" + i).addClass("box-hover");
+            $("#" + i).removeClass("bg-kamikaze");
         }
     }
     else {
         feedbackKamikaze(true);
         kamikaze = true;
         for (var i = 0; i < 100; i++) {
-            $('#' + i).addClass('kamikaze-cursor');
+            $("#" + i).removeClass("box-hover");
+            $('#' + i).hover(
+                function () {
+                    var id = this.id;
+                    var around = getAround(id, true);
+                    $("#" + id).addClass("bg-kamikaze");
+                    around.forEach(function (id) {
+                        $("#" + id).addClass("bg-kamikaze-second");
+                    });
+                },
+                function () {
+                    var id = this.id;
+                    var around = getAround(id, true);
+                    $("#" + id).removeClass("bg-kamikaze");
+                    around.forEach(function (id) {
+                        $("#" + id).removeClass("bg-kamikaze-second");
+                    });
+                }
+            );
         }
     }
 }
@@ -472,6 +501,9 @@ function LoadGame() {
     $("#lose").click(function () {
         win(false);
     })
+
+    $(".text").hide();
+    $(".game").removeAttr('hidden');
 
     tutorial();
 

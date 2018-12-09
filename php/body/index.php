@@ -61,7 +61,7 @@
       <img class="rounded-circle" src="/riddle_abp/assets/img/aprendee.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Aprende</h2>
-      <p>Aprende los acontecimientos más relevantes de la historia con nuestros enigmas. Infórmate de cuando, donde y porque sucedió cada hecho.
+      <p>Conoce los acontecimientos más relevantes de la historia con nuestros enigmas. Infórmate de cuando, donde y porque sucedió cada hecho.
       Todo de una forma muy fácil y senzilla, simplemente mientras juegas. </p>
     </div>
     <!-- /.col-lg-4 -->
@@ -78,7 +78,7 @@
 
 <a name="scroll"></a>
 
-<h3 class="title-font header" style="text-align: center;">SOBRE NOSOTROS</h3>
+<h3 class="title-font header bg-second" style="text-align: center;">Sobre nosotros</h3>
 
 <div class="container">
   <!-- START THE FEATURETTES -->

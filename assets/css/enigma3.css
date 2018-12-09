@@ -3,17 +3,17 @@
     background: white;
 }
 
-@font-face{
+@font-face {
     font-family: 'Letter';
     src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
 }
 
 .modal {
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
-.font-letter{
-    font-family:'Source Serif Pro', serif;
+.font-letter {
+    font-family: 'Source Serif Pro', serif;
 }
 
 .bg-card {
@@ -158,7 +158,7 @@
     border: solid 1px #a5a5a5;
 }
 
-.box:hover {
+.box-hover:hover {
     background-color: #a5a5a5;
 }
 
@@ -228,6 +228,16 @@
     top: 0;
     height: 100%;
     width: 100%;
+}
+
+.bg-kamikaze {
+    background-color: #c07373;
+    border-color: #c07373;
+}
+
+.bg-kamikaze-second {
+    background-color: #a65959;
+    border-color: #c07373;
 }
 
 /* .btn-kamikaze:before {

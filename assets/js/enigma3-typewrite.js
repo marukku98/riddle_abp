@@ -21,12 +21,16 @@ function showText() {
     }, 2000);
 
     setTimeout(function () {
-        write("texto-enunciado", 
-              "El comandante Mitsuo Fuchida, encargado de dirigir la fuerza aérea, " +
-              "te ha encargado planear el ataque contra una flota estadounidense. " +
-              "Para conseguir-lo Fuchida te ha asignado un escuadrón compuesto por " + 
-              "varios bombarderos Nakajima B5N. "+
-              "De entre todos los pilotos de tu escuadrón, uno te ha informado que estaría dispuesto " +
-              "a sacrificar su vida para asegurar la victoria (un Kamikaze).", 20
-    );}, 2800);
+        write("texto-enunciado",
+            "El comandante Mitsuo Fuchida, encargado de dirigir la fuerza aérea, " +
+            "te ha encargado planear el ataque contra una flota estadounidense. " +
+            "Para conseguir-lo, Fuchida te ha asignado un escuadrón compuesto por " +
+            "varios bombarderos Nakajima B5N. " +
+            "De entre todos los pilotos de tu escuadrón, uno te ha informado que estaría dispuesto " +
+            "a sacrificar su vida para asegurar la victoria (un Kamikaze).", 20
+        );
+    }, 2800);
+    setTimeout(function () {
+        $(".btn-play").removeAttr('hidden');
+    }, 11000);
 }

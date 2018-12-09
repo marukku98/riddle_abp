@@ -57,11 +57,11 @@
       ?>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-        <i class="material-icons text-white" style="font-size: 30px">
+        <i class="material-icons text-white float-right" style="font-size: 30px">
           account_circle
         </i>
         <div class="dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle text-white float-right" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false" style="font-size: 20px;">
             <?php echo ucfirst($_SESSION['user']['username']);?>
           </a>

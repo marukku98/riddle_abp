@@ -24,7 +24,7 @@
     top: 66%;
     position: absolute;
     color: white;
-    transition: all 0.5s;
+    transition: all 0.4s;
     background-image: url('/riddle_abp/assets/img/lock.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -38,7 +38,7 @@
     top: 66%;
     position: absolute;
     color: white;
-    transition: all 0.5s;
+    transition: all 0.4s;
     background-image: url('/riddle_abp/assets/img/success.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -71,7 +71,7 @@
     background-color: #24242496;
     position: absolute;
     bottom: 0;
-    transition: all 0.5s;
+    transition: all 0.4s;
 }
 
 .lockedImg {
@@ -87,7 +87,7 @@
 }
 
 .game-button {
-    transition: .5s ease;
+    transition: .4s ease;
     opacity: 1;
     position: absolute;
     top: 144%;
@@ -98,7 +98,7 @@
 }
 
 .game-success {
-    transition: .5s ease;
+    transition: .4s ease;
     opacity: 1;
     position: absolute;
     top: 144%;
