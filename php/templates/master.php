@@ -174,7 +174,7 @@
         }, 3000);
 
       }
-    }, (maxMinutsInactiu * 1000));
+    }, (maxMinutsInactiu * 12000));
 
     $(this).mousemove(function(){
       minutsInactiu = 0;

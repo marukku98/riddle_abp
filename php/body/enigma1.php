@@ -25,15 +25,17 @@ Enigma 1
 				planeando realizar en el Sureste Asiático contra
 				las posesiones ultramarinas del Reino Unido, Francia, Países Bajos y Estados Unidos. </p>
 
-			<h3 class="japan-font">Plan de ataque</h3>
+			<div class="planify">
+				<h3 class="japan-font">Plan de ataque</h3>
 
-			<p class="font-letter">El Almirante Isoroku Yamamoto a causa de una enfermedad no podrá dirigir el ejército de japón contra la
-				guerra a EE.UU. Por eso tu, el
-				capitán Genda, te ha ordenado liderar el ataque y llevar a Japón a la victoria, todos dependen de ti!</p>
+				<p class="font-letter">El Almirante Isoroku Yamamoto a causa de una enfermedad no podrá dirigir el ejército de japón contra la
+					guerra a EE.UU. Por eso tu, el
+					capitán Genda, te ha ordenado liderar el ataque y llevar a Japón a la victoria, todos dependen de ti!</p>
 
-			<p class="font-letter">Esta es la carta que te ha dejado el almirante: </p>
+				<p class="font-letter">Esta es la carta que te ha dejado el almirante: </p>		
 
-			<button class="btn btn-secondary btn-sm carta" data-toggle="modal" data-target="#exampleModaal">Leer carta del almirante</button><br><br>
+				<button class="btn btn-secondary btn-sm carta" data-toggle="modal" data-target="#exampleModaal">Leer carta del almirante</button><br><br>
+			</div>
 			<button type="button" class="btn btn-primary btn-sm" id="step">Resolver mapas</button>
 		</div> 
 
@@ -201,6 +203,15 @@ Enigma 1
 		$(".mapa").hide();
 		$(".content").hide();
 		$("#step").hide();
+		$(".planify").hide();
+		$(".carta").hide();
+
+		var miVar = setInterval(function () { nextText(); }, 3000);
+
+		function nextText(){
+			$(".planify").fadeIn();
+			$(".carta").fadeIn();
+		}
 
 		$(".carta").click(function () {
 			$("#contain").fadeIn(1000);

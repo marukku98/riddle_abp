@@ -23,26 +23,39 @@ Joc
 
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
 
-        <div class="game">
-            <div class="div-text gameText">
-                <h5 class="text m-0">Nivel 1</h5>
-                <p>Preparativos para la batalla</p>
-            </div>
-            <a href="enigma1.php">              
-                <?php                
-                    $game = 1;
-                    $email = "mansoksama@gmail.com";
-                    $var = selectProgressUser($game, $email);  
-                    if($var[0]['progres'] == 0){
-                ?>
-                <div class="game-button play-animation mt-3"></div>
-                    <?php 
-                }else{ ?>                                      
-                    <div class="success"></div>
-                <?php } ?>                            
-            </a>
-        </div>
+        <?php
+            $game = 1;
+            $email = "mansoksama@gmail.com";
+            $var = selectProgressUser($game, $email);            
 
+            if($var[0]['progres'] < 0){
+                $locked = "lockedImg";
+            }else{
+                $locked = "";
+            }
+        ?>
+        <div class="game <?php echo $locked ?>">
+            <div class="gameText">
+                <h5 class="m-0">Nivel 1</h5>                
+                <p>Preparativos para la batalla</p>
+            </div>           
+            <?php      
+                if($var[0]['progres'] < 0){                   
+                ?>
+                <div class="lockHover"></div>                
+                <?php }else{                     
+                    if($var[0]['progres'] >= 1){
+                        $success = "success";                          
+                    }else{
+                        $success = "game-button play-animation mt-3";
+                    }
+                     ?>  
+                                          
+                <div onclick="display('1')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+
+                <!-- game-button play-animation mt-3                                          -->
+            <?php } ?>           
+        </div>
     </div>
 
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
@@ -74,7 +87,7 @@ Joc
                     }
                      ?>  
                                           
-                <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                <div onclick="display('2')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
 
                 <!-- game-button play-animation mt-3                                          -->
             <?php } ?>  
@@ -106,10 +119,9 @@ Joc
                         $success = "success";                          
                     }else{
                         $success = "game-button play-animation mt-3";  
-                    } 
-                    
+                    }                     
                     ?>                   
-                    <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                   
+                    <div onclick="display('3')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                   
                 <?php } ?>  
 
         </div>
@@ -142,7 +154,7 @@ Joc
                         $success = "game-button play-animation mt-3";  
                     }                     
                     ?>                   
-                    <div id="compEnigma" class="<?php echo $success ?>"></div>                   
+                    <div onclick="display('4')" id="compEnigma" class="<?php echo $success ?>"></div>                   
                 <?php } ?>  
         </div>
        </body>
@@ -194,19 +206,37 @@ function getCookie(cname) {
     return "";
 }
 
-$("#compEnigma").click(function () {
+// $("#compEnigma").click(function () {
+//     var cookie = getCookie('enigma1');
+//     var estacio = getCookie('estacio');
+
+//     if(cookie == estacio){
+//         alert('Dirígete al siguiente punto de interés');
+//     }else if(cookie == 1 && estacio == 2){
+//         window.location="/riddle_abp/php/body/enigma2.php";    
+//     }else if(cookie == 2 && estacio == 3){
+//         window.location="/riddle_abp/php/body/enigma3.php";
+//     }else if(cookie == 3 && estacio == 4){
+//         window.location="/riddle_abp/php/body/enigma4.php";
+//     }    		
+// });
+
+ function display(enigma){
+   
     var cookie = getCookie('enigma1');
     var estacio = getCookie('estacio');
 
     if(cookie == estacio){
         alert('Dirígete al siguiente punto de interés');
-    }else if(cookie == 1 && estacio == 2){
-        window.location="/riddle_abp/php/body/enigma2.php";    
-    }else if(cookie == 2 && estacio == 3){
-        window.location="/riddle_abp/php/body/enigma3.php";
-    }else if(cookie == 3 && estacio == 4){
-        window.location="/riddle_abp/php/body/enigma4.php";
-    }    		
-});
+    }else if(cookie == 0 && estacio == 1 && enigma == 1){
+        window.location="/riddle_abp/php/body/enigma"+enigma+".php";  
+    }else if(cookie == 1 && estacio == 2 && enigma == 2){
+        window.location="/riddle_abp/php/body/enigma"+enigma+".php";    
+    }else if(cookie == 2 && estacio == 3 && enigma == 3){
+        window.location="/riddle_abp/php/body/enigma"+enigma+".php";
+    }else if(cookie == 3 && estacio == 4 && enigma == 4){
+        window.location="/riddle_abp/php/body/enigma"+enigma+".php";
+    }
+}
 
 </script>
