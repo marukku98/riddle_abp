@@ -8,6 +8,25 @@
     src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
 }
 
+.tools{
+}
+
+.btn-help{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    box-shadow: 0 0 5px black ;
+    border:solid 1px white;
+    background: url('/riddle_abp/assets/img/help.jpg');
+    background-position: center;
+    background-size: cover;
+    transition: all .2s;
+}
+
+.btn-help:hover{
+    box-shadow: 0 0 10px black ;
+}
+
 .modal {
     overflow-y: scroll;
 }

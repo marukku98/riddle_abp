@@ -6,7 +6,7 @@
 <script src="/riddle_abp/assets/js/enigma3-typewrite.js"></script>
 <?php endblock(); ?>
 
-<?php startblock("titulo"); ?> Enigma 3
+<?php startblock("titulo"); ?> Pearl Harbor 3
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
@@ -32,7 +32,8 @@
     </div>
 
     <div class="row mt-3">
-        <div class="m-auto bg-card game" hidden>
+        <div class="m-auto bg-card game">
+
             <div class="end">
                 <h3 class="end-text japan-font"></h3>
                 <button class="btn-lose" onclick="restart();"></button>
@@ -105,8 +106,7 @@
                         </div>
                         <div class="modal-body">
                             El siguiente enigma está basado en el tradicional
-                            <b>'Hundir la flota'</b>, aunque lo hemos adaptado a un solo jugador y le hemos añadido
-                            mecánicas
+                            <b>'Hundir la flota'</b>, aunque lo hemos adaptado a un solo jugador y le hemos añadido mecánicas
                             totalmente originales. Veámoslas...
                         </div>
                         <div class="modal-footer">
@@ -132,15 +132,12 @@
                             </p>
                             <img class="m-auto d-block" src="/riddle_abp/assets/img/ammo_pic.png" height="60px" style="margin-bottom: 30px !important">
                             <p class="mb-0">
-                                <b>Kamikaze. </b>Apretando este botón activaras/desactivaras el modo kamikaze, un
-                                disparo en
+                                <b>Kamikaze. </b>Apretando este botón activaras/desactivaras el modo kamikaze, un disparo en
                                 área muy útil. Solo tienes uno, así que úsalo con cabeza.
                             </p>
-                            <img class="m-auto d-block" src="/riddle_abp/assets/img/kamikaze_pic.png" height="60px"
-                                style="margin-bottom: 30px !important">
+                            <img class="m-auto d-block" src="/riddle_abp/assets/img/kamikaze_pic.png" height="60px" style="margin-bottom: 30px !important">
                             <p>
-                                <b>Banderas. </b>Haciendo clic derecho podrás marcar y bloquear las casillas donde
-                                sepas que
+                                <b>Banderas. </b>Haciendo clic derecho podrás marcar y bloquear las casillas donde sepas que
                                 no hay barcos.
                             </p>
                             <img class="m-auto d-block" src="/riddle_abp/assets/img/flag_pic.png" height="80px" style="margin-bottom: 30px !important">
@@ -163,16 +160,14 @@
 
                         </div>
                         <div class="modal-body">
-                            <p>La flota estadounidense está compuesta por 5 barcos uno de 2 bloques de longitud, 2 de
-                                3, uno
+                            <p>La flota estadounidense está compuesta por 5 barcos uno de 2 bloques de longitud, 2 de 3, uno
                                 de 4 y otro de 5.
-                                <br>Estos, para evitar accidentes, mantienen una distancia de como mínimo un bloque
-                                como puedes
+                                <br>Estos, para evitar accidentes, mantienen una distancia de como mínimo un bloque como puedes
                                 ver en esta imagen.</p>
                             <img class="m-auto d-block" src="/riddle_abp/assets/img/grid.png" height="250px">
                             <p>
-                                <br>Ahora ya dispones de toda la información necesaria para dirigir el ataque. ¡Mucha
-                                suerte!</p>
+                                <br>Ahora ya dispones de toda la información necesaria para dirigir el ataque. ¡Mucha suerte!
+                            </p>
                         </div>
                         <div class="modal-footer">
                             <button id="modal-btn-3" type="button" class="btn btn-success" data-dismiss="modal">JUGAR</button>
@@ -181,7 +176,11 @@
                 </div>
             </div>
         </div>
+        
     </div>
+    <div class="tools game">
+            <button class="btn-help" onclick="tutorial();"></button>
+        </div>
 
 </div>
 
