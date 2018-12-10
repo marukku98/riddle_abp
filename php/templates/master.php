@@ -137,9 +137,6 @@
       <a href="">Riddle Team</a>
     </div>
     <!-- Copyright -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal3">
-  Launch demo modal
-</button>
   </footer>
   <!-- Footer -->
 
