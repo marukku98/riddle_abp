@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/index.css">
 
+
   <?php startblock("css"); ?>
   <?php endblock(); ?>
 
@@ -90,18 +91,18 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0  title-font">
           <li class="nav-item">
-            <a class="nav-link text-white mr-4 pl-3" href="index.php">MENU
+            <a class="nav-link text-white ml-2 mr-2 pl-3" href="index.php">MENU
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white mr-4 pl-3" href="gamesGrid.php">JUEGOS</a>
+            <a class="nav-link text-white ml-2 mr-2 pl-3" href="gamesGrid.php">JUEGOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white mr-4 pl-3" href="index.php#scroll">ABOUT</a>
+            <a class="nav-link text-white ml-2 mr-2  pl-3" href="index.php#scroll">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white mr-4 pl-3" href="contact.php">CONTACTO</a>
+            <a class="nav-link text-white ml-2 mr-2  pl-3" href="contact.php">CONTACTO</a>
           </li>
           <?php
             if(isset($_SESSION['user'])){
@@ -136,11 +137,60 @@
       <a href="">Riddle Team</a>
     </div>
     <!-- Copyright -->
-
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal3">
+  Launch demo modal
+</button>
   </footer>
   <!-- Footer -->
 
 </body>
+
+<?php if(isset($_SESSION['user'])){ ?>
+
+<div id="modal-sessio" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sessió Caducada</h5>
+      </div>
+      <div class="modal-body">
+        <p>La sessió ha caducat. Torna a fer login si vols seguir jugant.</p>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var minutsInactiu = 0;
+  var maxMinutsInactiu = 5;
+
+  $(document).ready(function(){
+    var inactividad = setInterval(function(){
+      minutsInactiu++;
+      if (minutsInactiu == 5){
+        clearInterval(this);
+        
+        $("#modal-sessio").modal("show");
+        
+        setTimeout(function(){
+          window.location.href = "<?php echo $carpeta; ?>php/conexion/signout.php";
+        }, 3000);
+
+      }
+    }, (maxMinutsInactiu * 1000));
+
+    $(this).mousemove(function(){
+      minutsInactiu = 0;
+    });
+
+    $(this).keypress(function(){
+      minutsInactiu = 0;
+    });
+  });
+</script>
+
+<?php } ?>
+
 
 <!-- <script>
   $(function () {
