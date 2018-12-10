@@ -197,7 +197,6 @@ Enigma 1
 
 <script type="text/javascript">
 
-
 	$(document).ready(function () {
 		$(".btnMapa").hide();
 		$(".mapa").hide();
@@ -206,7 +205,7 @@ Enigma 1
 		$(".planify").hide();
 		$(".carta").hide();
 
-		var miVar = setInterval(function () { nextText(); }, 3000);
+		var miVar = setInterval(function () { nextText(); }, 10000);
 
 		function nextText(){
 			$(".planify").fadeIn();
@@ -222,11 +221,6 @@ Enigma 1
 			$("#contain").hide(1000);
 			$(".first").hide(1000);
 			$(".mapa").fadeIn(1000);
-
-			// $("#uno").fadeIn();
-
-			// var miVar = setInterval(function () { callback2() }, 2000);
-			// var miVar2 = setInterval(function () { callback3() }, 5000);
 		});
 	
 		$(".btnMapa").click(function () {
@@ -238,10 +232,7 @@ Enigma 1
 		$(".puzzlee").click(function () {
 			$(".content").fadeIn(1000);
 		});
-		// var images = [
-        //         { src: '/riddle_abp/assets/img/hawaii3.jpg', title: 'Hawaii' },
-        //         { src: '/riddle_abp/assets/img/puzzle2Scale.png', title: 'Kanto' }
-        //     ];	
+
 	});	
 
 	$("#play").click(function () {

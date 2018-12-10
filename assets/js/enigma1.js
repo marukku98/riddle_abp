@@ -7,7 +7,7 @@ var control;
 function empezarEnigma(image, gridSize, modo, num){
     startTime();
     gridPuzzle(image, gridSize);
-    $('#panelJuego').show();
+    $('#panelJuego').fadeIn();
     mezclarPiezas('#puzzGame');
     movimientos('#puzzGame li');    
     this.contador = 0;
