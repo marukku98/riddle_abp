@@ -109,7 +109,7 @@ Joc
                     } 
                     
                     ?>                   
-                    <div id="compEnigma" class="<?php echo $success ?>"></div>                   
+                    <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                   
                 <?php } ?>  
 
         </div>

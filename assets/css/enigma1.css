@@ -4,6 +4,7 @@
   font-family: 'Letter';
   src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
 }
+
 .total {
   color: #000;
   font: 14px Arial;
@@ -12,6 +13,11 @@
   position: relative;
 }
 
+.font-letter{
+  font-family: 'Source Serif Pro', serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
 
 .bg-body::after{
   position: absolute;
