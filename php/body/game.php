@@ -45,15 +45,13 @@ Joc
                 <div class="lockHover"></div>                
                 <?php }else{                     
                     if($var[0]['progres'] >= 1){
-                        $success = "success";                          
-                    }else{
-                        $success = "game-button play-animation mt-3";
-                    }
-                     ?>  
-                                          
-                <div onclick="display('1')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
-
-                <!-- game-button play-animation mt-3                                          -->
+                        $success = "success";  ?>
+                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
+                   <?php }else{
+                        $success = "game-button play-animation mt-3"; ?>
+                        <div onclick="display('1')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                   <?php }
+                     ?> 
             <?php } ?>           
         </div>
     </div>
@@ -81,14 +79,13 @@ Joc
                 <div class="lockHover"></div>                
                 <?php }else{                     
                     if($var[0]['progres'] >= 2){
-                        $success = "success";                          
-                    }else{
-                        $success = "game-button play-animation mt-3";
-                    }
-                     ?>  
-                                          
-                <div onclick="display('2')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
-
+                        $success = "success";  ?>
+                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
+                   <?php }else{
+                        $success = "game-button play-animation mt-3"; ?>
+                        <div onclick="display('2')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                   <?php }
+                     ?> 
                 <!-- game-button play-animation mt-3                                          -->
             <?php } ?>  
            
@@ -116,13 +113,14 @@ Joc
                 <div class="lockHover"></div>                
                 <?php }else{
                     if($var[0]['progres'] >= 3){
-                        $success = "success";                          
-                    }else{
-                        $success = "game-button play-animation mt-3";  
-                    }                     
-                    ?>                   
-                    <div onclick="display('3')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                   
-                <?php } ?>  
+                        $success = "success";  ?>
+                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
+                   <?php }else{
+                        $success = "game-button play-animation mt-3"; ?>
+                        <div onclick="display('3')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                   <?php }
+
+                     ?> <?php } ?>  
 
         </div>
     </div>
@@ -149,12 +147,13 @@ Joc
                 <div class="lockHover"></div>                
                 <?php }else{                    
                     if($var[0]['progres'] == 4){
-                        $success = "success";                          
-                    }else{
-                        $success = "game-button play-animation mt-3";  
-                    }                     
-                    ?>                   
-                    <div onclick="display('4')" id="compEnigma" class="<?php echo $success ?>"></div>                   
+                        $success = "success";  ?>
+                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
+                   <?php }else{
+                        $success = "game-button play-animation mt-3"; ?>
+                        <div onclick="display('4')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                   <?php }
+                     ?>                   
                 <?php } ?>  
         </div>
        </body>

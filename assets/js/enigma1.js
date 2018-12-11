@@ -1,3 +1,54 @@
+$(document).ready(function () {
+    $(".btnMapa").hide();
+    $(".mapa").hide();
+    $(".content").hide();
+    $("#step").hide();
+    $(".planify").hide();
+    $(".carta").hide();
+
+    var miVar = setInterval(function () { nextText(); }, 1000);
+
+    function nextText(){
+        $(".planify").fadeIn();
+        $(".carta").fadeIn();
+    }
+
+    $(".carta").click(function () {
+        $("#contain").fadeIn(1000);
+        $("#step").show();
+    });
+
+    $("#step").click(function () {
+        $("#contain").hide(1000);
+        $(".first").hide(1000);
+        $(".mapa").fadeIn(1000);
+    });
+
+    $(".btnMapa").click(function () {
+        $(".total").hide(1000);
+        $(".mapa").hide();
+        $(".mapa").fadeIn(1000);
+    });
+
+    $(".puzzlee").click(function () {
+        $(".content").fadeIn(1000);
+    });
+
+});	
+
+$("#play").click(function () {
+    empezarEnigma('/riddle_abp/assets/img/hawaii3.jpg', 3, true, 1);
+    document.getElementById('play').disabled=true;	
+});	
+
+$(function () {		
+    $('#newPhoto').click(function () {
+        $('#levelPanel').show();
+        empezarEnigma('/riddle_abp/assets/img/puzzle2Scale.png', 4, false, 2);
+        document.getElementById('newPhoto').disabled=true;
+    });
+});
+
 var contador;
 var timer = 1;
 var modo;
