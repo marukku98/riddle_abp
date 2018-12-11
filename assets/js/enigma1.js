@@ -111,7 +111,7 @@ function gridPuzzle(image, gridSize) {
 function movimientos(elem) {
     //Recogemos la función de arrastrar.
     $(elem).draggable({
-        snap: '#droppable',
+        snap: 'true',
         snapMode: 'outer',
         revert: "invalid",
         helper: "clone"

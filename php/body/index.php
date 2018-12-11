@@ -53,7 +53,7 @@
       <img class="rounded-circle" src="/riddle_abp/assets/img/diviertete.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Diviertete</h2>
-      <p>Disfruta de nuestros juegos únicos y familiares. Entreteneos investigando como resolver nuestros enigmas
+      <p class="text-font">Disfruta de nuestros juegos únicos y familiares. Entreteneos investigando como resolver nuestros enigmas
       de la forma más eficaz posible. Serás capaz de completarlos todos?</p>
     </div>
     <!-- /.col-lg-4 -->
@@ -61,7 +61,7 @@
       <img class="rounded-circle" src="/riddle_abp/assets/img/aprendee.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Aprende</h2>
-      <p>Conoce los acontecimientos más relevantes de la historia con nuestros enigmas. Infórmate de cuando, donde y porque sucedió cada hecho.
+      <p class="text-font">Conoce los acontecimientos más relevantes de la historia con nuestros enigmas. Infórmate de cuando, donde y porque sucedió cada hecho.
       Todo de una forma muy fácil y senzilla, simplemente mientras juegas. </p>
     </div>
     <!-- /.col-lg-4 -->
@@ -69,7 +69,7 @@
       <img class="rounded-circle" src="/riddle_abp/assets/img/compartee.png" alt="Generic placeholder image"
         width="140" height="140">
       <h2 class="title-font mt-3">Comparte</h2>
-      <p>Comparte con tus amigos y familiares la experencia que has tenido con nuestros juegos. Anímalos a prender nuevos hechos mientras pasan un buen rato.
+      <p class="text-font">Comparte con tus amigos y familiares la experencia que has tenido con nuestros juegos. Anímalos a prender nuevos hechos mientras pasan un buen rato.
      </p>
     </div>
     <!-- /.col-lg-4 -->
