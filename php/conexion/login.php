@@ -45,7 +45,7 @@ else{
         unset($_SESSION['lastPage']);
         ?>
             <script>
-                window.location = "/riddle_abp/php/body/" + "<?php echo $email;?>";
+                window.location = "/riddle_abp/php/body/" + "<?php echo $lastpage;?>";
             </script>
         <?php
 
