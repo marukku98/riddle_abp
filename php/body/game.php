@@ -1,7 +1,7 @@
 <?php require_once "../templates/master.php"; 
 
 include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php"; ?>
-
+<script src="/riddle_abp/assets/js/cookies.js"></script>
 
 
 <?php startblock("titulo"); ?>
@@ -181,44 +181,6 @@ Joc
 </div>
 
 <script>
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-// $("#compEnigma").click(function () {
-//     var cookie = getCookie('enigma1');
-//     var estacio = getCookie('estacio');
-
-//     if(cookie == estacio){
-//         alert('Dirígete al siguiente punto de interés');
-//     }else if(cookie == 1 && estacio == 2){
-//         window.location="/riddle_abp/php/body/enigma2.php";    
-//     }else if(cookie == 2 && estacio == 3){
-//         window.location="/riddle_abp/php/body/enigma3.php";
-//     }else if(cookie == 3 && estacio == 4){
-//         window.location="/riddle_abp/php/body/enigma4.php";
-//     }    		
-// });
 
  function display(enigma){
    

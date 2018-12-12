@@ -18,7 +18,7 @@ function showText() {
 
     setTimeout(function () {
         write("subtitulo-enunciado", "Primera Oleada", 40);
-    }, 2000);
+    }, 2200);
 
     setTimeout(function () {
         write("texto-enunciado",
@@ -29,8 +29,8 @@ function showText() {
             "De entre todos los pilotos de tu escuadrón, uno te ha informado que estaría dispuesto " +
             "a sacrificar su vida para asegurar la victoria (un Kamikaze).", 20
         );
-    }, 2800);
+    }, 3000);
     setTimeout(function () {
         $(".btn-play").removeAttr('hidden');
-    }, 11000);
+    }, 11200);
 }
