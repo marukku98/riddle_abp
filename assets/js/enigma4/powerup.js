@@ -1,17 +1,72 @@
 var probabilidadPower = 2;     // Probabildad del powerup
-var powerup;
+var gigantes = false;
+var actualPowerup;
 var usingPowerup = false;
 
-function createVelocitat(multiplicador) {
+function intervalCreacionPowerups() {
+    return setInterval(function () {
+        if (actualPowerup == null && !usingPowerup) {
+            var valor = Math.floor(Math.random() * probabilidadPower);
 
-    var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/coffee.png' />", 10000, function () {
-        var antSpeed = speed;
+            if (valor == 1) {
+                var randPower = Math.floor(Math.random() * 4);
+
+                switch (randPower) {
+                    case 0:
+                        actualPowerup = createVelocitat(3);
+                        break;
+                    case 1:
+                        actualPowerup = createRecoil(3);
+                        break;
+                    case 2:
+                        if (vidas < 3) {
+                            actualPowerup = createVida();
+                        }
+                        break;
+                    case 3:
+                        actualPowerup = createBalasGigantes();
+                        break;
+                    default:
+                        alert("No deberias estar aqui.");
+                        break;
+                }
+            }
+        }
+    }, 5000);
+}
+
+function intervalMovimientoPowerup() {
+    return setInterval(function () {
+        if (actualPowerup != null) {
+            actualPowerup.element.left -= speedPowerup;
+            actualPowerup.updatePosition();
+        }
+    }, 10);
+}
+
+function createBalasGigantes() {
+    var timeout = 10000;
+
+    var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/bala-powerup.png' />", timeout, function () {
+        gigantes = true;
+
+    }, function () {
+        gigantes = false;
+    });
+
+    return createPowerUpSprite(powerup);
+
+}
+
+function createVelocitat(multiplicador) {
+    var timeout = 10000;
+    var antSpeed = speed;
+
+    var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/coffee.png' />", timeout, function () {
         speed = speed * multiplicador;
 
-        setTimeout(function () {
-            speed = antSpeed;
-        }, 10000);
-
+    }, function () {
+        speed = antSpeed;
     });
 
     return createPowerUpSprite(powerup);
@@ -19,32 +74,26 @@ function createVelocitat(multiplicador) {
 
 
 function createRecoil(divisio) {
-    var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/recoil.png' />", 10000, function () {
-        var antRecoilTimeout = recoilTimeout;
+    var timeout = 10000;
+    var antRecoilTimeout = recoilTimeout;
+
+    var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/recoil.png' />", timeout, function () {
         recoilTimeout = recoilTimeout / divisio;
 
-        setTimeout(function () {
-            recoilTimeout = antRecoilTimeout;
-        }, 10000);
-
+    }, function () {
+        recoilTimeout = antRecoilTimeout;
     });
 
     return createPowerUpSprite(powerup);
 }
 
 function createVida() {
-    if (vidas < 3) {
-        var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/tools.png' />", 0, function () {
-            vidas++;
-            cargaVidas();
+    var powerup = createPowerUp("<img class='f-img' src='../../assets/img/enigma4/tools.png' />", 0, function () {
+        vidas++;
+        cargaVidas();
+    }, function () { });
 
-            setTimeout(function () {
-            }, 0);
-
-        });
-
-        return createPowerUpSprite(powerup);
-    }
+    return createPowerUpSprite(powerup);
 }
 
 function createPowerUpSprite(powerup) {
@@ -61,9 +110,12 @@ function createPowerUpSprite(powerup) {
         powerup: powerup,
         updatePosition: function () {
             powerupSprite.element.updatePosition(function () {
-                powerupSprite.element.mort(function () {
-                    powerup = null;
-                });
+                powerupSprite.mort();
+            });
+        },
+        mort: function () {
+            powerupSprite.element.mort(function () {
+                actualPowerup = null;
             });
         }
     }
@@ -72,11 +124,11 @@ function createPowerUpSprite(powerup) {
 }
 
 
-function createPowerUp(nombre, timeout, accion) {
+function createPowerUp(nombre, timeout, accion, accionFin) {
     var powerup = {
         nombre: nombre,
         timeout: timeout,
-        consume: function (onEnd) {
+        consume: function () {
             accion();
 
             var powerMuestra = $("<div class='powerup'>" + nombre + "</div>");
@@ -90,14 +142,20 @@ function createPowerUp(nombre, timeout, accion) {
 
 
             var reloj = setInterval(function () {
-                tiempo--;
-                count.html(tiempo);
+                if (usingPowerup) {
+                    tiempo--;
+                    count.html(tiempo);
+                } else {
+                    $("#panel-powerup").html("");
+                    clearInterval(this);
+                }
             }, 1000);
 
             setTimeout(function () {
+                accionFin();
                 $("#panel-powerup").html("");
                 clearInterval(reloj);
-                onEnd();
+                usingPowerup = false;
             }, timeout);
 
         }
