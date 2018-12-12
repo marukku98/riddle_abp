@@ -21,7 +21,7 @@ Joc
 
 <div class="row text-font">
 
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
 
         <?php
             $game = 1;
@@ -56,7 +56,7 @@ Joc
         </div>
     </div>
 
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
             $email = "mansoksama@gmail.com";
@@ -91,7 +91,7 @@ Joc
            
         </div>
     </div>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
             $email = "mansoksama@gmail.com";
@@ -125,7 +125,7 @@ Joc
         </div>
     </div>
 
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-3">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
             $email = "mansoksama@gmail.com";

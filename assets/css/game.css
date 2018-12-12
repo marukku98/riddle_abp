@@ -3,6 +3,7 @@
 }
 
 .game {
+    margin: auto;
     background-image: url('/riddle_abp/assets/img/picGame1.jpg');
     background-repeat: no-repeat;
     background-position: center;
