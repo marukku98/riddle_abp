@@ -50,7 +50,7 @@ $(function () {
 });
 
 var contador;
-var timer = 1;
+var timer = 5;
 var modo;
 var num;
 var control;
@@ -63,26 +63,36 @@ function empezarEnigma(image, gridSize, modo, num){
     movimientos('#puzzGame li');    
     this.contador = 0;
     this.modo = modo;
-    this.num = num;
+    this.num = num; 
+    this.timer = 5;
 }
 
-function reinicio(){   
-    if(timer == 10){    
+function reinicio(){
+
+    if(timer == -1){  
+        $('#puzzGame li').draggable('disable');
+        $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
-        timer = 0;
+        this.timer = 5;
     }
 }
 
-//Timer
+function ex(){
+    reinicio();
+}
+
+//Timer conta en rere
 function startTime(){
     var l = document.getElementById("number");
     control = window.setInterval(function(){
-        if(modo){
-            reinicio();
-        }       
-        l.innerHTML = timer;
-        timer++;    
+        if(modo){            
+           reinicio();
+        }
+        if(timer >= 0){
+            l.innerHTML = timer;
+        }        
+        timer--;    
     },1000);
 }
 
@@ -121,8 +131,9 @@ function movimientos(elem) {
     $(elem).droppable({
         drop: function (event, ui) {
             var $dragElem = $(ui.draggable).clone().replaceAll(this);
-            $(this).replaceAll(ui.draggable);         
-            //Recogemos lo que seria el puzzle bien hecho
+            $(this).replaceAll(ui.draggable); 
+
+            //Recogemos lo que seria el puzzle bien hecho  
             currentList = $('#puzzGame > li').map(function (i, el){ 
                 return $(el).attr('data-value'); 
             });
@@ -168,7 +179,7 @@ function movimientos(elem) {
                 }
                 contador++;                                        
                 $('.movimientos').text(contador);
-            }
+            }            
             //Le damos las mismas propiedades a las nuevas piezas movidas            
             movimientos(this);
             movimientos($dragElem);
