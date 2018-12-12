@@ -1,5 +1,6 @@
 <?php require_once "../templates/master.php" ?>
 
+<script src="/riddle_abp/assets/js/cookies.js"></script>
 <script src="/riddle_abp/assets/js/jquery-ui.js"></script>
 <script src="/riddle_abp/assets/js/jquery.ui.touch-punch.min.js"></script>
 <script src="/riddle_abp/assets/js/enigma1.js"></script>
@@ -45,8 +46,8 @@ Enigma 1
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content bg-transparent border-0">				
 					<div class="modal-body">
-						<div class="container" id="contain" style="display:none;">
-						<section id="content">
+						<div class="container mw-100 col-xl-12 col-md-8 col-sm-4 mx-auto" id="contain" style="display:none;">
+						<section id="content" class="col">
 							<form action="">
 							<h6>Carta del almirante Yamamoto al capitán Genda pidiéndole que estudie la viabilidad de un ataque
 									aéreo a Pearl Harbor.</h6>						
