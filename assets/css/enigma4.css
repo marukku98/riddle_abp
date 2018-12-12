@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
+.tooltip > .tooltip-inner {
+    background-color: #FFFFFF; 
+    color: #000000; 
+    border: 1px solid #F2F2F2; 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
 .bg-body::after{
     position: absolute;
     background-size: cover;
@@ -124,12 +132,13 @@
 }
 
 .explicacio-avio{
+    height: 55px;
     width: 160px;
     position: relative;
 }
 
 .explicacio-avio img{
-    height: 30px;
+    height: 55px;
 }
 
 #explicacio .btnBit{
@@ -220,23 +229,25 @@
 }
 
 .enemic-1{
-    width: 93px;
-    height: 34px;
-    background: url(../img/enigma4/A6M.png);
+    width: 106px;
+    height: 59px;
+    background: url(../img/enigma4/AV-1.png);
     background-size: cover;
 }
 
 .enemic-2{
-    width: 103px;
-    height: 41px;
-    background: url(../img/enigma4/N1KJ.png);
+    
+    width: 115px;
+    height: 86px;
+    background: url(../img/enigma4/AV-2.png);
     background-size: cover;
 }
 
 .enemic-3{
-    width: 93px;
-    height: 34px;
-    background: url(../img/enigma4/A6M-k.png);
+    
+    width: 79px;
+    height: 45px;
+    background: url(../img/enigma4/AV-3.png);
     background-size: cover;
 }
 
@@ -244,6 +255,11 @@
     width: 20px;
     height: 12px;
     background: url(../img/enigma4/bala.png);
+}
+
+.dispar.gigante{
+    width: 50px;
+    height: 28px;
 }
 
 .dispar-en{

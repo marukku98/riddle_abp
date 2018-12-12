@@ -3,7 +3,10 @@
 <?php startblock("css"); ?>
     <link rel="stylesheet" href="/riddle_abp/assets/css/enigma4.css">
     <script src="/riddle_abp/assets/js/enigma4/joc.js"></script>
+    <script src="/riddle_abp/assets/js/enigma4/jugador.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/powerup.js"></script>
+    <script src="/riddle_abp/assets/js/enigma4/dispar.js"></script>
+    <script src="/riddle_abp/assets/js/enigma4/enemic.js"></script>
 <?php endblock(); ?>
 
 <?php startblock("titulo"); ?> 
@@ -29,43 +32,43 @@
             </div>
         </div>
         <div id="explicacio">
-            <h2>Explicació</h2>
+            <h2>Instrucciones</h2>
             <hr>
             <div id="explicacio-jugador">
-                <p>Tu ets aquest avió</p>
+                <p>Este es tu avión</p>
                 <img src="../../assets/img/enigma4/avion-jp.png">
 
-                <p>Aquests son els teus enemics</p>
+                <p>Y estos son tus enemigos</p>
                 <div id="explicacio-avions">
-                    <div class="explicacio-avio">
-                        <img src="../../assets/img/enigma4/A6M.png">
-                        <p>A6M</p>
+                    <div class="explicacio-avio" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Curtiss P-40 Warhawk">
+                        <img src="../../assets/img/enigma4/AV-1.png">
                     </div>
-                    <div class="explicacio-avio">
-                        <img src="../../assets/img/enigma4/A6M-k.png">
-                        <p>A6M (Kamikaze)</p>
+                    <div class="explicacio-avio" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Boeing B-17 Flying Fortress">
+                        <img src="../../assets/img/enigma4/AV-2.png">
                     </div>
-                    <div class="explicacio-avio">
-                        <img src="../../assets/img/enigma4/N1KJ.png">
-                        <p>N1KJ</p>
+                    <div class="explicacio-avio" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Bell P-63 Kingcobra (Caza)">
+                        <img src="../../assets/img/enigma4/AV-3.png">
                     </div>
                 </div>
 
-                <p>Utilitza les fletxes per moure el avió i el espai per a disparar</p>
+                <p>Utiliza las flechas para mover el avión y el espacio para disparar</p>
                 <div>
                     <img src="../../assets/img/enigma4/exp-arrows.png" style="width:80px;">
                     <img src="../../assets/img/enigma4/exp-space.jpg" style="width:180px;">
                 </div>
 
-                <p>Durant la partida apareixeran ajudes que faran el joc mes fàcil</p>
+                <p>Durante la partida, saldran ayudas que te haran el juego mas facil</p>
                 <div id="explicacio-powerups">
-                    <div class="powerup">
+                    <div class="powerup" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Doble velocidad">
                         <img class='f-img' src='../../assets/img/enigma4/coffee.png' />
                     </div>
-                    <div class="powerup">
+                    <div class="powerup" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Menos tiempo de recoil">
                         <img class='f-img' src='../../assets/img/enigma4/recoil.png' />
                     </div>
-                    <div class="powerup">
+                    <div class="powerup" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Bala gigante">
+                        <img class='f-img' src='../../assets/img/enigma4/bala-powerup.png' />
+                    </div>
+                    <div class="powerup" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="Vida extra">
                         <img class='f-img' src='../../assets/img/enigma4/tools.png' />
                     </div>
                 </div>
@@ -83,4 +86,7 @@
             </div>
         </div>
     </div>
+    <script>
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
 <?php endblock(); ?>
