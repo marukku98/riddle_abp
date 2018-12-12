@@ -1,7 +1,9 @@
 <?php
+    if(!isset($_SESSION)){
+        session_start();
+    }
     $direccion = $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/";
     $carpeta = "/riddle_abp/";
-
     require_once $direccion . "php/librerias/ti.php";
 ?>
 
@@ -23,6 +25,7 @@
     <script src="<?php echo $carpeta; ?>assets/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo $carpeta; ?>assets/js/popper.min.js"></script>
     <script src="<?php echo $carpeta; ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo $carpeta; ?>assets/js/cookies.js"></script>
 
     <link rel="stylesheet" href="<?php echo $carpeta; ?>assets/css/login_register.css">
 
@@ -30,7 +33,7 @@
 
 <body>
     <div class="center">
-<a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/title.png" class="title" ></a>
+        <a href="index.php"><img src="<?php echo $carpeta; ?>assets/img/title.png" class="title" ></a>
     <div class="container">
         <?php startblock('principal'); ?>
 

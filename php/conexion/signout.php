@@ -1,8 +1,18 @@
+<?php session_start();?>
+<script src="/riddle_abp/assets/js/cookies.js"></script>
+
 <?php
-    session_start();
-    if(isset($_SESSION['user'])){
-        unset($_SESSION['user']);
-    }
-        
-    header("Location: /riddle_abp/php/body/index.php");
+    if(isset($_SESSION['user'])){        
 ?>
+    <script>
+        setHistorial("logout","<?php echo $_SESSION['user']['email'];?>");
+    </script>
+<?php
+        unset($_SESSION['user']);
+    }            
+?>
+
+<script>
+    window.location = "/riddle_abp/php/body/index.php";
+</script>
+

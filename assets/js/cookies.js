@@ -21,3 +21,25 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function setHistorial(_tipo, _email){
+    var object;
+    var JsonHistorial;
+    var historial;
+    var date = new Date();
+    var formatDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+    
+    object = {tipo: _tipo, email: _email, time: formatDate};
+    JsonHistorial = getCookie("historial");
+    
+    if(JsonHistorial != ""){
+        historial = JSON.parse(JsonHistorial);
+    }else{
+        historial = JSON.parse("[]");
+    }
+
+    historial.push(object);
+    JsonHistorial = JSON.stringify(historial);
+    setCookie("historial", JsonHistorial, 1);                
+
+}
