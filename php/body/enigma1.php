@@ -9,6 +9,17 @@
 Enigma 1
 <?php endblock(); ?>
 
+<?php
+if(!isset($_SESSION['user'])){
+	$_SESSION['lastPage'] = $_POST['lastpage'];
+	$_SESSION['lvl'] = '1';
+	header('Location: /riddle_abp/php/body/login.php');
+}else{
+	// $_SESSION['progres'] = '1';
+    // header('Location: /riddle_abp/php/conexion/progres.php');
+}
+ ?>
+
 <?php startblock("principal"); ?>
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma1.css">
 

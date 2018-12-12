@@ -39,23 +39,42 @@ else{
         'email'=>$res[0]["email"],
         'role'=>$res[0]["role"]        
     );  
+ 
 
-    if(isset($_SESSION['lastPage'])){
-        $lastpage = $_SESSION['lastPage'];
-        unset($_SESSION['lastPage']);
-        ?>
+    if(isset($_SESSION['lvl'])){
+        $enigma = $_SESSION['lvl'];
+        $game = '1';
+        $email = $_SESSION['user']['email'];
+        $var = selectProgressUser($game, $email); 
+         ?>
+        <script>alert(<?php echo $var[0]['progres']?>);</script>
+        <script>alert(<?php echo $enigma ?>);</script>
+        
+
+        <?php $var = selectProgressUser($game, $email); 
+        
+        if($var[0]['progres'] == $enigma-1){  ?>
             <script>
-                window.location = "/riddle_abp/php/body/" + "<?php echo $lastpage;?>";
+                alert('sdfdsfsd');
+                window.location = "/riddle_abp/php/body/enigma"+<?php echo $enigma ?>+".php";
             </script>
+    <?php }else{ ?>
+            <script>
+                window.location = "/riddle_abp/php/body/game.php";
+            </script>
+    <?php }
+        ?>
+        
         <?php
-
+        unset($_SESSION['lvl']);
     }else{
-        ?>
-            <script>
-                window.location = "/riddle_abp/php/body/index.php";
-            </script>
-        <?php
+    ?>
+        <script>
+            window.location = "/riddle_abp/php/body/index.php";
+        </script>
+    <?php
     }
+    
 }
 
 ?>

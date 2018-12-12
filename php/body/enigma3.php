@@ -12,6 +12,16 @@
 <?php startblock("principal"); ?>
 
 
+<?php
+if(!isset($_SESSION['user'])){
+	$_SESSION['lastPage'] = $_POST['lastpage'];
+	$_SESSION['lvl'] = '3';
+	header('Location: /riddle_abp/php/body/login.php');
+}else{
+    // $_SESSION['progres'] = '3';
+    // header('Location: /riddle_abp/php/conexion/progres.php');
+}
+ ?>
 
 
 <div class="container-fluid">

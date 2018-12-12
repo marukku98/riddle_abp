@@ -34,4 +34,6 @@ if(isset($_POST['completed'])){
     updateProgressUser($game, $email, $progres);
     header('Location: /riddle_abp/php/body/game.php'); 
 }
+
+
 ?>
