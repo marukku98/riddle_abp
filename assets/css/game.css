@@ -17,6 +17,14 @@
     overflow: hidden;
 }
 
+.gam1 {
+    background-image: url('/riddle_abp/assets/img/enigma1icon.jpg');
+}
+
+.gam4{
+    background-image: url('/riddle_abp/assets/img/bg-game4.jpg');
+}
+
 .lockHover {
     position: absolute;
     margin-top: 25px;

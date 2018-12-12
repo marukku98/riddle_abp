@@ -34,7 +34,7 @@ Joc
                 $locked = "";
             }
         ?>
-        <div class="game <?php echo $locked ?>">
+        <div class="game gam1 <?php echo $locked ?>">
             <div class="gameText">
                 <h5 class="m-0">Nivel 1</h5>                
                 <p>Preparativos para la batalla</p>
@@ -136,7 +136,7 @@ Joc
                 $locked = "";
             }
         ?>
-        <div class="game <?php echo $locked ?>">
+        <div class="game gam4 <?php echo $locked ?>">
         <div class="gameText">
                 <h5 class="m-0">Nivel 4</h5>                
                 <p>Las consequencias</p>
