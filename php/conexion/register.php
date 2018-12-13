@@ -41,7 +41,7 @@ if(isset($_POST['insertarUser'])){
 
     if($validation == true){
         insertarUsers($username, $email, $password);
-        header('Location: /riddle_abp/php/body/index.php');
+        header('Location: /riddle_abp/php/body/login.php');
     }else{
         header('Location: /riddle_abp/php/body/register.php');
     }
