@@ -6,17 +6,14 @@ $(document).ready(function () {
     $(".planify").hide();
     $(".carta").hide();
 
-    setInterval(function () { 
-        nextText(); 
-    }, 1000);
-
-    function funcionPrincipal(callback){
-        
+    function funcionPrincipal(callback){        
         callback();
     }
 
     funcionPrincipal(function(){
-        alert('terminó de hacer algo');
+        setInterval(function () { 
+          nextText(); 
+        }, 1000); 
     });
 
     function nextText(){
