@@ -64,11 +64,23 @@ else{
         <?php
         unset($_SESSION['lvl']);
     }else{
-    ?>
-        <script>
-            window.location = "/riddle_abp/php/body/index.php";
-        </script>
-    <?php
+        if (isset($_SESSION['lastPage'])) {
+            $lastPage = $_SESSION['lastPage'];
+            unset($_SESSION['lastPage']);
+            ?>
+                <script>
+                    window.location = "/riddle_abp/php/body/" + "<?php echo $lastPage;?>";
+                </script>
+            <?php
+
+        } else {
+            ?>
+                <script>
+                    window.location = "/riddle_abp/php/body/index.php";
+                </script>
+            <?php
+        }
+
     }
     
 }
