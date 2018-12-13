@@ -86,9 +86,9 @@
   <div class="row featurette">
     <div class="col-md-7 m-auto">
       <h2 class="featurette-heading title-font">Artur Alcoverro
-        <span class="text-muted">senpai.</span>
+        <span class="text-muted"></span>
       </h2>
-      <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. </p>
+      <p class="lead text-font"></p>
       <ul class="list-group list-group-flush text-font">
         <li class="list-group-item">
           <i class="far fa-envelope"></i> artur.bcn1998@gmail.com</li>
@@ -111,7 +111,7 @@
     <div class="col-md-7 order-md-2 m-auto">
       <h2 class="featurette-heading title-font">Toni Altamirano
         <p>
-          <span class="text-muted">Prove yourself and Rise</span>
+          <span class="text-muted"></span>
         </p>
       </h2>
       <p class="lead text-font">Programador back-end y front-end.</p>
@@ -137,10 +137,9 @@
   <div class="row featurette">
     <div class="col-md-7 m-auto">
       <h2 class="featurette-heading title-font">Marc González
-        <span class="text-muted">Checkomeito.</span>
+        <span class="text-muted"></span>
       </h2>
-      <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-        cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      <p class="lead text-font">
       </p>
       <ul class="list-group list-group-flush text-font">
         <li class="list-group-item">
@@ -163,10 +162,9 @@
   <div class="row featurette">
     <div class="col-md-7 order-md-2 m-auto">
       <h2 class="featurette-heading title-font">Martí Soler
-        <span class="text-muted">See for yourself.</span>
+        <span class="text-muted"></span>
       </h2>
-      <p class="lead text-font">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo
-        cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      <p class="lead text-font">
       </p>
 
       <ul class="list-group list-group-flush text-font">
