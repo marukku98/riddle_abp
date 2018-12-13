@@ -1,4 +1,6 @@
-<?php require_once "../templates/master.php" ?>
+<?php require_once "../templates/master.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
+?>
 
 <script src="/riddle_abp/assets/js/cookies.js"></script>
 <script src="/riddle_abp/assets/js/jquery-ui.js"></script>
@@ -15,8 +17,17 @@ if(!isset($_SESSION['user'])){
 	$_SESSION['lvl'] = '1';
 	header('Location: /riddle_abp/php/body/login.php');
 }else{
-	// $_SESSION['progres'] = '1';
-    // header('Location: /riddle_abp/php/conexion/progres.php');
+	$_SESSION['progres'] = '0';
+
+	$game = 1;
+	$email = $_SESSION['user']['email'];
+
+	$var = selectProgressUser($game, $email); 
+	if($var[0]['progres'] != 0){  ?>
+           <script>
+            window.location = "/riddle_abp/php/body/game.php";
+        </script>
+<?php }   
 }
  ?>
 

@@ -47,15 +47,11 @@ else{
         $email = $_SESSION['user']['email'];
         $var = selectProgressUser($game, $email); 
          ?>
-        <script>alert(<?php echo $var[0]['progres']?>);</script>
-        <script>alert(<?php echo $enigma ?>);</script>
-        
-
+         
         <?php $var = selectProgressUser($game, $email); 
         
         if($var[0]['progres'] == $enigma-1){  ?>
-            <script>
-                alert('sdfdsfsd');
+            <script>              
                 window.location = "/riddle_abp/php/body/enigma"+<?php echo $enigma ?>+".php";
             </script>
     <?php }else{ ?>
