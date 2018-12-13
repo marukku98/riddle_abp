@@ -6,7 +6,18 @@ $(document).ready(function () {
     $(".planify").hide();
     $(".carta").hide();
 
-    var miVar = setInterval(function () { nextText(); }, 1000);
+    setInterval(function () { 
+        nextText(); 
+    }, 1000);
+
+    function funcionPrincipal(callback){
+        
+        callback();
+    }
+
+    funcionPrincipal(function(){
+        alert('terminó de hacer algo');
+    });
 
     function nextText(){
         $(".planify").fadeIn();

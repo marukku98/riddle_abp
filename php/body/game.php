@@ -62,7 +62,7 @@ Joc
             $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);            
 
-            if($var[0]['progres'] <= 1){
+            if($var[0]['progres'] < 1){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
