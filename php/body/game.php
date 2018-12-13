@@ -25,7 +25,7 @@ Joc
 
         <?php
             $game = 1;
-            $email = "mansoksama@gmail.com";
+            $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);            
 
             if($var[0]['progres'] < 0){
@@ -59,7 +59,7 @@ Joc
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
-            $email = "mansoksama@gmail.com";
+            $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);            
 
             if($var[0]['progres'] <= 1){
@@ -94,7 +94,7 @@ Joc
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
-            $email = "mansoksama@gmail.com";
+            $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
             if($var[0]['progres'] < 2){
                 $locked = "lockedImg";
@@ -128,7 +128,7 @@ Joc
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
-            $email = "mansoksama@gmail.com";
+            $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
             if($var[0]['progres'] < 3){
                 $locked = "lockedImg";
