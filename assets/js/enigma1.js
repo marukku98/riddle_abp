@@ -57,7 +57,7 @@ $(function () {
     });
 });
 
-var contador;
+var contador = 0;
 var timer = 15;
 var modo;
 var num;
@@ -67,6 +67,10 @@ function empezarEnigma(image, gridSize, modo, num){
     if(num == 2){
         $("#timeBox").hide();
     }
+    
+    var l = document.getElementById("mov");
+    l.innerHTML = 0;
+
     startTime();
     gridPuzzle(image, gridSize);
     $('#panelJuego').fadeIn();
@@ -147,25 +151,26 @@ function movimientos(elem) {
 
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){    
-                setTimeout(function(){
-                    this.contador = 0;
+                setTimeout(function(){                   
+                    contador = 0;
                     timer = 0;                    
                     if(num == 1){                        
-                        animationComplete(true);
-                        //setTimeout(function () { $("#correcte").modal("show"); }, 1000);
+                        animationComplete(true);   
                         setTimeout(function () { 
-                            $("#correcte").modal("show"); 
-                            animationQuit(); 
+                            modal = "#correcte";
+                            finalAnimation(animation, modal);
                         }, 1000);
+
                         $('.next').show();                        
                     }else{
                         setCookie('enigma1', 1, 1);
                         setCookie('estacio', 1, 1);
-                        animationComplete(true);                        
+                        animationComplete(true);
                         setTimeout(function () { 
-                            $("#finalModal").modal({backdrop: 'static', keyboard: false}); 
-                            animationQuit();  
+                            modal = "#finalModal";
+                            finalAnimation(animation, modal);
                         }, 1000);
+                       
                     }
                     endTime();                  
                   });                                      
@@ -181,6 +186,8 @@ function movimientos(elem) {
                     setTimeout(function(){                    
                         if(contador == 20){                      
                             $("#pistaModal2").modal("show");
+                        }else if(contador == 35){
+                            $("#pistaModal3").modal("show");
                         }                       
                       }, 300); 
                 }
@@ -192,6 +199,15 @@ function movimientos(elem) {
             movimientos($dragElem);
         }
     });
+}
+
+function animation(name) {       
+    $(name).modal({backdrop: 'static', keyboard: false});; 
+    animationQuit(); 
+}
+  
+function finalAnimation(callback, modal) {
+    callback(modal);
 }
 
 function mezclarPiezas(ul) {    

@@ -105,7 +105,7 @@ if(!isset($_SESSION['user'])){
 				<h3 id="imgTitle font-letter" class="japan-font">Reorganizando los mapas</h3>
 				<div id="contadorMov">
 					<div>Movimientos:</div>
-					<div class="movimientos">0</div>
+					<div class="movimientos" id="mov">0</div>
 				</div>
 				<div id="timeBox">
 					<div>Tiempo:</div> 
@@ -123,7 +123,7 @@ if(!isset($_SESSION['user'])){
 			</div>
 			
 			<div class="next">
-				<button id="newPhoto" type="button" class="btn btn-dark">Siguiente</button>
+				<button id="newPhoto" type="button" class="btn btn-dark float-right">Siguiente</button>
 			</div>
 
 			<!-- Modal -->
@@ -155,14 +155,35 @@ if(!isset($_SESSION['user'])){
 			</div>
 
 				<!-- Modal -->
+				<div class="modal fade" id="pistaModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title font-letter" id="exampleModalLabel">Pista</h5>
+						</div>
+						<div class="modal-body font-letter">
+							Este es un trozo del mapa, memorizalo bien!
+							<img src="/riddle_abp/assets/img/pistamapa2.png" alt="Error">
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="dismiss" class="btn btn-secondary btn-sm" name="completed" data-dismiss="modal">Aceptar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+				<!-- Modal -->
 			<div class="modal fade" id="correcte" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title font-letter" id="exampleModalLabel">Correcte</h5>
+							<h5 class="modal-title font-letter" id="exampleModalLabel">Correcto!</h5>
 						</div>
 						<div class="modal-body">
 							Ya puedes pasar al puzzle final!
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="dismiss" class="btn btn-secondary btn-sm" name="completed" data-dismiss="modal">Aceptar</button>
 						</div>
 					</div>
 				</div>
@@ -200,9 +221,9 @@ if(!isset($_SESSION['user'])){
 							<ul class="list-group list-group-flush font-letter">
 								<li class="list-group-item">Hay un total de dos mapas por desencriptar.</li>
 								<li class="list-group-item">Uno de los mapas está encriptado de 3x3 y otro tiene más seguridad y es de 4x4.</li>
-								<li class="list-group-item">Uno de ellos está programado para que en x tiempo se reinicie si tardas mucho en 
+								<li class="list-group-item">El primer mapa está programado para que en 15 segundos se reinicie si tardas mucho en 
 								desencriptarlo. ¿Eres lo suficientemente rápido?</li>
-								<li class="list-group-item">Arrastra las piezas para intercambiarlas y resolver el puzzle!</li>						
+								<li class="list-group-item">Arrastra las piezas para intercambiarlas y resuelve el puzzle!</li>						
 							</ul>
 						</div>
 						<div class="modal-footer">
