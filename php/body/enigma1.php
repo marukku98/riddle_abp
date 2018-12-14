@@ -23,7 +23,7 @@ if(!isset($_SESSION['user'])){
 	$email = $_SESSION['user']['email'];
 
 	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 0 && $_SESSION['user']['role'] == 0)){  ?>
+	if($var[0]['progres'] != 0 && $_SESSION['user']['role'] == 0){  ?>
            <script>
             window.location = "/riddle_abp/php/body/game.php";
         </script>
@@ -148,7 +148,7 @@ if(!isset($_SESSION['user'])){
 							<h5 class="modal-title font-letter" id="exampleModalLabel">Pista</h5>
 						</div>
 						<div class="modal-body font-letter">
-							La liena divisoria tiene que quedar a la mitad
+							La linea divisoria tiene que quedar a la mitad
 						</div>
 					</div>
 				</div>

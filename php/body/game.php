@@ -20,9 +20,7 @@ Joc
 </div>
 
 <div class="row text-font">
-
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
-
         <?php
             $game = 1;
             $email = $_SESSION['user']['email'];
@@ -188,7 +186,7 @@ Joc
     var cookie = getCookie('enigma1');
     var estacio = getCookie('estacio');
 
-    if(cookie == estacio){
+    if(cookie == estacio){        
         alert('Dirígete al siguiente punto de interés');
     }else if(cookie == 0 && estacio == 1 && enigma == 1){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";  
