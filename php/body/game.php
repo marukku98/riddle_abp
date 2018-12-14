@@ -61,7 +61,7 @@ Joc
             $game = 1;
             $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] < 2){
+            if($var[0]['progres'] < 1){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -73,11 +73,11 @@ Joc
                 <p>Primera oleada</p>
             </div>
             <?php                       
-                if($var[0]['progres'] < 2){
+                if($var[0]['progres'] < 1){
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{
-                    if($var[0]['progres'] >= 3){
+                    if($var[0]['progres'] >= 2){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{
@@ -95,7 +95,7 @@ Joc
             $game = 1;
             $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] < 3){
+            if($var[0]['progres'] < 2){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -111,7 +111,7 @@ Joc
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{                    
-                    if($var[0]['progres'] == 4){
+                    if($var[0]['progres'] == 3){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{
@@ -143,7 +143,7 @@ Joc
                 <p>El desenlace</p>
             </div>           
             <?php      
-                if($var[0]['progres'] < 4){                   
+                if($var[0]['progres'] < 5){                   
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{                     
@@ -192,11 +192,11 @@ Joc
         alert('Dirígete al siguiente punto de interés');
     }else if(cookie == 0 && estacio == 1 && enigma == 1){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";  
-    }else if(cookie == 1 && estacio == 2 && enigma == 2){
+    }else if(cookie == 1 && estacio == 2 && enigma == 3){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";    
-    }else if(cookie == 2 && estacio == 3 && enigma == 3){
+    }else if(cookie == 2 && estacio == 3 && enigma == 4){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
-    }else if(cookie == 3 && estacio == 4 && enigma == 4){
+    }else if(cookie == 3 && estacio == 4 && enigma == 5){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
     }
 }
