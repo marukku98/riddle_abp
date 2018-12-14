@@ -17,16 +17,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 <?php
 if(!isset($_SESSION['user'])){
 	$_SESSION['lastPage'] = $_POST['lastpage'];
-	$_SESSION['lvl'] = '3';
+	$_SESSION['lvl'] = '2';
 	header('Location: /riddle_abp/php/body/login.php');
 }else{
-    $_SESSION['progres'] = '2';
+    $_SESSION['progres'] = '1';
 
 	$game = 1;
 	$email = $_SESSION['user']['email'];
 
 	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 2){  ?>
+	if($var[0]['progres'] != 1 && $_SESSION['user']['role'] == 0){  ?>
         <script>
             window.location = "/riddle_abp/php/body/game.php";
         </script>

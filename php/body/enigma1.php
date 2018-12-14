@@ -23,7 +23,7 @@ if(!isset($_SESSION['user'])){
 	$email = $_SESSION['user']['email'];
 
 	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 0){  ?>
+	if($var[0]['progres'] != 0 && $_SESSION['user']['role'] == 0){  ?>
            <script>
             window.location = "/riddle_abp/php/body/game.php";
         </script>
@@ -85,7 +85,7 @@ if(!isset($_SESSION['user'])){
 							</form>	
 						</section>	
 						</div>
-					</div>			
+					</div>						
 				</div>
 			</div>
 		</div>
@@ -109,7 +109,7 @@ if(!isset($_SESSION['user'])){
 				</div>
 				<div id="timeBox">
 					<div>Tiempo:</div> 
-					<div id="number">0</div> seg
+					<div id="number"></div>
                 </div>				   
 				<div class="animation">
 					<div class="gif">			
@@ -148,7 +148,7 @@ if(!isset($_SESSION['user'])){
 							<h5 class="modal-title font-letter" id="exampleModalLabel">Pista</h5>
 						</div>
 						<div class="modal-body font-letter">
-							La liena divisoria tiene que quedar a la mitad
+							La linea divisoria tiene que quedar a la mitad
 						</div>
 					</div>
 				</div>
@@ -181,7 +181,7 @@ if(!isset($_SESSION['user'])){
 						<div class="modal-footer">
 						<form action="/riddle_abp/php/conexion/progres.php" method="POST">
 							<input type="text" name="game" value="1" style="visibility:hidden;">
-							<input type="text" name="enigma" value="1" style="visibility:hidden;">
+							<input type="text" name="enigma" value="2" style="visibility:hidden;">
 							<button type="submit" id="success" class="btn btn-secondary btn-sm" name="completed" >Continuar</button>
 						</form>
 						</div>

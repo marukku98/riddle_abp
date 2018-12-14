@@ -20,9 +20,7 @@ Joc
 </div>
 
 <div class="row text-font">
-
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
-
         <?php
             $game = 1;
             $email = $_SESSION['user']['email'];
@@ -55,13 +53,12 @@ Joc
             <?php } ?>           
         </div>
     </div>
-
+    
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
             $email = $_SESSION['user']['email'];
-            $var = selectProgressUser($game, $email);            
-
+            $var = selectProgressUser($game, $email);  
             if($var[0]['progres'] < 1){
                 $locked = "lockedImg";
             }else{
@@ -72,47 +69,13 @@ Joc
             <div class="gameText">
                 <h5 class="m-0">Nivel 2</h5>                
                 <p>Primera oleada</p>
-            </div>           
-            <?php      
-                if($var[0]['progres'] < 1){                   
-                ?>
-                <div class="lockHover"></div>                
-                <?php }else{                     
-                    if($var[0]['progres'] >= 2){
-                        $success = "success";  ?>
-                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
-                   <?php }else{
-                        $success = "game-button play-animation mt-3"; ?>
-                        <div onclick="display('2')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
-                   <?php }
-                     ?> 
-                <!-- game-button play-animation mt-3                                          -->
-            <?php } ?>  
-           
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
-        <?php
-            $game = 1;
-            $email = $_SESSION['user']['email'];
-            $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] < 2){
-                $locked = "lockedImg";
-            }else{
-                $locked = "";
-            }
-        ?>
-        <div class="game <?php echo $locked ?>">
-            <div class="gameText">
-                <h5 class="m-0">Nivel 3</h5>                
-                <p>Segunda oleada</p>
             </div>
             <?php                       
-                if($var[0]['progres'] < 2){
+                if($var[0]['progres'] < 1){
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{
-                    if($var[0]['progres'] >= 3){
+                    if($var[0]['progres'] >= 2){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{
@@ -130,7 +93,7 @@ Joc
             $game = 1;
             $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] < 3){
+            if($var[0]['progres'] < 2){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -138,15 +101,15 @@ Joc
         ?>
         <div class="game gam4 <?php echo $locked ?>">
         <div class="gameText">
-                <h5 class="m-0">Nivel 4</h5>                
-                <p>Las consequencias</p>
+                <h5 class="m-0">Nivel 3</h5>                
+                <p>Segunda oleada</p>
             </div>
             <?php                       
                 if($var[0]['progres'] < 3){
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{                    
-                    if($var[0]['progres'] == 4){
+                    if($var[0]['progres'] == 3){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{
@@ -158,6 +121,42 @@ Joc
         </div>
        </body>
 
+    </div>
+
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+        <?php
+            $game = 1;
+            $email = $_SESSION['user']['email'];
+            $var = selectProgressUser($game, $email);            
+
+            if($var[0]['progres'] < 4){
+                $locked = "lockedImg";
+            }else{
+                $locked = "";
+            }
+        ?>
+        <div class="game gamFinal <?php echo $locked ?>">
+            <div class="gameText">
+                <h5 class="m-0">Nivel 4</h5>                
+                <p>El desenlace</p>
+            </div>           
+            <?php      
+                if($var[0]['progres'] < 5){                   
+                ?>
+                <div class="lockHover"></div>                
+                <?php }else{                     
+                    if($var[0]['progres'] == 5){
+                        $success = "success";  ?>
+                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
+                   <?php }else{
+                        $success = "game-button play-animation mt-3"; ?>
+                        <div onclick="display('5')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                   <?php }
+                     ?> 
+                <!-- game-button play-animation mt-3                                          -->
+            <?php } ?>  
+           
+        </div>
     </div>
     <?php endblock(); ?>
 
@@ -187,15 +186,15 @@ Joc
     var cookie = getCookie('enigma1');
     var estacio = getCookie('estacio');
 
-    if(cookie == estacio){
+    if(cookie == estacio){        
         alert('Dirígete al siguiente punto de interés');
     }else if(cookie == 0 && estacio == 1 && enigma == 1){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";  
-    }else if(cookie == 1 && estacio == 2 && enigma == 2){
+    }else if(cookie == 1 && estacio == 2 && enigma == 3){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";    
-    }else if(cookie == 2 && estacio == 3 && enigma == 3){
+    }else if(cookie == 2 && estacio == 3 && enigma == 4){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
-    }else if(cookie == 3 && estacio == 4 && enigma == 4){
+    }else if(cookie == 3 && estacio == 4 && enigma == 5){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
     }
 }

@@ -58,12 +58,15 @@ $(function () {
 });
 
 var contador;
-var timer = 5;
+var timer = 15;
 var modo;
 var num;
 var control;
 
 function empezarEnigma(image, gridSize, modo, num){
+    if(num == 2){
+        $("#timeBox").hide();
+    }
     startTime();
     gridPuzzle(image, gridSize);
     $('#panelJuego').fadeIn();
@@ -72,7 +75,7 @@ function empezarEnigma(image, gridSize, modo, num){
     this.contador = 0;
     this.modo = modo;
     this.num = num; 
-    this.timer = 5;
+    this.timer = 15;
 }
 
 function reinicio(){
@@ -82,12 +85,8 @@ function reinicio(){
         $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
-        this.timer = 5;
+        this.timer = 15;
     }
-}
-
-function ex(){
-    reinicio();
 }
 
 //Timer conta en rere
