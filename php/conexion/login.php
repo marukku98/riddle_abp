@@ -34,6 +34,7 @@ else{
     </script>
 <?php
 
+
     $_SESSION['user'] = array(
         'username'=>$res[0]["username"],
         'email'=>$res[0]["email"],

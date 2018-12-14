@@ -85,10 +85,7 @@ if(!isset($_SESSION['user'])){
 							</form>	
 						</section>	
 						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" id="dismiss" class="btn btn-secondary btn-sm" name="completed" data-dismiss="modal">Aceptar</button>
-					</div>		
+					</div>			
 				</div>
 			</div>
 		</div>
@@ -184,7 +181,7 @@ if(!isset($_SESSION['user'])){
 						<div class="modal-footer">
 						<form action="/riddle_abp/php/conexion/progres.php" method="POST">
 							<input type="text" name="game" value="1" style="visibility:hidden;">
-							<input type="text" name="enigma" value="2" style="visibility:hidden;">
+							<input type="text" name="enigma" value="1" style="visibility:hidden;">
 							<button type="submit" id="success" class="btn btn-secondary btn-sm" name="completed" >Continuar</button>
 						</form>
 						</div>

@@ -55,7 +55,42 @@ Joc
             <?php } ?>           
         </div>
     </div>
-    
+
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
+        <?php
+            $game = 1;
+            $email = $_SESSION['user']['email'];
+            $var = selectProgressUser($game, $email);            
+
+            if($var[0]['progres'] < 1){
+                $locked = "lockedImg";
+            }else{
+                $locked = "";
+            }
+        ?>
+        <div class="game <?php echo $locked ?>">
+            <div class="gameText">
+                <h5 class="m-0">Nivel 2</h5>                
+                <p>Primera oleada</p>
+            </div>           
+            <?php      
+                if($var[0]['progres'] < 1){                   
+                ?>
+                <div class="lockHover"></div>                
+                <?php }else{                     
+                    if($var[0]['progres'] >= 2){
+                        $success = "success";  ?>
+                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
+                   <?php }else{
+                        $success = "game-button play-animation mt-3"; ?>
+                        <div onclick="display('2')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
+                   <?php }
+                     ?> 
+                <!-- game-button play-animation mt-3                                          -->
+            <?php } ?>  
+           
+        </div>
+    </div>
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
         <?php
             $game = 1;
@@ -69,8 +104,8 @@ Joc
         ?>
         <div class="game <?php echo $locked ?>">
             <div class="gameText">
-                <h5 class="m-0">Nivel 2</h5>                
-                <p>Primera oleada</p>
+                <h5 class="m-0">Nivel 3</h5>                
+                <p>Segunda oleada</p>
             </div>
             <?php                       
                 if($var[0]['progres'] < 2){
@@ -103,8 +138,8 @@ Joc
         ?>
         <div class="game gam4 <?php echo $locked ?>">
         <div class="gameText">
-                <h5 class="m-0">Nivel 3</h5>                
-                <p>Segunda oleada</p>
+                <h5 class="m-0">Nivel 4</h5>                
+                <p>Las consequencias</p>
             </div>
             <?php                       
                 if($var[0]['progres'] < 3){
@@ -123,42 +158,6 @@ Joc
         </div>
        </body>
 
-    </div>
-
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 p-3">
-        <?php
-            $game = 1;
-            $email = $_SESSION['user']['email'];
-            $var = selectProgressUser($game, $email);            
-
-            if($var[0]['progres'] < 4){
-                $locked = "lockedImg";
-            }else{
-                $locked = "";
-            }
-        ?>
-        <div class="game gamFinal <?php echo $locked ?>">
-            <div class="gameText">
-                <h5 class="m-0">Nivel 4</h5>                
-                <p>El desenlace</p>
-            </div>           
-            <?php      
-                if($var[0]['progres'] < 4){                   
-                ?>
-                <div class="lockHover"></div>                
-                <?php }else{                     
-                    if($var[0]['progres'] == 5){
-                        $success = "success";  ?>
-                        <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
-                   <?php }else{
-                        $success = "game-button play-animation mt-3"; ?>
-                        <div onclick="display('5')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
-                   <?php }
-                     ?> 
-                <!-- game-button play-animation mt-3                                          -->
-            <?php } ?>  
-           
-        </div>
     </div>
     <?php endblock(); ?>
 
