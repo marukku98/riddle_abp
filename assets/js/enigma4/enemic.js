@@ -1,10 +1,82 @@
-var numEnemics = 5;             // Num de enemics a la vegada que hi poden apareixer
-var totalEnemics = 30;          // Total de enemics que pasaran
+var limitEnemics;             // Num de enemics a la vegada que hi poden apareixer
+var tempsAparicio;          // Segons que triguen en apareixer els avions enemics
 
 var enemics = [];
 
-function intervalMovimientoEnemics() {
+var intervalCreacionEnemics;
 
+var dificultat = {
+    tempsRonda: 30,
+    actInterval: null,
+    easy() {
+        limitEnemics = 5;
+        tempsAparicio = 4;
+
+        dificultat.novaDificultat(dificultat.mid, 2);
+    },
+    mid() {
+        limitEnemics = 10;
+        tempsAparicio = 3;
+
+        dificultat.novaDificultat(dificultat.hard, 3);
+    },
+    hard() {
+        limitEnemics = 15;
+        tempsAparicio = 2;
+
+        dificultat.novaDificultat(dificultat.extra, "4 (HELL)");
+    },
+    extra() {
+        limitEnemics = 20;
+        tempsAparicio = 1;
+
+        createIntervalCreacionEnemics();
+    },
+    novaDificultat(nDificultat, ronda) {
+        createIntervalCreacionEnemics();
+
+        setTimeout(function () {
+            clearInterval(intervalCreacionEnemics);
+
+            var checked = false;
+            actInterval = setInterval(function () {
+                if (enemics.length == 0 && !checked && !isStop) {
+                    checked = true;
+                    clearInterval(this);
+
+                    showRonda(nDificultat, ronda);
+
+
+                } else if (isStop){
+                    clearInterval(this);
+                }
+            }, 1000);
+        }, (this.tempsRonda * 1000));
+    },
+    clearAllIntervals() {
+        clearInterval(this.actInterval);
+    }
+}
+
+function showRonda(nDificultat, ronda) {
+    $(".numRonda").html(ronda);
+    $("#ronda").css({ visibility: "visible" });
+
+    setTimeout(function () {
+        $("#ronda").css({ visibility: "hidden" });
+        nDificultat();
+    }, 3500);
+}
+
+function setDificultat() {
+    tempsRonda = 30;
+
+    showRonda(dificultat.easy, 1);
+}
+
+
+
+function intervalMovimientoEnemics() {
     return setInterval(function () {
         enemics.map((enemic) => {
             enemic.element.left -= enemic.velocitat;
@@ -12,17 +84,17 @@ function intervalMovimientoEnemics() {
             enemic.checkColisions();
         });
     }, 10);
-
 }
 
-function intervalCreacionEnemics() {
-    return setInterval(function () {
-        if (enemics.length < numEnemics) {
+function createIntervalCreacionEnemics() {
+
+    intervalCreacionEnemics = setInterval(function () {
+        if (enemics.length < limitEnemics) {
             var randPower = Math.floor((Math.random() * 3) + 1);
 
             createEnemicC(randPower);
         }
-    }, 3000);
+    }, (tempsAparicio * 1000));
 }
 
 function createEnemicC(categoria) {
@@ -64,7 +136,7 @@ function createEnemic(categoria, vidas, valor, velocitat, warning) {
         vidas: vidas,
         totalVidas: vidas,
         valor: valor,
-        mort: function (borrar) {
+        mort: function () {
 
             this.divHealth.css({ "width": "0%" });
 
@@ -72,8 +144,7 @@ function createEnemic(categoria, vidas, valor, velocitat, warning) {
                 netejaElement(enemics, enemic);
 
                 enemic.element.div.addClass("explosion");
-                var audio = new Audio('../../assets/sound/enigma4/explosion.wav');
-                audio.play();
+                audio.playExplosion();
             }, 1450);
         },
         updatePosition: function () {

@@ -7,14 +7,9 @@ var speedPowerup = 0.8;         // Velocitat dels powerups
 var vidas = 3;                  // Numero de vidas del jugador
 var score = 0;                  // Score actual del jugador
 var recoilTimeout = 500;        // Temps d'espera entre cada dispar
+var isStop;
 
 var intervals = [];             // Intervals que ha de parar al acabarse el joc
-var musica = new Audio('../../assets/sound/enigma4/valk-theme.mp3');
-
-musica.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-}, false);
 
 // Carga el div de vides amb el nombre corresponent
 function cargaVidas() {
@@ -27,14 +22,13 @@ function cargaVidas() {
 
 // Funció principal del codi
 function start() {
-    var audio = new Audio('../../assets/sound/enigma4/button.ogg');
-    audio.play();
+    isStop = false;
+    audio.playButton();
 
     vidas = 3;
     score = 0;
 
-    musica.currentTime = 0;;
-    musica.play();
+    audio.playMusica();
 
     updateScore();
     cargaVidas();
@@ -49,9 +43,10 @@ function start() {
 
     createJugador();
 
-    intervals.push(intervalCreacionEnemics());
     intervals.push(intervalCreacionPowerups());
 
+    setDificultat();
+    
     intervals.push(intervalMovimientoEnemics());
     intervals.push(intervalMovimientoDisparar());
     intervals.push(intervalMovimientoPowerup());
@@ -59,10 +54,12 @@ function start() {
 
 // Para tots els intervals i mostra la pantalla de game over
 function stop() {
-
-    musica.pause();
+    isStop = true;
+    audio.stopMusica();
 
     intervals.map((interval) => clearInterval(interval));
+    dificultat.clearAllIntervals();
+    clearInterval(intervalCreacionEnemics);
 
     mataElements(enemics);
     mataElements(dispars);

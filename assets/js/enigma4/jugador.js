@@ -14,10 +14,6 @@ function createJugador() {
     jugador = {
         element: createElement(div, 0, bottom),
         recoil: false,
-        mort: function mort() {
-            jugador.intervals.map((interval) => clearInterval(interval));
-            jugador.element.mort();
-        },
         updatePosition: function () {
             jugador.element.updatePosition();
         },
@@ -32,6 +28,8 @@ function createJugador() {
         mort: function () {
             this.element.mort(function () {
                 jugador.element.div.addClass("explosion");
+
+                audio.playExplosion();
             }, 1450);
 
             setTimeout(function () {
