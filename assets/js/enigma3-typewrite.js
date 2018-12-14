@@ -30,7 +30,13 @@ function showText() {
             "a sacrificar su vida para asegurar la victoria (un Kamikaze).", 20
         );
     }, 3000);
+
+    setTimeout(function () {
+        write("texto-enunciado2", 
+              "Dirigue el ataque con determinación y conduce a nuestro pais a la victoria!", 20);
+    }, 11200);
+
     setTimeout(function () {
         $(".btn-play").removeAttr('hidden');
-    }, 11200);
+    }, 11400);
 }
