@@ -147,8 +147,7 @@
         <li class="list-group-item">
           <i class="fab fa-linkedin"></i> Marc González</li>
         <li class="list-group-item">
-          <i class="fab fa-twitter-square"></i>
-        </li>
+          <i class="fab fa-twitter-square"></i> @marukku98</li>
       </ul>
     </div>
     <div class="col-md-5">

@@ -7,6 +7,7 @@
     <script src="/riddle_abp/assets/js/enigma4/powerup.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/dispar.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/enemic.js"></script>
+    <script src="/riddle_abp/assets/js/enigma4/audio.js"></script>
 <?php endblock(); ?>
 
 <?php startblock("titulo"); ?> 
@@ -21,6 +22,10 @@
 
             </div>
 
+            <div id="panel-ronda">
+                <p>RONDA <span class="numRonda"></span></p>
+            </div>
+
             <div id="panel-powerup">
 
             </div>
@@ -31,7 +36,7 @@
                 </p>
             </div>
         </div>
-        <div id="explicacio">
+        <div id="explicacio" class="panel-over">
             <h2>Instrucciones</h2>
             <hr>
             <div id="explicacio-jugador">
@@ -78,12 +83,16 @@
                 </div>
             </div>
         </div>
-        <div id="gameover">
+        <div id="gameover" class="panel-over panel-over-hidden">
             <h1>GAME OVER</h1>
             <h2>Score: <span id="score-final"></span></h2>
             <div class="btnBit" onclick="start()">
                 Try Again?
             </div>
+        </div>
+
+        <div id="ronda" class="panel-over panel-over-hidden">
+            <h1 id="text-ronda">RONDA <span class="numRonda"></span></h1>
         </div>
     </div>
     <script>

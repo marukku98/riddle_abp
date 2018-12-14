@@ -36,8 +36,7 @@ function createDispar(amic, element) {
                 netejaElement(dispars, dispar);
 
                 dispar.element.div.addClass("explosion-d");
-                var audio = new Audio('../../assets/sound/enigma4/explosion-bala.wav');
-                audio.play();
+                audio.playDisparExplosion();
             }, 1000);
         },
         updatePosition: function () {
@@ -57,6 +56,5 @@ function createDispar(amic, element) {
 
     dispar.updatePosition();
     dispars.push(dispar);
-    var audio = new Audio('../../assets/sound/enigma4/disparo.wav');
-    audio.play();
+    audio.playDispar();
 }

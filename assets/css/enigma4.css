@@ -84,21 +84,27 @@
     to { background-position: 35000%; }
 }
 
-#joc, #explicacio, #gameover{
+#joc, .panel-over{
     border-radius: 10px;
 }
 
-#gameover{
+#gameover {
+    flex-direction: column;
+}
+
+.panel-over-hidden{
     visibility: hidden;
     transition: visibility 1s;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
 }
 
-#explicacio, #gameover{
+#text-ronda{
+    animation: parpadeo 1s linear infinite;
+}
+
+.panel-over{
     width: 100%;
     height: 100%;
     background-color: black;
@@ -352,4 +358,4 @@
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
-  }
+}
