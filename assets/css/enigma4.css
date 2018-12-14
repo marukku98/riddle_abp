@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
 
+
+#explicacion-oleada{
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-weight: bold;
+}
+#explicacion-oleada h3, #explicacion-oleada h4{
+    font-weight: bolder;
+}
+#explicacion-oleada p{
+    font-size: 22px;
+}
 .tooltip > .tooltip-inner {
     background-color: #FFFFFF; 
     color: #000000; 

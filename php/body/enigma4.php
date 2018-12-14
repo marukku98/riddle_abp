@@ -8,6 +8,7 @@
     <script src="/riddle_abp/assets/js/enigma4/dispar.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/enemic.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/audio.js"></script>
+
 <?php endblock(); ?>
 
 <?php startblock("titulo"); ?> 
@@ -16,7 +17,47 @@
 
 
 <?php startblock("principal"); ?>
-    <div id="joc">
+
+<?php
+/*if(!isset($_SESSION['user'])){
+	$_SESSION['lastPage'] = $_POST['lastpage'];
+	$_SESSION['lvl'] = '1';
+	header('Location: /riddle_abp/php/body/login.php');
+}else{
+	$_SESSION['progres'] = '3';
+
+	$game = 1;
+	$email = $_SESSION['user']['email'];
+
+	$var = selectProgressUser($game, $email); 
+	if($var[0]['progres'] != 3){  ?>
+           <script>
+            window.location = "/riddle_abp/php/body/game.php";
+        </script>
+<?php }   
+}*/
+ ?>
+
+<div class="p-4">
+    <div class="row" id="explicacion-oleada">
+        <h3>Segunda Oleada</h3>
+        <p class="font-letter">
+            Una hora después de la primera oleada, 171 aviones se dirigen a Kaneohe y Pearl Harbor para bombardearlos en 3 grandes grupos dirigidos por Shimazaki Shigekazu. 
+            Tú formas parte de uno de los grupos dirigidos a Pearl Harbor. <br>
+            A diferencia de la primera, esta oleada ya no es tan sorpresa, y los americanos te están esperando con mejores defensas.
+            Destruye tantos enemigos como puedas, incluso si tienes que arriesgar tu propia vida.
+        </p>
+        <h4 class="col-lg-12 text-center">¡BANZAI!</h4>  
+        <div class="col-lg-12 text-center">
+        <button type="button" id="btnEmpezar" class="btn btn-primary">Empezar</button>
+        </div>
+        
+    </div>
+</div>
+
+<div class="row">
+
+    <div id="joc" style="display:none">
         <div id="panel">
             <div id="panel-vidas">
 
@@ -95,7 +136,18 @@
             <h1 id="text-ronda">RONDA <span class="numRonda"></span></h1>
         </div>
     </div>
+</div>
+
+
+    
     <script>
         $('[data-toggle="tooltip"]').tooltip();
+
+        $("#btnEmpezar").on("click", function(){
+            $("#explicacion-oleada").fadeOut(1000, function(){
+                $("#joc").fadeIn(1000);
+            });
+            
+        });
     </script>
 <?php endblock(); ?>
