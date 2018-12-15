@@ -5,12 +5,6 @@
     require_once $direccion . "php/librerias/ti.php";
     startblock("php");
     endblock();
-    if (!isset($_SESSION['expired'])){
-      unset($_SESSION['expired']);
-      ?>
-      <script>alert("Tu sesión ha expirado.");</script>
-      <?php
-    }
     ?>
 
 <!DOCTYPE html>
@@ -177,7 +171,6 @@
         
         setTimeout(function(){
           window.location.href = "<?php echo $carpeta; ?>php/conexion/signout.php";
-          <?php $_SESSION['expired']=true;?>
         }, 3000);
 
       }

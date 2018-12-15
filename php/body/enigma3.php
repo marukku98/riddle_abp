@@ -27,9 +27,9 @@ if(!isset($_SESSION['user'])){
 
 	$var = selectProgressUser($game, $email); 
 	if($var[0]['progres'] != 1 && $_SESSION['user']['role'] == 0){  ?>
-        <script>
-            window.location = "/riddle_abp/php/body/game.php";
-        </script>
+<script>
+    window.location = "/riddle_abp/php/body/game.php";
+</script>
 <?php }
    
 }
@@ -47,6 +47,9 @@ if(!isset($_SESSION['user'])){
         </div>
         <div class="row">
             <p id="texto-enunciado" class="font-letter font-weight-bold"></p>
+        </div>
+        <div class="row">
+            <p id="texto-enunciado2" class="font-letter font-weight-bold"></p>
         </div>
         <div class="row">
             <button class="btn btn-danger btn-play" onclick="LoadGame()" hidden>Empezar</button>
@@ -113,6 +116,8 @@ if(!isset($_SESSION['user'])){
                     </div>
                 </div>
 
+                <!--**SPANISH MODALS**-->
+
                 <!-- Modal 1 -->
                 <div id="modal1" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                     aria-hidden="true">
@@ -124,7 +129,8 @@ if(!isset($_SESSION['user'])){
                             </div>
                             <div class="modal-body">
                                 El siguiente enigma está basado en el tradicional
-                                <b>'Hundir la flota'</b>, aunque lo hemos adaptado a un solo jugador y le hemos añadido mecánicas
+                                <b>'Hundir la flota'</b>, aunque lo hemos adaptado a un solo jugador y le hemos añadido
+                                mecánicas
                                 totalmente originales. Veámoslas...
                             </div>
                             <div class="modal-footer">
@@ -148,17 +154,22 @@ if(!isset($_SESSION['user'])){
                                 <p class="mb-0">
                                     <b>Munición. </b>El número de misiles es limitado, si te quedas sin pierdes.
                                 </p>
-                                <img class="m-auto d-block" src="/riddle_abp/assets/img/ammo_pic.png" height="60px" style="margin-bottom: 30px !important">
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/ammo_pic.png" height="60px"
+                                    style="margin-bottom: 30px !important">
                                 <p class="mb-0">
-                                    <b>Kamikaze. </b>Apretando este botón activaras/desactivaras el modo kamikaze, un disparo
+                                    <b>Kamikaze. </b>Apretando este botón activaras/desactivaras el modo kamikaze, un
+                                    disparo
                                     en área muy útil. Solo tienes uno, así que úsalo con cabeza.
                                 </p>
-                                <img class="m-auto d-block" src="/riddle_abp/assets/img/kamikaze_pic.png" height="60px" style="margin-bottom: 30px !important">
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/kamikaze_pic.png" height="60px"
+                                    style="margin-bottom: 30px !important">
                                 <p>
-                                    <b>Banderas. </b>Haciendo clic derecho podrás marcar y bloquear las casillas donde sepas
+                                    <b>Banderas. </b>Haciendo clic derecho podrás marcar y bloquear las casillas donde
+                                    sepas
                                     que no hay barcos.
                                 </p>
-                                <img class="m-auto d-block" src="/riddle_abp/assets/img/flag_pic.png" height="80px" style="margin-bottom: 30px !important">
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/flag_pic.png" height="80px"
+                                    style="margin-bottom: 30px !important">
                             </div>
                             <div class="modal-footer">
                                 <button id="modal-btn-2" type="button" class="btn btn-success" data-dismiss="modal">Siguiente</button>
@@ -178,17 +189,109 @@ if(!isset($_SESSION['user'])){
 
                             </div>
                             <div class="modal-body">
-                                <p>La flota estadounidense está compuesta por 5 barcos uno de 2 bloques de longitud, 2 de 3,
+                                <p>La flota estadounidense está compuesta por 5 barcos uno de 2 bloques de longitud, 2
+                                    de 3,
                                     uno de 4 y otro de 5.
-                                    <br>Estos, para evitar accidentes, mantienen una distancia de como mínimo un bloque como
+                                    <br>Estos, para evitar accidentes, mantienen una distancia de como mínimo un bloque
+                                    como
                                     puedes ver en esta imagen.</p>
                                 <img class="m-auto d-block" src="/riddle_abp/assets/img/grid.png" height="250px">
                                 <p>
-                                    <br>Ahora ya dispones de toda la información necesaria para dirigir el ataque. ¡Mucha suerte!
+                                    <br>Ahora ya dispones de toda la información necesaria para dirigir el ataque.
+                                    ¡Mucha suerte!
                                 </p>
                             </div>
                             <div class="modal-footer">
                                 <button id="modal-btn-3" type="button" class="btn btn-success" data-dismiss="modal">JUGAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--**ENGLISH MODALS**-->
+
+                <!-- Modal 1 -->
+                <div id="modal1en" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">¿How to play?</h5>
+
+                            </div>
+                            <div class="modal-body">
+                                The following enigma is based on the traditional <b>'Battleship'</b>,
+                                although we have adapted it to a single player and we have added totally original
+                                mechanics.
+                                Let's see them ...
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-btn-1en" type="button" class="btn btn-success" data-dismiss="modal">Next</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal 2 -->
+                <div id="modal2en" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Mechanics</h5>
+
+                            </div>
+                            <div class="modal-body">
+                                <p class="mb-0">
+                                    <b>Ammo. </b>The number of missiles is limited, if you stay without you lose.
+                                </p>
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/ammo_pic.png" height="60px"
+                                    style="margin-bottom: 30px !important">
+                                <p class="mb-0">
+                                    <b>Kamikaze. </b>Pressing this button you will activate / deactivate the Kamikaze
+                                    mode, a very useful area shot.
+                                    You only have one, so use it carefully.
+                                </p>
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/kamikaze_pic.png" height="60px"
+                                    style="margin-bottom: 30px !important">
+                                <p>
+                                    <b>Flags. </b>By right clicking you can mark and block the boxes where you know
+                                    there are no boats.
+                                </p>
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/flag_pic.png" height="80px"
+                                    style="margin-bottom: 30px !important">
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-btn-2en" type="button" class="btn btn-success" data-dismiss="modal">Next</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal 3 -->
+                <div id="modal3en" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">The enemy fleet</h5>
+
+                            </div>
+                            <div class="modal-body">
+                                <p>The US fleet consists of 5 ships, one of 2 blocks in length, 2 of 3, one of 4 and
+                                    another of 5.
+                                    <br>These, to avoid accidents, maintain a distance of at least one block as you can
+                                    see in this image.</p>
+                                <img class="m-auto d-block" src="/riddle_abp/assets/img/grid.png" height="250px">
+                                <p>
+                                    <br>Now you have all the information necessary to direct the attack. Good luck!
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-btn-3en" type="button" class="btn btn-success" data-dismiss="modal">PLAY</button>
                             </div>
                         </div>
                     </div>

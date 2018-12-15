@@ -1,23 +1,30 @@
-var campo_enemigo = [];
-var barcos_enemigos = [];
-var hundidos = 0;
-var tiros = 40;
-var num_kamikazes = 1;
-var kamikaze = false;
-var victoria = false;
+var campo_enemigo = [];   //Caselles
+var barcos_enemigos = []; //posicions de les barques
+var hundidos = 0;         //numero de barques enfonsades
+var tiros = 40;           //numero de misils disponibles
+var num_kamikazes = 1;    //numero de kamikazes disponibles
+var kamikaze = false;     //indicador Kamikaze activat/desactivat
+var victoria = false;     //indicador victoria
 var intermitente;
-var intentos = 0;
+var intentos = 0;         //nuemro d'intents 
+var english = true;
 
 for (var i = 0; i < 100; i++) {
     campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false, bandera: false });
 }
 
+//Coloquem tots els barcos
 barcos_enemigos[0] = colocarBarco(5, campo_enemigo);
 barcos_enemigos[1] = colocarBarco(4, campo_enemigo);
 barcos_enemigos[2] = colocarBarco(3, campo_enemigo);
 barcos_enemigos[3] = colocarBarco(3, campo_enemigo);
 barcos_enemigos[4] = colocarBarco(2, campo_enemigo);
 
+/**
+ * Coloca un barco de la longitud indicada de manera aleatoria.
+ * @param {*} len 
+ * @param {*} campo 
+ */
 function colocarBarco(len, campo) {
     var orientacio;
     var vertical = 0;
@@ -70,6 +77,12 @@ function colocarBarco(len, campo) {
     return barco;
 }
 
+/**
+ * dispara un kamikaze
+ * @param {*} pos 
+ * @param {*} barcos 
+ * @param {*} campo 
+ */
 function dispararKamikaze(pos, barcos, campo) {
     var isTocado = false;
     var isHundido = false;
@@ -103,6 +116,12 @@ function dispararKamikaze(pos, barcos, campo) {
     setKamikazes(num_kamikazes);
 }
 
+/**
+ * dispara un misil
+ * @param {*} pos 
+ * @param {*} barcos 
+ * @param {*} campo 
+ */
 function dispararMisil(pos, barcos, campo) {
     tiros--;
     setMisiles(tiros);
@@ -114,10 +133,16 @@ function dispararMisil(pos, barcos, campo) {
     }
 }
 
-function disparar(campo, pos, TipoDisparo) {
+/**
+ * Dispara en un casella amb el tipus d'arma indicat
+ * @param {*} campo 
+ * @param {*} pos 
+ * @param {*} TipoDisparo 
+ */
+function disparar(campo, pos, barcos, TipoDisparo) {
     if (hundidos < 5 && tiros != 0) {
         if (campo[pos]['bandera'] == false) {
-            TipoDisparo();
+            TipoDisparo(pos, barcos, campo);
         }
     }
     else if (tiros == 0) {
@@ -126,15 +151,24 @@ function disparar(campo, pos, TipoDisparo) {
     }
 }
 
+/**
+ * Apunta a una casella y dispara depenent si esta el kamikaze activat o no
+ * @param {*} pos 
+ * @param {*} barcos 
+ * @param {*} campo 
+ */
 function apuntar(pos, barcos, campo) {
     if (kamikaze && num_kamikazes != 0) {
-        disparar(campo, pos, dispararKamikaze(pos, barcos, campo));
+        disparar(campo, pos, barcos, dispararKamikaze);
     }
     else {
-        disparar(campo, pos, dispararMisil(pos, barcos, campo));
+        disparar(campo, pos, barcos, dispararMisil);
     }
 }
 
+/**
+ * Activa totes les caselles.
+ */
 function all() {
     for (var x = 0; x < 100; x++) {
         var tocado = ComprobarTocado(x, barcos_enemigos);
@@ -142,6 +176,11 @@ function all() {
     }
 }
 
+/**
+ * Comproba si hem tocat un barco
+ * @param {*} pos 
+ * @param {*} barcos 
+ */
 function ComprobarTocado(pos, barcos) {
     var tocado = [];
     tocado[0] = false;
@@ -158,6 +197,14 @@ function ComprobarTocado(pos, barcos) {
     return tocado;
 }
 
+/**
+ * Canvia l'aspecte d'una casella que ha sigut disparada (també activa un gif)
+ * - blanca = aigua
+ * - vermella = tocado || tocado y hundido 
+ * @param {*} pos 
+ * @param {*} tocado 
+ * @param {*} gif 
+ */
 function ocultarBoton(pos, tocado, gif) {
     $("#" + pos).prop('disabled', true);
     var time = 0;
@@ -217,6 +264,12 @@ function ocultarBoton(pos, tocado, gif) {
     }
 }
 
+/**
+ * Comproba si en una posicio hi ha un barco
+ * @param {*} x 
+ * @param {*} y 
+ * @param {*} campo 
+ */
 function CheckPos(x, y, campo) {
     try {
         var bool = false;
@@ -230,6 +283,12 @@ function CheckPos(x, y, campo) {
     return bool;
 }
 
+/**
+ * Comproba si hem enfonsat un barco o si hem guanyat
+ * @param {*} num_barco 
+ * @param {*} barcos 
+ * @param {*} campo 
+ */
 function CheckEstadoBarco(num_barco, barcos, campo) {
     var hundido = true;
     barcos[num_barco].forEach(function (pos) {
@@ -251,6 +310,11 @@ function CheckEstadoBarco(num_barco, barcos, campo) {
     return hundido;
 }
 
+/**
+ * Retorna les caselles que envoltan la que li pasem per parametre
+ * @param {*} pos 
+ * @param {*} diagonales si volem tambe les cantonades 
+ */
 function getAround(pos, diagonales) {
     var x = Math.floor(pos / 10);
     var y = pos - (x * 10);
@@ -299,6 +363,7 @@ function getPos(x, y) {
 }
 
 /**
+ * Feedback d'un tir
  * -1: blank
  * 0:agua
  * 1:tocado
@@ -318,12 +383,22 @@ function feedback(msg) {
 
     switch (msg) {
         case tocado:
-            $('#alert-text').text("TOCADO")
+            if (english) {
+                $('#alert-text').text("HIT");
+            }
+            else {
+                $('#alert-text').text("TOCADO");
+            }
             $('#alert-text').css({ "color": "#FF7F50" });
             break;
 
         case hundido:
-            $('#alert-text').text("HUNDIDO")
+            if (english) {
+                $('#alert-text').text("HIT & SUNK");
+            }
+            else {
+                $('#alert-text').text("HUNDIDO");
+            }
             $('#alert-text').css({ "color": "#B22222" });
             break;
 
@@ -336,7 +411,12 @@ function feedback(msg) {
             break;
 
         case agua:
-            $('#alert-text').text("AGUA")
+            if (english) {
+                $('#alert-text').text("MISS");
+            }
+            else {
+                $('#alert-text').text("AGUA");
+            }
             $('#alert-text').css({ "color": "#1E90FF" });
             break;
 
@@ -346,11 +426,20 @@ function feedback(msg) {
     }
 }
 
+/**
+ * Activa / Desactiva el feedback del kamikaze.
+ * @param {*} active 
+ */
 function feedbackKamikaze(active) {
     if (active) {
         $('#kamikaze-alert').removeClass('invisible');
         $('#alert').addClass('invisible');
-        $('#kamikaze-text').text("KAMIKAZE ACTIVADO");
+        if (english) {
+            $('#kamikaze-text').text("KAMIKAZE READY");
+        }
+        else {
+            $('#kamikaze-text').text("KAMIKAZE ACTIVADO");
+        }
         $('#kamikaze-text').css({ "color": "red" });
         setTimeout(function () {
             $('#kamikaze-text').css({ "color": "#00000000" });
@@ -371,14 +460,26 @@ function feedbackKamikaze(active) {
     }
 }
 
+/**
+ * actualiza el numero de misils de la pantalla
+ * @param {*} num 
+ */
 function setMisiles(num) {
     $('#misiles').text("  x" + num)
 }
 
+/**
+ * actualiza el numero de kamikazes de la pantalla
+ * @param {*} num 
+ */
 function setKamikazes(num) {
     $('#kamikaes').text(num);
 }
 
+/**
+ * Activa / Desactiva el kamikaze.
+ * Tant les animacions com la funcionalitat. * 
+ */
 function toggleKamikaze() {
     if (kamikaze) {
         feedbackKamikaze(false);
@@ -416,6 +517,9 @@ function toggleKamikaze() {
     }
 }
 
+/**
+ * Comença una nova partida
+ */
 function restart() {
     intentos++;
     hundidos = 0;
@@ -451,6 +555,9 @@ function restart() {
     }
 }
 
+/**
+ * Activa les banderes
+ */
 function flag() {
     for (var i = 0; i < 100; i++) {
         $('#' + i).contextmenu(function () {
@@ -469,22 +576,36 @@ function flag() {
 
 }
 
+//Feedback Victoria/Derrota
 function win(win) {
     $(".end").addClass("end-on");
     if (win) {
-        $(".end-text").text("VICTORIA");
+        if (english) {
+            $(".end-text").text("VICTORY?");
+        }
+        else {
+            $(".end-text").text("VICTORIA?");
+        }
         $(".end-text").css({ "color": "#00c400" });
         $(".btn-win").removeClass("invisible");
         $(".btn-lose").addClass("invisible");
     }
     else {
-        $(".end-text").text("DERROTA");
+        if (english) {
+            $(".end-text").text("DEFEAT");
+        }
+        else {
+            $(".end-text").text("DERROTA");
+        }
         $(".end-text").css({ "color": "red" });
         $(".btn-win").addClass("invisible");
         $(".btn-lose").removeClass("invisible");
     }
 }
 
+/**
+ * Carga el joc i els botons de debug(admin)
+ */
 function LoadGame() {
     $("#ALL").click(function () {
         all();
@@ -510,23 +631,47 @@ function LoadGame() {
     flag();
 }
 
+/**
+ * Mostra els modals del tutorial
+ */
 function tutorial() {
-    $("#modal1").modal({
-        backdrop: 'static',
-        keyboard: false,
-    });
-
-    $("#modal-btn-1").click(function () {
-        $("#modal2").modal({
+    if (english) {
+        $("#modal1en").modal({
             backdrop: 'static',
-            keyboard: false
+            keyboard: false,
         });
-    });
 
-    $("#modal-btn-2").click(function () {
-        $("#modal3").modal({
-            backdrop: 'static',
-            keyboard: false
+        $("#modal-btn-1en").click(function () {
+            $("#modal2en").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
         });
-    });
+
+        $("#modal-btn-2en").click(function () {
+            $("#modal3en").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        });
+    } else {
+        $("#modal1").modal({
+            backdrop: 'static',
+            keyboard: false,
+        });
+
+        $("#modal-btn-1").click(function () {
+            $("#modal2").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        });
+
+        $("#modal-btn-2").click(function () {
+            $("#modal3").modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        });
+    }
 }

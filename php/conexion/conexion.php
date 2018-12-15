@@ -19,12 +19,14 @@ function closeBD(){
 function insertarUsers($username, $email, $password){
     $con = openBD();
 
+    $encrypted_password = md5($password);
+
     try{    
     //Consulta para insertar a la BD.
     $sentencia = $con->prepare("insert into users(username, email, password) values (:username, :email, :password)");
     $sentencia->bindParam(':username', $username);
     $sentencia->bindParam(':email', $email); 
-    $sentencia->bindParam(':password', $password); 
+    $sentencia->bindParam(':password', $encrypted_password); 
 
     $sentencia->execute();
 
@@ -42,9 +44,11 @@ function insertarUsers($username, $email, $password){
 function selectUser($email, $password){
     $conn = openBD();
     
+    $encrypted_password = md5($password);
+
     $sentencia = $conn->prepare("select * from users where email = :email and password = :password");
     $sentencia->bindParam(':email', $email);
-    $sentencia->bindParam(':password', $password);
+    $sentencia->bindParam(':password', $encrypted_password);
     $sentencia->execute();
 
     $result = $sentencia->fetchAll();
