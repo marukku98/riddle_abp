@@ -21,13 +21,14 @@
     background-image: url('/riddle_abp/assets/img/enigma1icon.jpg');
 }
 
-.gam4{
+.gam4 {
     background-image: url('/riddle_abp/assets/img/bg-game4.jpg');
 }
 
-.gamFinal{
+.gamFinal {
     background-image: url('/riddle_abp/assets/img/bomba_ficha.jpg');
 }
+
 .lockHover {
     position: absolute;
     margin-top: 25px;
@@ -123,6 +124,24 @@
 .game:hover .game-button {
     opacity: 1;
     top: 78%;
+}
+
+.info {
+    margin-left: 20px;
+    margin-top: 8px;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    box-shadow: 0 0 5px black;
+    border: solid 1px white;
+    background: url('/riddle_abp/assets/img/help.jpg');
+    background-position: center;
+    background-size: cover;
+    transition: all .2s;
+}
+
+.info:active {
+    box-shadow: 0 0 0 black;
 }
 
 /* .btnStart {

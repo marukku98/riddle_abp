@@ -20,8 +20,9 @@ if(!isset($_SESSION['user'])){
 
 <?php startblock("principal"); ?>
 
-<div class="container title title-font ml-0">
+<div class="container title title-font ml-0 d-flex">
     <h2>ATAQUE A PEARL HARVOR</h2>
+    <button id="info" class="info"></button>
 </div>
 
 <div class="row text-font">
@@ -158,7 +159,7 @@ if(!isset($_SESSION['user'])){
                         <div onclick="display('5')" id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>    
                    <?php }
                      ?> 
-                <!-- game-button play-animation mt-3                                          -->
+                <!-- game-button play-animation mt-3 -->
             <?php } ?>  
            
         </div>
@@ -184,9 +185,37 @@ if(!isset($_SESSION['user'])){
     </div>
 </div>
 
-<script>
+<!-- Modal Info -->
+<div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title title-font" id="exampleModalLongTitle">Ataque a Pearl Harbor</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-font">
+        El ataque a Pearl Harbor fue un ataque militar sorpresa del Servicio Aéreo de la Marina Imperial Japonesa 
+        contra la base naval de los Estados Unidos en Pearl Harbor, la mañana del 7 de diciembre de 1941. 
+        Este ataque desencadeno la entrada de los Estados Unidos en la Segunda Guerra Mundial.
+        <br>
+        <br>
+        En este "Riddle" te pondras en la piel del capitán Minoru Genda, 
+        con el que conoceras la distintas fases del ataque y las consecuencias que desencadeno.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Empezemos!</button>
+      </div>
+    </div>
+  </div>
+</div>
 
- function display(enigma){
+<script>
+$("#info").click(function () {
+    $("#modalInfo").modal();
+});
+function display(enigma){
    
     var cookie = getCookie('enigma1');
     var estacio = getCookie('estacio');
@@ -203,5 +232,14 @@ if(!isset($_SESSION['user'])){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
     }
 }
-
 </script>
+<?php
+if(isset($_SESSION['gameStart'])){
+    unset($_SESSION['gameStart']);
+    ?>
+    <script>
+        $("#modalInfo").modal();
+    </script>
+    <?php
+}
+?>

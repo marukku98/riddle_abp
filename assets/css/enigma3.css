@@ -8,27 +8,27 @@
     src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
 }
 
-.tools{
+.tools {
     margin-left: 10px;
     position: absolute;
     left: 100%;
     top: 10px;
 }
 
-.btn-help{
+.btn-help {
     height: 25px;
     width: 25px;
     border-radius: 100%;
-    box-shadow: 0 0 5px black ;
-    border:solid 1px white;
+    box-shadow: 0 0 5px black;
+    border: solid 1px white;
     background: url('/riddle_abp/assets/img/help.jpg');
     background-position: center;
     background-size: cover;
     transition: all .2s;
 }
 
-.btn-help:active{
-    box-shadow: 0 0 0 black ;
+.btn-help:active {
+    box-shadow: 0 0 0 black;
 }
 
 .modal {
@@ -47,9 +47,8 @@
     transition: all 1s;
 }
 
-.hide{
+.hide {
     padding: 20px 40px 10px 20px;
-
     overflow: hidden;
     position: relative;
 }
@@ -309,4 +308,8 @@
 .greyscale {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+}
+
+.btn-play {
+    width: 100px;
 }

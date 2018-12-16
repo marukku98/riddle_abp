@@ -6,7 +6,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 
 
 if(isset($_POST['gameStart'])){
-
     if(!isset($_SESSION['user'])){
         $_SESSION['lastPage'] = $_POST['lastpage'];
         header('Location: /riddle_abp/php/body/login.php'); 
@@ -17,6 +16,7 @@ if(isset($_POST['gameStart'])){
         $verificar = consultaProgresUser($email, $game);
 
         if(count($verificar) == 0){      
+            $_SESSION['gameStart'] = true;
             newProgressUser($game, $email, 0);
             header('Location: /riddle_abp/php/body/game.php');  
         }else{
@@ -34,6 +34,4 @@ if(isset($_POST['completed'])){
     updateProgressUser($game, $email, $progres);
     header('Location: /riddle_abp/php/body/game.php'); 
 }
-
-
 ?>

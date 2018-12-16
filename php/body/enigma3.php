@@ -38,21 +38,23 @@ if(!isset($_SESSION['user'])){
 
 <div class="container-fluid">
 
-    <div class="m-4 text">
-        <div class="row">
-            <h3 id="titulo-enunciado" class="font-letter font-weight-bold"></h3>
+    <div class="m-4 text" style="min-height: 700px;">
+        <div class="enunciado" style="min-height: calc(400px - 13vw);">
+            <div class="row">
+                <h3 id="titulo-enunciado" class="font-letter font-weight-bold"></h3>
+            </div>
+            <div class="row">
+                <h4 id="subtitulo-enunciado" class="font-letter font-weight-bold"></h4>
+            </div>
+            <div class="row">
+                <p id="texto-enunciado" class="font-letter font-weight-bold"></p>
+            </div>
+            <div class="row">
+                <p id="texto-enunciado2" class="font-letter font-weight-bold"></p>
+            </div>
         </div>
-        <div class="row">
-            <h4 id="subtitulo-enunciado" class="font-letter font-weight-bold"></h4>
-        </div>
-        <div class="row">
-            <p id="texto-enunciado" class="font-letter font-weight-bold"></p>
-        </div>
-        <div class="row">
-            <p id="texto-enunciado2" class="font-letter font-weight-bold"></p>
-        </div>
-        <div class="row">
-            <button class="btn btn-danger btn-play" onclick="LoadGame()" hidden>Empezar</button>
+        <div class="row float-right">
+            <button class="btn btn-dark btn-play text-font" onclick="saltar(english);">Saltar</button>
         </div>
     </div>
 
@@ -311,7 +313,7 @@ if(!isset($_SESSION['user'])){
 </div>
 
 <script>
-    showText();
+    showText(english);
 </script>
 
 <?php endblock(); ?>
