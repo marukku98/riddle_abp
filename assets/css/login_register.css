@@ -59,9 +59,9 @@ body {
 }
 
 .boton-login:active {
-    border-color: #DA3F62;
-    background: #DA3F62;
-    box-shadow: 0px 2px 5px #1F1F1F;
+    box-shadow: 0px 2px 2px #1F1F1F !important;
+    border-color: #af2342 !important;
+    background: #af2342 !important;
 }
 
 .boton-login:focus {
