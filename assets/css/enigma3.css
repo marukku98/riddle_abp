@@ -285,7 +285,7 @@
     border: 0px;
     height: 43px;
     width: 43px;
-    background: url("/riddle_abp/assets/img/fire1.png") left !important;
+    background: url("/riddle_abp/assets/img/fire.png") left !important;
     animation: exp 0.55s steps(11);
     z-index: 2;
     transform: translate(-10%, -10%);
@@ -295,7 +295,7 @@
     border: 0px;
     height: 43px;
     width: 43px;
-    background: url("/riddle_abp/assets/img/water1.png") left !important;
+    background: url("/riddle_abp/assets/img/water.png") left !important;
     animation: exp 0.55s steps(11);
     z-index: 2;
     transform: translate(-10%, -10%);

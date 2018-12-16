@@ -353,6 +353,10 @@ if(!isset($_SESSION['user'])){
             backdrop: 'static',
             keyboard: false
         });
+
+        $(".game").contextmenu(function () {
+            return false
+        });
     });
 </script>
 
