@@ -313,3 +313,22 @@
 .btn-play {
     width: 100px;
 }
+
+.flag-img {
+    height: 23px;
+    margin-right: 15px;
+}
+
+.btn-lenguage {
+    padding: 10px;
+    transition: all 0.2s;
+}
+
+.btn-lenguage:hover {
+    background: #2196f3;
+    color: white;
+}
+
+.lenguage-text {
+    font-weight: bold;
+}

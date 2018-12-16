@@ -7,7 +7,9 @@ var kamikaze = false;     //indicador Kamikaze activat/desactivat
 var victoria = false;     //indicador victoria
 var intermitente;
 var intentos = 0;         //nuemro d'intents 
-var english = true;
+var english = false;
+var flagOn = false;
+var load = false;
 
 for (var i = 0; i < 100; i++) {
     campo_enemigo[i] = ({ pos: i, ocupado: false, tocado: false, bandera: false });
@@ -559,6 +561,8 @@ function restart() {
  * Activa les banderes
  */
 function flag() {
+
+    flagOn = true;
     for (var i = 0; i < 100; i++) {
         $('#' + i).contextmenu(function () {
             if (campo_enemigo[this.id]['bandera'] == true) {
@@ -573,7 +577,6 @@ function flag() {
             return false;
         });
     }
-
 }
 
 //Feedback Victoria/Derrota
@@ -607,28 +610,31 @@ function win(win) {
  * Carga el joc i els botons de debug(admin)
  */
 function LoadGame() {
-    $("#ALL").click(function () {
-        all();
-    })
+    if (!load) {
+        load = true;
+        $("#ALL").click(function () {
+            all();
+        })
 
-    $("#reset").click(function () {
-        restart();
-    })
+        $("#reset").click(function () {
+            restart();
+        })
 
-    $("#win").click(function () {
-        win(true);
-    })
+        $("#win").click(function () {
+            win(true);
+        })
 
-    $("#lose").click(function () {
-        win(false);
-    })
+        $("#lose").click(function () {
+            win(false);
+        })
 
-    $(".text").hide();
-    $(".game").removeAttr('hidden');
+        $(".text").hide();
+        $(".game").removeAttr('hidden');
 
-    tutorial();
+        tutorial();
 
-    flag();
+        flag();
+    }
 }
 
 /**

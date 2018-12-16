@@ -39,7 +39,7 @@ if(!isset($_SESSION['user'])){
 <div class="container-fluid">
 
     <div class="m-4 text" style="min-height: 700px;">
-        <div class="enunciado" style="min-height: calc(400px - 13vw);">
+        <div id="enunciado" class="enunciado" style="min-height: calc(450px - 13vw);" hidden>
             <div class="row">
                 <h3 id="titulo-enunciado" class="font-letter font-weight-bold"></h3>
             </div>
@@ -53,7 +53,7 @@ if(!isset($_SESSION['user'])){
                 <p id="texto-enunciado2" class="font-letter font-weight-bold"></p>
             </div>
         </div>
-        <div class="row float-right">
+        <div id="btn-enunciado" class="row float-right" hidden>
             <button class="btn btn-dark btn-play text-font" onclick="saltar(english);">Saltar</button>
         </div>
     </div>
@@ -305,7 +305,27 @@ if(!isset($_SESSION['user'])){
             </div>
         </div>
     </div>
-
+    <!-- LENGUAGE MODAL -->
+    <div id="modal-len" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-2 m-auto">
+                    <h5 class="modal-title" id="exampleModalLongTitle">En que idioma quieres jugar?</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="btn-es" class="row btn-lenguage">
+                        <img class="flag-img" src="/riddle_abp/assets/img/es-flag.png" alt="">
+                        <p class="lenguage-text m-0">Español</p>
+                    </div>
+                    <div id="btn-en" class="row btn-lenguage">
+                        <img class="flag-img" src="/riddle_abp/assets/img/en-flag.png" alt="">
+                        <p class="lenguage-text m-0">Inglés</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </div>
@@ -313,7 +333,26 @@ if(!isset($_SESSION['user'])){
 </div>
 
 <script>
-    showText(english);
+    $("#btn-en").click(function () {
+        english = true;
+        $('#modal-len').modal('toggle');
+        $('#enunciado').removeAttr('hidden');
+        $('#btn-enunciado').removeAttr('hidden');
+        showText(english);
+    });
+    $("#btn-es").click(function () {
+        english = false;
+        $('#modal-len').modal('toggle');
+        $('#enunciado').removeAttr('hidden');
+        $('#btn-enunciado').removeAttr('hidden');
+        showText(english);
+    });
+
+    $("#modal-len").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+
 </script>
 
 <?php endblock(); ?>
