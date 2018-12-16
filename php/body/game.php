@@ -8,6 +8,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php"; ?>
 Joc
 <?php endblock(); ?>
 
+<?php
+if(!isset($_SESSION['user'])){
+	header('Location: /riddle_abp/php/body/gamesGrid.php');
+}?>
+
 <?php startblock("css"); ?>
 <link rel="stylesheet" href="/riddle_abp/assets/css/game.css">
 <link rel="stylesheet" href="/riddle_abp/assets/css/play-animation.css">
