@@ -333,26 +333,27 @@ if(!isset($_SESSION['user'])){
 </div>
 
 <script>
-    $("#btn-en").click(function () {
-        english = true;
-        $('#modal-len').modal('toggle');
-        $('#enunciado').removeAttr('hidden');
-        $('#btn-enunciado').removeAttr('hidden');
-        showText(english);
-    });
-    $("#btn-es").click(function () {
-        english = false;
-        $('#modal-len').modal('toggle');
-        $('#enunciado').removeAttr('hidden');
-        $('#btn-enunciado').removeAttr('hidden');
-        showText(english);
-    });
+    $(document).ready(function () {
+        $("#btn-en").click(function () {
+            english = true;
+            $('#modal-len').modal('toggle');
+            $('#enunciado').removeAttr('hidden');
+            $('#btn-enunciado').removeAttr('hidden');
+            showText(english);
+        });
+        $("#btn-es").click(function () {
+            english = false;
+            $('#modal-len').modal('toggle');
+            $('#enunciado').removeAttr('hidden');
+            $('#btn-enunciado').removeAttr('hidden');
+            showText(english);
+        });
 
-    $("#modal-len").modal({
-        backdrop: 'static',
-        keyboard: false
+        $("#modal-len").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
     });
-
 </script>
 
 <?php endblock(); ?>

@@ -212,55 +212,25 @@ function ocultarBoton(pos, tocado, gif) {
     var time = 0;
     if (tocado) {
         if (gif) {
-            $("#" + pos).css({
-                "border": "0px",
-                "position": "absolute",
-                "height": "43.818181818181px",
-                "width": "43.818181818181px",
-                "background": "url('https://imgur.com/WhyJUjH.gif?a=" + Math.random() + "')",
-                "background-size": "cover",
-                "z-index": "2",
-                "transform": "translate(-10%,-10%)"
-            });
+            $("#" + pos).addClass("fuego");
             time = 550;
         }
         var time = setTimeout(function () {
-            $("#" + pos).css({
-                "border": "1px",
-                "border-radius": "50%",
-                "background": "red",
-                "height": "18.181818px",
-                "width": "18.181818",
-                "transform": "translate(50%,50%)"
-            });
+            $("#" + pos).removeClass("fuego");
+            $("#" + pos).addClass("tocado");
         }, time)
 
         feedback(1); //tocado
 
     } else {
         if (gif) {
-            $("#" + pos).css({
-                "border": "0px",
-                "position": "absolute",
-                "height": "43.818181818181px",
-                "width": "43.818181818181px",
-                "background": "url('https://i.imgur.com/mrAAKhA.gif?a=" + Math.random() + "')",
-                "background-size": "cover",
-                "z-index": "2",
-                "transform": "translate(-7%,-7%)"
-            });
+            $("#" + pos).addClass("agua");
             time = 550;
         }
 
         var time = setTimeout(function () {
-            $("#" + pos).css({
-                "border": "1px",
-                "border-radius": "50%",
-                "background": "white",
-                "height": "18.181818px",
-                "width": "18.181818px",
-                "transform": "translate(50%,50%)"
-            });
+            $("#" + pos).removeClass("agua");
+            $("#" + pos).addClass("noTocado");
         }, time)
         feedback(0); //agua
     }
