@@ -1,35 +1,51 @@
+var speed = 1000;
+
 $(document).ready(function () {
-    $(".title").hide();
-    $(".primerTexto").hide();
-    $(".segundoTexto").hide();
-    $(".tercerTexto").hide();
-    $(".finalTexto").hide();
-    $(".about").hide();
-   
+  $(".title").hide();
+  $(".primerTexto").hide();
+  $(".segundoTexto").hide();
+  $(".tercerTexto").hide();
+  $(".cuartoTexto").hide();
+  $(".finalTexto").hide();
 
-    $(".title").fadeIn();
+  $(".title").fadeIn();
 
+  setTimeout(function () {
+    $(".title").fadeOut(speed);
     setTimeout(function () {
-        $(".title").hide();
-        $(".primerTexto").fadeIn();
-      }, 3000); 
-   
-    setTimeout(function () {     
-      $(".primerTexto").hide();
-      $(".segundoTexto").fadeIn()
-      }, 8000);
+      $(".primerTexto").fadeIn(speed);
+    }, speed);
+  }, 3000);
 
-    setTimeout(function () {     
-      $(".segundoTexto").hide();
-      $(".tercerTexto").fadeIn()
-      }, 13000);
-    
-    setTimeout(function () {     
-      $(".tercerTexto").hide();
-      $(".finalTexto").fadeIn()
-      }, 18000);
-    setTimeout(function () { 
-        $(".about").fadeIn()
-    }, 25000); 
-   
+  setTimeout(function () {
+    $(".primerTexto").fadeOut(speed);
+    setTimeout(function () {
+      $(".segundoTexto").fadeIn(speed)
+    }, speed);
+  }, 10000);
+
+  setTimeout(function () {
+    $(".segundoTexto").fadeOut(speed);
+    setTimeout(function () {
+      $(".tercerTexto").fadeIn(speed)
+    }, speed);
+  }, 16000);
+
+  setTimeout(function () {
+    $(".tercerTexto").fadeOut(speed);
+    setTimeout(function () {
+      $(".cuartoTexto").fadeIn(speed)
+    }, speed);
+  }, 26000);
+
+  setTimeout(function () {
+    $(".cuartoTexto").fadeOut(speed);
+    setTimeout(function () {
+      $(".finalTexto").fadeIn(speed)
+    }, speed);
+  }, 33000);
+  setTimeout(function () {
+    $(".about").removeClass("opacity-0");
+  }, 36000);
+
 });	

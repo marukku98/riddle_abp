@@ -19,26 +19,30 @@ Enigma 5
         <h1 class="title">CONSECUENCIAS</h1>
     </div>
 
-    <div class="reaccionesinmediatas">     
-        <p class="primerTexto">Entre los dos bandos murieron más de <b>2500</b> personas y casi 1300 resultaron heridas. De todas las víctimas mortales, <b> 68 </b>eran civiles. 
+    <div class="reaccionesinmediatas">
+        <p class="primerTexto">El ataque a Pearl Harbor provoco la muerte de más de <span class="blood">2500</span>
+            personas y casi
+            1300 resultaron heridas. De todas las víctimas mortales, 68 eran civiles.
         </p>
-        <p class="segundoTexto">Al día siguiente, Estados Unidos declaró la guerra a Japón e inició su participación en la Segunda Guerra Mundial.
+        <p class="segundoTexto">Al día siguiente, Estados Unidos declaró la guerra a Japón e inició su participación en
+            la Segunda Guerra Mundial.
         </p>
-        <p class="tercerTexto">Entre el 6 y el 9 de agosto de 1945 Estados Unidos bombardeó con armas nucleares a <b> 67 ciudades japonesas</b> y provocaron la muerte de unas <b> 214.000 
-        personas</b>.
-        <p class="finalTexto">Muchas gracias por venir a nuestra visita al museo y jugar a nuestros juegos! Esperemos que te lo hayas pasado bien 
-        y hayas aprendido. Te esperamos verte de nuevo! Ya sea con amigos o familiares, comparte la experencia que acabas de tener!</p>
-        <div class="about">
-            <p>Para conocer más sobre la guerra: <a target="_blank" href="http://www.pearlharborhistoricsites.org/">Visita la web</a></p>
-            <p>Para conocer más al equipo: <a href="/riddle_abp/php/body/index.php#scroll">Conócenos</a> </p>
+        <p class="tercerTexto">Entre el 6 y el 9 de agosto de 1945, EEUU bombardeó con armas nucleares a 67
+            ciudades japonesas y provocaron la muerte de unas <span class="blood">214.000</span>
+            personas.</p>
+        <p class="cuartoTexto">
+            Aún hoy aparecen nuevas patologías relacionadas con los residuos nucleares generados por el bombardeo.
+        </p>
+        <p class="finalTexto">
+            <span style="font-size: 40px">Gracias por jugar!</span>
+            <br>Esperamos que hayas apredido mucho.
+        </p>
+        <div class="about opacity-0">
+            <p><br>Para conocer más sobre el ataque: <br><a target="_blank" href="http://www.pearlharborhistoricsites.org/">Visita
+                    la web.</a></p>
+            <p>Para saber más sobre nosotros: <br><a href="/riddle_abp/php/body/index.php#scroll">Conocenos.</a> </p>
         </div>
-       
     </div>
-
-
-
-
-
 </div>
 
 

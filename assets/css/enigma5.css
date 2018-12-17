@@ -3,42 +3,56 @@
     src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
 }
 
-.titulo{
-margin: auto;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-
+.bg-body {
+    text-align: center;
+    background: black;
+    color: white;
 }
 
-.title{
-    font-size: 6vw;
-    
+.blood {
+    color: red;
+    font-size: 30px;
 }
-.reaccionesinmediatas{
+
+.titulo {
     margin: auto;
     position: absolute;
-    top: 50%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    font-size: 6vw;
+}
+
+.reaccionesinmediatas {
+    margin: auto;
+    position: absolute;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 26px;
 }
 
-.main{
+.main {
     position: relative;
     min-height: calc(700px - 12vw);
-    display: flex; 
-    justify-content: flex-end;
-    /* align-items: flex-end; */  
 }
 
 .font-letter {
     font-family: 'Source Serif Pro', serif;
 }
 
-
-.button{
+.button {
     align-self: flex-end;
     margin: 50px;
+}
+
+.about {
+    transition: all 1s;
+}
+
+.opacity-0 {
+    opacity: 0;
 }
