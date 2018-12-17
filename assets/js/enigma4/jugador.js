@@ -34,9 +34,7 @@ function createJugador() {
 
             setTimeout(function () {
                 stop();
-                $("#score-final").html($("#score").html());
-                $("#gameover").css({ visibility: "visible" });
-            }, 2000);
+            }, 1500);
         }
     }
 
@@ -49,6 +47,13 @@ function createJugador() {
             map[event.keyCode] = true;
         }
     });
+
+    setListenerPhone("btnUp", 38);
+    setListenerPhone("btnDown", 40);
+    setListenerPhone("btnLeft", 37);
+    setListenerPhone("btnRight", 39);
+    setListenerPhone("btnShoot", 32);
+    
 
     $(document).keyup(function (event) {
         if (event.keyCode in map) {
@@ -133,4 +138,26 @@ function createJugador() {
 
     
 
+}
+
+function setListenerPhone(btnId, key){
+    $("#" + btnId).mouseup(function(){
+        map[key] = false;
+
+        jugador.element.div.addClass("normal");
+        jugador.element.div.removeClass("up");
+        jugador.element.div.removeClass("down");
+    });
+
+    $("#" + btnId).mouseout(function(){
+        map[key] = false;
+
+        jugador.element.div.addClass("normal");
+        jugador.element.div.removeClass("up");
+        jugador.element.div.removeClass("down");
+    });
+
+    $("#" + btnId).mousedown(function(){
+        map[key] = true;
+    });
 }

@@ -21,7 +21,7 @@ if(!isset($_SESSION['user'])){
 <?php startblock("principal"); ?>
 
 <div class="container title title-font ml-0 d-flex">
-    <h2>ATAQUE A PEARL HARVOR</h2>
+    <h2>ATAQUE A PEARL HARBOR</h2>
     <button id="info" class="info"></button>
 </div>
 

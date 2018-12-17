@@ -7,7 +7,8 @@ var speedPowerup = 0.8;         // Velocitat dels powerups
 var vidas = 3;                  // Numero de vidas del jugador
 var score = 0;                  // Score actual del jugador
 var recoilTimeout = 500;        // Temps d'espera entre cada dispar
-var isStop;
+var isStop;                     // Bool que indica si el joc esta parat o començat
+var isPhone;                    // Bool que indica si mostrar els control per a mobil
 
 var intervals = [];             // Intervals que ha de parar al acabarse el joc
 
@@ -23,6 +24,14 @@ function cargaVidas() {
 // Funció principal del codi
 function start() {
     isStop = false;
+
+    isPhone = $("#isPhone").prop('checked');
+    if (isPhone) {
+        $("#keyboard").show();
+    } else {
+        $("#keyboard").hide();
+    }
+
     audio.playButton();
 
     vidas = 3;
@@ -35,8 +44,8 @@ function start() {
 
     joc = $("#joc");
 
-    $("#explicacio").remove();
-    $("#gameover").css({ visibility: "hidden" });
+    $("#explicacio").hide();
+    $("#gameover").hide();
 
     contenidorWidth = joc.width();
     contenidorHeight = joc.height();
@@ -46,7 +55,7 @@ function start() {
     intervals.push(intervalCreacionPowerups());
 
     setDificultat();
-    
+
     intervals.push(intervalMovimientoEnemics());
     intervals.push(intervalMovimientoDisparar());
     intervals.push(intervalMovimientoPowerup());
@@ -54,6 +63,15 @@ function start() {
 
 // Para tots els intervals i mostra la pantalla de game over
 function stop() {
+    $("#keyboard").hide();
+    $("#score-final").html($("#score").html());
+    $("#gameover").css({ display: "flex" });
+    if (ronda >= 3) {
+        setCookie("enigma1", 4, 1);
+        setCookie('estacio', 4, 1);
+        $("#frmCompleted").css({ display: "flex" });
+    }
+
     isStop = true;
     audio.stopMusica();
 

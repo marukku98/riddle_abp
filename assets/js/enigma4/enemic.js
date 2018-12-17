@@ -1,35 +1,36 @@
 var limitEnemics;             // Num de enemics a la vegada que hi poden apareixer
 var tempsAparicio;          // Segons que triguen en apareixer els avions enemics
+var ronda;
 
 var enemics = [];
 
 var intervalCreacionEnemics;
 
 var dificultat = {
-    tempsRonda: 30,
+    tempsRonda: 40,
     actInterval: null,
     easy() {
         limitEnemics = 5;
         tempsAparicio = 4;
-
+        ronda = 1;
         dificultat.novaDificultat(dificultat.mid, 2);
     },
     mid() {
         limitEnemics = 10;
         tempsAparicio = 3;
-
+        ronda = 2;
         dificultat.novaDificultat(dificultat.hard, 3);
     },
     hard() {
         limitEnemics = 15;
         tempsAparicio = 2;
-
+        ronda = 3;
         dificultat.novaDificultat(dificultat.extra, "4 (HELL)");
     },
     extra() {
         limitEnemics = 20;
         tempsAparicio = 1;
-
+        ronda = 4;
         createIntervalCreacionEnemics();
     },
     novaDificultat(nDificultat, ronda) {
@@ -47,7 +48,7 @@ var dificultat = {
                     showRonda(nDificultat, ronda);
 
 
-                } else if (isStop){
+                } else if (isStop) {
                     clearInterval(this);
                 }
             }, 1000);
@@ -60,10 +61,10 @@ var dificultat = {
 
 function showRonda(nDificultat, ronda) {
     $(".numRonda").html(ronda);
-    $("#ronda").css({ visibility: "visible" });
+    $("#ronda").css({ display: "flex" });
 
     setTimeout(function () {
-        $("#ronda").css({ visibility: "hidden" });
+        $("#ronda").hide();
         nDificultat();
     }, 3500);
 }

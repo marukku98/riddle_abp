@@ -2,6 +2,7 @@
 
 <?php startblock("css"); ?>
     <link rel="stylesheet" href="/riddle_abp/assets/css/enigma4.css">
+    <script src="/riddle_abp/assets/js/cookies.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/joc.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/jugador.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/powerup.js"></script>
@@ -43,8 +44,8 @@
         <h3>Segunda Oleada</h3>
         <p class="font-letter">
             Una hora después de la primera oleada, 171 aviones se dirigen a Kaneohe y Pearl Harbor para bombardearlos en 3 grandes grupos dirigidos por Shimazaki Shigekazu. 
-            Tú formas parte de uno de los grupos dirigidos a Pearl Harbor. <br>
-            A diferencia de la primera, esta oleada ya no es tan sorpresa, y los americanos te están esperando con mejores defensas.
+            Tú formas parte de uno de los grupos con destino Pearl Harbor. <br>
+            A diferencia de la primera, esta oleada ya no es tan sorpresa, y los americanos te están esperando con mejores defensas.<br />
             Destruye tantos enemigos como puedas, incluso si tienes que arriesgar tu propia vida.
         </p>
         <h4 class="col-lg-12 text-center">¡BANZAI!</h4>  
@@ -58,6 +59,27 @@
 <div class="row">
 
     <div id="joc" style="display:none">
+
+        <div id="keyboard" class="p-2">
+            <div class="row">
+                <div class=" col-8 col-lg-6 keyboard-mov">
+                    <div class="row">
+                        <button id="btnUp" class="btn btn-primary"><span class="fa fa-arrow-up"></span></button>
+                    </div>
+                    <div class="row">
+                        <button id="btnLeft" class="btn btn-primary" style="margin-right: 20px;"><span class="fa fa-arrow-left"></span></button>
+                        <button id="btnRight" class="btn btn-primary" style="margin-left: 20px;"><span class="fa fa-arrow-right"></span></button>
+                    </div>
+                    <div class="row">
+                        <button id="btnDown" class="btn btn-primary"><span class="fa fa-arrow-down"></span></button>
+                    </div>
+                </div>
+                <div class="col-4 col-lg-6 keyboard-mov">
+                    <button id="btnShoot" class="btn btn-primary">SHOOT</button>
+                </div>
+            </div>
+        </div>
+
         <div id="panel">
             <div id="panel-vidas">
 
@@ -77,7 +99,14 @@
                 </p>
             </div>
         </div>
+
         <div id="explicacio" class="panel-over">
+            <div id="selecControl" style="position:absolute; top:0; right: 0;">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="isPhone">
+                    <label class="custom-control-label" for="isPhone">Control tactil</label>
+                </div>
+            </div>
             <h2>Instrucciones</h2>
             <hr>
             <div id="explicacio-jugador">
@@ -128,8 +157,13 @@
             <h1>GAME OVER</h1>
             <h2>Score: <span id="score-final"></span></h2>
             <div class="btnBit" onclick="start()">
-                Try Again?
+                TRY AGAIN?
             </div>
+            <form id="frmCompleted" action="/riddle_abp/php/conexion/progres.php" method="POST">
+				<input type="hidden" name="game" value="1">
+				<input type="hidden" name="enigma" value="4">
+				<button type="submit" id="success" class="btnBit" name="completed" >CONTINUAR</button>
+			</form>
         </div>
 
         <div id="ronda" class="panel-over panel-over-hidden">
