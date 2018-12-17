@@ -148,7 +148,7 @@ if(!isset($_SESSION['user'])){
 							<h5 class="modal-title font-letter" id="exampleModalLabel">Pista</h5>
 						</div>
 						<div class="modal-body font-letter">
-							La linea divisoria tiene que quedar a la mitad
+							La linea divisoria tiene que quedar entre las dos columnas centrales
 						</div>
 					</div>
 				</div>
@@ -162,8 +162,8 @@ if(!isset($_SESSION['user'])){
 							<h5 class="modal-title font-letter" id="exampleModalLabel">Pista</h5>
 						</div>
 						<div class="modal-body font-letter">
-							Este es un trozo del mapa, memorizalo bien!
-							<img src="/riddle_abp/assets/img/pistamapa2.png" alt="Error">
+							Este es un trozo de la parte inferior del mapa, memorízala bien!
+							<img src="/riddle_abp/assets/img/pistamapainferior.png" alt="Error">
 						</div>
 						<div class="modal-footer">
 							<button type="button" id="dismiss" class="btn btn-secondary btn-sm" name="completed" data-dismiss="modal">Aceptar</button>

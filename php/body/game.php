@@ -65,7 +65,7 @@ if(!isset($_SESSION['user'])){
             $game = 1;
             $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] < 1){
+            if($var[0]['progres'] < 2){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -77,11 +77,11 @@ if(!isset($_SESSION['user'])){
                 <p>Primera oleada</p>
             </div>
             <?php                       
-                if($var[0]['progres'] < 1){
+                if($var[0]['progres'] < 2){
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{
-                    if($var[0]['progres'] >= 2){
+                    if($var[0]['progres'] >= 3){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{
@@ -99,7 +99,7 @@ if(!isset($_SESSION['user'])){
             $game = 1;
             $email = $_SESSION['user']['email'];
             $var = selectProgressUser($game, $email);  
-            if($var[0]['progres'] < 2){
+            if($var[0]['progres'] < 3){
                 $locked = "lockedImg";
             }else{
                 $locked = "";
@@ -115,7 +115,7 @@ if(!isset($_SESSION['user'])){
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{                    
-                    if($var[0]['progres'] == 3){
+                    if($var[0]['progres'] >= 4){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{
@@ -147,11 +147,11 @@ if(!isset($_SESSION['user'])){
                 <p>El desenlace</p>
             </div>           
             <?php      
-                if($var[0]['progres'] < 5){                   
+                if($var[0]['progres'] < 4){                   
                 ?>
                 <div class="lockHover"></div>                
                 <?php }else{                     
-                    if($var[0]['progres'] == 5){
+                    if($var[0]['progres'] >= 6){
                         $success = "success";  ?>
                         <div id="compEnigma" name="comprobarEnigma" class="<?php echo $success ?>"></div>                            
                    <?php }else{

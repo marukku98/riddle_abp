@@ -67,7 +67,7 @@ function empezarEnigma(image, gridSize, modo, num){
     if(num == 2){
         $("#timeBox").hide();
     }
-    
+     
     var l = document.getElementById("mov");
     l.innerHTML = 0;
 

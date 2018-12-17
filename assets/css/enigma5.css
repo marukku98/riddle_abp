@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Letter';
+    src: url('/riddle_abp/assets/font/traveling_typewriter/TravelingTypewriter.otf')
+}
+
 .titulo{
 margin: auto;
 position: absolute;
@@ -13,10 +18,11 @@ transform: translate(-50%, -50%);
 }
 .reaccionesinmediatas{
     margin: auto;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 26px;
 }
 
 .main{
@@ -24,8 +30,13 @@ transform: translate(-50%, -50%);
     min-height: calc(700px - 12vw);
     display: flex; 
     justify-content: flex-end;
-    /* align-items: flex-end; */
+    /* align-items: flex-end; */  
 }
+
+.font-letter {
+    font-family: 'Source Serif Pro', serif;
+}
+
 
 .button{
     align-self: flex-end;
