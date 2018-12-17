@@ -1,0 +1,33 @@
+.titulo{
+margin: auto;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+
+.title{
+    font-size: 6vw;
+    
+}
+.reaccionesinmediatas{
+    margin: auto;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.main{
+    position: relative;
+    min-height: calc(700px - 12vw);
+    display: flex; 
+    justify-content: flex-end;
+    /* align-items: flex-end; */
+}
+
+.button{
+    align-self: flex-end;
+    margin: 50px;
+}
