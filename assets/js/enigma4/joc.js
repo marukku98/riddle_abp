@@ -67,7 +67,6 @@ function stop() {
     $("#score-final").html($("#score").html());
     $("#gameover").css({ display: "flex" });
     if (ronda >= 3) {
-        setCookie("enigma1", 4, 1);
         setCookie('estacio', 4, 1);
         $("#frmCompleted").css({ display: "flex" });
     }

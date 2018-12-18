@@ -149,7 +149,7 @@ function setListenerPhone(btnId, key){
         jugador.element.div.removeClass("down");
     });
 
-    $("#" + btnId).mouseout(function(){
+    $("#" + btnId).on("touchend touchcancel touchmove mouseout", function(){
         map[key] = false;
 
         jugador.element.div.addClass("normal");
@@ -157,7 +157,7 @@ function setListenerPhone(btnId, key){
         jugador.element.div.removeClass("down");
     });
 
-    $("#" + btnId).mousedown(function(){
+    $("#" + btnId).on("touchstart mousedown", function(){
         map[key] = true;
     });
 }

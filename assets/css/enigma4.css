@@ -2,19 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
 
 #frmCompleted{
-    display: hidden;
+    display: none;
 }
 
-#explicacion-oleada{
-    font-family: 'Goudy Bookletter 1911', serif;
+.font-letter{
+    font-family: "Source Serif Pro", serif;
     font-weight: bold;
 }
-#explicacion-oleada h3, #explicacion-oleada h4{
-    font-weight: bolder;
+.font-size{
+    font-size: 1.10rem;
 }
-#explicacion-oleada p{
-    font-size: 22px;
-}
+
 .tooltip > .tooltip-inner {
     background-color: #FFFFFF; 
     color: #000000; 
@@ -117,6 +115,7 @@
     left: 0;
     width: 100%;
     display: none;
+    opacity: 0.8;
 }
 
 .keyboard-mov{

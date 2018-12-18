@@ -7,7 +7,7 @@ var enemics = [];
 var intervalCreacionEnemics;
 
 var dificultat = {
-    tempsRonda: 40,
+    tempsRonda: 30,
     actInterval: null,
     easy() {
         limitEnemics = 5;
@@ -44,12 +44,14 @@ var dificultat = {
                 if (enemics.length == 0 && !checked && !isStop) {
                     checked = true;
                     clearInterval(this);
+                    intervalCreacionEnemics = null;
 
                     showRonda(nDificultat, ronda);
 
 
                 } else if (isStop) {
                     clearInterval(this);
+                    intervalCreacionEnemics = null;
                 }
             }, 1000);
         }, (this.tempsRonda * 1000));

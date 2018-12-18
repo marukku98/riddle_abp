@@ -20,43 +20,41 @@
 <?php startblock("principal"); ?>
 
 <?php
-/*if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['user'])){
 	$_SESSION['lastPage'] = $_POST['lastpage'];
-	$_SESSION['lvl'] = '1';
+	$_SESSION['lvl'] = '3';
 	header('Location: /riddle_abp/php/body/login.php');
 }else{
-	$_SESSION['progres'] = '3';
+	$_SESSION['progres'] = '2';
 
 	$game = 1;
 	$email = $_SESSION['user']['email'];
 
 	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 3){  ?>
+	if($var[0]['progres'] != 2 && $_SESSION['user']['role'] == 0){  ?>
            <script>
             window.location = "/riddle_abp/php/body/game.php";
         </script>
 <?php }   
-}*/
+}
  ?>
 
 <div class="p-4">
     <div class="row" id="explicacion-oleada">
-        <h3>Segunda Oleada</h3>
-        <p class="font-letter">
+        <h3 class="font-letter">Segunda Oleada</h3>
+        <p class="font-letter font-size">
             Una hora después de la primera oleada, 171 aviones se dirigen a Kaneohe y Pearl Harbor para bombardearlos en 3 grandes grupos dirigidos por Shimazaki Shigekazu. 
             Tú formas parte de uno de los grupos con destino Pearl Harbor. <br>
             A diferencia de la primera, esta oleada ya no es tan sorpresa, y los americanos te están esperando con mejores defensas.<br />
             Destruye tantos enemigos como puedas, incluso si tienes que arriesgar tu propia vida.
         </p>
-        <h4 class="col-lg-12 text-center">¡BANZAI!</h4>  
+        <h3 class="col-lg-12 text-center font-letter">¡BANZAI!</h4>  
         <div class="col-lg-12 text-center">
         <button type="button" id="btnEmpezar" class="btn btn-primary">Empezar</button>
         </div>
         
     </div>
 </div>
-
-<div class="row">
 
     <div id="joc" style="display:none">
 
@@ -156,7 +154,7 @@
         <div id="gameover" class="panel-over panel-over-hidden">
             <h1>GAME OVER</h1>
             <h2>Score: <span id="score-final"></span></h2>
-            <div class="btnBit" onclick="start()">
+            <div class="btnBit" onclick="location.reload();">
                 TRY AGAIN?
             </div>
             <form id="frmCompleted" action="/riddle_abp/php/conexion/progres.php" method="POST">
@@ -170,8 +168,6 @@
             <h1 id="text-ronda">RONDA <span class="numRonda"></span></h1>
         </div>
     </div>
-</div>
-
 
     
     <script>
