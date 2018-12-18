@@ -13,7 +13,7 @@ $(document).ready(function () {
     funcionPrincipal(function(){
         setInterval(function () { 
           nextText(); 
-        }, 2000); 
+        }, 14000); 
     });
 
     function nextText(){

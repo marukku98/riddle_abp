@@ -26,7 +26,7 @@ if(!isset($_SESSION['user'])){
 	$email = $_SESSION['user']['email'];
 
 	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 1 && $_SESSION['user']['role'] == 0){  ?>
+	if($var[0]['progres'] != 2 && $_SESSION['user']['role'] == 0){  ?>
 <script>
     window.location = "/riddle_abp/php/body/game.php";
 </script>
