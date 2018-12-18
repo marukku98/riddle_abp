@@ -14,9 +14,12 @@
 }
 
 .font-letter{
-  font-family: 'Source Serif Pro', serif;
-  font-size: 1rem;
+  font-family: 'Source Serif Pro', serif; 
   font-weight: bold;
+}
+
+.font-size{
+  font-size: 1rem;
 }
 
 .bg-body::after{

@@ -13,7 +13,7 @@ $(document).ready(function () {
     funcionPrincipal(function(){
         setInterval(function () { 
           nextText(); 
-        }, 1000); 
+        }, 2000); 
     });
 
     function nextText(){
@@ -162,8 +162,7 @@ function movimientos(elem) {
                         }, 1000);
 
                         $('.next').show();                        
-                    }else{
-                        setCookie('enigma1', 1, 1);
+                    }else{                        
                         setCookie('estacio', 1, 1);
                         animationComplete(true);
                         setTimeout(function () { 
