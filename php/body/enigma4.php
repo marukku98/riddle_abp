@@ -1,8 +1,9 @@
-<?php require_once "../templates/master.php" ?>
+<?php require_once "../templates/master.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
+?>
 
 <?php startblock("css"); ?>
-    <link rel="stylesheet" href="/riddle_abp/assets/css/enigma4.css">
-    <script src="/riddle_abp/assets/js/cookies.js"></script>
+    <link rel="stylesheet" href="/riddle_abp/assets/css/enigma4.css">    
     <script src="/riddle_abp/assets/js/enigma4/joc.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/jugador.js"></script>
     <script src="/riddle_abp/assets/js/enigma4/powerup.js"></script>
@@ -15,9 +16,6 @@
 <?php startblock("titulo"); ?> 
     Enigma 4
 <?php endblock(); ?>
-
-
-<?php startblock("principal"); ?>
 
 <?php
 if(!isset($_SESSION['user'])){
@@ -38,6 +36,10 @@ if(!isset($_SESSION['user'])){
 <?php }   
 }
  ?>
+
+<?php startblock("principal"); ?>
+
+
 
 <div class="p-4">
     <div class="row" id="explicacion-oleada">

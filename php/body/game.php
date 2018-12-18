@@ -211,6 +211,26 @@ if(!isset($_SESSION['user'])){
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="estacioModul" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Información</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="infoEstacio"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Aceptar</button>     
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 $("#info").click(function () {
     $("#modalInfo").modal();
@@ -219,9 +239,7 @@ function display(enigma){
   
     var estacio = getCookie('estacio');
 
-    if(cookie == estacio){        
-        alert('Dirígete al siguiente punto de interés');
-    }else if(estacio == 1 && enigma == 1){
+    if(estacio == 1 && enigma == 1){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";  
     }else if(estacio == 2 && enigma == 3){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";    
@@ -229,6 +247,9 @@ function display(enigma){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
     }else if(estacio == 4 && enigma == 5){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
+    }else{
+        $('.infoEstacio').text('Dirígete a la estación '+ (parseInt(estacio) + 1));
+        $('#estacioModul').modal();
     }
 }
 </script>

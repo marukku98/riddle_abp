@@ -554,8 +554,7 @@ function flag() {
  */
 function win(win) {
     $(".end").addClass("end-on");
-    if (win) {
-        setCookie('estacio', 1, 3);
+    if (win) {        
         if (english) {
             $(".end-text").text("VICTORY?");
         }

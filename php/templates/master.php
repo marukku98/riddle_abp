@@ -47,7 +47,7 @@
 <body class="bg-body">
   <header class="shadow-effect">
     <nav class="navbar navbar-expand-lg navbar-light bg-main">
-      <img class="mt-2 mb-2" src="/riddle_abp/assets/img/TITULO.png" height="50">
+      <a href="/riddle_abp/php/body/index.php"><img class="mt-2 mb-2" src="/riddle_abp/assets/img/TITULO.png" height="50"></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
         aria-expanded="false" aria-label="Toggle navigation">

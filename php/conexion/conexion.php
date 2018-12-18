@@ -2,11 +2,11 @@
 
 function openBD(){
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $servername = "hostingmysql328.nominalia.com";
+    $username = "daw2a01";
+    $password = "riddleteam1998";
 
-    $conn = new PDO("mysql:host=$servername;dbname=riddle;charset=utf8", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=daw2a01;charset=utf8", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $conn;

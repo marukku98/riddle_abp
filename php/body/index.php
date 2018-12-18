@@ -114,7 +114,6 @@
           <span class="text-muted"></span>
         </p>
       </h2>
-      <p class="lead text-font">Programador back-end y front-end.</p>
 
       <ul class="list-group list-group-flush text-font">
         <li class="list-group-item">
@@ -155,34 +154,6 @@
         alt="Generic placeholder image">
     </div>
   </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7 order-md-2 m-auto">
-      <h2 class="featurette-heading title-font">Martí Soler
-        <span class="text-muted"></span>
-      </h2>
-      <p class="lead text-font">
-      </p>
-
-      <ul class="list-group list-group-flush text-font">
-        <li class="list-group-item">
-          <i class="far fa-envelope"></i> emdicmarti@gmail.com</li>
-        <li class="list-group-item">
-          <i class="fab fa-linkedin"></i> Martí Soler</li>
-        <li class="list-group-item">
-          <i class="fab fa-twitter-square"></i>
-        </li>
-      </ul>
-
-    </div>
-    <div class="col-md-5 order-md-1">
-      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" src="/riddle_abp/assets/img/Marti_Avatar.png"
-        alt="Generic placeholder image">
-    </div>
-  </div>
-</div>
 
 <!-- /END THE FEATURETTES -->
 <?php endblock(); ?>

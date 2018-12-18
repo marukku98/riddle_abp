@@ -2,7 +2,6 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 ?>
 
-<script src="/riddle_abp/assets/js/cookies.js"></script>
 <script src="/riddle_abp/assets/js/jquery-ui.js"></script>
 <script src="/riddle_abp/assets/js/jquery.ui.touch-punch.min.js"></script>
 <script src="/riddle_abp/assets/js/enigma1.js"></script>

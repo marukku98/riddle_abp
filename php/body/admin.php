@@ -1,11 +1,11 @@
 <?php 
     require_once "../templates/master.php";
-    startblock("php");
+   
       require_once "../conexion/adminusers.php";
       checkUser();
 
       $users = selectUsers();
-    endblock();
+
 ?>
 
 <link rel="stylesheet" href="/riddle_abp/assets/css/contact.css">

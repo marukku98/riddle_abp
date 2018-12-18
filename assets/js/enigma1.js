@@ -162,8 +162,7 @@ function movimientos(elem) {
                         }, 1000);
 
                         $('.next').show();                        
-                    }else{                        
-                        setCookie('estacio', 1, 1);
+                    }else{  
                         animationComplete(true);
                         setTimeout(function () { 
                             modal = "#finalModal";
