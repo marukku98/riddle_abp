@@ -549,10 +549,13 @@ function flag() {
     }
 }
 
-//Feedback Victoria/Derrota
+/**
+ * Feedback Victoria/Derrota
+ */
 function win(win) {
     $(".end").addClass("end-on");
     if (win) {
+        setCookie('estacio', 1, 3);
         if (english) {
             $(".end-text").text("VICTORY?");
         }

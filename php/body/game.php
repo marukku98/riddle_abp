@@ -215,20 +215,19 @@ if(!isset($_SESSION['user'])){
 $("#info").click(function () {
     $("#modalInfo").modal();
 });
-function display(enigma){
-   
-    var cookie = getCookie('enigma1');
+function display(enigma){  
+  
     var estacio = getCookie('estacio');
 
     if(cookie == estacio){        
         alert('Dirígete al siguiente punto de interés');
-    }else if(cookie == 0 && estacio == 1 && enigma == 1){
+    }else if(estacio == 1 && enigma == 1){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";  
-    }else if(cookie == 1 && estacio == 2 && enigma == 3){
+    }else if(estacio == 2 && enigma == 3){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";    
-    }else if(cookie == 2 && estacio == 3 && enigma == 4){
+    }else if(estacio == 3 && enigma == 4){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
-    }else if(cookie == 3 && estacio == 4 && enigma == 5){
+    }else if(estacio == 4 && enigma == 5){
         window.location="/riddle_abp/php/body/enigma"+enigma+".php";
     }
 }

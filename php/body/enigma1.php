@@ -39,9 +39,9 @@ if(!isset($_SESSION['user'])){
 	<div class="total">
 		<div class="container first">
 
-			<h3 class="japan-font">La guerra de Pearl Harbor</h3>
+			<h3 class="font-letter">La guerra de Pearl Harbor</h3>
 
-			<p class="font-letter">El ataque a Pearl Harbor fue una ofensiva militar sorpresa efectuada por la Armada Imperial Japonesa
+			<p class="font-letter font-size">El ataque a Pearl Harbor fue una ofensiva militar sorpresa efectuada por la Armada Imperial Japonesa
 				contra la base naval de los Estados Unidos en Pearl Harbor (Hawái) en la mañana del domingo 7 de
 				diciembre de 1941. El ataque pretendía ser una acción preventiva destinada a evitar la intervención de
 				la Flota del Pacífico de los Estados Unidos en las acciones militares que el Imperio del Japón estaba
@@ -49,13 +49,13 @@ if(!isset($_SESSION['user'])){
 				las posesiones ultramarinas del Reino Unido, Francia, Países Bajos y Estados Unidos. </p>
 
 			<div class="planify">
-				<h3 class="japan-font">Plan de ataque</h3>
+				<h3 class="font-letter">Plan de ataque</h3>
 
-				<p class="font-letter">El Almirante Isoroku Yamamoto a causa de una enfermedad no podrá dirigir el ejército de japón contra la
+				<p class="font-letter font-size">El Almirante Isoroku Yamamoto a causa de una enfermedad no podrá dirigir el ejército de japón contra la
 					guerra a EE.UU. Por eso tu, el
 					capitán Genda, te ha ordenado liderar el ataque y llevar a Japón a la victoria, todos dependen de ti!</p>
 
-				<p class="font-letter">Esta es la carta que te ha dejado el almirante: </p>		
+				<p class="font-letter font-size">Esta es la carta que te ha dejado el almirante: </p>		
 
 				<button class="btn btn-secondary btn-sm carta" data-toggle="modal" data-target="#exampleModaal">Leer carta del almirante</button><br><br>
 			</div>
@@ -93,8 +93,8 @@ if(!isset($_SESSION['user'])){
 
 	<div class="mapa">
 
-		<h3 class="japan-font">Mapa de la zona de guerra</h3>
-		<p class="font-letter">Desencripta los mapas que te ha enviado el Contraalmirante Takijiro Onishi, para poder situaros y reconocer
+		<h3 class="font-letter">Mapa de la zona de guerra</h3>
+		<p class="font-letter font-size">Desencripta los mapas que te ha enviado el Contraalmirante Takijiro Onishi, para poder situaros y reconocer
 		la zona!</p>
 		<button class="btn btn-info fas fa-exclamation-circle" type="button" data-toggle="modal" data-target="#reglasModal"> Reglas</button>
 		<button class="btn btn-success far fa-play-circle" type="button" id="play"> Jugar</button>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['user'])){
 		<!-- Puzzle -->
 		<div id="engima1">
 			<div id="panelJuego" class="font-letter">
-				<h3 id="imgTitle font-letter" class="japan-font">Reorganizando los mapas</h3>
+				<h3 id="imgTitle" class="font-letter">Reorganizando los mapas</h3>
 				<div id="contadorMov">
 					<div>Movimientos:</div>
 					<div class="movimientos" id="mov">0</div>
@@ -215,7 +215,7 @@ if(!isset($_SESSION['user'])){
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h1 class="modal-title font-letter" id="exampleModalLabel">Reglas del juego</h1>
+							<h3 class="modal-title font-letter" id="exampleModalLabel">Reglas del juego</h3>
 						</div>
 						<div class="modal-body">
 							<ul class="list-group list-group-flush font-letter">
