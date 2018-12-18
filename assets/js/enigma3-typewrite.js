@@ -28,8 +28,8 @@ function saltar(english) {
         $("#subtitulo-enunciado").attr("id", "_subtitulo-enunciado");
         document.getElementById("_subtitulo-enunciado").innerHTML = "First Wave";
         $("#texto-enunciado").attr("id", "_texto-enunciado");
-        document.getElementById("_texto-enunciado").innerHTML = "The commander Mitsuo Fuchida, the one in charge to direct the air force," +
-            " the one in charge to realize the attack against an American fleet. " +
+        document.getElementById("_texto-enunciado").innerHTML = "The commander Mitsuo Fuchida, the one in charge to direct the air force" +
+            " and realize the attack against an American fleet. " +
             "To achieve this, Fuchida has assigned you a squad consisting of several Nakajima B5N bombers." +
             " Of all the pilots of your squadron, " +
             "one has informed you that he could be willing to sacrifice his life to ensure victory (a Kamikaze).";
