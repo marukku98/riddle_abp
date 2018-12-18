@@ -256,10 +256,5 @@ function display(enigma){
 <?php
 if(isset($_SESSION['gameStart'])){
     unset($_SESSION['gameStart']);
-    ?>
-    <script>
-        $("#modalInfo").modal();
-    </script>
-    <?php
 }
 ?>

@@ -34,7 +34,7 @@ function insertarUsers($username, $email, $password){
 
     }catch(PDOException $e){
 
-        $_SESSION['error'] = 'Error boludo'; 
+        $_SESSION['error'] = 'Error'; 
 
     } 
       //Cerrar conexion
@@ -74,7 +74,33 @@ function selectUserByEmail($email){
 
     }catch(PDOException $e){
 
-        $_SESSION['error'] = 'Error boludo'; 
+        $_SESSION['error'] = 'Error'; 
+
+    } 
+      //Cerrar conexion
+      $con = closeBD();
+
+      return $registros;
+
+}
+
+function selectUserByName($name){
+
+    $con = openBD();
+
+    try{    
+    //Consulta para insertar a la BD.
+    $sentencia = $con->prepare("select * from users WHERE username = :name");
+    $sentencia->bindParam(':name', $name); 
+    $sentencia->execute(); 
+    $result = $sentencia->fetchAll();
+
+    $registros = count($result);
+
+
+    }catch(PDOException $e){
+
+        $_SESSION['error'] = 'Error'; 
 
     } 
       //Cerrar conexion
@@ -97,7 +123,7 @@ function consultaProgresUser($email, $game){
     $result = $sentencia->fetchAll();
 
     }catch(PDOException $e){
-        $_SESSION['error'] = 'Error boludo'; 
+        $_SESSION['error'] = 'Error'; 
     }
 
     //Cerrar conexion
@@ -116,7 +142,7 @@ function newProgressUser($game, $email, $progres){
 
     $sentencia->execute();
     }catch(PDOException $e){
-        $_SESSION['error'] = 'Error boludo'; 
+        $_SESSION['error'] = 'Error'; 
     } 
       //Cerrar conexion
       $con = closeBD();
@@ -137,7 +163,7 @@ function updateProgressUser($game, $email, $progres){
 
     }catch(PDOException $e){
 
-        $_SESSION['error'] = 'Error boludo'; 
+        $_SESSION['error'] = 'Error'; 
 
     } 
       //Cerrar conexion
@@ -162,7 +188,7 @@ function selectProgressUser($game, $email){
 
     }catch(PDOException $e){
 
-        $_SESSION['error'] = 'Error boludo'; 
+        $_SESSION['error'] = 'Error'; 
 
     } 
       //Cerrar conexion
