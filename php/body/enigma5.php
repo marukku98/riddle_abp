@@ -39,7 +39,7 @@ Enigma 5
         </p>
         <div class="about opacity-0">
             <p><br>Para conocer más sobre el ataque visita: <br><a target="_blank" href="http://www.pearlharborhistoricsites.org/">www.pearlharborhistoricsites.org</a></p>
-            <p>Para saber más sobre nosotros: <br><a href="/riddle_abp/php/body/index.php#scroll">Conocenos.</a> </p>
+            <p>Para saber más sobre nosotros: <br><a href="/riddle_abp/php/body/index.php#scroll">Conócenos.</a> </p>
         </div>
     </div>
 </div>

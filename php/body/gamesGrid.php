@@ -21,7 +21,7 @@
                         <form action="/riddle_abp/php/conexion/progres.php" name="submit" method="POST">
                             <input type="text" name="game" value="1" style="visibility:hidden;">
                             <input type="hidden" name="lastpage" value="game.php">
-                            <button type="submit" class="btn btn-primary float-right" name="gameStart">Comenzar</button>
+                            <button type="submit" class="btn btn-dark float-right" name="gameStart">Jugar</button>
                         </form>
                     </div>
                 </div>
