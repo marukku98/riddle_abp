@@ -58,7 +58,7 @@ $(function () {
 });
 
 var contador = 0;
-var timer = 15;
+var timer = 25;
 var modo;
 var num;
 var control;
@@ -79,7 +79,7 @@ function empezarEnigma(image, gridSize, modo, num){
     this.contador = 0;
     this.modo = modo;
     this.num = num; 
-    this.timer = 15;
+    this.timer = 25;
 }
 
 function reinicio(){
@@ -89,7 +89,7 @@ function reinicio(){
         $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
-        this.timer = 15;
+        this.timer = 25;
     }
 }
 
@@ -182,9 +182,9 @@ function movimientos(elem) {
                       }, 300); 
                 }else{
                     setTimeout(function(){                    
-                        if(contador == 20){                      
+                        if(contador == 10){                      
                             $("#pistaModal2").modal("show");
-                        }else if(contador == 35){
+                        }else if(contador == 25){
                             $("#pistaModal3").modal("show");
                         }                       
                       }, 300); 

@@ -220,7 +220,7 @@ if(!isset($_SESSION['user'])){
 							<ul class="list-group list-group-flush font-letter">
 								<li class="list-group-item">Hay un total de dos mapas por desencriptar.</li>
 								<li class="list-group-item">Uno de los mapas está encriptado de 3x3 y otro tiene más seguridad y es de 4x4.</li>
-								<li class="list-group-item">El primer mapa está programado para que en 15 segundos se reinicie si tardas mucho en 
+								<li class="list-group-item">El primer mapa está programado para que en 25 segundos se reinicie si tardas mucho en 
 								desencriptarlo. ¿Eres lo suficientemente rápido?</li>
 								<li class="list-group-item">Arrastra las piezas para intercambiarlas y resuelve el puzzle!</li>						
 							</ul>
