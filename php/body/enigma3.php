@@ -3,6 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 ?>
 
 <?php startblock("css"); ?>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma3.css">
 <script src="/riddle_abp/assets/js/enigma3.js"></script>
 <script src="/riddle_abp/assets/js/enigma3-typewrite.js"></script>
@@ -38,7 +39,7 @@ if(!isset($_SESSION['user'])){
 
 <div class="container-fluid">
 
-    <div class="m-4 text" style="min-height: 700px;">
+    <div class="m-4 text" style="min-height: 80vh;">
         <div id="enunciado" class="enunciado" style="min-height: calc(450px - 13vw);" hidden>
             <div class="row">
                 <h3 id="titulo-enunciado" class="font-letter font-weight-bold"></h3>
@@ -67,7 +68,8 @@ if(!isset($_SESSION['user'])){
                     <form action="/riddle_abp/php/conexion/progres.php" method="POST">
                         <input type="hidden" name="game" value="1">
                         <input type="hidden" name="enigma" value="3">
-                        <button type="submit" id="success" class="btn-win" name="completed"></button>
+                        <button type="submit" id="success" class="btn-win" name="completed">
+                        </button>
                     </form>
                 </div>
                 <div class="row ml-box pb-1">
@@ -80,6 +82,7 @@ if(!isset($_SESSION['user'])){
                     </div>
                     <div class="col">
                         <button title="" class="btn-kamikaze btn-kamikaze-hover ml-4 float-right" onclick="toggleKamikaze();"></button>
+
                     </div>
                 </div>
 
@@ -301,6 +304,14 @@ if(!isset($_SESSION['user'])){
 
             </div>
             <div class="tools game">
+                <div class="kamikaze-pop">
+                    <div class="kamikaze-pop-body">
+                        <p class="kamikaze-pop-text m-0">Recuerda que este botón activa el Kamikaze</p>
+                    </div>
+                    <i class="material-icons kamikaze-pop-btn">close</i>
+
+                </div>
+                <div class="arrow-left"></div>
                 <button class="btn-help" onclick="tutorial();"></button>
             </div>
         </div>

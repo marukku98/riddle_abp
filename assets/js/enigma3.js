@@ -34,7 +34,7 @@ function colocarBarco(len, campo) {
     var x;
     var y;
     var barco = [];
-    var ran = 10 - len;
+    var ran = 10 - (len - 1);
 
     do {
         orientacio = Math.round(Math.random());
@@ -127,9 +127,16 @@ function dispararKamikaze(pos, barcos, campo) {
 function dispararMisil(pos, barcos, campo) {
     tiros--;
     setMisiles(tiros);
+    if (tiros == 20 && num_kamikazes == 1) {
+        showKamikazePop();
+    }
     campo[pos]['tocado'] = true;
     var tocado = ComprobarTocado(pos, barcos);
     ocultarBoton(pos, tocado[0], true);
+    if (tiros == 0) {
+        all();
+        feedback(3); //derrota
+    }
     if (tocado[0]) {
         CheckEstadoBarco(tocado[1], barcos, campo);
     }
@@ -146,10 +153,6 @@ function disparar(campo, pos, barcos, TipoDisparo) {
         if (campo[pos]['bandera'] == false) {
             TipoDisparo(pos, barcos, campo);
         }
-    }
-    else if (tiros == 0) {
-        all();
-        feedback(3); //derrota
     }
 }
 
@@ -209,6 +212,7 @@ function ComprobarTocado(pos, barcos) {
  */
 function ocultarBoton(pos, tocado, gif) {
     $("#" + pos).prop('disabled', true);
+    $("#" + pos).removeClass("box-hover");
     var time = 0;
     if (tocado) {
         if (gif) {
@@ -458,7 +462,9 @@ function toggleKamikaze() {
         kamikaze = false;
         for (var i = 0; i < 100; i++) {
             $('#' + i).unbind('mouseenter mouseleave')
-            $("#" + i).addClass("box-hover");
+            if (campo_enemigo[i]['tocado'] == false) {
+                $("#" + i).addClass("box-hover");
+            }
             $("#" + i).removeClass("bg-kamikaze");
         }
     }
@@ -522,7 +528,7 @@ function restart() {
     for (var x = 0; x < 10; x++) {
         for (var j = 0; j < 10; j++) {
             $('#' + (x * 10 + j)).attr('style', 'top:' + (36.36363636363636 * (x + 1)) + 'px; left:' + (36.36363636363636 * (j + 1)) + 'px;');
-            $('#' + (x * 10 + j)).attr('class', 'box');
+            $('#' + (x * 10 + j)).attr('class', 'box box-hover');
         }
     }
 }
@@ -554,7 +560,7 @@ function flag() {
  */
 function win(win) {
     $(".end").addClass("end-on");
-    if (win) {        
+    if (win) {
         if (english) {
             $(".end-text").text("VICTORY?");
         }
@@ -606,7 +612,20 @@ function LoadGame() {
         tutorial();
 
         flag();
+
+        $(".kamikaze-pop").hide();
+        $(".arrow-left").hide();
+
+        $(".kamikaze-pop-btn").click(function () {
+            $(".kamikaze-pop").fadeOut(250);
+            $(".arrow-left").fadeOut(250);
+        });
     }
+}
+
+function showKamikazePop() {
+    $(".kamikaze-pop").fadeIn(250);
+    $(".arrow-left").fadeIn(250);
 }
 
 /**
