@@ -314,6 +314,11 @@ if(!isset($_SESSION['user'])){
                 <div class="arrow-left"></div>
                 <button class="btn-help" onclick="tutorial();"></button>
             </div>
+            <div class="botMessage row">
+                <p class="m-0 col-12">Recuerda que los barcos mantienen un bloque de distancia entre si. Puedes
+                    marcar estos bloques haciendoles clic derecho.</p>
+                <i class="material-icons kamikaze-pop-btn">close</i>
+            </div>
         </div>
     </div>
     <!-- LENGUAGE MODAL -->
@@ -351,6 +356,7 @@ if(!isset($_SESSION['user'])){
             $('#enunciado').removeAttr('hidden');
             $('#btn-enunciado').removeAttr('hidden');
             showText(english);
+            $(".kamikaze-pop-text").text("Remember that this button activates the Kamikaze");
         });
         $("#btn-es").click(function () {
             english = false;

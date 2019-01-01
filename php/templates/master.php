@@ -148,10 +148,10 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Sessió Caducada</h5>
+        <h5 class="modal-title">Sesión Caducada</h5>
       </div>
       <div class="modal-body">
-        <p>La sessió ha caducat. Torna a fer login si vols seguir jugant.</p>        
+        <p>La sesión ha caducado. Vuelva a iniciar sesión si quieres seguir jugando.</p>        
       </div>
     </div>
   </div>
