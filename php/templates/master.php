@@ -18,6 +18,7 @@
     <?php startblock("titulo"); ?>
     <?php endblock(); ?>
   </title>
+  <link rel="shortcut icon" type="image/png" href="/riddle_abp/assets/img/favicon2.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans|Roboto|Source+Serif+Pro" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

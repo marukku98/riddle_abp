@@ -23,11 +23,11 @@
       </div>
     </div>
     <div class="carousel-item" style="z-index: -1;">
-      <img class="d-block w-100 slide" src="/riddle_abp/assets/img/proximamente.png" alt="Second slide">
-      <div class="container">
-        <div class="carousel-caption">
+      <img class="d-block w-100 slide" src="/riddle_abp/assets/img/bg-game31.jpg" alt="Second slide">
+      <div class="carousel-caption text-left">
+          <h1 class="title-font title-corousel2">El campo de concentración <br> de Sachsenhausen</h1>
+          <p class="text-font text-corousel2 blood">Proximamente</p>
         </div>
-      </div>
     </div>
     <div class="carousel-item" style="z-index: -1;">
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/proximamente.png" alt="First slide">
@@ -41,6 +41,7 @@
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
+  <a class="carousel-control-link" href="gamesGrid.php">
   <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
