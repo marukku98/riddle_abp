@@ -26,7 +26,7 @@
       <img class="d-block w-100 slide" src="/riddle_abp/assets/img/bg-game31.jpg" alt="Second slide">
       <div class="carousel-caption text-left">
           <h1 class="title-font title-corousel2">El campo de concentración <br> de Sachsenhausen</h1>
-          <p class="text-font text-corousel2 blood">Proximamente</p>
+          <p class="text-font text-corousel2 blood">Próximamente</p>
         </div>
     </div>
     <div class="carousel-item" style="z-index: -1;">
