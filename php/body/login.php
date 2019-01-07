@@ -32,7 +32,7 @@ Login
                 ?>
             </div>
             <div class="form-group row">
-                <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password"
+                <input type="password" class="form-control col-12" placeholder="Contraseña" name="password" id="password"
                     required>
             </div>
             <br>

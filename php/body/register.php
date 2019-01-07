@@ -26,12 +26,12 @@ Registro
             <div class="form-group row">
                 <?php 
                     if(isset($_SESSION['errorUsername'])){
-                    echo '<input type="text" class="form-control col-12" placeholder="Username" value="'.$_SESSION["errorUsername"].'" name="username" id="Username"
+                    echo '<input type="text" class="form-control col-12" placeholder="Usuario" value="'.$_SESSION["errorUsername"].'" name="username" id="Username"
                         required>';
                 
                     unset($_SESSION['errorUsername']);
                     }else{
-                        echo '<input type="text" class="form-control col-12" placeholder="Username" name="username" id="Username"
+                        echo '<input type="text" class="form-control col-12" placeholder="Usuario" name="username" id="Username"
                         required>';
                     }
                 ?>
@@ -49,12 +49,12 @@ Registro
             </div>
 
             <div class="form-group row">
-                <input type="password" class="form-control col-12" placeholder="Password" name="password" id="password"
+                <input type="password" class="form-control col-12" placeholder="Contraseña" name="password" id="password"
                     required>
             </div>
 
             <div class="form-group row">
-                <input type="password" class="form-control col-12" placeholder="Repeat password" name="password2" id="password"
+                <input type="password" class="form-control col-12" placeholder="Repetir contraseña" name="password2" id="password"
                     required>
             </div><br>
             <div class="form-group row">

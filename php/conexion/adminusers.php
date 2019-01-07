@@ -45,6 +45,9 @@ function deleteUserByID($email){
     $conn = OpenBD();
 
     try{
+        $sentencia = $conn->prepare("delete from progres where email = :email");
+        $sentencia->bindParam(':email', $email);    
+        $sentencia->execute();
         $sentencia = $conn->prepare("delete from users where email = :email");
         $sentencia->bindParam(':email', $email);    
         $sentencia->execute();
