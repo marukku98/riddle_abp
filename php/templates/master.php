@@ -160,7 +160,7 @@
 
 <script>
   var minutsInactiu = 0;
-  var maxMinutsInactiu = 1;
+  var maxMinutsInactiu = 2;
 
   $(document).ready(function(){
     var inactividad = setInterval(function(){
@@ -175,7 +175,7 @@
         }, 3000);
 
       }
-    }, (maxMinutsInactiu * 10000));
+    }, (maxMinutsInactiu * 60000));
 
     $(this).mousemove(function(){
       minutsInactiu = 0;
