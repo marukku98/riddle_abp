@@ -45,6 +45,9 @@
                                 <td>".$user["email"]."</td>
                                 <td>".$user["role"]."</td>
 
+                                ");
+                    if($_SESSION['user']['role'] > $user['role']){
+                            echo("  
                                 <td class='with-td'>
                                     <button type='sumit' class='btn btn-info btn-sm with-td'>GUARDAR</button>
                                     <input type='hidden' value ='".$user["email"]."' name='edit[email]'> 
@@ -52,16 +55,16 @@
                                                                    
                                 </td>
                             </form>
-        
                                 <td class='with-td'>
-                                    <form class='float-right' action='/riddle_abp/php/conexion/usersController.php' method='post'>
+                                   <form class='float-right' action='/riddle_abp/php/conexion/usersController.php' method='post'>
                                         <button type='sumit' class='btn btn-danger btn-sm with-td'>BORRAR</button>
                                         <input type='hidden' value ='".$user["email"]."' name='delete[email]'>                                                                                 
                                         <input type='hidden' value ='".$user["role"]."' name='delete[role]'>                                                                                 
                                     </form> 
                                 </td>");
+                    }
 
-                        if($_SESSION['user']['role'] == 2 && $user['role'] < 2){
+                        if($_SESSION['user']['role'] == 2 && $user['role'] < $_SESSION['user']['role']){
                             echo ("<td class='with-td'>
                                   <form class='float-right' action='/riddle_abp/php/conexion/usersController.php' method='post'>");
                             

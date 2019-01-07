@@ -108,9 +108,35 @@ body,
     text-shadow: -2px 0 #ab3030, -2px -2px #ab3030, 0 2px #ab3030, 2px 2px #ab3030, 2px -2px #ab3030, -2px 2px #ab3030, 2px 0 #ab3030, 0 -2px #ab3030;
 }
 
+.title-corousel2 {
+    font-size: 3vw;
+    text-shadow: -3px 0 #581419, -3px -3px #581419, 0 3px #581419, 3px 3px #581419, 3px -3px #581419, -3px 3px #581419, 3px 0 #581419, 0 -3px #ab3030;
+    color: white;
+}
+
+.text-corousel2 {
+    font-size: 1.5vw;
+    text-shadow: -2px 0 #581419, -2px -2px #581419, 0 2px #581419, 2px 2px #581419, 2px -2px #581419, -2px 2px #581419, 2px 0 #581419, 0 -2px #ab3030;
+    color: white;
+}
+
 .header {
     color: white;
     font-size: 40px;
     padding: 15px;
     box-shadow: 0px 0px 10px black;
+}
+
+.carousel-control-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 60%;
+    right: 20%;
 }

@@ -18,6 +18,7 @@
     <?php startblock("titulo"); ?>
     <?php endblock(); ?>
   </title>
+  <link rel="shortcut icon" type="image/png" href="/riddle_abp/assets/img/favicon2.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans|Roboto|Source+Serif+Pro" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -148,10 +149,10 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Sessió Caducada</h5>
+        <h5 class="modal-title">Sesión Caducada</h5>
       </div>
       <div class="modal-body">
-        <p>La sessió ha caducat. Torna a fer login si vols seguir jugant.</p>        
+        <p>La sesión ha caducado. Vuelva a iniciar sesión si quieres seguir jugando.</p>        
       </div>
     </div>
   </div>
@@ -159,7 +160,7 @@
 
 <script>
   var minutsInactiu = 0;
-  var maxMinutsInactiu = 5;
+  var maxMinutsInactiu = 2;
 
   $(document).ready(function(){
     var inactividad = setInterval(function(){
@@ -174,7 +175,7 @@
         }, 3000);
 
       }
-    }, (maxMinutsInactiu * 12000));
+    }, (maxMinutsInactiu * 60000));
 
     $(this).mousemove(function(){
       minutsInactiu = 0;

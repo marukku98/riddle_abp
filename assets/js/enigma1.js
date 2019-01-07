@@ -61,7 +61,7 @@ $(function () {
 
 //Variables para el juego
 var contador = 0;
-var timer = 15;
+var timer = 25;
 var modo;
 var num;
 var control;
@@ -85,7 +85,7 @@ function empezarEnigma(image, gridSize, modo, num){
     this.contador = 0;
     this.modo = modo;
     this.num = num; 
-    this.timer = 15;
+    this.timer = 25;
 }
 
 //Funcion para reiniciar el primer puzzle cuando el contador llegue a cero
@@ -95,7 +95,7 @@ function reinicio(){
         $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');
-        this.timer = 15;
+        this.timer = 25;
     }
 }
 
@@ -208,9 +208,9 @@ function movimientos(elem) {
                 }//Si se encuentra en el segundo puzzle y ha hecho 20 / 35 movimientos se le da otra pista
                 else{
                     setTimeout(function(){                    
-                        if(contador == 20){                      
+                        if(contador == 10){                      
                             $("#pistaModal2").modal("show");
-                        }else if(contador == 35){
+                        }else if(contador == 25){
                             $("#pistaModal3").modal("show");
                         }                       
                       }, 300); 

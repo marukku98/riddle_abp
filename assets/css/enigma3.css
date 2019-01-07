@@ -267,6 +267,67 @@
     border-color: #c07373;
 }
 
+.kamikaze-pop {
+    position: absolute;
+    top: 43%;
+    left: -160%;
+    min-height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    background: #252525;
+}
+
+.kamikaze-pop-body {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.kamikaze-pop-text {
+    font-size: smaller;
+    color: white;
+    /* white-space: nowrap; */
+}
+
+.kamikaze-pop-btn {
+    color: #7d7d7d;
+    position: absolute;
+    left: calc(100% - 25px);
+    top: 7px;
+    font-size: 18px;
+    cursor: default;
+}
+
+.kamikaze-pop-btn:hover {
+    background: #1b1b1b;
+    border-radius: 3px;
+}
+
+.arrow-left {
+    position: absolute;
+    top: 95%;
+    left: -200%;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #252525;
+}
+
+.botMessage {
+    color: white;
+    position: fixed;
+    bottom: 15px;
+    right: 50%;
+    transform: translate(50%, 0%);
+    padding: 15px;
+    border-radius: 5px;
+    background: #252525;
+    margin: auto;
+}
+
 /* .btn-kamikaze:before {
     content: "";
     padding: 4px;

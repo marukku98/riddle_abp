@@ -7,6 +7,7 @@ $(document).ready(function () {
   $(".tercerTexto").hide();
   $(".cuartoTexto").hide();
   $(".finalTexto").hide();
+  $(".about").hide();
 
   $(".title").fadeIn();
 
@@ -42,6 +43,7 @@ $(document).ready(function () {
     $(".cuartoTexto").fadeOut(speed);
     setTimeout(function () {
       $(".finalTexto").fadeIn(speed)
+      $(".about").fadeIn(0);
     }, speed);
   }, 33000);
   setTimeout(function () {
