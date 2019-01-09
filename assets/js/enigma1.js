@@ -90,11 +90,11 @@ function empezarEnigma(image, gridSize, modo, num){
 
 //Funcion para reiniciar el primer puzzle cuando el contador llegue a cero
 function reinicio(){
-    if(timer == -1){  
+    if(this.timer == -1){  
         $('#puzzGame li').draggable('disable');
         $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
-        movimientos('#puzzGame li');
+        movimientos('#puzzGame li');        
         this.timer = 25;
     }
 }
@@ -106,11 +106,11 @@ function startTime(){
         if(modo){            
            reinicio();
         }
-        if(timer >= 0){
-            l.innerHTML = timer;
+        if(this.timer >= 0){
+            l.innerHTML = this.timer;
         }        
-        timer--;    
-    },1000);
+        this.timer--;         
+    },1000);    
 }
 
 //Netejem el contador de temps
@@ -174,7 +174,7 @@ function movimientos(elem) {
             if (completado(currentList)){                  
                 setTimeout(function(){                   
                     contador = 0;
-                    timer = 0; 
+                    this.timer = 0; 
                     //Diferenciamos si es el primer o segundo puzzle.
                     //Hacemos una animación, la quitamos y mostramos un modal u otro dependiendo del puzzle en que esté                  
                     if(num == 1){                        
@@ -190,8 +190,7 @@ function movimientos(elem) {
                         setTimeout(function () { 
                             modal = "#finalModal";
                             finalAnimation(animation, modal);
-                        }, 1000);
-                       
+                        }, 1000);                       
                     }
                     endTime();                  
                   });                                      
@@ -237,17 +236,16 @@ function finalAnimation(callback, modal) {
 }
 
 //Mezclamos las diferentes piezas del puzzle
-function mezclarPiezas(ul) {    
+function mezclarPiezas(ul) {  
 
-    var $elems = $(ul).children(),
-        $parents = $elems.parent();
+    var $ul =  $(ul).children();
     //children ->  Obtenga los elementos secundarios de cada elemento en el conjunto de elementos emparejados, opcionalmente filtrados por un selector.
     //parent -> obtenga el elemento primario de cada elemento en el conjunto actual de elementos coincidentes, opcionalmente filtrado por un selector.
     
     //Comença a agafar cada element i el reordena
-    $parents.each(function () {
+    $ul.each(function () {
         //De cada ul fa un sort random y elimina la posicio que estava
-        $(ul).children().sort(function () {
+        $ul.sort(function () {
             return Math.round(Math.random()) - 0.5;
         }).remove().appendTo(ul);
     });
