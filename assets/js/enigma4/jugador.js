@@ -41,6 +41,7 @@ function createJugador() {
     jugador.updatePosition();
 
     $(document).keydown(function (event) {
+        reiniciarContador();
         if (event.keyCode in map) {
             event.preventDefault();
 
@@ -56,6 +57,7 @@ function createJugador() {
     
 
     $(document).keyup(function (event) {
+        reiniciarContador();
         if (event.keyCode in map) {
             event.preventDefault();
             map[event.keyCode] = false;

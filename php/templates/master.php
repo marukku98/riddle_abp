@@ -160,12 +160,12 @@
 
 <script>
   var minutsInactiu = 0;
-  var maxMinutsInactiu = 2;
+  var maxMinutsInactiu = 5;
 
   $(document).ready(function(){
     var inactividad = setInterval(function(){
       minutsInactiu++;
-      if (minutsInactiu == 5){
+      if (minutsInactiu == maxMinutsInactiu){
         clearInterval(this);
         
         $("#modal-sessio").modal("show");
@@ -175,16 +175,20 @@
         }, 3000);
 
       }
-    }, (maxMinutsInactiu * 60000));
+    }, (60 * 1000));
 
     $(this).mousemove(function(){
-      minutsInactiu = 0;
+      reiniciarContador();
     });
 
     $(this).keypress(function(){
-      minutsInactiu = 0;
+      reiniciarContador();
     });
   });
+
+  function reiniciarContador(){
+    minutsInactiu = 0;
+  }
 </script>
 
 <?php } ?>
