@@ -68,7 +68,7 @@ var control;
 
 //Función que inicializa todos los componentes del juego.
 function empezarEnigma(image, gridSize, modo, num){
-
+    
     if(num == 2){
         $("#timeBox").hide();
     }
@@ -77,9 +77,18 @@ function empezarEnigma(image, gridSize, modo, num){
     
     startTime();    //Compte enrere del temps   
     gridPuzzle(image, gridSize);    //Divideix la foto en x parts
+
+    var list = comprobar();
+
     $('#panelJuego').fadeIn();  //Apareix el puzzle partit
-    mezclarPiezas('#puzzGame'); //Barrejem les peçes del puzzle
-    movimientos('#puzzGame li');    //Abilitem els movimients del puzzle.
+    //Comprovem que s'han mesclat bè
+    do{
+        list = comprobar();
+     
+        mezclarPiezas('#puzzGame'); //Barrejem les peçes del puzzle
+    }while(completado(list));
+
+    movimientos('#puzzGame li');//Abilitem els movimients del puzzle.
     
     //Inicialitzem les variables necessaries
     this.contador = 0;
@@ -88,6 +97,14 @@ function empezarEnigma(image, gridSize, modo, num){
     this.timer = 25;
 }
 
+function comprobar(){
+    var list = $('#puzzGame > li').map(
+        function (i, el){ 
+            return $(el).attr('data-value'); 
+        }
+    );
+    return list;
+}
 //Funcion para reiniciar el primer puzzle cuando el contador llegue a cero
 function reinicio(){
     if(this.timer == -1){  
@@ -164,11 +181,7 @@ function movimientos(elem) {
             //Mapea los li que tiene el puzzle y obtiene su valor para saber en que posición estan, para saber si el puzzle esta resuelto o no
             //Map --> Convierta todos los elementos de una matriz u objeto en una nueva matriz de elementos.
             // El primer argumento de la función es el elemento de la matriz, el segundo argumento es el índice en la matriz
-            currentList = $('#puzzGame > li').map(
-                function (i, el){ 
-                    return $(el).attr('data-value'); 
-                }
-            );
+            currentList = comprobar();
 
             //Comprobamos despues de cada mov si es correcto o no
             if (completado(currentList)){                  
