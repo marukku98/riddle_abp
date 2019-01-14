@@ -7,6 +7,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma3.css">
 <script src="/riddle_abp/assets/js/enigma3.js"></script>
 <script src="/riddle_abp/assets/js/enigma3-typewrite.js"></script>
+<script src="/riddle_abp/assets/js/cookies.js"></script>
+
 <?php endblock(); ?>
 
 <?php startblock("titulo"); ?> Pearl Harbor 3
@@ -14,7 +16,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 
 <?php startblock("principal"); ?>
 
-
+<script>
+    var estacio = getCookie('estacio');
+    if (estacio != 2){
+        window.location = "/riddle_abp/php/body/game.php";
+    }
+</script>
 <?php
 if(!isset($_SESSION['user'])){
 	$_SESSION['lastPage'] = $_POST['lastpage'];
@@ -26,7 +33,7 @@ if(!isset($_SESSION['user'])){
 	$game = 1;
 	$email = $_SESSION['user']['email'];
 
-	$var = selectProgressUser($game, $email); 
+    $var = selectProgressUser($game, $email); 
 	if($var[0]['progres'] != 2 && $_SESSION['user']['role'] == 0){  ?>
 <script>
     window.location = "/riddle_abp/php/body/game.php";
