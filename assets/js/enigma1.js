@@ -61,7 +61,7 @@ $(function () {
 
 //Variables para el juego
 var contador = 0;
-var timer = 15;
+var timer = 25;
 var modo;
 var num;
 var control;
@@ -93,7 +93,7 @@ function empezarEnigma(image, gridSize, modo, num){
     this.contador = 0;
     this.modo = modo;
     this.num = num; 
-    this.timer = 15;
+    this.timer = 25;
 }
 
  //Mapea los li que tiene el puzzle y obtiene su valor para saber en que posición estan, para saber si el puzzle esta resuelto o no
@@ -114,7 +114,7 @@ function reinicio(){
         $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');        
-        this.timer = 15;
+        this.timer = 25;
     }
 }
 
