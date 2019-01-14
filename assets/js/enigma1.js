@@ -61,7 +61,7 @@ $(function () {
 
 //Variables para el juego
 var contador = 0;
-var timer = 25;
+var timer = 15;
 var modo;
 var num;
 var control;
@@ -83,8 +83,7 @@ function empezarEnigma(image, gridSize, modo, num){
     $('#panelJuego').fadeIn();  //Apareix el puzzle partit
     //Comprovem que s'han mesclat bè
     do{
-        list = comprobar();
-     
+        list = comprobar();     
         mezclarPiezas('#puzzGame'); //Barrejem les peçes del puzzle
     }while(completado(list));
 
@@ -94,7 +93,7 @@ function empezarEnigma(image, gridSize, modo, num){
     this.contador = 0;
     this.modo = modo;
     this.num = num; 
-    this.timer = 25;
+    this.timer = 15;
 }
 
  //Mapea los li que tiene el puzzle y obtiene su valor para saber en que posición estan, para saber si el puzzle esta resuelto o no
@@ -110,12 +109,12 @@ function comprobar(){
 }
 //Funcion para reiniciar el primer puzzle cuando el contador llegue a cero
 function reinicio(){
-    if(this.timer == -1){  
+    if(this.timer <= -1){          
         $('#puzzGame li').draggable('disable');
         $('#puzzGame li').droppable('disable');  
         mezclarPiezas('#puzzGame');
         movimientos('#puzzGame li');        
-        this.timer = 25;
+        this.timer = 15;
     }
 }
 
@@ -127,8 +126,22 @@ function startTime(){
            reinicio();
         }
         if(this.timer >= 0){
+            $('#number').css({ 
+                "display" : "inline",
+                "color": "black" });
             l.innerHTML = this.timer;
-        }        
+        }
+        if(this.timer <= 10){                    
+            $('#number').css({ 
+                "display" : "inline",
+                "color": "red" 
+            });
+            setTimeout(function () {
+                $('#number').css({                     
+                    "display" : "none",  
+                });
+            }, 500);              
+        }      
         this.timer--;         
     },1000);    
 }
