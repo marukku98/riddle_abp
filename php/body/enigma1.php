@@ -11,6 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 Enigma 1
 <?php endblock(); ?>
 
+<?php startblock("principal"); ?>
 <script>
     var estacio = getCookie('estacio');
     if (estacio != 1){
@@ -37,7 +38,7 @@ if(!isset($_SESSION['user'])){
 }
  ?>
 
-<?php startblock("principal"); ?>
+
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma1.css">
 
 <body>

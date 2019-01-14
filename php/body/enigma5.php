@@ -10,8 +10,32 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 Enigma 5
 <?php endblock(); ?>
 
-
 <?php startblock("principal"); ?>
+<script>
+    var estacio = getCookie('estacio');
+    if (estacio != 4){
+        window.location = "/riddle_abp/php/body/game.php";
+    }
+</script>
+<?php
+if(!isset($_SESSION['user'])){
+	$_SESSION['lastPage'] = $_POST['lastpage'];
+	$_SESSION['lvl'] = '3';
+	header('Location: /riddle_abp/php/body/login.php');
+}else{
+	$_SESSION['progres'] = '3';
+
+	$game = 1;
+	$email = $_SESSION['user']['email'];
+
+	$var = selectProgressUser($game, $email); 
+	if($var[0]['progres'] != 4 && $_SESSION['user']['role'] == 0){  ?>
+        <script>
+            window.location = "/riddle_abp/php/body/game.php";
+        </script>
+<?php }   
+}
+ ?>
 <link rel="stylesheet" href="/riddle_abp/assets/css/enigma5.css">
 
 <div class="main font-letter">

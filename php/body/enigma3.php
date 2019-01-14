@@ -15,8 +15,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
-
 <script>
+    //Comprobem les cookies
     var estacio = getCookie('estacio');
     if (estacio != 2){
         window.location = "/riddle_abp/php/body/game.php";
@@ -24,10 +24,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 </script>
 <?php
 if(!isset($_SESSION['user'])){
+    //Comprobem si ha iniciat sessio
 	$_SESSION['lastPage'] = $_POST['lastpage'];
 	$_SESSION['lvl'] = '2';
 	header('Location: /riddle_abp/php/body/login.php');
 }else{
+    //Comprobem el progress de la BBDD
     $_SESSION['progres'] = '1';
 
 	$game = 1;
@@ -42,7 +44,6 @@ if(!isset($_SESSION['user'])){
    
 }
  ?>
-
 
 <div class="container-fluid">
 

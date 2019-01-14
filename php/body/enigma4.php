@@ -17,6 +17,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
     Enigma 4
 <?php endblock(); ?>
 
+<?php startblock("principal"); ?>
+<script>
+    var estacio = getCookie('estacio');
+    if (estacio != 3){
+        window.location = "/riddle_abp/php/body/game.php";
+    }
+</script>
 <?php
 if(!isset($_SESSION['user'])){
 	$_SESSION['lastPage'] = $_POST['lastpage'];
@@ -29,17 +36,13 @@ if(!isset($_SESSION['user'])){
 	$email = $_SESSION['user']['email'];
 
 	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 2 && $_SESSION['user']['role'] == 0){  ?>
+	if($var[0]['progres'] != 3 && $_SESSION['user']['role'] == 0){  ?>
            <script>
             window.location = "/riddle_abp/php/body/game.php";
         </script>
 <?php }   
 }
  ?>
-
-<?php startblock("principal"); ?>
-
-
 
 <div class="p-4">
     <div class="row" id="explicacion-oleada">
