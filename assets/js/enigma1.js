@@ -6,8 +6,8 @@ $(document).ready(function () {
     $(".planify").hide();
     $(".carta").hide();
 
-    function funcionPrincipal(callback){        
-        callback();
+    function funcionPrincipal(core){        
+        core();
     }
 
     funcionPrincipal(function(){
@@ -75,7 +75,7 @@ function empezarEnigma(image, gridSize, modo, num){
     var l = document.getElementById("mov");
     l.innerHTML = 0;
     
-    startTime();    //Compte enrere del temps   
+    startTime();//Compte enrere del temps   
     gridPuzzle(image, gridSize);    //Divideix la foto en x parts
 
     var list = comprobar();
@@ -97,6 +97,9 @@ function empezarEnigma(image, gridSize, modo, num){
     this.timer = 25;
 }
 
+ //Mapea los li que tiene el puzzle y obtiene su valor para saber en que posición estan, para saber si el puzzle esta resuelto o no
+ //Map --> Convierta todos los elementos de una matriz u objeto en una nueva matriz de elementos.
+ // El primer argumento de la función es el elemento de la matriz, el segundo argumento es el índice en la matriz      
 function comprobar(){
     var list = $('#puzzGame > li').map(
         function (i, el){ 
@@ -178,9 +181,6 @@ function movimientos(elem) {
             var $dragElem = $(ui.draggable).clone().replaceAll(this);
             $(this).replaceAll(ui.draggable); 
 
-            //Mapea los li que tiene el puzzle y obtiene su valor para saber en que posición estan, para saber si el puzzle esta resuelto o no
-            //Map --> Convierta todos los elementos de una matriz u objeto en una nueva matriz de elementos.
-            // El primer argumento de la función es el elemento de la matriz, el segundo argumento es el índice en la matriz
             currentList = comprobar();
 
             //Comprobamos despues de cada mov si es correcto o no
