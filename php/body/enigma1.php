@@ -11,7 +11,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 Enigma 1
 <?php endblock(); ?>
 
-
+<script>
+    var estacio = getCookie('estacio');
+    if (estacio != 1){
+        window.location = "/riddle_abp/php/body/game.php";
+    }
+</script>
 <?php
 if(!isset($_SESSION['user'])){
 	$_SESSION['lastPage'] = $_POST['lastpage'];
