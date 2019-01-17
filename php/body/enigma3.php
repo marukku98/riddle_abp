@@ -358,32 +358,32 @@ if(!isset($_SESSION['user'])){
 </div>
 
 <script>
-    $(document).ready(function () {
-        $("#btn-en").click(function () {
-            english = true;
-            $('#modal-len').modal('toggle');
-            $('#enunciado').removeAttr('hidden');
-            $('#btn-enunciado').removeAttr('hidden');
-            showText(english);
-            $(".kamikaze-pop-text").text("Remember that this button activates the Kamikaze");
-        });
-        $("#btn-es").click(function () {
-            english = false;
-            $('#modal-len').modal('toggle');
-            $('#enunciado').removeAttr('hidden');
-            $('#btn-enunciado').removeAttr('hidden');
-            showText(english);
-        });
-
-        $("#modal-len").modal({
-            backdrop: 'static',
-            keyboard: false
-        });
-
-        $(".game").contextmenu(function () {
-            return false
-        });
+$(document).ready(function() {
+    $("#btn-en").click(function() {
+        english = true;
+        $('#modal-len').modal('toggle');
+        $('#enunciado').removeAttr('hidden');
+        $('#btn-enunciado').removeAttr('hidden');
+        showText(english);
+        $(".kamikaze-pop-text").text("Remember that this button activates the Kamikaze");
     });
+    $("#btn-es").click(function() {
+        english = false;
+        $('#modal-len').modal('toggle');
+        $('#enunciado').removeAttr('hidden');
+        $('#btn-enunciado').removeAttr('hidden');
+        showText(english);
+    });
+
+    $("#modal-len").modal({
+        backdrop: 'static',
+        keyboard: false
+    });
+
+    $(".game").contextmenu(function() {
+        return false
+    });
+});
 </script>
 
 <?php endblock(); ?>

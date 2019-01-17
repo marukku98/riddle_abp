@@ -2,9 +2,12 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 ?>
 
-<script src="/riddle_abp/assets/js/cookies.js"></script>
 <script src="/riddle_abp/assets/js/enigma5.js"></script>
 <script src="/riddle_abp/assets/js/enigma3-typewrite.js"></script>
+
+<?php startblock("css"); ?>
+<script src="/riddle_abp/assets/js/cookies.js"></script>
+<?php endblock(); ?>
 
 <?php startblock("titulo"); ?>
 Enigma 5
@@ -12,10 +15,10 @@ Enigma 5
 
 <?php startblock("principal"); ?>
 <script>
-    var estacio = getCookie('estacio');
-    if (estacio != 4){
-        window.location = "/riddle_abp/php/body/game.php";
-    }
+var estacio = getCookie('estacio');
+if (estacio != 4) {
+    window.location = "/riddle_abp/php/body/game.php";
+}
 </script>
 <?php
 if(!isset($_SESSION['user'])){
@@ -30,9 +33,9 @@ if(!isset($_SESSION['user'])){
 
 	$var = selectProgressUser($game, $email); 
 	if($var[0]['progres'] != 4 && $_SESSION['user']['role'] == 0){  ?>
-        <script>
-            window.location = "/riddle_abp/php/body/game.php";
-        </script>
+<script>
+window.location = "/riddle_abp/php/body/game.php";
+</script>
 <?php }   
 }
  ?>
