@@ -19,6 +19,9 @@ Enigma 4
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
+<?php
+if($_SESSION['user']['role']==0){
+?>
 <script>
     var estacio = getCookie('estacio');
     if (estacio != 3){
@@ -26,6 +29,7 @@ Enigma 4
     }
 </script>
 <?php
+}
 if(!isset($_SESSION['user'])){
 	$_SESSION['lastPage'] = $_POST['lastpage'];
 	$_SESSION['lvl'] = '3';

@@ -15,6 +15,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
+<?php
+if($_SESSION['user']['role']==0){
+?>
 <script>
     //Comprobem les cookies
     var estacio = getCookie('estacio');
@@ -23,6 +26,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
     }
 </script>
 <?php
+}
 if(!isset($_SESSION['user'])){
     //Comprobem si ha iniciat sessio
 	$_SESSION['lastPage'] = $_POST['lastpage'];
