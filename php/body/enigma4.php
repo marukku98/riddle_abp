@@ -20,33 +20,34 @@ Enigma 4
 
 <?php startblock("principal"); ?>
 <?php
-if($_SESSION['user']['role']==0){
-?>
+// if($_SESSION['user']['role']==0){
+// ?>
 <script>
-    var estacio = getCookie('estacio');
-    if (estacio != 3){
-        window.location = "/riddle_abp/php/body/game.php";
-    }
-</script>
+    //     var estacio = getCookie('estacio');
+//     if (estacio != 3){
+//         window.location = "/riddle_abp/php/body/game.php";
+//     }
+ </script>
 <?php
-}
-if(!isset($_SESSION['user'])){
-	$_SESSION['lastPage'] = $_POST['lastpage'];
-	$_SESSION['lvl'] = '3';
-	header('Location: /riddle_abp/php/body/login.php');
-}else{
-	$_SESSION['progres'] = '2';
+// }
+// if(!isset($_SESSION['user'])){
+// 	$_SESSION['lastPage'] = $_POST['lastpage'];
+// 	$_SESSION['lvl'] = '3';
+// 	header('Location: /riddle_abp/php/body/login.php');
+// }else{
+// 	$_SESSION['progres'] = '2';
 
-	$game = 1;
-	$email = $_SESSION['user']['email'];
+// 	$game = 1;
+// 	$email = $_SESSION['user']['email'];
 
-	$var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 3 && $_SESSION['user']['role'] == 0){  ?>
+// 	$var = selectProgressUser($game, $email); 
+// 	if($var[0]['progres'] != 3 && $_SESSION['user']['role'] == 0){  ?>
 <script>
-    window.location = "/riddle_abp/php/body/game.php";
-        </script>
-<?php }   
-}
+    //     window.location = "/riddle_abp/php/body/game.php";
+ </script>
+<?php 
+//     }   
+// }
  ?>
 
 <div class="p-4">
