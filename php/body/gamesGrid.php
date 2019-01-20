@@ -11,7 +11,6 @@
 <?php startblock("principal"); ?>
 <div class="container">
         <div class="row">
-
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 p-3">
                 <div class="card rounded-0">
                     <img class="card-img-top rounded-0" src="/riddle_abp/assets/img/japan-airplane-grid.jpg" alt="Card image cap">
