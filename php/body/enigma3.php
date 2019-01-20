@@ -15,35 +15,40 @@ include $_SERVER['DOCUMENT_ROOT'] . "/riddle_abp/php/conexion/conexion.php";
 <?php endblock(); ?>
 
 <?php startblock("principal"); ?>
+
+<?php
+// if($_SESSION['user']['role']==0){
+// ?>
 <script>
-    //Comprobem les cookies
-    var estacio = getCookie('estacio');
-    if (estacio != 2){
-        window.location = "/riddle_abp/php/body/game.php";
-    }
+    //     //Comprobem les cookies
+//     var estacio = getCookie('estacio');
+//     if (estacio != 2){
+//         window.location = "/riddle_abp/php/body/game.php";
+//     }
 </script>
 <?php
-if(!isset($_SESSION['user'])){
-    //Comprobem si ha iniciat sessio
-	$_SESSION['lastPage'] = $_POST['lastpage'];
-	$_SESSION['lvl'] = '2';
-	header('Location: /riddle_abp/php/body/login.php');
-}else{
-    //Comprobem el progress de la BBDD
-    $_SESSION['progres'] = '1';
+// }
+// if(!isset($_SESSION['user'])){
+//     //Comprobem si ha iniciat sessio
+// 	$_SESSION['lastPage'] = $_POST['lastpage'];
+// 	$_SESSION['lvl'] = '2';
+// 	header('Location: /riddle_abp/php/body/login.php');
+// }else{
+//     //Comprobem el progress de la BBDD
+//     $_SESSION['progres'] = '1';
 
-	$game = 1;
-	$email = $_SESSION['user']['email'];
+// 	$game = 1;
+// 	$email = $_SESSION['user']['email'];
 
-    $var = selectProgressUser($game, $email); 
-	if($var[0]['progres'] != 2 && $_SESSION['user']['role'] == 0){  ?>
+//     $var = selectProgressUser($game, $email); 
+// 	if($var[0]['progres'] != 2 && $_SESSION['user']['role'] == 0){  ?>
 <script>
-    window.location = "/riddle_abp/php/body/game.php";
-</script>
-<?php }
-   
-}
- ?>
+    //     window.location = "/riddle_abp/php/body/game.php";
+// </script>
+<?php 
+//     }   
+// }
+//  ?>
 
 <div class="container-fluid">
 
