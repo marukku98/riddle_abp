@@ -242,15 +242,15 @@ if(!isset($_SESSION['user'])){
         });
         function display(enigma) {
 
-            var estacio = getCookie('estacio');
+            // var estacio = getCookie('estacio');
 
-            if (estacio == 1 && enigma == 1) {
+            if (/*estacio == 1 &&*/ enigma == 1) {
                 window.location = "/riddle_abp/php/body/enigma" + enigma + ".php";
-            } else if (estacio == 2 && enigma == 3) {
+            } else if (/*estacio == 2 &&*/ enigma == 3) {
                 window.location = "/riddle_abp/php/body/enigma" + enigma + ".php";
-            } else if (estacio == 3 && enigma == 4) {
+            } else if (/*estacio == 3 &&*/ enigma == 4) {
                 window.location = "/riddle_abp/php/body/enigma" + enigma + ".php";
-            } else if (estacio == 4 && enigma == 5) {
+            } else if (/*estacio == 4 &&*/ enigma == 5) {
                 window.location = "/riddle_abp/php/body/enigma" + enigma + ".php";
             } else {
                 $('.infoEstacio').text('Dirígete a la estación ' + (parseInt(estacio) + 1));
