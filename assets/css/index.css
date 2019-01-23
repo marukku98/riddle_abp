@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'Japanese';
     src: url('/riddle_abp/assets/font/Japanese-3017/Japanese-3017.otf');
